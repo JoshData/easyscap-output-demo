@@ -1,0 +1,18 @@
+id: xccdf_org.ssgproject.content_rule_disable_user_list
+severity: low
+title: Disable the User List
+description: |
+  \
+  \
+   Run the following command to disable the user list:
+
+      sudo -u gdm gconftool-2 \
+        --type bool \
+        --set /apps/gdm/simple-greeter/disable_user_list true
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-23
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27230-2

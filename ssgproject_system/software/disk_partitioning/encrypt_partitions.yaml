@@ -1,0 +1,44 @@
+id: xccdf_org.ssgproject.content_rule_encrypt_partitions
+severity: low
+title: Encrypt Partitions
+description: |
+  \
+  \
+   For manual installations, select the `Encrypt` checkbox during
+  partition creation to encrypt the partition. When this option is
+  selected the system will prompt for a passphrase to use in decrypting
+  the partition. The passphrase will subsequently need to be entered
+  manually every time the system boots. \
+  \
+   For automated/unattended installations, it is possible to use Kickstart
+  by adding the `--encrypted` and `--passphrase=` options to the
+  definition of each partition to be encrypted. For example, the following
+  line would encrypt the root partition:
+
+      part / --fstype=ext3 --size=100 --onpart=hda1 --encrypted --passphrase=PASSPHRASE
+
+  Any *PASSPHRASE* is stored in the Kickstart in plaintext, and the
+  Kickstart must then be protected accordingly. Omitting the
+  `--passphrase=` option from the partition definition will cause the
+  installer to pause and interactively ask for the passphrase during
+  installation. \
+  \
+   Detailed information on encrypting partitions using LUKS can be found
+  on the Red Hat Documentation web site:\
+
+  https://docs.redhat.com/docs/en-US/Red\_Hat\_Enterprise\_Linux/6/html/Security\_Guide/sect-Security\_Guide-LUKS\_Disk\_Encryption.html
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SC-13
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SC-28
+- href: http://iase.disa.mil/cci/index.html
+  value: '1019'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1199'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1200'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27596-6

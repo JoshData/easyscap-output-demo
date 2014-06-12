@@ -1,0 +1,32 @@
+id: xccdf_org.ssgproject.content_rule_rsyslog_accept_remote_messages_none
+severity: low
+title: Ensure rsyslog Does Not Accept Remote Messages Unless Acting As Log Server
+description: |
+  `rsyslog` daemon should not accept remote messages unless the system
+  acts as a log server. To ensure that it is not listening on the network,
+  ensure the following lines are *not* found in `/etc/rsyslog.conf`:
+
+      $ModLoad imtcp
+      $InputTCPServerRun port
+      $ModLoad imudp
+      $UDPServerRun port
+      $ModLoad imrelp
+      $InputRELPServerRun port
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-9(2)
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26803-7
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:path: /etc
+    ind:filename: rsyslog.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*\$(?:Input(?:TCP|RELP)|UDP)ServerRun
+    ind:instance: 1

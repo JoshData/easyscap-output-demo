@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_disable_vsftpd
+severity: low
+title: Disable vsftpd Service
+description: |
+  `vsftpd` service can be disabled with the following command:
+
+      # chkconfig vsftpd off
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '1436'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26948-0
+tests: []

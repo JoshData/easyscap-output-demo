@@ -1,0 +1,30 @@
+id: xccdf_org.ssgproject.content_group_mounting
+title: |-
+  Restrict Dynamic Mounting and Unmounting of
+  Filesystems
+description: |
+  \
+  \
+   This command can be used to list the types of filesystems that are
+  available to the currently executing kernel:
+
+      # find /lib/modules/`uname -r`/kernel/fs -type f -name '*.ko'
+
+  If these filesystems are not required then they can be explicitly
+  disabled in a configuratio file in `/etc/modprobe.d`.
+rules:
+- kernel_module_usb-storage_disabled
+- bootloader_nousb_argument
+- bios_disable_usb_boot
+- bios_assign_password
+- service_autofs_disabled
+- gconf_gnome_disable_automount
+- kernel_module_cramfs_disabled
+- kernel_module_freevxfs_disabled
+- kernel_module_jffs2_disabled
+- kernel_module_hfs_disabled
+- kernel_module_hfsplus_disabled
+- kernel_module_squashfs_disabled
+- kernel_module_udf_disabled
+- disable_gnome_thumbnailers
+subgroups: []

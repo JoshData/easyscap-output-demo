@@ -1,0 +1,73 @@
+id: xccdf_org.ssgproject.content_rule_audit_logs_rootowner
+severity: low
+title: System Audit Logs Must Be Owned By Root
+description: |
+  `/var/log`, run the command:
+
+  ~~~~ {xml:space="preserve"}
+  # chown root/var/log
+  ~~~~
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-9
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: http://iase.disa.mil/cci/index.html
+  value: '166'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27244-3
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: none_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+      max_depth: '-1'
+      recurse: directories
+      recurse_direction: down
+      recurse_file_system: all
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: equals
+      value: /var/log/audit
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      operation: pattern match
+      value: ^.*$
+    filter:
+      operator: OR
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}group_id':
+        operation: not equal
+        value: 0
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id':
+        operation: not equal
+        value: 0
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: none_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+      max_depth: '-1'
+      recurse: directories
+      recurse_direction: down
+      recurse_file_system: all
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: equals
+      value: /var/log/audit
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+    filter:
+      operator: OR
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}group_id':
+        operation: not equal
+        value: 0
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id':
+        operation: not equal
+        value: 0

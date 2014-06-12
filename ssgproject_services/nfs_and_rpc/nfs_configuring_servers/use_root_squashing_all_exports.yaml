@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_rule_use_root_squashing_all_exports
+severity: low
+title: Use Root-Squashing on All Exports
+description: |
+  \
+  \
+   Ensure that no line in `/etc/exports` contains the option
+  `no_root_squash`.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27138-7

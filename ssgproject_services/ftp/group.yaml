@@ -1,0 +1,14 @@
+id: xccdf_org.ssgproject.content_group_ftp
+title: FTP Server
+description: |
+  \
+  \
+   However, there are some FTP server configurations which may be
+  appropriate for some environments, particularly those which allow only
+  read-only anonymous access as a means of downloading data available to
+  the public.
+rules: []
+subgroups:
+- disabling_vsftpd
+- ftp_use_vsftpd
+- ftp_configure_vsftpd

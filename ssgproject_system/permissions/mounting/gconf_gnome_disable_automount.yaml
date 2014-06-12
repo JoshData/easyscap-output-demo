@@ -1,0 +1,40 @@
+id: xccdf_org.ssgproject.content_rule_gconf_gnome_disable_automount
+severity: low
+title: Disable GNOME Automounting
+description: |
+  # gconftool-2 --direct \
+          --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
+          --type bool \
+          --set /apps/nautilus/preferences/media_automount false
+      # gconftool-2 --direct \
+          --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
+          --type bool \
+          --set /apps/nautilus/preferences/media_autorun_never true
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(e)
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27035-5
+tests:
+- type: ind:xmlfilecontent_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/gconf/gconf.xml.mandatory/apps/nautilus/preferences/%gconf.xml
+    ind:xpath: /gconf/entry[@name='media_automount']/@value
+  state:
+    ind:value_of: 'false'
+- type: ind:xmlfilecontent_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/gconf/gconf.xml.mandatory/apps/nautilus/preferences/%gconf.xml
+    ind:xpath: /gconf/entry[@name='media_autorun_never']/@value
+  state:
+    ind:value_of: 'true'

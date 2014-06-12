@@ -1,0 +1,25 @@
+id: xccdf_org.ssgproject.content_rule_enable_screensaver_after_idle
+severity: medium
+title: GNOME Desktop Screensaver Mandatory Use
+description: |
+  # gconftool-2 --direct \
+        --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
+        --type bool \
+        --set /apps/gnome-screensaver/idle_activation_enabled true
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-11(a)
+- href: http://iase.disa.mil/cci/index.html
+  value: '57'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26600-7
+tests:
+- type: ind:xmlfilecontent_test
+  check: all
+  object:
+    ind:filepath: /etc/gconf/gconf.xml.mandatory/apps/gnome-screensaver/%gconf.xml
+    ind:xpath: /gconf/entry[@name='idle_activation_enabled']/@value
+  state:
+    ind:value_of: 'true'

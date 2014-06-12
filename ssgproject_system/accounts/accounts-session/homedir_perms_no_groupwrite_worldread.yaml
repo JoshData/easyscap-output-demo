@@ -1,0 +1,78 @@
+id: xccdf_org.ssgproject.content_rule_homedir_perms_no_groupwrite_worldread
+severity: low
+title: Ensure that User Home Directories are not Group-Writable or World-Readable
+description: |
+  # ls -ld /home/USER
+
+  Ensure that the directory is not group-writable and that it is not
+  world-readable. If necessary, repair the permissions:
+
+      # chmod g-w /home/USER
+      # chmod o-rwx /home/USER
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26981-1
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+      max_depth: '1'
+      recurse: directories
+      recurse_direction: down
+      recurse_file_system: all
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: equals
+      value: /home
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+    filter:
+      operator: OR
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}suid':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sgid':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gwrite':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oread':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oexec':
+        datatype: boolean
+        value: 'true'
+  state:
+    operator: OR
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}suid':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sgid':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gwrite':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oread':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oexec':
+      datatype: boolean
+      value: 'true'

@@ -1,0 +1,40 @@
+id: xccdf_org.ssgproject.content_rule_audit_sysadmin_actions
+severity: low
+title: Ensure auditd Collects System Administrator Actions
+description: |
+  `/etc/audit/audit.rules`:
+
+      -w /etc/sudoers -p wa -k actions
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-2(7)(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(7)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(c)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: http://iase.disa.mil/cci/index.html
+  value: '126'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26662-7
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/etc/sudoers\s+\-p\s+wa\s+\-k\s+[-\w]+\s*$
+    ind:instance: 1

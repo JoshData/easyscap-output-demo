@@ -1,0 +1,39 @@
+id: xccdf_org.ssgproject.content_rule_group_owner_grub_conf
+severity: medium
+title: Verify /etc/grub.conf Group Ownership
+description: |
+  `/etc/grub.conf` should be group-owned by the `root` group to prevent
+  destruction or modification of the file. To properly set the group owner
+  of `/etc/grub.conf`, run the command:
+
+  ~~~~ {xml:space="preserve"}
+  # chgrp root/etc/grub.conf
+  ~~~~
+rationale: |
+  `root` group is a highly-privileged group. Furthermore, the group-owner
+  of this file should not have any access privileges anyway.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+- href: http://iase.disa.mil/cci/index.html
+  value: '225'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27022-3
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: all_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filepath': /boot/grub/grub.conf
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}group_id': 0
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: all_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filepath': /boot/efi/EFI/redhat/grub.conf
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}group_id': 0

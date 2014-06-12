@@ -1,0 +1,8 @@
+id: xccdf_org.ssgproject.content_group_disabling_ipv6
+title: Disable Support for IPv6 Unless Needed
+description: ~
+rules:
+- kernel_module_ipv6_option_disabled
+- network_ipv6_disable_interfaces
+- network_ipv6_disable_rpc
+subgroups: []

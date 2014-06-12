@@ -1,0 +1,10 @@
+id: xccdf_org.ssgproject.content_group_restrictions
+title: Restrict Programs from Dangerous Execution Patterns
+description: ~
+rules:
+- enable_dmesg_restriction
+subgroups:
+- daemon_umask
+- coredumps
+- enable_execshield_settings
+- enable_nx

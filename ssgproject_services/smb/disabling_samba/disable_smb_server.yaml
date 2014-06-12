@@ -1,0 +1,120 @@
+id: xccdf_org.ssgproject.content_rule_disable_smb_server
+severity: low
+title: Disable Samba
+description: |
+  `smb` service can be disabled with the following command:
+
+      # chkconfig smb off
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '1436'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27143-7
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': smb
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '0'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': smb
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '1'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': smb
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '2'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': smb
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '3'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': smb
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '4'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': smb
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '5'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': smb
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '6'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'

@@ -1,0 +1,16 @@
+id: xccdf_org.ssgproject.content_rule_dns_server_disable_dynamic_updates
+severity: low
+title: Disable Dynamic Updates
+description: |
+  `/etc/named.conf`. For each zone specification, correct the following
+  directive if necessary:
+
+      zone "example.com " IN {
+        allow-update { none; };
+        ...
+      };
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27105-6

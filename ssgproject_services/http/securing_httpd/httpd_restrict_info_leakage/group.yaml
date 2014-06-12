@@ -1,0 +1,10 @@
+id: xccdf_org.ssgproject.content_group_httpd_restrict_info_leakage
+title: Restrict Web Server Information Leakage
+description: |
+  `ServerTokens` and `ServerSignature` directives determine how much
+  information the web server discloses about the configuration of the
+  system.
+rules:
+- httpd_servertokens_prod
+- httpd_serversignature_off
+subgroups: []

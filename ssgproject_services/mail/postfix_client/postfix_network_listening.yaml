@@ -1,0 +1,34 @@
+id: xccdf_org.ssgproject.content_rule_postfix_network_listening
+severity: medium
+title: Disable Postfix Network Listening
+description: |
+  `/etc/postfix/main.cf` to ensure that only the following
+  `inet_interfaces` line appears:
+
+      inet_interfaces = localhost
+rationale: |
+  `postfix` accepts mail messages (such as cron job reports) from the
+  local system only, and not from the network, which protects it from
+  network attack.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '382'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26780-7
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    ind:path: /etc/postfix
+    ind:filename: main.cf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*inet_interfaces[\s]*=[\s]*localhost[\s]*$
+    ind:instance: 1

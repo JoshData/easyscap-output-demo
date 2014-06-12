@@ -1,0 +1,23 @@
+id: xccdf_org.ssgproject.content_rule_smartcard_auth
+severity: medium
+title: Enable Smart Card Login
+description: '-   https://docs.redhat.com/docs/en-US/Red\_Hat\_Enterprise\_Linux/6/html/Managing\_Smart\_Cards/enabling-smart-card-login.html'
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '765'
+- href: http://iase.disa.mil/cci/index.html
+  value: '766'
+- href: http://iase.disa.mil/cci/index.html
+  value: '767'
+- href: http://iase.disa.mil/cci/index.html
+  value: '768'
+- href: http://iase.disa.mil/cci/index.html
+  value: '771'
+- href: http://iase.disa.mil/cci/index.html
+  value: '772'
+- href: http://iase.disa.mil/cci/index.html
+  value: '884'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27440-7

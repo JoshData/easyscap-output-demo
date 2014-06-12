@@ -1,0 +1,20 @@
+id: xccdf_org.ssgproject.content_group_root_paths
+title: Ensure that No Dangerous Directories Exist in Root's Path
+description: |
+  # echo $PATH
+
+  This will produce a colon-separated list of directories in the path. \
+  \
+   Certain path elements could be considered dangerous, as they could lead
+  to root executing unknown or untrusted programs, which could contain
+  malicious code. Since root may sometimes work inside untrusted
+  directories, the `.` character, which represents the current directory,
+  should never be in the root path, nor should any directory which can be
+  written to by an unprivileged or semi-privileged (system) user. \
+  \
+   It is a good practice for administrators to always execute privileged
+  commands by typing the full path to the command.
+rules:
+- root_path_no_dot
+- root_path_no_groupother_writable
+subgroups: []

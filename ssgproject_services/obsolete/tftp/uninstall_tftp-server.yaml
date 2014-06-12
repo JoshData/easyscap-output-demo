@@ -1,0 +1,29 @@
+id: xccdf_org.ssgproject.content_rule_uninstall_tftp-server
+severity: medium
+title: Uninstall tftp-server Package
+description: |
+  `tftp-server` package can be removed with the following command:
+
+      # yum erase tftp-server
+rationale: |
+  `tftp-server` package decreases the risk of the accidental (or
+  intentional) activation of tftp services.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '305'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26946-4
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: tftp-server

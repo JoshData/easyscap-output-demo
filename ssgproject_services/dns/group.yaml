@@ -1,0 +1,8 @@
+id: xccdf_org.ssgproject.content_group_dns
+title: DNS Server
+description: ~
+rules: []
+subgroups:
+- disabling_dns_server
+- dns_server_isolation
+- dns_server_protection

@@ -1,0 +1,15 @@
+id: xccdf_org.ssgproject.content_rule_dns_server_disable_zone_transfers
+severity: low
+title: Disable Zone Transfers from the Nameserver
+description: |
+  `/etc/named.conf`:
+
+      options {
+        allow-transfer { none; };
+        ...
+      }
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27528-9

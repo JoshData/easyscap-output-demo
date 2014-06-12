@@ -1,0 +1,10 @@
+id: xccdf_org.ssgproject.content_group_general-principles
+title: General Principles
+description: ~
+rules: []
+subgroups:
+- principle-encrypt-transmitted-data
+- principle-minimize-software
+- principle-separate-servers
+- principle-use-security-tools
+- principle-least-privilege

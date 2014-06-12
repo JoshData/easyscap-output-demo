@@ -1,0 +1,24 @@
+id: xccdf_org.ssgproject.content_rule_httpd_cgi_support
+severity: low
+title: Disable CGI Support
+description: |
+  `cgi` module allows HTML to interact with the CGI web programming
+  language. \
+  \
+   If this functionality is unnecessary, comment out the module:
+
+      #LoadModule cgi_module modules/mod_cgi.so
+
+  <!--#LoadModule env_module modules/mod_env.so
+  #LoadModule actions_module modules/mod_actions.so
+  #LoadModule suexec_module modules/mod_suexec.so --> If the web server
+  requires the use of CGI, enable `mod_cgi`. <!-- If extended
+  CGI functionality is required, include the appropriate modules. <tt>env</tt> allows for
+  control of the environment passed to CGI scripts. <tt>actions</tt> allows CGI events
+  to be triggered when files of a certain type are requested. <tt>su exec</tt> allows
+  CGI scripts to run as a specified user/group instead of as the server's user/group. -->
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27362-3

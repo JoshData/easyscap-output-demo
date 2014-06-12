@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_httpd_restrict_root_directory
+severity: low
+title: Restrict Root Directory
+description: |
+  `httpd` root directory should always have the most restrictive
+  configuration enabled.
+
+      <Directory / >
+         Options None
+         AllowOverride None
+         Order allow,deny
+      </Directory>
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27009-0

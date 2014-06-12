@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_rule_disable_dovecot
+severity: low
+title: Disable Dovecot Service
+description: |
+  `dovecot` service can be disabled with the following command:
+
+      # chkconfig dovecot off
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26922-5
+tests: []

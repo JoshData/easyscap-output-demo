@@ -1,0 +1,14 @@
+id: xccdf_org.ssgproject.content_group_avahi_configuration
+title: Configure Avahi if Necessary
+description: |
+  `/etc/avahi/avahi-daemon.conf`. The following security recommendations
+  should be applied to this file: See the `avahi-daemon.conf(5)` man page,
+  or documentation at http://www.avahi.org, for more detailed information
+  about the configuration options.
+rules:
+- avahi_ip_only
+- avahi_check_ttl
+- avahi_prevent_port_sharing
+- avahi_disable_publishing
+- avahi_restrict_published_information
+subgroups: []

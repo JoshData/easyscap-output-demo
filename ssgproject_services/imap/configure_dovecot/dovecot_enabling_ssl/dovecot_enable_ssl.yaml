@@ -1,0 +1,26 @@
+id: xccdf_org.ssgproject.content_rule_dovecot_enable_ssl
+severity: low
+title: Enable the SSL flag in /etc/dovecot.conf
+description: |
+  `ssl` flag in Dovecot’s configuration file needs to be set to `yes`. \
+  \
+   Edit `/etc/dovecot/conf.d/10-ssl.conf` and add or correct the following
+  line:
+
+      ssl = yes
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27571-9
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:path: /etc/dovecot/conf.d
+    ind:filename: 10-ssl.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*ssl[\s]*=[\s]*yes[\s]*$
+    ind:instance: 1

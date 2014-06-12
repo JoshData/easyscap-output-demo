@@ -1,0 +1,35 @@
+id: xccdf_org.ssgproject.content_rule_audit_config_immutable
+severity: low
+title: Make the auditd Configuration Immutable
+description: |
+  `/etc/audit/audit.rules` in order to make the configuration immutable:
+
+      -e 2
+
+  With this setting, a reboot will be required to change any audit rules.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(c)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26612-2
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-e\s+2\s*$
+    ind:instance: 1

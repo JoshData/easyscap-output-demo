@@ -1,0 +1,22 @@
+id: xccdf_org.ssgproject.content_rule_account_temp_expire_date
+severity: low
+title: Assign Expiration Date to Temporary Accounts
+description: |
+  `USER` and `YYYY-MM-DD` appropriately:
+
+      # chage -E YYYY-MM-DD USER
+
+  `YYYY-MM-DD` indicates the documented expiration date for the account.
+rationale: \
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-2(2)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-2(3)
+- href: http://iase.disa.mil/cci/index.html
+  value: '16'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1682'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27474-6

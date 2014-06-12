@@ -1,0 +1,39 @@
+id: xccdf_org.ssgproject.content_rule_cups_disable_printserver
+severity: low
+title: Disable Print Server Capabilities
+description: |
+  Port 631
+
+  and replacing it with the `Listen` directive:
+
+      Listen localhost:631
+
+  This will prevent remote users from printing to locally configured
+  printers while still allowing local users on the machine to print
+  normally.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27107-2
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:filepath: /etc/cups/cupsd.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*Port[\s]+(\d)+
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/cups/cupsd.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*Listen[\s]+(?:localhost|127\.0\.0\.1|::1):(\d)+
+    ind:instance: 1

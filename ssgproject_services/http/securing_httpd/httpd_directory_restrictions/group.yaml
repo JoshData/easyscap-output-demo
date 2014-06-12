@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_group_httpd_directory_restrictions
+title: Directory Restrictions
+description: ~
+rules:
+- httpd_restrict_root_directory
+- httpd_restrict_web_directory
+- httpd_restrict_critical_directories
+- httpd_limit_available_methods
+subgroups: []

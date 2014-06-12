@@ -1,0 +1,29 @@
+id: xccdf_org.ssgproject.content_rule_accounts_max_concurrent_login_sessions
+severity: low
+title: Limit the Number of Concurrent Login Sessions Allowed Per User
+description: |
+  `/etc/security/limits.conf`:
+
+      * hard maxlogins 10
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-10
+- href: http://iase.disa.mil/cci/index.html
+  value: '54'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27457-1
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/security/limits.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*\*[\s]+(?:(?:hard)|(?:-))[\s]+maxlogins[\s]+(\d+)\s*$
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: less than or equal
+      var_ref: oval:ssg:var:2223

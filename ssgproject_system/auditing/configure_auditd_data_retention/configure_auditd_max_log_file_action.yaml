@@ -1,0 +1,52 @@
+id: xccdf_org.ssgproject.content_rule_configure_auditd_max_log_file_action
+severity: medium
+title: Configure auditd max_log_file_action Upon Reaching Maximum Log Size
+description: |
+  `auditd`, add or correct the line in `/etc/audit/auditd.conf`:
+
+      max_log_file_action = ACTION
+
+  Possible values for *ACTION* are described in the `auditd.conf` man
+  page. These include:
+
+  -   `ignore`
+  -   `syslog`
+  -   `suspend`
+  -   `rotate`
+  -   `keep_logs`
+
+  Set the `ACTION` to `rotate` to ensure log rotation occurs. This is the
+  default. The setting is case-insensitive.
+rationale: |
+  `rotate`) minimizes the chances of the system unexpectedly running out
+  of disk space by being overwhelmed with log data. However, for systems
+  that must never discard log data, or which use external processes to
+  transfer it and reclaim space, `keep_logs` can be employed.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-4
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-11
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27237-7
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/auditd.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[ ]*max_log_file_action[ ]+=[ ]+(\S+)[ ]*$
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: case insensitive equals
+      var_ref: oval:ssg:var:2243

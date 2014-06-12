@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_group_tftp
+title: TFTP Server
+description: ~
+rules:
+- disable_tftp
+- uninstall_tftp-server
+- package_tftp_removed
+- tftpd_uses_secure_mode
+subgroups: []

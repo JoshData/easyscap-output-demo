@@ -1,0 +1,38 @@
+id: xccdf_org.ssgproject.content_rule_configure_auditd_max_log_file
+severity: medium
+title: Configure auditd Max Log File Size
+description: |
+  `/etc/audit/auditd.conf`. Add or modify the following line, substituting
+  the correct value for *STOREMB*:
+
+      max_log_file = STOREMB
+
+  Set the value to `6` (MB) or higher for general-purpose systems. Larger
+  values, of course, support retention of even more audit data.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-11
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27550-3
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/auditd.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[ ]*max_log_file[ ]+=[ ]+(\d+)[ ]*$
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: greater than or equal
+      var_ref: oval:ssg:var:2242

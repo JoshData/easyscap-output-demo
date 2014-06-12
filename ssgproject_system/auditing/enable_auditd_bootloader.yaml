@@ -1,0 +1,43 @@
+id: xccdf_org.ssgproject.content_rule_enable_auditd_bootloader
+severity: medium
+title: Enable Auditing for Processes Which Start Prior to the Audit Daemon
+description: |
+  `audit=1` to the kernel line in `/etc/grub.conf`, in the manner below:
+
+      kernel /vmlinuz-version ro vga=ext root=/dev/VolGroup00/LogVol00 rhgb quiet audit=1
+rationale: |
+  `auditd` takes care of enabling this for all processes which launch
+  after it does, adding the kernel argument ensures it is set for every
+  process during boot.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(1)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(c)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-10
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: http://iase.disa.mil/cci/index.html
+  value: '1464'
+- href: http://iase.disa.mil/cci/index.html
+  value: '130'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26785-6
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:path: /etc
+    ind:filename: grub.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*kernel\s/vmlinuz.*audit=1.*$
+    ind:instance: 1

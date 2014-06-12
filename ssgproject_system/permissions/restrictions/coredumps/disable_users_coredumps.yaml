@@ -1,0 +1,27 @@
+id: xccdf_org.ssgproject.content_rule_disable_users_coredumps
+severity: low
+title: Disable Core Dumps for All Users
+description: |
+  `/etc/security/limits.conf`:
+
+      *     hard   core    0
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SC-5
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27033-0
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/security/limits.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*\*[\s]+hard[\s]+core[\s]+([\d]+)
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: equals
+      value: '0'

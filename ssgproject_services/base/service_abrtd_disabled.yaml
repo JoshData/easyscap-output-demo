@@ -1,0 +1,23 @@
+id: xccdf_org.ssgproject.content_rule_service_abrtd_disabled
+severity: low
+title: Disable Automatic Bug Reporting Tool (abrtd)
+description: |
+  `abrtd`) daemon collects and reports crash data when an application
+  crash is detected. Using a variety of plugins, abrtd can email crash
+  reports to system administrators, log crash reports to files, or forward
+  crash reports to a centralized issue tracking system such as RHTSupport.
+  The `abrtd` service can be disabled with the following command:
+
+      # chkconfig abrtd off
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '381'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27247-6
+tests: []

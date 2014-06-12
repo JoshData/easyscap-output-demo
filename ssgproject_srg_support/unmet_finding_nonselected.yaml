@@ -1,0 +1,23 @@
+id: xccdf_org.ssgproject.content_rule_unmet_finding_nonselected
+severity: low
+title: Implementation of the Requirement is Not Supported
+description: ~
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '20'
+- href: http://iase.disa.mil/cci/index.html
+  value: '31'
+- href: http://iase.disa.mil/cci/index.html
+  value: '52'
+- href: http://iase.disa.mil/cci/index.html
+  value: '144'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1158'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1294'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1295'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1500'
+crosswalk: []

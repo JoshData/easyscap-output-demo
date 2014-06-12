@@ -1,0 +1,6 @@
+id: xccdf_org.ssgproject.content_group_xwindows
+title: X Window System
+description: ~
+rules: []
+subgroups:
+- disabling_xwindows

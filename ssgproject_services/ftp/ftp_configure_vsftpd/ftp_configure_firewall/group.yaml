@@ -1,0 +1,20 @@
+id: xccdf_org.ssgproject.content_group_ftp_configure_firewall
+title: Configure Firewalls to Protect the FTP Server
+description: |
+  `iptables` blocks access to the ports used by the web server. To
+  configure `iptables` to allow port 21 traffic one must edit
+  `/etc/sysconfig/iptables` and `/etc/sysconfig/ip6tables` (if IPv6 is in
+  use). Add the following line, ensuring that it appears before the final
+  LOG and DROP lines for the INPUT chain:
+
+  ~~~~ {xml:space="preserve"}
+  -A INPUT -m state --state NEW -p tcp --dport 21 -j ACCEPT
+  ~~~~
+
+  Edit the file `/etc/sysconfig/iptables-config`. Ensure that the
+  space-separated list of modules contains the FTP connection tracking
+  module:
+
+      IPTABLES_MODULES="ip_conntrack_ftp"
+rules: []
+subgroups: []

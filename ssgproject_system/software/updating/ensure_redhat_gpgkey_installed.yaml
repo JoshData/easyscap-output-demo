@@ -1,0 +1,44 @@
+id: xccdf_org.ssgproject.content_rule_ensure_redhat_gpgkey_installed
+severity: high
+title: Ensure Red Hat GPG Key Installed
+description: |
+  # rhn_register
+
+  If the system is not connected to the Internet or an RHN Satellite, then
+  install the Red Hat GPG key from trusted media such as the Red Hat
+  installation CD-ROM or DVD. Assuming the disc is mounted in
+  `/media/cdrom`, use the following command as the root user to import it
+  into the keyring:
+
+      # rpm --import /media/cdrom/RPM-GPG-KEY
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SI-7
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: MA-1(b)
+- href: http://iase.disa.mil/cci/index.html
+  value: '351'
+- href: test_attestation
+  dc:contributor: MM
+  dc:date: '20120928'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26506-6
+tests:
+- type: linux:rpminfo_test
+  check: only one
+  check_existence: any_exist
+  object:
+    linux:name: gpg-pubkey
+  state:
+    linux:release: 4ae0493b
+    linux:version: fd431d51
+- type: linux:rpminfo_test
+  check: only one
+  check_existence: any_exist
+  object:
+    linux:name: gpg-pubkey
+  state:
+    linux:release: 45700c69
+    linux:version: 2fa658e0

@@ -1,0 +1,29 @@
+id: xccdf_org.ssgproject.content_rule_postfix_server_banner
+severity: medium
+title: Configure SMTP Greeting Banner
+description: |
+  `/etc/postfix/main.cf`, and add or correct the following line,
+  substituting some other wording for the banner information if you
+  prefer:
+
+      smtpd_banner = $myhostname ESMTP
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-22
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-13
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27508-1
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:path: /etc/postfix
+    ind:filename: main.cf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*smtpd_banner[\s]*=[\s]*\$myhostname[\s]+ESMTP[\s]*$
+    ind:instance: 1

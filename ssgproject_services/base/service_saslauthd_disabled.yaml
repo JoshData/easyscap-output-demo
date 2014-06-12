@@ -1,0 +1,29 @@
+id: xccdf_org.ssgproject.content_rule_service_saslauthd_disabled
+severity: low
+title: Disable Cyrus SASL Authentication Daemon (saslauthd)
+description: |
+  `saslauthd` service handles plaintext authentication requests on behalf
+  of the SASL library. The service isolates all code requiring superuser
+  privileges for SASL authentication into a single process, and can also
+  be used to provide proxy authentication services to clients that do not
+  understand SASL based authentication. The `saslauthd` service can be
+  disabled with the following command:
+
+      # chkconfig saslauthd off
+rationale: |
+  `saslauthd` service provides essential functionality for performing
+  authentication in some directory environments, such as those which use
+  Kerberos and LDAP. For others, however, in which only local files may be
+  consulted, it is not necessary and should be disabled.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27263-3
+tests: []

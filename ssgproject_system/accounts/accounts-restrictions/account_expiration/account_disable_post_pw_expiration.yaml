@@ -1,0 +1,46 @@
+id: xccdf_org.ssgproject.content_rule_account_disable_post_pw_expiration
+severity: low
+title: Set Account Expiration Following Inactivity
+description: |
+  `/etc/default/useradd`, substituting `NUM_DAYS` appropriately:
+
+      INACTIVE=NUM_DAYS
+
+  A value of 35 is recommended. If a password is currently on the verge of
+  expiration, then 35 days remain until the account is automatically
+  disabled. However, if the password will not expire for another 60 days,
+  then 95 days could elapse until the account would be automatically
+  disabled. See the `useradd` man page for more information. Determining
+  the inactivity timeout must be done with careful consideration of the
+  length of a “normal” period of inactivity for users in the particular
+  environment. Setting the timeout too low incurs support costs and also
+  has the potential to impact availability of the system to legitimate
+  users.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-2(2)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-2(3)
+- href: http://iase.disa.mil/cci/index.html
+  value: '16'
+- href: http://iase.disa.mil/cci/index.html
+  value: '17'
+- href: http://iase.disa.mil/cci/index.html
+  value: '795'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27283-1
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/default/useradd
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*INACTIVE\s*=\s*(\d+)\s*$
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: greater than
+      value: -1

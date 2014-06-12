@@ -1,0 +1,33 @@
+id: xccdf_org.ssgproject.content_rule_cups_disable_browsing
+severity: low
+title: Disable Printer Browsing Entirely if Possible
+description: |
+  `/etc/cups/cupsd.conf`, to include the following:
+
+      Browsing Off
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27108-0
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/cups/cupsd.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*Browsing[\s]+(?:Off|No)
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/cups/cupsd.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*BrowseAllow[\s]+(?:none)
+    ind:instance: 1

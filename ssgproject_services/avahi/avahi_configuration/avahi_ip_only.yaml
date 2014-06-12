@@ -1,0 +1,20 @@
+id: xccdf_org.ssgproject.content_rule_avahi_ip_only
+severity: low
+title: Serve Avahi Only via Required Protocol
+description: |
+  `/etc/avahi/avahi-daemon.conf` and ensure the following line exists in
+  the `[server]` section:
+
+      use-ipv6=no
+
+  Similarly, if you are using only IPv6, disable IPv4 sockets with the
+  line:
+
+      use-ipv4=no
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27590-9

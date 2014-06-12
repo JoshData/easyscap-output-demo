@@ -1,0 +1,43 @@
+id: xccdf_org.ssgproject.content_rule_selinux_all_devicefiles_labeled
+severity: low
+title: Ensure No Device Files are Unlabeled by SELinux
+description: '`unlabeled_t`, investigate the cause and correct the file’s context.'
+rationale: |
+  `unlabeled_t`, then SELinux cannot properly restrict access to the
+  device file.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-9
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '22'
+- href: http://iase.disa.mil/cci/index.html
+  value: '32'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26774-0
+tests:
+- type: linux:selinuxsecuritycontext_test
+  check: none satisfy
+  check_existence: all_exist
+  object:
+    linux:behaviors:
+      recurse_direction: down
+    linux:path: /dev
+    linux:filename:
+      operation: pattern match
+      value: ^.*$
+    filter:
+      linux:type:
+        operation: equals
+        value: unlabeled_t
+  state:
+    linux:type:
+      operation: equals
+      value: unlabeled_t

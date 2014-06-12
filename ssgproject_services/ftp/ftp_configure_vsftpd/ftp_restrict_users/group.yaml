@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_ftp_restrict_users
+title: Restrict the Set of Users Allowed to Access FTP
+description: ~
+rules:
+- ftp_restrict_to_anon
+subgroups:
+- ftp_limit_users

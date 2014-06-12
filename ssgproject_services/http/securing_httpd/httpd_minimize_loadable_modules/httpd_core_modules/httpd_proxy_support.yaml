@@ -1,0 +1,25 @@
+id: xccdf_org.ssgproject.content_rule_httpd_proxy_support
+severity: low
+title: Disable Proxy Support
+description: |
+  `proxy` module provides proxying support, allowing `httpd` to forward
+  requests and serve as a gateway for other servers. If its functionality
+  is unnecessary, comment out the module:
+
+      #LoadModule proxy_module modules/mod_proxy.so
+
+  <!-- dependencies: #LoadModule proxy_balancer_module modules/mod_proxy_balancer.so
+  #LoadModule proxy_ftp_module modules/mod_proxy_ftp.so
+  #LoadModule proxy_http_module modules/mod_proxy_http.so
+  #LoadModule proxy_connect_module modules/mod_proxy_connect.so--> If
+  proxy support is needed, load `mod_proxy` and the appropriate proxy
+  protocol handler module (one of `mod_proxy_http`, `mod_proxy_ftp`, or
+  `mod_proxy_connect`). Additionally, make certain that a server is secure
+  before enabling proxying, as open proxy servers are a security risk.
+  `mod_proxy_balancer` enables load balancing, but requires that
+  `mod status` be enabled.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27442-3

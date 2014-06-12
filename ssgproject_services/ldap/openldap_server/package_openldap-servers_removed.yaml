@@ -1,0 +1,31 @@
+id: xccdf_org.ssgproject.content_rule_package_openldap-servers_removed
+severity: low
+title: Uninstall openldap-servers Package
+description: |
+  `openldap-servers` package should be removed if not in use. Is this
+  machine the OpenLDAP server? If not, remove the package.
+
+      # yum erase openldap-servers
+
+  The openldap-servers RPM is not installed by default on RHEL 6 machines.
+  It is needed only by the OpenLDAP server, not by the clients which use
+  LDAP for authentication. If the system is not intended for use as an
+  LDAP Server it should be removed.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26858-1
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: openldap-servers

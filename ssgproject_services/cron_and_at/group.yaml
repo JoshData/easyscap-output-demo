@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_group_cron_and_at
+title: Cron and At Daemons
+description: ~
+rules:
+- service_crond_enabled
+- disable_anacron
+- service_atd_disabled
+subgroups:
+- restrict_at_cron_users

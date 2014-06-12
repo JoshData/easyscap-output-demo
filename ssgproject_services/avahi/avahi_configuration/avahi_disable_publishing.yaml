@@ -1,0 +1,15 @@
+id: xccdf_org.ssgproject.content_rule_avahi_disable_publishing
+severity: low
+title: Disable Avahi Publishing
+description: |
+  `/etc/avahi/avahi-daemon.conf` and ensure the following line appears in
+  the `[server]` section:
+
+      disallow-other-stacks=yes
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27526-3

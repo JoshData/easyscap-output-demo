@@ -1,0 +1,15 @@
+id: xccdf_org.ssgproject.content_group_integrity
+title: Software Integrity Checking
+description: |
+  \
+  \
+   Integrity checking cannot *prevent* intrusions, but can detect that
+  they have occurred. Requirements for software integrity checking may be
+  highly dependent on the environment in which the system will be used.
+  Snapshot-based approaches such as AIDE may induce considerable overhead
+  in the presence of frequent software updates.
+rules: []
+subgroups:
+- aide
+- rpm_verification
+- additional_security_software

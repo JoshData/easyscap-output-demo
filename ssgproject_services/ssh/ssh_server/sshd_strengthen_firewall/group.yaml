@@ -1,0 +1,19 @@
+id: xccdf_org.ssgproject.content_group_sshd_strengthen_firewall
+title: Strengthen Firewall Configuration if Possible
+description: |
+  \
+  \
+   Determine an appropriate network block, `netwk`, and network mask,
+  `mask`, representing the machines on your network which will be allowed
+  to access this SSH server. \
+  \
+   Edit the files `etc/sysconfig/iptables` and `/etc/sysconfig/ip6tables`
+  (if IPv6 is in use). In each file, locate the line:
+
+      -A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+
+  and replace it with:
+
+      -A INPUT -s netwk/mask -m state --state NEW -p tcp --dport 22 -j ACCEPT
+rules: []
+subgroups: []

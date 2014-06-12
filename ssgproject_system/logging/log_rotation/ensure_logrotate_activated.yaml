@@ -1,0 +1,45 @@
+id: xccdf_org.ssgproject.content_rule_ensure_logrotate_activated
+severity: low
+title: Ensure Logrotate Runs Periodically
+description: |
+  `logrotate` utility allows for the automatic rotation of log files. The
+  frequency of rotation is specified in `/etc/logrotate.conf`, which
+  triggers a cron task. To configure logrotate to run daily, add or
+  correct the following line in `/etc/logrotate.conf`:
+
+      # rotate log files frequency
+      daily
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-9
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27014-0
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:behaviors:
+      singleline: 'true'
+    ind:filepath: /etc/logrotate.conf
+    ind:pattern:
+      operation: pattern match
+      value: (?:daily)*.*(?=[\n][\s]*daily)(.*)$
+    ind:instance: 1
+    filter:
+      ind:subexpression:
+        operation: pattern match
+        value: '}[^{]+[\n][\s]*(weekly|monthly|yearly)|[\n][\s]*(weekly|monthly|yearly)[^}]+{'
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/cron.daily/logrotate
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*/usr/sbin/logrotate[\s]*/etc/logrotate.conf(?:.*)$
+    ind:instance: 1

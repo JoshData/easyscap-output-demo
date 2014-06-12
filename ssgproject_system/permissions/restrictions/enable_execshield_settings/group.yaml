@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_enable_execshield_settings
+title: Enable ExecShield
+description: '`sysctl` variables `kernel.exec-shield` and `kernel.randomize_va_space`.'
+rules:
+- sysctl_kernel_exec_shield
+- sysctl_kernel_randomize_va_space
+subgroups: []

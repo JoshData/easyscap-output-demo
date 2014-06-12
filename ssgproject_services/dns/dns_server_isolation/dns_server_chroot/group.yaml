@@ -1,0 +1,31 @@
+id: xccdf_org.ssgproject.content_group_dns_server_chroot
+title: Run DNS Software in a chroot Jail
+description: |
+  `bind-chroot` package:
+
+      # yum install bind-chroot
+
+  Place a valid named.conf file inside the chroot jail:
+
+      # cp /etc/named.conf /var/named/chroot/etc/named.conf
+      # chown root:root /var/named/chroot/etc/named.conf
+      # chmod 644 /var/named/chroot/etc/named.conf
+
+  Create and populate an appropriate zone directory within the jail, based
+  on the options directive. If your `named.conf` includes:
+
+      options {
+      directory "/path/to/DIRNAME ";
+      ...
+      }
+
+  then copy that directory and its contents from the original zone
+  directory:
+
+      # cp -r /path/to/DIRNAME /var/named/chroot/DIRNAME
+
+  Add or correct the following line within `/etc/sysconfig/named`:
+
+      ROOTDIR=/var/named/chroot
+rules: []
+subgroups: []

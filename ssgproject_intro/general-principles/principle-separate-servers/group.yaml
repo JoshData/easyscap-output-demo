@@ -1,0 +1,5 @@
+id: xccdf_org.ssgproject.content_group_principle-separate-servers
+title: Run Different Network Services on Separate Systems
+description: ~
+rules: []
+subgroups: []

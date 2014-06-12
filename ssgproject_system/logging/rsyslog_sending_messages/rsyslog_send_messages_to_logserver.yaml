@@ -1,0 +1,61 @@
+id: xccdf_org.ssgproject.content_rule_rsyslog_send_messages_to_logserver
+severity: low
+title: Ensure Logs Sent To Remote Host
+description: |
+  `/etc/rsyslog.conf` and read and understand the last section of the
+  file, which describes the multiple directives necessary to activate
+  remote logging. Along with these other directives, the system can be
+  configured to forward its logs to a particular log server by adding or
+  correcting one of the following lines, substituting
+  `loghost.example.com` appropriately. The choice of protocol depends on
+  the environment of the system; although TCP and RELP provide more
+  reliable message delivery, they may not be supported in all
+  environments. \
+   To use UDP for log message delivery:
+
+      *.* @loghost.example.com
+
+  \
+   To use TCP for log message delivery:
+
+      *.* @@loghost.example.com
+
+  \
+   To use RELP for log message delivery:
+
+      *.* :omrelp:loghost.example.com
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-3(2)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-9
+- href: http://iase.disa.mil/cci/index.html
+  value: '1348'
+- href: http://iase.disa.mil/cci/index.html
+  value: '136'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26801-1
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/rsyslog.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^\*\.\*[\s]+(?:@|\:omrelp\:)
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:path: /etc/rsyslog.d
+    ind:filename:
+      operation: pattern match
+      value: .*
+    ind:pattern:
+      operation: pattern match
+      value: ^\*\.\*[\s]+(?:@|\:omrelp\:)
+    ind:instance: 1

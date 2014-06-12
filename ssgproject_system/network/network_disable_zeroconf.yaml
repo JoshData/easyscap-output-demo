@@ -1,0 +1,24 @@
+id: xccdf_org.ssgproject.content_rule_network_disable_zeroconf
+severity: low
+title: Disable Zeroconf Networking
+description: |
+  `/etc/sysconfig/network`:
+
+      NOZEROCONF=yes
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27151-0
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    ind:filepath: /etc/sysconfig/network
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*NOZEROCONF[\s]*=[\s]*yes
+    ind:instance: 1

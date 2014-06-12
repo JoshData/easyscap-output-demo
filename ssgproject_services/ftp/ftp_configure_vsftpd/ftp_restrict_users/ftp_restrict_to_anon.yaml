@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_rule_ftp_restrict_to_anon
+severity: low
+title: Restrict Access to Anonymous Users if Possible
+description: |
+  local_enable=NO
+
+  If non-anonymous FTP logins are necessary, follow the guidance in the
+  remainder of this section to secure these logins as much as possible.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27115-5

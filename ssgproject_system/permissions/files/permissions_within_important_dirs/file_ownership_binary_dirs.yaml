@@ -1,0 +1,55 @@
+id: xccdf_org.ssgproject.content_rule_file_ownership_binary_dirs
+severity: medium
+title: Verify that System Executables Have Root Ownership
+description: |
+  /bin
+      /usr/bin
+      /usr/local/bin
+      /sbin
+      /usr/sbin
+      /usr/local/sbin
+
+  All files in these directories should be owned by the `root` user. If
+  any file *FILE* in these directories is found to be owned by a user
+  other than root, correct its ownership with the following command:
+
+      # chown root FILE
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://iase.disa.mil/cci/index.html
+  value: '1499'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27623-8
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: none_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: pattern match
+      value: ^\/(|s)bin|^\/usr\/(|local\/)(|s)bin
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+    filter:
+      operator: OR
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id':
+        operation: not equal
+        value: 0
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: none_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: pattern match
+      value: ^\/(|s)bin|^\/usr\/(|local\/)(|s)bin
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      operation: pattern match
+      value: ^.*$
+    filter:
+      operator: OR
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id':
+        operation: not equal
+        value: 0

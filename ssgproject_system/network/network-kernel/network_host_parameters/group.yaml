@@ -1,0 +1,8 @@
+id: xccdf_org.ssgproject.content_group_network_host_parameters
+title: Network Parameters for Hosts Only
+description: ~
+rules:
+- sysctl_net_ipv4_conf_default_send_redirects
+- sysctl_ipv4_all_send_redirects
+- sysctl_ipv4_ip_forward
+subgroups: []

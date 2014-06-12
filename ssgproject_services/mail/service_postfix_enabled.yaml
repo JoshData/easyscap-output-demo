@@ -1,0 +1,16 @@
+id: xccdf_org.ssgproject.content_rule_service_postfix_enabled
+severity: low
+title: Enable Postfix Service
+description: |
+  `postfix` service can be enabled with the following command:
+
+      # chkconfig --level 2345 postfix on
+rationale: ~
+references:
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26325-1
+tests: []

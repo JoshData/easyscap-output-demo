@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_ldap
+title: LDAP
+description: ~
+rules: []
+subgroups:
+- openldap_client
+- openldap_server

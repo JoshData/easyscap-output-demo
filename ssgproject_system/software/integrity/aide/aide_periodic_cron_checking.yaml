@@ -1,0 +1,39 @@
+id: xccdf_org.ssgproject.content_rule_aide_periodic_cron_checking
+severity: medium
+title: Configure Periodic Execution of AIDE
+description: |
+  `/etc/crontab`:
+
+      05 4 * * * root /usr/sbin/aide --check
+
+  AIDE can be executed periodically through other means; this is merely
+  one example.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-3(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-3(e)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-6(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-6(3)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SC-28
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SI-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '374'
+- href: http://iase.disa.mil/cci/index.html
+  value: '416'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1069'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1263'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1297'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1589'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27222-9

@@ -1,0 +1,18 @@
+id: xccdf_org.ssgproject.content_rule_root_path_default
+severity: low
+title: Root Path Must Be Vendor Default
+description: |
+  ~/.profile
+
+      ~/.bashrc
+
+  Change any `PATH` variables to the vendor default for root and remove
+  any empty `PATH` entries or references to relative paths.
+rationale: ~
+references:
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27125-4

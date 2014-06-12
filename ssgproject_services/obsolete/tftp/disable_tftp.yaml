@@ -1,0 +1,25 @@
+id: xccdf_org.ssgproject.content_rule_disable_tftp
+severity: medium
+title: Disable tftp Service
+description: |
+  `tftp` service should be disabled. The `tftp` service can be disabled
+  with the following command:
+
+      # chkconfig tftp off
+rationale: |
+  `tftp` service ensures the system is not acting as a TFTP server, which
+  does not provide encryption or authentication.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '1436'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27055-3
+tests: []

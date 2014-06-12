@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_httpd_serversignature_off
+severity: low
+title: Set httpd ServerSignature Directive to Off
+description: |
+  `ServerSignature Off` restricts `httpd` from displaying server version
+  number on error pages. \
+  \
+   Add or correct the following directive in `/etc/httpd/conf/httpd.conf`:
+
+      ServerSignature Off
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27586-7

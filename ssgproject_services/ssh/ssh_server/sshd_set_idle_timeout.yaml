@@ -1,0 +1,43 @@
+id: xccdf_org.ssgproject.content_rule_sshd_set_idle_timeout
+severity: low
+title: Set SSH Idle Timeout Interval
+description: |
+  \
+  \
+   To set an idle timeout interval, edit the following line in
+  `/etc/ssh/sshd_config` as follows:
+
+      ClientAliveInterval interval
+
+  The timeout **interval** is given in seconds. To have a timeout of 15
+  minutes, set **interval** to 900. \
+  \
+   If a shorter timeout has already been set for the login shell, that
+  value will preempt any SSH setting made here. Keep in mind that some
+  processes may stop SSH from correctly detecting that the user is idle.
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '879'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1133'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26919-1
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/ssh/sshd_config
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*(?i)ClientAliveInterval[\s]+(\d+)[\s]*(?:|(?:#.*))?$
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: greater than
+      value: 0

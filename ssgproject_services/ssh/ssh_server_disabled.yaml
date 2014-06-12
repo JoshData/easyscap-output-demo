@@ -1,0 +1,19 @@
+id: xccdf_org.ssgproject.content_rule_ssh_server_disabled
+severity: low
+title: Disable SSH Server If Possible (Unusual)
+description: |
+  `sshd` service can be disabled with the following command:
+
+      # chkconfig sshd off
+
+  This is unusual, as SSH is a common method for encrypted and
+  authenticated remote access.
+rationale: ~
+references:
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27054-6
+tests: []

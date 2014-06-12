@@ -1,0 +1,6 @@
+id: xccdf_org.ssgproject.content_group_ftp_use_vsftpd
+title: Use vsftpd to Provide FTP Service if Necessary
+description: ~
+rules:
+- package_vsftpd_installed
+subgroups: []

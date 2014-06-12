@@ -1,0 +1,15 @@
+id: xccdf_org.ssgproject.content_rule_httpd_mod_rewrite
+severity: low
+title: Disable HTTP mod_rewrite
+description: |
+  `mod_rewrite` module is very powerful and can protect against certain
+  classes of web attacks. However, it is also very complex and has a
+  significant history of vulnerabilities itself. If its functionality is
+  unnecessary, comment out the related module:
+
+      #LoadModule rewrite_module modules/mod_rewrite.so
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27570-1

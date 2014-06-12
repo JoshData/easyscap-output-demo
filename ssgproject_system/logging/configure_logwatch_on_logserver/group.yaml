@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_configure_logwatch_on_logserver
+title: ' Configure Logwatch on the Central Log Server'
+description: '`/etc/logwatch/conf/logwatch.conf` as shown below.'
+rules:
+- configure_logwatch_hostlimit
+- configure_logwatch_splithosts
+subgroups: []

@@ -1,0 +1,14 @@
+id: xccdf_org.ssgproject.content_rule_smb_server_disable_root
+severity: low
+title: Disable Root Access to SMB Shares
+description: |
+  [share]
+        invalid users = root @wheel
+
+  If administrator accounts cannot be disabled, ensure that local machine
+  passwords and Samba service passwords do not match.
+rationale: '`[global]` instead.'
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27533-9

@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_group_accounts-session
+title: Secure Session Configuration Files for Login Accounts
+description: ~
+rules:
+- accounts_max_concurrent_login_sessions
+- homedir_perms_no_groupwrite_worldread
+subgroups:
+- root_paths
+- user_umask

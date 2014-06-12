@@ -1,0 +1,36 @@
+id: xccdf_org.ssgproject.content_rule_sshd_allow_only_protocol2
+severity: high
+title: Allow Only SSH Protocol 2
+description: |
+  `/etc/ssh/sshd_config` is correct, and can be verified by ensuring that
+  the following line appears:
+
+      Protocol 2
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(7)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IA-5(1)(c)
+- href: http://iase.disa.mil/cci/index.html
+  value: '776'
+- href: http://iase.disa.mil/cci/index.html
+  value: '774'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1436'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27072-8
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/ssh/sshd_config
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*(?i)Protocol[\s]+2[\s]*(?:|(?:#.*))?$
+    ind:instance: 1

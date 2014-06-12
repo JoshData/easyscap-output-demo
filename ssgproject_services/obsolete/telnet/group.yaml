@@ -1,0 +1,8 @@
+id: xccdf_org.ssgproject.content_group_telnet
+title: Telnet
+description: ~
+rules:
+- disable_telnet_service
+- uninstall_telnet_server
+- package_telnet_removed
+subgroups: []

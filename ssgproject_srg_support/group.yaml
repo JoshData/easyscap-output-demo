@@ -1,0 +1,12 @@
+id: xccdf_org.ssgproject.content_group_srg_support
+title: Documentation to Support DISA OS SRG Mapping
+description: ~
+rules:
+- met_inherently_generic
+- met_inherently_auditing
+- met_inherently_nonselected
+- unmet_nonfinding_nonselected_scope
+- unmet_finding_nonselected
+- unmet_nonfinding_scope
+- update_process
+subgroups: []

@@ -1,0 +1,25 @@
+id: xccdf_org.ssgproject.content_rule_set_blank_screensaver
+severity: low
+title: Implement Blank Screen Saver
+description: |
+  # gconftool-2 --direct \
+        --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
+        --type string \
+        --set /apps/gnome-screensaver/mode blank-only
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-11(b)
+- href: http://iase.disa.mil/cci/index.html
+  value: '60'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26638-7
+tests:
+- type: ind:xmlfilecontent_test
+  check: all
+  object:
+    ind:filepath: /etc/gconf/gconf.xml.mandatory/apps/gnome-screensaver/%gconf.xml
+    ind:xpath: /gconf/entry[@name='mode']/stringvalue[1]/text()
+  state:
+    ind:value_of: blank-only

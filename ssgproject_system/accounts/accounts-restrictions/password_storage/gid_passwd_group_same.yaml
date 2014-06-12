@@ -1,0 +1,16 @@
+id: xccdf_org.ssgproject.content_rule_gid_passwd_group_same
+severity: low
+title: All GIDs referenced in /etc/passwd must be defined in /etc/group
+description: ~
+rationale: |
+  `/etc/passwd` and `/etc/group` could lead to a user having unintended
+  rights.
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27379-7

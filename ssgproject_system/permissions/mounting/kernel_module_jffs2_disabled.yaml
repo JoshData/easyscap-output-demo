@@ -1,0 +1,39 @@
+id: xccdf_org.ssgproject.content_rule_kernel_module_jffs2_disabled
+severity: low
+title: Disable Mounting of jffs2
+description: |
+  `jffs2` kernel module from being loaded, add the following line to a
+  file in the directory `/etc/modprobe.d`:
+
+  ~~~~ {xml:space="preserve"}
+  install jffs2 /bin/false
+  ~~~~
+
+  This effectively prevents usage of this uncommon filesystem.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26670-0
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:path: /etc/modprobe.d
+    ind:filename:
+      operation: pattern match
+      value: ^.*\.conf$
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*install\s+jffs2\s+(/bin/false|/bin/true)$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/modprobe.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*install\s+jffs2\s+(/bin/false|/bin/true)$
+    ind:instance: 1

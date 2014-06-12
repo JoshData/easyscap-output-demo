@@ -1,0 +1,40 @@
+id: xccdf_org.ssgproject.content_rule_enable_dmesg_restriction
+severity: low
+title: Restrict Access to Kernel Message Buffer
+description: |
+  `kernel.dmesg_restrict` kernel parameter, run the following command:
+
+  ~~~~ {xml:space="preserve"}
+  # sysctl -w kernel.dmesg_restrict=1
+  ~~~~
+
+  If this is not the system’s default value, add the following line to
+  `/etc/sysctl.conf`:
+
+  ~~~~ {xml:space="preserve"}
+  kernel.dmesg_restrict = 1
+  ~~~~
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27366-4
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sysctl_test'
+  check: all
+  check_existence: all_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}name': kernel.dmesg_restrict
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}value':
+      operation: equals
+      value: 1
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/sysctl.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*kernel.dmesg_restrict[\s]*=[\s]*1*$
+    ind:instance: 1

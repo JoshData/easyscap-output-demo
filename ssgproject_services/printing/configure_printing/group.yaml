@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_configure_printing
+title: Configure the CUPS Service if Necessary
+description: ~
+rules:
+- cups_disable_browsing
+- cups_disable_printserver
+subgroups: []

@@ -1,0 +1,28 @@
+id: xccdf_org.ssgproject.content_rule_mount_option_tmp_nosuid
+severity: low
+title: Add nosuid Option to /tmp
+description: |
+  `nosuid` mount option can be used to prevent execution of setuid
+  programs in `/tmp`. The suid/sgid permissions should not be required in
+  these world-writable directories. Add the `nosuid` option to the fourth
+  column of `/etc/fstab` for the line which controls mounting of `/tmp`.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: MP-2
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26762-5
+tests:
+- type: linux:partition_test
+  check: all
+  check_existence: all_exist
+  object:
+    linux:mount_point: /tmp
+  state:
+    linux:mount_options:
+      entity_check: at least one
+      operation: equals
+      value: nosuid

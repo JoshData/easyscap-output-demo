@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_disabling_xwindows
+title: Disable X Windows
+description: ~
+rules:
+- disable_xwindows_with_runlevel
+- packagegroup_xwindows_remove
+subgroups: []

@@ -1,0 +1,16 @@
+id: xccdf_org.ssgproject.content_rule_service_rpcsvcgssd_disabled
+severity: low
+title: Disable Secure RPC Server Service (rpcsvcgssd)
+description: |
+  `rpcsvcgssd` service can be disabled with the following command:
+
+      # chkconfig rpcsvcgssd off
+rationale: ~
+references:
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121025'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27122-1
+tests: []

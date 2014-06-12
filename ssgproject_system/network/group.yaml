@@ -1,0 +1,24 @@
+id: xccdf_org.ssgproject.content_group_network
+title: Network Configuration and Firewalls
+description: |
+  \
+  \
+   This section also discusses firewalls, network access controls, and
+  other network security frameworks, which allow system-level rules to be
+  written that can limit an attackers’ ability to connect to your system.
+  These rules can specify that network traffic should be allowed or denied
+  from certain IP addresses, hosts, and networks. The rules can also
+  specify which of the system’s network services are available to
+  particular hosts or networks.
+rules:
+- network_disable_zeroconf
+- network_sniffer_disabled
+subgroups:
+- network_disable_unused_interfaces
+- network-kernel
+- network-wireless
+- network-ipv6
+- network-iptables
+- network_ssl
+- network-uncommon
+- network-ipsec

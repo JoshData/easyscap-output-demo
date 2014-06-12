@@ -1,0 +1,57 @@
+id: xccdf_org.ssgproject.content_group_auditd_configure_rules
+title: Configure auditd Rules for Comprehensive Auditing
+description: |
+  `auditd` program can perform comprehensive monitoring of system
+  activity. This section describes recommended configuration settings for
+  comprehensive auditing, but a full description of the auditing system’s
+  capabilities is beyond the scope of this guide. The mailing list
+  *linux-audit@redhat.com* exists to facilitate community discussion of
+  the auditing system. \
+  \
+   The audit subsystem supports extensive collection of events, including:
+  \
+
+  -   Tracing of arbitrary system calls (identified by name or number) on
+      entry or exit.
+  -   Filtering by PID, UID, call success, system call argument (with some
+      limitations), etc.
+  -   Monitoring of specific files for modifications to the file’s
+      contents or metadata.
+
+  \
+   Auditing rules at startup are controlled by the file
+  `/etc/audit/audit.rules`. Add rules to it to meet the auditing
+  requirements for your organization. Each line in
+  `/etc/audit/audit.rules` represents a series of arguments that can be
+  passed to `auditctl` and can be individually tested during runtime. See
+  documentation in `/usr/share/doc/audit-VERSION` and in the related man
+  pages for more details. \
+  \
+   If copying any example audit rulesets from
+  `/usr/share/doc/audit-VERSION`, be sure to comment out the lines
+  containing `arch=` which are not appropriate for your system’s
+  architecture. Then review and understand the following rules, ensuring
+  rules are activated as needed for the appropriate architecture. \
+  \
+   After reviewing all the rules, reading the following sections, and
+  editing as needed, the new rules can be activated as follows:
+
+      # service auditd restart
+rules:
+- audit_account_changes
+- audit_network_modifications
+- file_permissions_var_log_audit
+- audit_logs_rootowner
+- audit_mac_changes
+- audit_manual_logon_edits
+- audit_manual_session_edits
+- audit_rules_unsuccessful_file_modification
+- audit_privileged_commands
+- audit_media_exports
+- audit_rules_file_deletion_events
+- audit_sysadmin_actions
+- audit_kernel_module_loading
+- audit_config_immutable
+subgroups:
+- audit_time_rules
+- audit_dac_actions

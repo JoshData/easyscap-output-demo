@@ -1,0 +1,96 @@
+id: xccdf_org.ssgproject.content_rule_file_permissions_var_log_audit
+severity: low
+title: System Audit Logs Must Have Mode 0640 or Less Permissive
+description: '# chmod 0640 audit_file'
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-9
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: http://iase.disa.mil/cci/index.html
+  value: '166'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27243-5
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+      max_depth: '-1'
+      recurse: directories
+      recurse_direction: down
+      recurse_file_system: local
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: equals
+      value: /var/log/audit
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      operation: pattern match
+      value: ^.*$
+    filter:
+      operator: OR
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}suid':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sgid':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}uexec':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gwrite':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gexec':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oread':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
+        datatype: boolean
+        value: 'true'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oexec':
+        datatype: boolean
+        value: 'true'
+  state:
+    operator: OR
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}suid':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sgid':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}uexec':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gwrite':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gexec':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oread':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
+      datatype: boolean
+      value: 'true'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oexec':
+      datatype: boolean
+      value: 'true'

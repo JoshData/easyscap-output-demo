@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_snmp
+title: SNMP Server
+description: ~
+rules: []
+subgroups:
+- disabling_snmp_service
+- snmp_configure_server

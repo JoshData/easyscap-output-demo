@@ -1,0 +1,25 @@
+id: xccdf_org.ssgproject.content_rule_httpd_restrict_web_directory
+severity: low
+title: Restrict Web Directory
+description: |
+  `/var/www/html`) Directory allows directory indexing (`Indexes`) and the
+  following of symbolic links (`FollowSymLinks`). Neither of these is
+  recommended. \
+  \
+   The `/var/www/html` directory hierarchy should not be viewable via the
+  web, and symlinks should only be followed if the owner of the symlink
+  also owns the linked file. \
+  \
+   Ensure that this policy is adhered to by altering the related section
+  of the configuration:
+
+      <Directory "/var/www/html">
+      #  ...
+         Options SymLinksIfOwnerMatch
+      #  ...
+      </Directory>
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27574-3

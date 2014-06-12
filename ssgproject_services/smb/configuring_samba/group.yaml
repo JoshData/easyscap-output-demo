@@ -1,0 +1,16 @@
+id: xccdf_org.ssgproject.content_group_configuring_samba
+title: Configure Samba if Necessary
+description: |
+  `/etc/samba/smb.conf`. Settings are divided between a `[global]`
+  configuration section and a series of user created share definition
+  sections meant to describe file or print shares on the system. By
+  default, Samba will operate in user mode and allow client machines to
+  access local home directories and printers. It is recommended that these
+  settings be changed or that additional limitations be set in place.
+rules:
+- smb_server_disable_root
+- require_smb_client_signing
+- require_smb_client_signing_mount.cifs
+subgroups:
+- smb_restrict_file_sharing
+- smb_disable_printing

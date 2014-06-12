@@ -1,0 +1,8 @@
+id: xccdf_org.ssgproject.content_group_ssh
+title: SSH Server
+description: '`sshd` and provided by the RPM package `openssh-server`.'
+rules:
+- ssh_server_disabled
+- ssh_server_iptables_exception
+subgroups:
+- ssh_server

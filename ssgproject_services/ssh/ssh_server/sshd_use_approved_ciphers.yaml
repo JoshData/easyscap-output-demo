@@ -1,0 +1,45 @@
+id: xccdf_org.ssgproject.content_rule_sshd_use_approved_ciphers
+severity: medium
+title: Use Only Approved Ciphers
+description: |
+  `/etc/ssh/sshd_config` demonstrates use of FIPS-approved ciphers:
+
+      Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc,aes192-cbc,aes256-cbc
+
+  The man page `sshd_config(5)` contains a list of supported ciphers.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-3
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(2)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-10(5)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IA-5(1)(c)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IA-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '803'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1144'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1145'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1146'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26555-3
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/ssh/sshd_config
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*(?i)Ciphers(?-i)[\s]+aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc,aes192-cbc,aes256-cbc[\s]*(?:|(?:#.*))?$
+    ind:instance: 1

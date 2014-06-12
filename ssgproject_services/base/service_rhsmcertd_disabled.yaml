@@ -1,0 +1,23 @@
+id: xccdf_org.ssgproject.content_rule_service_rhsmcertd_disabled
+severity: low
+title: Disable Red Hat Subscription Manager Daemon (rhsmcertd)
+description: |
+  `rhsmcertd` service can be disabled with the following command:
+
+      # chkconfig rhsmcertd off
+rationale: |
+  `rhsmcertd` service can provide administrators with some additional
+  control over which of their systems are entitled to particular
+  subscriptions. However, for systems that are managed locally or which
+  are not expected to require remote changes to their subscription status,
+  it is unnecessary and can be disabled.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27262-5
+tests: []

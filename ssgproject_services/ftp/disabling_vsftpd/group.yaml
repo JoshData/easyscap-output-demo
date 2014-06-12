@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_disabling_vsftpd
+title: Disable vsftpd if Possible
+description: ~
+rules:
+- disable_vsftpd
+- uninstall_vsftpd
+subgroups: []

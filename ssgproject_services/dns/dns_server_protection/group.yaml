@@ -1,0 +1,10 @@
+id: xccdf_org.ssgproject.content_group_dns_server_protection
+title: Protect DNS Data from Tampering or Attack
+description: ~
+rules:
+- dns_server_disable_zone_transfers
+- dns_server_authenticate_zone_transfers
+- dns_server_disable_dynamic_updates
+subgroups:
+- dns_server_separate_internal_external
+- dns_server_partition_with_views

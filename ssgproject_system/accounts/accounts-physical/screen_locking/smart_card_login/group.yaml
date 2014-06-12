@@ -1,0 +1,6 @@
+id: xccdf_org.ssgproject.content_group_smart_card_login
+title: Hardware Tokens for Authentication
+description: ~
+rules:
+- smartcard_auth
+subgroups: []

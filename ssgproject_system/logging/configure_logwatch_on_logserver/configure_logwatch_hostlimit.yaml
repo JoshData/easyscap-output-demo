@@ -1,0 +1,24 @@
+id: xccdf_org.ssgproject.content_rule_configure_logwatch_hostlimit
+severity: low
+title: Configure Logwatch HostLimit Line
+description: |
+  `HostLimit` setting tells Logwatch to report on all hosts, not just the
+  one on which it is running.
+
+       HostLimit = no
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27197-3
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:path: /etc/logwatch/conf
+    ind:filename: logwatch.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]HostLimit[\s]*=[\s]*no[\s]*$
+    ind:instance: 1

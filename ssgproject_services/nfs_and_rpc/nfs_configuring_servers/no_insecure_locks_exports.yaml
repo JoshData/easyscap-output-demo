@@ -1,0 +1,16 @@
+id: xccdf_org.ssgproject.content_rule_no_insecure_locks_exports
+severity: medium
+title: Ensure Insecure File Locking is Not Allowed
+description: |
+  `insecure_locks` option can be used so these clients can access the
+  desired export. This poses a security risk by potentially allowing the
+  client access to data for which it does not have authorization. Remove
+  any instances of the `insecure_locks` option from the file
+  `/etc/exports`.
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '764'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27167-6

@@ -1,0 +1,22 @@
+id: xccdf_org.ssgproject.content_rule_disable_dhcp_server
+severity: medium
+title: Disable DHCP Service
+description: |
+  `dhcpd` service should be disabled on any system that does not need to
+  act as a DHCP server. The `dhcpd` service can be disabled with the
+  following command:
+
+      # chkconfig dhcpd off
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27074-4
+tests: []

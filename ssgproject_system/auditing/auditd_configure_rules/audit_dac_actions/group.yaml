@@ -1,0 +1,37 @@
+id: xccdf_org.ssgproject.content_group_audit_dac_actions
+title: Record Events that Modify the System's Discretionary Access Controls
+description: >
+  `/etc/audit/audit.rules`:
+
+      -a always,exit -F arch=b32 -S chmod -S fchmod -S fchmodat -F auid>=500 -F auid!=4294967295
+  -k perm_mod
+          -a always,exit -F arch=b32 -S chown -S fchown -S fchownat -S lchown -F auid>=500
+  -F auid!=4294967295 -k perm_mod
+          -a always,exit -F arch=b32 -S setxattr -S lsetxattr -S fsetxattr -S removexattr
+  -S lremovexattr -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+
+  If your system is 64 bit then these lines should be duplicated and the
+
+  arch=b32 replaced with arch=b64 as follows:
+
+      -a always,exit -F arch=b64 -S chmod -S fchmod -S fchmodat -F auid>=500 -F auid!=4294967295
+  -k perm_mod
+          -a always,exit -F arch=b64 -S chown -S fchown -S fchownat -S lchown -F auid>=500
+  -F auid!=4294967295 -k perm_mod
+          -a always,exit -F arch=b64 -S setxattr -S lsetxattr -S fsetxattr -S removexattr
+  -S lremovexattr -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+rules:
+- audit_rules_dac_modification_chmod
+- audit_rules_dac_modification_chown
+- audit_rules_dac_modification_fchmod
+- audit_rules_dac_modification_fchmodat
+- audit_rules_dac_modification_fchown
+- audit_rules_dac_modification_fchownat
+- audit_rules_dac_modification_fremovexattr
+- audit_rules_dac_modification_fsetxattr
+- audit_rules_dac_modification_lchown
+- audit_rules_dac_modification_lremovexattr
+- audit_rules_dac_modification_lsetxattr
+- audit_rules_dac_modification_removexattr
+- audit_rules_dac_modification_setxattr
+subgroups: []

@@ -1,0 +1,48 @@
+id: xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_all_accept_source_route
+severity: medium
+title: Disable Kernel Parameter for Accepting Source-Routed Packets for All Interfaces
+description: |
+  `net.ipv4.conf.all.accept_source_route` kernel parameter, run the
+  following command:
+
+  ~~~~ {xml:space="preserve"}
+  # sysctl -w net.ipv4.conf.all.accept_source_route=0
+  ~~~~
+
+  If this is not the system’s default value, add the following line to
+  `/etc/sysctl.conf`:
+
+  ~~~~ {xml:space="preserve"}
+  net.ipv4.conf.all.accept_source_route = 0
+  ~~~~
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '1551'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27037-1
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sysctl_test'
+  check: all
+  check_existence: all_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}name': net.ipv4.conf.all.accept_source_route
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}value':
+      operation: equals
+      value: 0
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/sysctl.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*net.ipv4.conf.all.accept_source_route[\s]*=[\s]*0*$
+    ind:instance: 1

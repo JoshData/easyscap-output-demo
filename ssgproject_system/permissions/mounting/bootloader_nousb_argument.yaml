@@ -1,0 +1,36 @@
+id: xccdf_org.ssgproject.content_rule_bootloader_nousb_argument
+severity: low
+title: Disable Kernel Support for USB via Bootloader Configuration
+description: |
+  `nousb` argument to the kernel’s boot loader configuration. To do so,
+  append “nousb” to the kernel line in `/etc/grub.conf` as shown:
+
+      kernel /vmlinuz-VERSION ro vga=ext root=/dev/VolGroup00/LogVol00 rhgb quiet nousb
+
+  ***WARNING:** Disabling all kernel support for USB will cause problems
+  for systems with USB-based keyboards, mice, or printers. This
+  configuration is infeasible for systems which require USB devices, which
+  is common.*
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(e)
+- href: http://iase.disa.mil/cci/index.html
+  value: '1250'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27011-6
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:path: /etc
+    ind:filename: grub.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*kernel\s/vmlinuz.*nousb.*$
+    ind:instance: 1

@@ -1,0 +1,16 @@
+id: xccdf_org.ssgproject.content_group_account_expiration
+title: Set Account Expiration Parameters
+description: |
+  `NUM_DAYS` and `USER` appropriately:
+
+      # chage -I NUM_DAYS USER
+
+  Accounts, such as temporary accounts, can also be configured to expire
+  on an explicitly-set date with the `-E` option. The file
+  `/etc/default/useradd` controls default settings for all newly-created
+  accounts created with the system’s normal command line utilities.
+rules:
+- account_disable_post_pw_expiration
+- account_unique_name
+- account_temp_expire_date
+subgroups: []

@@ -1,0 +1,33 @@
+id: xccdf_org.ssgproject.content_rule_disable_host_auth
+severity: medium
+title: Disable Host-Based Authentication
+description: |
+  `.rhosts` authentication. However, it is not recommended that hosts
+  unilaterally trust one another, even within an organization. \
+  \
+   To disable host-based authentication, add or correct the following line
+  in `/etc/ssh/sshd_config`:
+
+      HostbasedAuthentication no
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '765'
+- href: http://iase.disa.mil/cci/index.html
+  value: '766'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27091-8
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:filepath: /etc/ssh/sshd_config
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*(?i)HostbasedAuthentication(?-i)[\s]+yes[\s]*(?:|(?:#.*))?$
+    ind:instance: 1

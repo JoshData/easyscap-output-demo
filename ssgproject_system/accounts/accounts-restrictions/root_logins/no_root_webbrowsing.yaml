@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_rule_no_root_webbrowsing
+severity: low
+title: Restrict Web Browser Use for Administrative Accounts
+description: ~
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26795-5

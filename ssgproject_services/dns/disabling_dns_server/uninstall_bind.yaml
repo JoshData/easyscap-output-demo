@@ -1,0 +1,23 @@
+id: xccdf_org.ssgproject.content_rule_uninstall_bind
+severity: low
+title: Uninstall bind Package
+description: |
+  `bind` package, which contains the `named` service, run the following
+  command:
+
+      # yum erase bind
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27030-6
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: bind

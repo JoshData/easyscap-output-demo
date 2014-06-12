@@ -1,0 +1,56 @@
+id: xccdf_org.ssgproject.content_rule_file_permissions_etc_passwd
+severity: medium
+title: Verify Permissions on passwd File
+description: |
+  `/etc/passwd`, run the command:
+
+  ~~~~ {xml:space="preserve"}
+  # chmod 0644/etc/passwd
+  ~~~~
+rationale: |
+  `/etc/passwd` file is writable by a group-owner or the world the risk of
+  its compromise is increased. The file contains the list of accounts on
+  the system and associated information, and protection of this file is
+  critical for system security.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://iase.disa.mil/cci/index.html
+  value: '225'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26868-0
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: all_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filepath': /etc/passwd
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}suid':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sgid':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}uexec':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gwrite':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gexec':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oexec':
+      datatype: boolean
+      value: 'false'

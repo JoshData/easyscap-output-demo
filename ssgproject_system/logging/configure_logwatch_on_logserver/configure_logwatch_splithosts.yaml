@@ -1,0 +1,26 @@
+id: xccdf_org.ssgproject.content_rule_configure_logwatch_splithosts
+severity: low
+title: Configure Logwatch SplitHosts Line
+description: |
+  `SplitHosts` is set, Logwatch will separate entries by hostname. This
+  makes the report longer but significantly more usable. If it is not set,
+  then Logwatch will not report which host generated a given log entry,
+  and that information is almost always necessary
+
+       SplitHosts = yes
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27069-4
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:path: /etc/logwatch/conf
+    ind:filename: logwatch.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]SplitHosts[\s]*=[\s]*yes[\s]*$
+    ind:instance: 1

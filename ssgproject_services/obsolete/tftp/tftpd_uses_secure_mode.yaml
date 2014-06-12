@@ -1,0 +1,33 @@
+id: xccdf_org.ssgproject.content_rule_tftpd_uses_secure_mode
+severity: high
+title: Ensure tftp Daemon Uses Secure Mode
+description: |
+  `tftp` service is necessary, it should be configured to change its root
+  directory at startup. To do so, ensure `/etc/xinetd.d/tftp` includes
+  `-s` as a command line argument, as shown in the following example
+  (which is also the default):
+
+      server_args = -s /var/lib/tftpboot
+rationale: |
+  `-s` option causes the TFTP service to only serve files from the given
+  directory. Serving files from an intentionally-specified directory
+  reduces the risk of sharing files which should remain private.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27272-4
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/xinetd.d/tftp
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*server_args[\s]+=[\s]+\-s[\s]+.+$
+    ind:instance: 1

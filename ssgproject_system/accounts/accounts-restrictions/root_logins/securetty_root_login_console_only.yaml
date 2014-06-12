@@ -1,0 +1,34 @@
+id: xccdf_org.ssgproject.content_rule_securetty_root_login_console_only
+severity: medium
+title: Restrict Virtual Console Root Logins
+description: |
+  `/etc/securetty`:
+
+      vc/1
+      vc/2
+      vc/3
+      vc/4
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6(2)
+- href: http://iase.disa.mil/cci/index.html
+  value: '770'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26855-7
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:filepath: /etc/securetty
+    ind:pattern:
+      operation: pattern match
+      value: ^vc/[0-9]+$
+    ind:instance:
+      operation: greater than or equal
+      value: 1

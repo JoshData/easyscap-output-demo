@@ -1,0 +1,39 @@
+id: xccdf_org.ssgproject.content_rule_network_ipv6_disable_rpc
+severity: low
+title: Disable Support for RPC IPv6
+description: |
+  `udp6` and `tcp6` by default, even if IPv6 has been disabled in
+  `/etc/modprobe.d`. To prevent RPC services such as `rpc.mountd` from
+  attempting to start IPv6 network listeners, remove or comment out the
+  following two lines in `/etc/netconfig`:
+
+      udp6       tpi_clts      v     inet6    udp     -       -
+      tcp6       tpi_cots_ord  v     inet6    tcp     -       -
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27232-8
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:path: /etc
+    ind:filename: netconfig
+    ind:pattern:
+      operation: pattern match
+      value: ^udp6\s+tpi_clts\s+v\s+inet6\s+udp\s+-\s+-$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:path: /etc
+    ind:filename: netconfig
+    ind:pattern:
+      operation: pattern match
+      value: ^tcp6\s+tpi_cots_ord\s+v\s+inet6\s+tcp\s+-\s+-$
+    ind:instance: 1

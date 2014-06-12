@@ -1,0 +1,8 @@
+id: xccdf_org.ssgproject.content_group_set_password_hashing_algorithm
+title: Set Password Hashing Algorithm
+description: '`/etc/shadow` is SHA-512. This can be configured in several locations.'
+rules:
+- set_password_hashing_algorithm_systemauth
+- set_password_hashing_algorithm_logindefs
+- set_password_hashing_algorithm_libuserconf
+subgroups: []

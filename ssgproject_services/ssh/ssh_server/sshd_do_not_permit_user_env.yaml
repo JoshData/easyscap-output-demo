@@ -1,0 +1,27 @@
+id: xccdf_org.ssgproject.content_rule_sshd_do_not_permit_user_env
+severity: low
+title: Do Not Allow SSH Environment Options
+description: |
+  `/etc/ssh/sshd_config`:
+
+      PermitUserEnvironment no
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '1414'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27201-3
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:filepath: /etc/ssh/sshd_config
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*(?i)PermitUserEnvironment(?-i)[\s]+no[\s]*(?:|(?:#.*))?$
+    ind:instance: 1

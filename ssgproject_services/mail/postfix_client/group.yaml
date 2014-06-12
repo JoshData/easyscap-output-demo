@@ -1,0 +1,6 @@
+id: xccdf_org.ssgproject.content_group_postfix_client
+title: Configure SMTP For Mail Clients
+description: ~
+rules:
+- postfix_network_listening
+subgroups: []

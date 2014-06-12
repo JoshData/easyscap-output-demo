@@ -1,0 +1,29 @@
+id: xccdf_org.ssgproject.content_group_base
+title: Base Services
+description: ~
+rules:
+- service_abrtd_disabled
+- service_acpid_disabled
+- service_certmonger_disabled
+- service_cgconfig_disabled
+- service_cgred_disabled
+- service_cpuspeed_disabled
+- service_haldaemon_disabled
+- service_irqbalance_enabled
+- service_kdump_disabled
+- service_mdmonitor_disabled
+- service_messagebus_disabled
+- service_netconsole_disabled
+- service_ntpdate_disabled
+- service_oddjobd_disabled
+- service_portreserve_disabled
+- service_psacct_enabled
+- service_qpidd_disabled
+- service_quota_nld_disabled
+- service_rdisc_disabled
+- service_rhnsd_disabled
+- service_rhsmcertd_disabled
+- service_saslauthd_disabled
+- service_smartd_disabled
+- service_sysstat_disabled
+subgroups: []

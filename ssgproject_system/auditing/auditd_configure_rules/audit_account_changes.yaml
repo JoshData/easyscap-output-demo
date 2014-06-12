@@ -1,0 +1,89 @@
+id: xccdf_org.ssgproject.content_rule_audit_account_changes
+severity: low
+title: Record Events that Modify User/Group Information
+description: |
+  `/etc/audit/audit.rules`, in order to capture events that modify account
+  changes:
+
+      # audit_account_changes
+      -w /etc/group -p wa -k audit_account_changes
+      -w /etc/passwd -p wa -k audit_account_changes
+      -w /etc/gshadow -p wa -k audit_account_changes
+      -w /etc/shadow -p wa -k audit_account_changes
+      -w /etc/security/opasswd -p wa -k audit_account_changes
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-2(4)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(7)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(c)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: http://iase.disa.mil/cci/index.html
+  value: '18'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1403'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1404'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1405'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1684'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1683'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1685'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1686'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26664-3
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/etc/group\s+\-p\s+wa\s+\-k\s+\w+\s*$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/etc/passwd\s+\-p\s+wa\s+\-k\s+\w+\s*$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/etc/gshadow\s+\-p\s+wa\s+\-k\s+\w+\s*$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/etc/shadow\s+\-p\s+wa\s+\-k\s+\w+\s*$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/etc/security/opasswd\s+\-p\s+wa\s+\-k\s+\w+\s*$
+    ind:instance: 1

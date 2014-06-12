@@ -1,0 +1,14 @@
+id: xccdf_org.ssgproject.content_group_dhcp_server_configuration
+title: Disable DHCP Server
+description: |
+  `/etc/dhcp/dhcpd.conf`. The file begins with a number of global
+  configuration options. The remainder of the file is divided into
+  sections, one for each block of addresses offered by dhcpd, each of
+  which contains configuration options specific to that address block.
+rules:
+- dhcp_server_disable_ddns
+- dhcp_server_deny_decline
+- dhcp_server_deny_bootp
+- dhcp_server_configure_logging
+subgroups:
+- dhcp_server_minimize_served_info

@@ -1,0 +1,12 @@
+id: xccdf_org.ssgproject.content_group_dhcp_server_minimize_served_info
+title: Minimize Served Information
+description: |
+  option domain-name
+      option domain-name-servers
+      option nis-domain
+      option nis-servers
+      option ntp-servers
+      option routers
+      option time-offset
+rules: []
+subgroups: []

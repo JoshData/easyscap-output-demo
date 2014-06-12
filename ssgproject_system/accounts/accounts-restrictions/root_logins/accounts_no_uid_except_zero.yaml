@@ -1,0 +1,28 @@
+id: xccdf_org.ssgproject.content_rule_accounts_no_uid_except_zero
+severity: medium
+title: Verify Only Root Has UID 0
+description: ~
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IA-2(1)
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26971-2
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:filepath: /etc/passwd
+    ind:pattern:
+      operation: pattern match
+      value: ^(?!root:)[^:]*:[^:]*:0
+    ind:instance: 1

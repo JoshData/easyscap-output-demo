@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_rule_update_process
+severity: low
+title: A process for prompt installation of OS updates must exist.
+description: ~
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '1232'
+crosswalk: []

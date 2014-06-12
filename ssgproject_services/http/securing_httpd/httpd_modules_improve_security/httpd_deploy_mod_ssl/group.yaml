@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_group_httpd_deploy_mod_ssl
+title: Deploy mod_ssl
+description: |
+  \
+  \
+   Note: `mod_nss` is a FIPS 140-2 certified alternative to `mod_ssl`. The
+  modules share a considerable amount of code and should be nearly
+  identical in functionality. If FIPS 140-2 validation is required, then
+  `mod_nss` should be used. If it provides some feature or its greater
+  compatibility is required, then `mod_ssl` should be used.
+rules:
+- httpd_install_mod_ssl
+subgroups: []

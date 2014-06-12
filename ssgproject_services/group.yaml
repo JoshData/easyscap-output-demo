@@ -1,0 +1,30 @@
+id: xccdf_org.ssgproject.content_group_services
+title: Services
+description: |
+  \
+  \
+   RHEL 6 provides a convenient minimal install option that essentially
+  installs the bare necessities for a functional system. When building
+  RHEL 6 servers, it is highly recommended to select the minimal packages
+  and then build up the system from there.
+rules: []
+subgroups:
+- obsolete
+- base
+- cron_and_at
+- ssh
+- xwindows
+- avahi
+- printing
+- dhcp
+- ntp
+- mail
+- ldap
+- nfs_and_rpc
+- dns
+- ftp
+- http
+- imap
+- smb
+- proxy
+- snmp

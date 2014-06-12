@@ -1,0 +1,35 @@
+id: xccdf_org.ssgproject.content_rule_disable_prelink
+severity: low
+title: Disable Prelinking
+description: |
+  `/etc/sysconfig/prelink`:
+
+      PRELINKING=no
+
+  Next, run the following command to return binaries to a normal,
+  non-prelinked state:
+
+      # /usr/sbin/prelink -ua
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-6(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-6(3)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SC-28
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SI-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27221-1
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/sysconfig/prelink
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*PRELINKING=no[\s]*
+    ind:instance: 1

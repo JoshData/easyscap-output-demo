@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_additional_security_software
+title: Additional Security Software
+description: ~
+rules:
+- install_hids
+- install_antivirus
+subgroups: []

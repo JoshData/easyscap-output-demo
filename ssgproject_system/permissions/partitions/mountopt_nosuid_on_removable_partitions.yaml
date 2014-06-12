@@ -1,0 +1,52 @@
+id: xccdf_org.ssgproject.content_rule_mountopt_nosuid_on_removable_partitions
+severity: low
+title: Add nosuid Option to Removable Media Partitions
+description: |
+  `nosuid` mount option prevents set-user-identifier (suid) and
+  set-group-identifier (sgid) permissions from taking effect. These
+  permissions allow users to execute binaries with the same permissions as
+  the owner and group of the file respectively. Users should not be
+  allowed to introduce suid and guid files into the system via partitions
+  mounted from removeable media. Add the `nosuid` option to the fourth
+  column of `/etc/fstab` for the line which controls mounting of any
+  removable media partitions.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(e)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: MP-2
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27056-1
+tests:
+- type: linux:partition_test
+  check: all
+  check_existence: all_exist
+  object:
+    linux:mount_point:
+      var_ref: oval:ssg:var:2215
+  state:
+    linux:mount_options:
+      entity_check: at least one
+      operation: equals
+      value: nosuid
+- type: ind:textfilecontent54_test
+  check: at least one
+  object:
+    ind:filepath: /etc/fstab
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*([/\w]*)\s+.*,?nosuid,?.*$
+    ind:instance:
+      operation: not equal
+      value: 0
+  state:
+    ind:subexpression:
+      var_ref: oval:ssg:var:2215

@@ -1,0 +1,122 @@
+id: xccdf_org.ssgproject.content_rule_service_cgred_disabled
+severity: low
+title: Disable Control Group Rules Engine (cgred)
+description: |
+  `cgred` service moves tasks into control groups according to parameters
+  set in the `/etc/cgrules.conf` configuration file. The `cgred` service
+  can be disabled with the following command:
+
+      # chkconfig cgred off
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27252-6
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': cgred
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '0'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': cgred
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '1'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': cgred
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '2'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': cgred
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '3'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': cgred
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '4'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': cgred
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '5'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': cgred
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '6'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'

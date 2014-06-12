@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_group_wireless_software
+title: Disable Wireless Through Software Configuration
+description: ~
+rules:
+- wireless_disable_in_bios
+- deactivate_wireless_interfaces
+- service_bluetooth_disabled
+- kernel_module_bluetooth_disabled
+subgroups: []

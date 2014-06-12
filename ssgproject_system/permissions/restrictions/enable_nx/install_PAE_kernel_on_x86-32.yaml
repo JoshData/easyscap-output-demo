@@ -1,0 +1,15 @@
+id: xccdf_org.ssgproject.content_rule_install_PAE_kernel_on_x86-32
+severity: low
+title: Install PAE Kernel on Supported 32-bit x86 Systems
+description: |
+  # yum install kernel-PAE
+
+  The installation process should also have configured the bootloader to
+  load the new kernel at boot. Verify this at reboot and modify
+  `/etc/grub.conf` if necessary.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27010-8

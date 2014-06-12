@@ -1,0 +1,29 @@
+id: xccdf_org.ssgproject.content_rule_partition_for_var
+severity: low
+title: Ensure /var Located On Separate Partition
+description: |
+  `/var` directory is used by daemons and other system services to store
+  frequently-changing data. Ensure that `/var` has its own partition or
+  logical volume at installation time, or migrate it using LVM.
+rationale: |
+  `/var` is mounted on its own partition enables the setting of more
+  restrictive mount options. This helps protect system services such as
+  daemons or other programs which use it. It is not uncommon for the
+  `/var` directory to contain world-writable directories, installed by
+  other software packages.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+- href: http://iase.disa.mil/cci/index.html
+  value: '1208'
+- href: test_attestation
+  dc:contributor: MM
+  dc:date: '20120928'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26639-5
+tests:
+- type: linux:partition_test
+  check: all
+  check_existence: all_exist
+  object:
+    linux:mount_point: /var

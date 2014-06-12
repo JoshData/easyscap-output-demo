@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_group_enable_nx
+title: |-
+  Enable Execute Disable (XD) or No Execute (NX) Support on
+  x86 Systems
+description: ~
+rules:
+- install_PAE_kernel_on_x86-32
+- bios_enable_execution_restrictions
+subgroups: []

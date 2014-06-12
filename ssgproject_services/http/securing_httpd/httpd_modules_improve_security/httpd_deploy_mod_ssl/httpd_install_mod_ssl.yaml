@@ -1,0 +1,15 @@
+id: xccdf_org.ssgproject.content_rule_httpd_install_mod_ssl
+severity: low
+title: Install mod_ssl
+description: |
+  `mod_ssl` module:
+
+      # yum install mod_ssl
+rationale: |
+  `mod_ssl` provides encryption capabilities for the `httpd` Web server.
+  Unencrypted content is transmitted in plain text which could be
+  passively monitored and accessed by unauthorized parties.
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27403-5

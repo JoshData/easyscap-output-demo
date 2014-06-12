@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_group_permissions_within_important_dirs
+title: Verify File Permissions Within Some Important Directories
+description: ~
+rules:
+- file_permissions_library_dirs
+- file_ownership_library_dirs
+- file_permissions_binary_dirs
+- file_ownership_binary_dirs
+subgroups: []

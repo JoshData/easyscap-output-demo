@@ -1,0 +1,26 @@
+id: xccdf_org.ssgproject.content_rule_disable_xwindows_with_runlevel
+severity: low
+title: Disable X Windows Startup By Setting Runlevel
+description: |
+  `/etc/inittab` features a `3` as shown:
+
+      id:3:initdefault:
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121025'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27119-7
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/inittab
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*id:3:initdefault:[\s]*$
+    ind:instance: 1

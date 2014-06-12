@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_group_smb
+title: Samba(SMB) Microsoft Windows File Sharing Server
+description: |
+  `samba-client`, provides a series of command line tools that enable a
+  client machine to access Samba shares. The second, simply labeled
+  `samba`, provides the Samba service. It is this second package that
+  allows a Linux machine to act as an Active Directory server, a domain
+  controller, or as a domain member. Only the `samba-client` package is
+  installed by default.
+rules: []
+subgroups:
+- disabling_samba
+- configuring_samba

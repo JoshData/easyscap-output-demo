@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_httpd_servertokens_prod
+severity: low
+title: Set httpd ServerTokens Directive to Prod
+description: |
+  `ServerTokens Prod` restricts information in page headers, returning
+  only the word “Apache.” \
+  \
+   Add or correct the following directive in `/etc/httpd/conf/httpd.conf`:
+
+      ServerTokens Prod
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27425-8

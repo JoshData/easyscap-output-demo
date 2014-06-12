@@ -1,0 +1,26 @@
+id: xccdf_org.ssgproject.content_rule_display_login_attempts
+severity: low
+title: Set Last Logon/Access Notification
+description: |
+  `pam_lastlog`, add the following line immediately after
+  `session  required  pam_limits.so`:
+
+      session       required     pam_lastlog.so showfailed
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '53'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27291-4
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/pam.d/system-auth
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*session\s+(required|requisite)?\s+pam_lastlog.so[\s\w\d\=]+showfailed
+    ind:instance:
+      operation: equals
+      value: 1

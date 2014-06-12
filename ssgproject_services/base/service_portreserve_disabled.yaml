@@ -1,0 +1,26 @@
+id: xccdf_org.ssgproject.content_rule_service_portreserve_disabled
+severity: low
+title: Disable Portreserve (portreserve)
+description: |
+  `portreserve` service is a TCP port reservation utility that can be used
+  to prevent portmap from binding to well known TCP ports that are
+  required for other services. The `portreserve` service can be disabled
+  with the following command:
+
+      # chkconfig portreserve off
+rationale: |
+  `portreserve` service provides helpful functionality by preventing
+  conflicting usage of ports in the reserved port range, but it can be
+  disabled if not needed.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27258-3
+tests: []

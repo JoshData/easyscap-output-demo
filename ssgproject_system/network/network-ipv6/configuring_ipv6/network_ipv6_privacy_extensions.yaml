@@ -1,0 +1,32 @@
+id: xccdf_org.ssgproject.content_rule_network_ipv6_privacy_extensions
+severity: low
+title: Use Privacy Extensions for Address
+description: |
+  `/etc/sysconfig/network-scripts/ifcfg-interface`:
+
+      IPV6_PRIVACY=rfc3041
+
+  Automatically-generated IPv6 addresses are based on the underlying
+  hardware (e.g. Ethernet) address, and so it becomes possible to track a
+  piece of hardware over its lifetime using its traffic. If it is
+  important for a system’s IP address to not trivially reveal its hardware
+  address, this setting should be applied.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27154-4
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:path: /etc/sysconfig/network-scripts
+    ind:filename:
+      operation: pattern match
+      value: ifcfg-.*
+    ind:pattern:
+      operation: pattern match
+      value: ^IPV6_PRIVACY=rfc3041$
+    ind:instance: 1

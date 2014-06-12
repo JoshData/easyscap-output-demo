@@ -1,0 +1,22 @@
+id: xccdf_org.ssgproject.content_rule_uninstall_vsftpd
+severity: low
+title: Uninstall vsftpd Package
+description: |
+  `vsftpd` package can be removed with the following command:
+
+      # yum erase vsftpd
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '1436'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26687-4
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: vsftpd

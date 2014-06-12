@@ -1,0 +1,38 @@
+id: xccdf_org.ssgproject.content_rule_userowner_rsyslog_files
+severity: medium
+title: Ensure Log Files Are Owned By Appropriate User
+description: |
+  `rsyslog` should be root. These log files are determined by the second
+  part of each Rule line in `/etc/rsyslog.conf` and typically all appear
+  in `/var/log`. For each log file *LOGFILE* referenced in
+  `/etc/rsyslog.conf`, run the following command to inspect the file’s
+  owner:
+
+      $ ls -l LOGFILE
+
+  If the owner is not `root`, run the following command to correct this:
+
+      # chown root LOGFILE
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://iase.disa.mil/cci/index.html
+  value: '1314'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26812-8
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: all_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path': /var/log
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      operation: pattern match
+      value: .*log
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id': 0

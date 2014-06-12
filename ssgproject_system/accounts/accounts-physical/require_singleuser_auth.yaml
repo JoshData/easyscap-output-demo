@@ -1,0 +1,33 @@
+id: xccdf_org.ssgproject.content_rule_require_singleuser_auth
+severity: medium
+title: Require Authentication for Single User Mode
+description: |
+  \
+  \
+   To require entry of the root password even if the system is started in
+  single-user mode, add or correct the following line in the file
+  `/etc/sysconfig/init`:
+
+      SINGLE=/sbin/sulogin
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IA-2(1)
+- href: http://iase.disa.mil/cci/index.html
+  value: '213'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27040-5
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/sysconfig/init
+    ind:pattern:
+      operation: pattern match
+      value: ^SINGLE=/sbin/sulogin[\s]*
+    ind:instance: 1

@@ -1,0 +1,36 @@
+id: xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile
+severity: low
+title: Ensure the Default Umask is Set Correctly in /etc/profile
+description: |
+  `/etc/profile` is set properly, add or correct the `umask` setting in
+  `/etc/profile` to read as follows:
+
+      umask 077
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+- href: test_attestation
+  dc:contributor: swells
+  dc:date: '20120929'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26669-2
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/profile
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*umask[\s]+([^#\s]*)
+    ind:instance:
+      operation: greater than or equal
+      value: 1
+  state:
+    ind:subexpression:
+      operation: equals
+      var_check: all
+      var_ref: oval:ssg:var:2239

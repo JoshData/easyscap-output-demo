@@ -1,0 +1,14 @@
+id: xccdf_org.ssgproject.content_rule_ftp_log_transactions
+severity: low
+title: Enable Logging of All FTP Transactions
+description: |
+  `vsftpd` configuration file, located at `/etc/vsftpd/vsftpd.conf`:
+
+      xferlog_enable=YES
+      xferlog_std_format=NO
+      log_ftp_protocol=YES
+rationale: '`/var/log/vsftpd.log`.'
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27142-9

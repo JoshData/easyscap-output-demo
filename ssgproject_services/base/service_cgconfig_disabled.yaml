@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_service_cgconfig_disabled
+severity: low
+title: Disable Control Group Config (cgconfig)
+description: |
+  `cgconfig` daemon starts at boot and establishes the predefined control
+  groups. The `cgconfig` service can be disabled with the following
+  command:
+
+      # chkconfig cgconfig off
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27250-0
+tests: []

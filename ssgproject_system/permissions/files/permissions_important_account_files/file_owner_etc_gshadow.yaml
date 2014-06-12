@@ -1,0 +1,31 @@
+id: xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow
+severity: medium
+title: Verify User Who Owns gshadow File
+description: |
+  `/etc/gshadow`, run the command:
+
+  ~~~~ {xml:space="preserve"}
+  # chown root/etc/gshadow
+  ~~~~
+rationale: |
+  `/etc/gshadow` file contains group password hashes. Protection of this
+  file is critical for system security.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://iase.disa.mil/cci/index.html
+  value: '225'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27026-4
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: all_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filepath': /etc/gshadow
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id': 0

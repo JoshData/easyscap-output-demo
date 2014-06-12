@@ -1,0 +1,21 @@
+id: xccdf_org.ssgproject.content_rule_service_kdump_disabled
+severity: low
+title: Disable KDump Kernel Crash Analyzer (kdump)
+description: |
+  `kdump` service provides a kernel crash dump analyzer. It uses the
+  `kexec` system call to boot a secondary kernel (“capture” kernel)
+  following a system crash, which can load information from the crashed
+  kernel for analysis. The `kdump` service can be disabled with the
+  following command:
+
+      # chkconfig kdump off
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26850-8
+tests: []

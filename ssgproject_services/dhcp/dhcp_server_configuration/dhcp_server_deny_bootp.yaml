@@ -1,0 +1,11 @@
+id: xccdf_org.ssgproject.content_rule_dhcp_server_deny_bootp
+severity: low
+title: Deny BOOTP Queries
+description: deny bootp;
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27077-7

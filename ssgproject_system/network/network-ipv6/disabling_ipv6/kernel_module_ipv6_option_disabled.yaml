@@ -1,0 +1,37 @@
+id: xccdf_org.ssgproject.content_rule_kernel_module_ipv6_option_disabled
+severity: medium
+title: Disable IPv6 Networking Support Automatic Loading
+description: |
+  `ipv6`) from loading the IPv6 networking stack, add the following line
+  to `/etc/modprobe.d/disabled.conf` (or another file in
+  `/etc/modprobe.d`):
+
+      options ipv6 disable=1
+
+  This permits the IPv6 module to be loaded (and thus satisfy other
+  modules that depend on it), while disabling support for the IPv6
+  protocol.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '1551'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27153-6
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:path: /etc/modprobe.d
+    ind:filename:
+      operation: pattern match
+      value: ^.*\.conf$
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*options\s+ipv6\s+.*disable=1.*$
+    ind:instance: 1

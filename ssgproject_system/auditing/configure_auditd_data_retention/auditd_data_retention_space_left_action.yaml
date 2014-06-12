@@ -1,0 +1,57 @@
+id: xccdf_org.ssgproject.content_rule_auditd_data_retention_space_left_action
+severity: medium
+title: Configure auditd space_left Action on Low Disk Space
+description: |
+  `auditd` service can be configured to take an action when disk space
+  *starts* to run low. Edit the file `/etc/audit/auditd.conf`. Modify the
+  following line, substituting *ACTION* appropriately:
+
+      space_left_action = ACTION
+
+  Possible values for *ACTION* are described in the `auditd.conf` man
+  page. These include:
+
+  -   `ignore`
+  -   `syslog`
+  -   `email`
+  -   `exec`
+  -   `suspend`
+  -   `single`
+  -   `halt`
+
+  Set this to `email` (instead of the default, which is `suspend`) as it
+  is more likely to get prompt attention. Acceptable values also include
+  `suspend`, `single`, and `halt`.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-4
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-5(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: http://iase.disa.mil/cci/index.html
+  value: '140'
+- href: http://iase.disa.mil/cci/index.html
+  value: '143'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27238-5
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/auditd.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[ ]*space_left_action[ ]+=[ ]+(\S+)[ ]*$
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: case insensitive equals
+      var_ref: oval:ssg:var:2245

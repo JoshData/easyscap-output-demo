@@ -1,0 +1,34 @@
+id: xccdf_org.ssgproject.content_rule_accounts_umask_login_defs
+severity: low
+title: Ensure the Default Umask is Set Correctly in login.defs
+description: |
+  `/etc/login.defs` is set properly, add or correct the `UMASK` setting in
+  `/etc/login.defs` to read as follows:
+
+      UMASK 077
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+- href: test_attestation
+  dc:contributor: swells
+  dc:date: '20120929'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26371-5
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/login.defs
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*UMASK[\s]+([^#\s]*)
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: equals
+      var_check: all
+      var_ref: oval:ssg:var:2239

@@ -1,0 +1,19 @@
+id: xccdf_org.ssgproject.content_group_network_disable_unused_interfaces
+title: Disable Unused Interfaces
+description: |
+  \
+  \
+   If the system does not require network communications but still needs
+  to use the loopback interface, remove all files of the form
+  `ifcfg-interface` except for `ifcfg-lo` from
+  `/etc/sysconfig/network-scripts`:
+
+      # rm /etc/sysconfig/network-scripts/ifcfg-interface
+
+  If the system is a standalone machine with no need for network access or
+  even communication over the loopback device, then disable this service.
+  The `network` service can be disabled with the following command:
+
+      # chkconfig network off
+rules: []
+subgroups: []

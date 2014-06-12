@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_avahi
+title: Avahi Server
+description: ~
+rules: []
+subgroups:
+- disable_avahi_group
+- avahi_configuration

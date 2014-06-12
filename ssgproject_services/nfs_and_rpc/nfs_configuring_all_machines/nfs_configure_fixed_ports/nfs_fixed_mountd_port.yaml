@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_nfs_fixed_mountd_port
+severity: low
+title: Configure mountd to use static port
+description: |
+  `mountd` daemon to use a static port as opposed to letting the RPC Bind
+  service dynamically assign a port. Edit the file `/etc/sysconfig/nfs`.
+  Add or correct the following line:
+
+      MOUNTD_PORT=statd-port
+
+  Where `mountd-port` is a port which is not used by any other service on
+  your network.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27114-8

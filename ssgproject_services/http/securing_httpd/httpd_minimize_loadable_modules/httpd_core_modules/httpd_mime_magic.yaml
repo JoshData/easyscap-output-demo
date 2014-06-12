@@ -1,0 +1,14 @@
+id: xccdf_org.ssgproject.content_rule_httpd_mime_magic
+severity: low
+title: Disable MIME Magic
+description: |
+  `mime_magic` module provides a second layer of MIME support that in most
+  configurations is likely extraneous. If its functionality is
+  unnecessary, comment out the related module:
+
+      #LoadModule mime_magic_module modules/mod_mime_magic.so
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27541-2

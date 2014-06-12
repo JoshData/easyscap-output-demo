@@ -1,0 +1,10 @@
+id: xccdf_org.ssgproject.content_group_httpd_modules_improve_security
+title: Use Appropriate Modules to Improve httpd's Security
+description: |
+  `httpd` are several whose use may improve the security of the web server
+  installation. This section recommends and discusses the deployment of
+  security-relevant modules.
+rules: []
+subgroups:
+- httpd_deploy_mod_ssl
+- httpd_deploy_mod_security

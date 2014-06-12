@@ -1,0 +1,27 @@
+id: xccdf_org.ssgproject.content_group_postfix_install_ssl_cert
+title: Ensure Security of Postfix SSL Certificate
+description: |
+  # mkdir /etc/pki/tls/mail
+      # chown root:root /etc/pki/tls/mail
+      # chmod 755 /etc/pki/tls/mail
+
+  Using removable media or some other secure transmission format, install
+  the files generated in the previous step onto the mail server:
+
+      /etc/pki/tls/mail/serverkey.pem: the private key mailserverkey.pem
+      /etc/pki/tls/mail/servercert.pem: the certificate file mailservercert.pem
+
+  Verify the ownership and permissions of these files:
+
+      # chown root:root /etc/pki/tls/mail/serverkey.pem
+      # chown root:root /etc/pki/tls/mail/servercert.pem
+      # chmod 600 /etc/pki/tls/mail/serverkey.pem
+      # chmod 644 /etc/pki/tls/mail/servercert.pem
+
+  Verify that the CA’s public certificate file has been installed as
+  `/etc/pki/tls/CA/cacert.pem`, and has the correct permissions:
+
+      # chown root:root /etc/pki/tls/CA/cacert.pem
+      # chmod 644 /etc/pki/tls/CA/cacert.pem
+rules: []
+subgroups: []

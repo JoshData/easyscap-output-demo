@@ -1,0 +1,33 @@
+id: xccdf_org.ssgproject.content_rule_audit_mac_changes
+severity: low
+title: Record Events that Modify the System's Mandatory Access Controls
+description: |
+  `/etc/audit/audit.rules`:
+
+      -w /etc/selinux/ -p wa -k MAC-policy
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(7)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(c)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26657-7
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/etc/selinux/\s+\-p\s+wa\s+\-k\s+[-\w]+\s*$
+    ind:instance: 1

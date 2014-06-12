@@ -1,0 +1,34 @@
+id: xccdf_org.ssgproject.content_rule_disable_rlogin
+severity: high
+title: Disable rlogin Service
+description: |
+  `rlogin` service, which is available with the `rsh-server` package and
+  runs as a service through xinetd, should be disabled. The `rlogin`
+  service can be disabled with the following command:
+
+      # chkconfig rlogin off
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IA-5(1)(c)
+- href: http://iase.disa.mil/cci/index.html
+  value: '1436'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26865-6
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/xinetd.d/rlogin
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*disable\s+=\s+yes\s*$
+    ind:instance: 1

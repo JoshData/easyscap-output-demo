@@ -1,0 +1,49 @@
+id: xccdf_org.ssgproject.content_rule_met_inherently_nonselected
+severity: low
+title: Product Meets this Requirement
+description: ~
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '34'
+- href: http://iase.disa.mil/cci/index.html
+  value: '35'
+- href: http://iase.disa.mil/cci/index.html
+  value: '99'
+- href: http://iase.disa.mil/cci/index.html
+  value: '154'
+- href: http://iase.disa.mil/cci/index.html
+  value: '226'
+- href: http://iase.disa.mil/cci/index.html
+  value: '802'
+- href: http://iase.disa.mil/cci/index.html
+  value: '872'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1086'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1087'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1089'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1091'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1424'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1426'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1428'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1209'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1214'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1237'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1269'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1338'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1425'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1670'
+crosswalk: []

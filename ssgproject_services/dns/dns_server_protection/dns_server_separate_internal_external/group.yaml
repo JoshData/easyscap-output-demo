@@ -1,0 +1,31 @@
+id: xccdf_org.ssgproject.content_group_dns_server_separate_internal_external
+title: Run Separate DNS Servers for External and Internal Queries
+description: |
+  `/etc/named.conf` to add or correct the following directives:
+
+      options {
+        allow-query { any; };
+        recursion no;
+        ...
+      };
+      zone "example.com " IN {
+        ...
+      };
+
+  On the internal nameserver, edit `/etc/named.conf`. Add or correct the
+  following directives, where SUBNET is the numerical IP representation of
+  your organization in the form xxx.xxx.xxx.xxx/xx:
+
+      acl internal {
+        SUBNET ;
+        localhost;
+      };
+      options {
+        allow-query { internal; };
+        ...
+      };
+      zone "internal.example.com " IN {
+        ...
+      };
+rules: []
+subgroups: []

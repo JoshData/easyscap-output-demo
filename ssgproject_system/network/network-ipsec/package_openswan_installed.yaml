@@ -1,0 +1,28 @@
+id: xccdf_org.ssgproject.content_rule_package_openswan_installed
+severity: low
+title: Install openswan Package
+description: |
+  `openswan` package can be installed with the following command:
+
+      # yum install openswan
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: MA-4
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SC-9
+- href: http://iase.disa.mil/cci/index.html
+  value: '1130'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1131'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27626-1
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: all_exist
+  object:
+    linux:name: openswan

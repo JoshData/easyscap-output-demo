@@ -1,0 +1,29 @@
+id: xccdf_org.ssgproject.content_rule_no_files_unowned_by_group
+severity: low
+title: Ensure All Files Are Owned by a Group
+description: ~
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://iase.disa.mil/cci/index.html
+  value: '224'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26872-2
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  '{http://oval.mitre.org/XMLSchema/oval-definitions-5}notes':
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5}note': This will enumerate
+      all files on local partitions
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+      recurse: symlinks and directories
+      recurse_file_system: local
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path': /
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      operation: pattern match
+      value: .*
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}group_id': 0

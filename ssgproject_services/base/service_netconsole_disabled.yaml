@@ -1,0 +1,130 @@
+id: xccdf_org.ssgproject.content_rule_service_netconsole_disabled
+severity: low
+title: Disable Network Console (netconsole)
+description: |
+  `netconsole` service is responsible for loading the netconsole kernel
+  module, which logs kernel printk messages over UDP to a syslog server.
+  This allows debugging of problems where disk logging fails and serial
+  consoles are impractical. The `netconsole` service can be disabled with
+  the following command:
+
+      # chkconfig netconsole off
+rationale: |
+  `netconsole` service is not necessary unless there is a need to debug
+  kernel panics, which is not common.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '381'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27254-2
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netconsole
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '0'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netconsole
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '1'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netconsole
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '2'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netconsole
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '3'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netconsole
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '4'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netconsole
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '5'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netconsole
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '6'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'

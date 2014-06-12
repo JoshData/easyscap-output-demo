@@ -1,0 +1,20 @@
+id: xccdf_org.ssgproject.content_rule_uninstall_httpd
+severity: low
+title: Uninstall httpd Package
+description: |
+  `httpd` package can be removed with the following command:
+
+      # yum erase httpd
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27133-8
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: httpd

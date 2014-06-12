@@ -1,0 +1,35 @@
+id: xccdf_org.ssgproject.content_rule_restrict_serial_port_logins
+severity: low
+title: Restrict Serial Port Root Logins
+description: |
+  `/etc/securetty`:
+
+      ttyS0
+      ttyS1
+
+  <!-- TODO: discussion/description of serial port -->
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6(2)
+- href: http://iase.disa.mil/cci/index.html
+  value: '770'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27047-0
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:path: /etc
+    ind:filename: securetty
+    ind:pattern:
+      operation: pattern match
+      value: ^ttyS[0-9]+$
+    ind:instance:
+      operation: greater than or equal
+      value: 1

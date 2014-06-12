@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_openldap_server
+title: Configure OpenLDAP Server
+description: ~
+rules:
+- package_openldap-servers_removed
+subgroups:
+- ldap_server_config_certificate_files

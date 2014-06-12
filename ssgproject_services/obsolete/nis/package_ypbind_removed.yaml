@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_package_ypbind_removed
+severity: low
+title: Remove NIS Client
+description: |
+  `ypbind`) was used to bind a machine to an NIS server and receive the
+  distributed configuration files.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: ypbind

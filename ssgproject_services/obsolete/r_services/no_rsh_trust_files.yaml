@@ -1,0 +1,62 @@
+id: xccdf_org.ssgproject.content_rule_no_rsh_trust_files
+severity: high
+title: Remove Rsh Trust Files
+description: |
+  `/etc/hosts.equiv` and `~/.rhosts` (in each user’s home directory) list
+  remote hosts and users that are trusted by the local system when using
+  the rshd daemon. To remove these files, run the following command to
+  delete them from any location:
+
+      # rm /etc/hosts.equiv
+
+      $ rm ~/.rhosts
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '1436'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27270-8
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: equals
+      value: /root
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      operation: pattern match
+      value: ^\.(r|s)hosts$
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+      max_depth: '1'
+      recurse: directories
+      recurse_direction: down
+      recurse_file_system: all
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: equals
+      value: /home
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      operation: pattern match
+      value: ^\.(r|s)hosts$
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: equals
+      value: /etc
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      operation: pattern match
+      value: ^s?hosts\.equiv$

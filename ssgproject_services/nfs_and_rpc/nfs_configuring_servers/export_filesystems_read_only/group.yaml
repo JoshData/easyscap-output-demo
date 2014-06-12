@@ -1,0 +1,5 @@
+id: xccdf_org.ssgproject.content_group_export_filesystems_read_only
+title: Export Filesystems Read-Only if Possible
+description: '`ro`, so do not specify `rw` without a good reason.'
+rules: []
+subgroups: []

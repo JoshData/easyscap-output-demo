@@ -1,0 +1,27 @@
+id: xccdf_org.ssgproject.content_rule_sysctl_ipv6_default_accept_redirects
+severity: medium
+title: Disable Accepting IPv6 Redirects
+description: |
+  `net.ipv6.conf.default.accept_redirects` kernel parameter, run the
+  following command:
+
+  ~~~~ {xml:space="preserve"}
+  # sysctl -w net.ipv6.conf.default.accept_redirects=0
+  ~~~~
+
+  If this is not the system’s default value, add the following line to
+  `/etc/sysctl.conf`:
+
+  ~~~~ {xml:space="preserve"}
+  net.ipv6.conf.default.accept_redirects = 0
+  ~~~~
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '1551'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27166-8
+tests: []

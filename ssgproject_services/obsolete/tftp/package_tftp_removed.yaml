@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_package_tftp_removed
+severity: low
+title: Remove tftp
+description: |
+  `tftp` is a client program that allows for connections to a `tftp`
+  server.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: tftp

@@ -1,0 +1,6 @@
+id: xccdf_org.ssgproject.content_group_disabling_dhcp_client
+title: Disable DHCP Client
+description: ~
+rules:
+- disable_dhcp_client
+subgroups: []

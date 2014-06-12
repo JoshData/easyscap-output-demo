@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_disabling_dns_server
+title: Disable DNS Server
+description: ~
+rules:
+- disable_dns_server
+- uninstall_bind
+subgroups: []

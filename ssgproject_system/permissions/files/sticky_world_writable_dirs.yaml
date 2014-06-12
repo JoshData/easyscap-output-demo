@@ -1,0 +1,55 @@
+id: xccdf_org.ssgproject.content_rule_sticky_world_writable_dirs
+severity: low
+title: Verify that All World-Writable Directories Have Sticky Bits Set
+description: |
+  \
+   To set the sticky bit on a world-writable directory *DIR*, run the
+  following command:
+
+      # chmod +t DIR
+rationale: |
+  \
+  \
+   The only authorized public directories are those temporary directories
+  supplied with the system, or those designed to be temporary file
+  repositories. The setting is normally reserved for directories used by
+  the system, by users for temporary file storage (such as `/tmp`), and
+  for directories requiring global read/write access.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: test_attestation
+  dc:contributor: swells
+  dc:date: '20120929'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26840-9
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: all_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+      max_depth: '-1'
+      recurse: directories
+      recurse_direction: down
+      recurse_file_system: local
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: equals
+      value: /
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+    filter:
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
+        datatype: boolean
+        value: 'false'
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
+        datatype: boolean
+        value: 'true'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
+      datatype: boolean
+      value: 'true'

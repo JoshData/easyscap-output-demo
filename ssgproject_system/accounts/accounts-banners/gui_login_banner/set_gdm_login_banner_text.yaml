@@ -1,0 +1,36 @@
+id: xccdf_org.ssgproject.content_rule_set_gdm_login_banner_text
+severity: medium
+title: Set GUI Warning Banner Text
+description: |
+  sudo -u gdm gconftool-2 \
+        --type string \
+        --set /apps/gdm/simple-greeter/banner_message_text \
+        "Text of the warning banner here"
+
+  When entering a warning banner that spans several lines, remember to
+  begin and end the string with `"`. This command writes directly to the
+  file `/var/lib/gdm/.gconf/apps/gdm/simple-greeter/%gconf.xml`, and this
+  file can later be edited directly if necessary.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-8(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-8(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-8(c)
+- href: http://iase.disa.mil/cci/index.html
+  value: '48'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1384'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1385'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1386'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1387'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1388'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27017-3

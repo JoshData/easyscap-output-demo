@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_rule_install_hids
+severity: high
+title: Install Intrusion Detection Software
+description: \
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SC-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '1263'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27409-2

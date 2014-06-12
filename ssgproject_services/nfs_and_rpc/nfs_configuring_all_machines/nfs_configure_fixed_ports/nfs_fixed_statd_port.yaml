@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_nfs_fixed_statd_port
+severity: low
+title: Configure statd to use static port
+description: |
+  `statd` daemon to use a static port as opposed to letting the RPC Bind
+  service dynamically assign a port. Edit the file `/etc/sysconfig/nfs`.
+  Add or correct the following line:
+
+      STATD_PORT=statd-port
+
+  Where `statd-port` is a port which is not used by any other service on
+  your network.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26889-6

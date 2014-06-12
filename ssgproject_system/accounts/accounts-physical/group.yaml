@@ -1,0 +1,10 @@
+id: xccdf_org.ssgproject.content_group_accounts-physical
+title: Protect Physical Console Access
+description: ~
+rules:
+- require_singleuser_auth
+- disable_ctrlaltdel_reboot
+- disable_interactive_boot
+subgroups:
+- bootloader
+- screen_locking

@@ -1,0 +1,12 @@
+id: xccdf_org.ssgproject.content_group_system
+title: System Settings
+description: ~
+rules: []
+subgroups:
+- software
+- permissions
+- selinux
+- accounts
+- network
+- logging
+- auditing

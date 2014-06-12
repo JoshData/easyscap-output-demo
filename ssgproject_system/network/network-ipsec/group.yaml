@@ -1,0 +1,6 @@
+id: xccdf_org.ssgproject.content_group_network-ipsec
+title: IPSec Support
+description: ~
+rules:
+- package_openswan_installed
+subgroups: []

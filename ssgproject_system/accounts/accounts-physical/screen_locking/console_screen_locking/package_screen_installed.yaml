@@ -1,0 +1,34 @@
+id: xccdf_org.ssgproject.content_rule_package_screen_installed
+severity: low
+title: Install the screen Package
+description: |
+  `screen` package:
+
+      # yum install screen
+
+  Instruct users to begin new terminal sessions with the following
+  command:
+
+      $ screen
+
+  The console can now be locked with the following key combination:
+
+      ctrl+a x
+rationale: |
+  `screen` ensures a console locking capability is available for users who
+  may need to suspend console logins.
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '58'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26940-7
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: all_exist
+  object:
+    linux:name: screen

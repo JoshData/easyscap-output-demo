@@ -1,0 +1,14 @@
+id: xccdf_org.ssgproject.content_rule_dhcp_server_disable_ddns
+severity: low
+title: Do Not Use Dynamic DNS
+description: |
+  `/etc/dhcp/dhcpd.conf`, and add or correct the following global option:
+
+      ddns-update-style none;
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27049-6

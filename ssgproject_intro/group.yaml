@@ -1,0 +1,20 @@
+id: xccdf_org.ssgproject.content_group_intro
+title: Introduction
+description: |
+  <!-- purpose and scope of guidance --> The purpose of this guidance is
+  to provide security configuration recommendations and baselines for the
+  Red Hat Enterprise Linux (RHEL) 6 operating system. The guidance
+  provided here should be applicable to all variants (Desktop, Server,
+  Advanced Platform) of the product. Recommended settings for the basic
+  operating system are provided, as well as for many network services that
+  the system can provide to other systems. <!-- audience -->The guide is
+  intended for system administrators. Readers are assumed to possess basic
+  system administration skills for Unix-like systems, as well as some
+  familiarity with Red Hat’s documentation and administration conventions.
+  Some instructions within this guide are complex. All directions should
+  be followed completely and with understanding of their effects in order
+  to avoid serious adverse effects on the system and its security.
+rules: []
+subgroups:
+- general-principles
+- how-to-use

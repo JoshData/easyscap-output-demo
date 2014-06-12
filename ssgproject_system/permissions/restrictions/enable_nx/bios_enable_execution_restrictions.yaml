@@ -1,0 +1,10 @@
+id: xccdf_org.ssgproject.content_rule_bios_enable_execution_restrictions
+severity: low
+title: Enable NX or XD Support in the BIOS
+description: ~
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27163-5

@@ -1,0 +1,27 @@
+id: xccdf_org.ssgproject.content_rule_package_rsyslog_installed
+severity: medium
+title: Ensure rsyslog is Installed
+description: |
+  `rsyslog` package can be installed with the following command:
+
+      # yum install rsyslog
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-9(2)
+- href: http://iase.disa.mil/cci/index.html
+  value: '1311'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1312'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26809-4
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: all_exist
+  object:
+    linux:name: rsyslog

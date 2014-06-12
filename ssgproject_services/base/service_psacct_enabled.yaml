@@ -1,0 +1,27 @@
+id: xccdf_org.ssgproject.content_rule_service_psacct_enabled
+severity: low
+title: Enable Process Accounting (psacct)
+description: |
+  `psacct`, works with programs including `acct` and `ac` to allow system
+  administrators to view user activity, such as commands issued by users
+  of the system. The `psacct` service can be enabled with the following
+  command:
+
+      # chkconfig --level 2345 psacct on
+rationale: |
+  `psacct` service can provide administrators a convenient view into some
+  user activities. However, it should be noted that the auditing system
+  and its audit records provide more authoritative and comprehensive
+  records.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-12
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27259-1
+tests: []

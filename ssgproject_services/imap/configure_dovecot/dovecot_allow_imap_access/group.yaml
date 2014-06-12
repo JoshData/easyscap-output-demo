@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_group_dovecot_allow_imap_access
+title: Allow IMAP Clients to Access the Server
+description: |
+  `iptables` to allow port 143 traffic one must edit
+  `/etc/sysconfig/iptables` and `/etc/sysconfig/ip6tables` (if IPv6 is in
+  use). Add the following line, ensuring that it appears before the final
+  LOG and DROP lines for the INPUT chain:
+
+  ~~~~ {xml:space="preserve"}
+  -A INPUT -m state --state NEW -p tcp --dport 143 -j ACCEPT
+  ~~~~
+rules: []
+subgroups: []

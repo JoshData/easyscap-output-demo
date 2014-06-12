@@ -1,0 +1,16 @@
+id: xccdf_org.ssgproject.content_group_files
+title: |-
+  Verify Permissions on Important Files and
+  Directories
+description: ~
+rules:
+- sticky_world_writable_dirs
+- world_writeable_files
+- no_unpackaged_sgid_files
+- no_unpackaged_suid_files
+- no_files_unowned_by_user
+- no_files_unowned_by_group
+- world_writable_files_system_ownership
+subgroups:
+- permissions_important_account_files
+- permissions_within_important_dirs

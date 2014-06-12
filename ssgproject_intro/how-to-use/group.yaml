@@ -1,0 +1,10 @@
+id: xccdf_org.ssgproject.content_group_how-to-use
+title: How to Use This Guide
+description: ~
+rules: []
+subgroups:
+- intro-read-sections-completely
+- intro-test-non-production
+- intro-root-shell-assumed
+- intro-formatting-conventions
+- intro-reboot-required

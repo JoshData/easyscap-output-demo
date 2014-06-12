@@ -1,0 +1,30 @@
+id: xccdf_org.ssgproject.content_rule_groupowner_rsyslog_files
+severity: medium
+title: Ensure Log Files Are Owned By Appropriate Group
+description: |
+  `rsyslog` should be root. These log files are determined by the second
+  part of each Rule line in `/etc/rsyslog.conf` and typically all appear
+  in `/var/log`. For each log file *LOGFILE* referenced in
+  `/etc/rsyslog.conf`, run the following command to inspect the file’s
+  group owner:
+
+      $ ls -l LOGFILE
+
+  If the owner is not `root`, run the following command to correct this:
+
+      # chgrp root LOGFILE
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://iase.disa.mil/cci/index.html
+  value: '1314'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26821-9
+tests:
+- type: ind:unknown_test
+  check: all

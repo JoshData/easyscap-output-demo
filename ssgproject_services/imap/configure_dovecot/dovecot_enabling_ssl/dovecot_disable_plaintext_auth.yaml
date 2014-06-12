@@ -1,0 +1,24 @@
+id: xccdf_org.ssgproject.content_rule_dovecot_disable_plaintext_auth
+severity: low
+title: Disable Plaintext Authentication
+description: |
+  `/etc/dovecot/conf.d/10-auth.conf` and add or correct the following
+  line:
+
+      disable_plaintext_auth = yes
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27144-5
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:path: /etc/dovecot/conf.d
+    ind:filename: 10-auth.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*disable_plaintext_auth[\s]*=[\s]*yes[\s]*$
+    ind:instance: 1

@@ -1,0 +1,10 @@
+id: xccdf_org.ssgproject.content_group_postfix_server_mail_relay
+title: Control Mail Relaying
+description: ~
+rules: []
+subgroups:
+- postfix_server_mail_relay_set_trusted_networks
+- postfix_server_mail_smtpd_relay_restrictions
+- postfix_server_mail_smtpd_recipient_restrictions
+- postfix_server_mail_relay_smtp_auth_for_untrusted_networks
+- postfix_server_mail_relay_require_tls_for_smtp_auth

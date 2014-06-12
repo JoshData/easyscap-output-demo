@@ -1,0 +1,40 @@
+id: xccdf_org.ssgproject.content_group_configure_auditd_data_retention
+title: Configure auditd Data Retention
+description: |
+  `/var/log/audit/audit.log`. By default, `auditd` rotates 5 logs by size
+  (6MB), retaining a maximum of 30MB of data in total, and refuses to
+  write entries when the disk is too full. This minimizes the risk of
+  audit data filling its partition and impacting other services. This also
+  minimizes the risk of the audit daemon temporarily disabling the system
+  if it cannot write audit log (which it can be configured to do). For a
+  busy system or a system which is thoroughly auditing system activity,
+  the default settings for data retention may be insufficient. The log
+  file size needed will depend heavily on what types of events are being
+  audited. First configure auditing to log all the events of interest.
+  Then monitor the log size manually for awhile to determine what file
+  size will allow you to keep the required data for the correct time
+  period. \
+  \
+   Using a dedicated partition for `/var/log/audit` prevents the `auditd`
+  logs from disrupting system functionality if they fill, and, more
+  importantly, prevents other activity in `/var` from filling the
+  partition and stopping the audit trail. (The audit logs are size-limited
+  and therefore unlikely to grow without bound unless configured to do
+  so.) Some machines may have requirements that no actions occur which
+  cannot be audited. If this is the case, then `auditd` can be configured
+  to halt the machine if it runs out of space. **Note:** Since older logs
+  are rotated, configuring `auditd` this way does not prevent older logs
+  from being rotated away before they can be viewed. *If your system is
+  configured to halt when logging cannot be performed, make sure this can
+  never happen under normal circumstances! Ensure that `/var/log/audit` is
+  on its own partition, and that this partition is larger than the maximum
+  amount of data `auditd` will retain normally.*
+rules:
+- configure_auditd_num_logs
+- configure_auditd_max_log_file
+- configure_auditd_max_log_file_action
+- auditd_data_retention_space_left_action
+- auditd_data_retention_admin_space_left_action
+- auditd_data_retention_action_mail_acct
+- configure_auditd_audispd
+subgroups: []

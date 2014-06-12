@@ -1,0 +1,47 @@
+id: xccdf_org.ssgproject.content_rule_set_iptables_default_rule
+severity: medium
+title: Set Default iptables Policy for Incoming Packets
+description: |
+  `/etc/sysconfig/iptables`:
+
+      :INPUT DROP [0:0]
+rationale: |
+  `iptables` the default policy is applied only after all the applicable
+  rules in the table are examined for a match. Setting the default policy
+  to `DROP` implements proper design for a firewall, i.e. any packets
+  which are not explicitly permitted should not be accepted.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '66'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1109'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1154'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1414'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26444-0
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    ind:path: /etc/sysconfig
+    ind:filename: iptables
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*:INPUT\sDROP\s\[0:0\]
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    ind:path: /etc/sysconfig
+    ind:filename: iptables
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*:INPUT\ACCEPT\s\[0:0\]
+    ind:instance: 1

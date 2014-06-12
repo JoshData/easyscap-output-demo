@@ -1,0 +1,30 @@
+id: xccdf_org.ssgproject.content_rule_sshd_enable_warning_banner
+severity: medium
+title: Enable SSH Warning Banner
+description: |
+  `/etc/ssh/sshd_config`:
+
+      Banner /etc/issue
+
+  Another section contains information on how to create an appropriate
+  system-wide warning banner.
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '48'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27112-2
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/ssh/sshd_config
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*(?i)Banner(?-i)[\s]+/etc/issue[\s]*(?:|(?:#.*))?$
+    ind:instance: 1

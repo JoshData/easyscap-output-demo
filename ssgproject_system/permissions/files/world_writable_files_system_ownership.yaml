@@ -1,0 +1,42 @@
+id: xccdf_org.ssgproject.content_rule_world_writable_files_system_ownership
+severity: low
+title: Ensure All World-Writable Directories Are Owned by a System Account
+description: ~
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: test_attestation
+  dc:contributor: swells
+  dc:date: '20120929'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26642-9
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+      max_depth: '-1'
+      recurse: directories
+      recurse_direction: down
+      recurse_file_system: local
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: equals
+      value: /
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+    filter:
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id':
+        operation: greater than or equal
+        value: 500
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
+        datatype: boolean
+        value: 'true'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id':
+      operation: greater than or equal
+      value: 500
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
+      datatype: boolean
+      value: 'true'

@@ -1,0 +1,25 @@
+id: xccdf_org.ssgproject.content_rule_met_inherently_auditing
+severity: low
+title: Product Meets this Requirement
+description: ~
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '130'
+- href: http://iase.disa.mil/cci/index.html
+  value: '157'
+- href: http://iase.disa.mil/cci/index.html
+  value: '131'
+- href: http://iase.disa.mil/cci/index.html
+  value: '132'
+- href: http://iase.disa.mil/cci/index.html
+  value: '133'
+- href: http://iase.disa.mil/cci/index.html
+  value: '134'
+- href: http://iase.disa.mil/cci/index.html
+  value: '135'
+- href: http://iase.disa.mil/cci/index.html
+  value: '159'
+- href: http://iase.disa.mil/cci/index.html
+  value: '174'
+crosswalk: []

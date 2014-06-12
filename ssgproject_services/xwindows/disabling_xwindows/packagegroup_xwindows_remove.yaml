@@ -1,0 +1,20 @@
+id: xccdf_org.ssgproject.content_rule_packagegroup_xwindows_remove
+severity: low
+title: Remove the X Windows Package Group
+description: '# yum groupremove "X Window System"'
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121025'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27198-1
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: xorg-x11-server-common

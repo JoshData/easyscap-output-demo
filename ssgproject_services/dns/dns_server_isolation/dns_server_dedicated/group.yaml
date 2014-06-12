@@ -1,0 +1,5 @@
+id: xccdf_org.ssgproject.content_group_dns_server_dedicated
+title: Run DNS Software on Dedicated Servers
+description: ~
+rules: []
+subgroups: []

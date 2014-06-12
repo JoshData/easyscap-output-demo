@@ -1,0 +1,11 @@
+id: xccdf_org.ssgproject.content_group_r_services
+title: Rlogin, Rsh, and Rexec
+description: ~
+rules:
+- uninstall_rsh-server
+- disable_rexec
+- disable_rsh
+- package_rsh_removed
+- disable_rlogin
+- no_rsh_trust_files
+subgroups: []

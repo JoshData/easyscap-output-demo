@@ -1,0 +1,25 @@
+id: xccdf_org.ssgproject.content_rule_security_patches_up_to_date
+severity: high
+title: Ensure Software Patches Installed
+description: |
+  # yum update
+
+  If the system is not configured to use one of these sources, updates (in
+  the form of RPM packages) can be manually downloaded from the Red Hat
+  Network and installed using `rpm`.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SI-2
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: MA-1(b)
+- href: http://iase.disa.mil/cci/index.html
+  value: '1227'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1233'
+- href: test_attestation
+  dc:contributor: MM
+  dc:date: '20120928'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27635-2

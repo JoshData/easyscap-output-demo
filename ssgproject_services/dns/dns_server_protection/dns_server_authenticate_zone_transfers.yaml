@@ -1,0 +1,50 @@
+id: xccdf_org.ssgproject.content_rule_dns_server_authenticate_zone_transfers
+severity: low
+title: Authenticate Zone Transfers
+description: |
+  # cd /tmp
+      # dnssec-keygen -a HMAC-MD5 -b 128 -n HOST dns.example.com
+      Kdns.example.com .+aaa +iiiii
+
+  This output is the name of a file containing the new key. Read the file
+  to find the base64-encoded key string:
+
+      # cat Kdns.example.com .+NNN +MMMMM .key
+      dns.example.com IN KEY 512 3 157 base64-key-string
+
+  Add the directives to `/etc/named.conf` on the primary server:
+
+      key zone-transfer-key {
+        algorithm hmac-md5;
+        secret "base64-key-string ";
+      };
+      zone "example.com " IN {
+        type master;
+        allow-transfer { key zone-transfer-key; };
+        ...
+      };
+
+  Add the directives below to `/etc/named.conf` on the secondary
+  nameserver:
+
+      key zone-transfer-key {
+        algorithm hmac-md5;
+        secret "base64-key-string ";
+      };
+
+      server IP-OF-MASTER {
+        keys { zone-transfer-key; };
+      };
+
+      zone "example.com " IN {
+        type slave;
+        masters { IP-OF-MASTER ; };
+        ...
+      };
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27496-9

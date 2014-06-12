@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_httpd_install_mod_security
+severity: low
+title: Install mod_security
+description: |
+  `security` module:
+
+      # yum install mod_security
+
+  <!-- this is in EPEL and this rule should not be included in any RHEL-only baselines -->
+rationale: |
+  `mod_security` provides an additional level of protection for the web
+  server by enabling the administrator to implement content access
+  policies and filters at the application layer.
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27525-5

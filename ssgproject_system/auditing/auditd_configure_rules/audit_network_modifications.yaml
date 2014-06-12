@@ -1,0 +1,71 @@
+id: xccdf_org.ssgproject.content_rule_audit_network_modifications
+severity: low
+title: Record Events that Modify the System's Network Environment
+description: |
+  `/etc/audit/audit.rules`, setting ARCH to either b32 or b64 as
+  appropriate for your system:
+
+      # audit_network_modifications
+      -a always,exit -F arch=ARCH -S sethostname -S setdomainname -k audit_network_modifications
+      -w /etc/issue -p wa -k audit_network_modifications
+      -w /etc/issue.net -p wa -k audit_network_modifications
+      -w /etc/hosts -p wa -k audit_network_modifications
+      -w /etc/sysconfig/network -p wa -k audit_network_modifications
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(7)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(c)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26648-6
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-a\s+always,exit\s+(\-F\s+arch=(b64|b32)\s+)?\-S\s+sethostname\s+\-S\s+setdomainname\s+\-k\s+[-\w]+\s*$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/etc/issue\s+\-p\s+wa\s+\-k\s+[-\w]+\s*$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/etc/issue\.net\s+\-p\s+wa\s+\-k\s+[-\w]+\s*$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/etc/hosts\s+\-p\s+wa\s+\-k\s+[-\w]+\s*$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/etc/sysconfig/network\s+\-p\s+wa\s+\-k\s+[-\w]+\s*$
+    ind:instance: 1

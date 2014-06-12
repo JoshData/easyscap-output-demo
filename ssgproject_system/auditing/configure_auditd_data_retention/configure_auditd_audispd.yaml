@@ -1,0 +1,22 @@
+id: xccdf_org.ssgproject.content_rule_configure_auditd_audispd
+severity: medium
+title: Configure auditd to use audispd plugin
+description: |
+  `auditd` service to use the `audispd` plugin, set the `active` line in
+  `/etc/audisp/plugins.d/syslog.conf` to `yes`. Restart the
+  `auditd`service:
+
+      # service auditd restart
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-3(2)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: http://iase.disa.mil/cci/index.html
+  value: '136'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26933-2

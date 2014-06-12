@@ -1,0 +1,18 @@
+id: xccdf_org.ssgproject.content_rule_package_setroubleshoot_removed
+severity: low
+title: Uninstall setroubleshoot Package
+description: |
+  `setroubleshoot` package can be removed with the following command:
+
+      # yum erase setroubleshoot
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: setroubleshoot

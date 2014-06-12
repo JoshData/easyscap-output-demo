@@ -1,0 +1,119 @@
+id: xccdf_org.ssgproject.content_rule_service_netfs_disabled
+severity: low
+title: Disable Network File Systems (netfs)
+description: |
+  `/etc/fstab` and against flaws in the netfs script itself. The `netfs`
+  service can be disabled with the following command:
+
+      # chkconfig netfs off
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27137-9
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netfs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '0'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netfs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '1'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netfs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '2'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netfs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '3'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netfs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '4'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netfs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '5'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': netfs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '6'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'

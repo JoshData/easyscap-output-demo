@@ -1,0 +1,19 @@
+id: xccdf_org.ssgproject.content_group_password_storage
+title: |-
+  Verify Proper Storage and Existence of Password
+  Hashes
+description: |
+  `/etc/shadow`. This file should be readable only by processes running
+  with root credentials, preventing users from casually accessing others’
+  password hashes and attempting to crack them. However, it remains
+  possible to misconfigure the system and store password hashes in
+  world-readable files such as `/etc/passwd`, or to even store passwords
+  themselves in plaintext on the system. Using system-provided tools for
+  password change/creation should allow administrators to avoid such
+  misconfiguration.
+rules:
+- no_empty_passwords
+- accounts_password_all_shadowed
+- gid_passwd_group_same
+- no_netrc_files
+subgroups: []

@@ -1,0 +1,5 @@
+id: xccdf_org.ssgproject.content_group_postfix_server_mail_relay_smtp_auth_for_untrusted_networks
+title: Require SMTP AUTH Before Relaying from Untrusted Clients
+description: ~
+rules: []
+subgroups: []

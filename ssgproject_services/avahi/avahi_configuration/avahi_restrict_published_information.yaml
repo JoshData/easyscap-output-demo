@@ -1,0 +1,26 @@
+id: xccdf_org.ssgproject.content_rule_avahi_restrict_published_information
+severity: low
+title: Restrict Information Published by Avahi
+description: |
+  `[publish]` section:
+
+      disable-user-service-publishing=yes
+
+  Implement as many of the following lines as possible, to restrict the
+  information published by Avahi.
+
+      publish-addresses=no
+      publish-hinfo=no
+      publish-workstation=no
+      publish-domain=no
+
+  Inspect the files in the directory `/etc/avahi/services/`. Unless there
+  is an operational need to publish information about each of these
+  services, delete the corresponding file.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27300-3

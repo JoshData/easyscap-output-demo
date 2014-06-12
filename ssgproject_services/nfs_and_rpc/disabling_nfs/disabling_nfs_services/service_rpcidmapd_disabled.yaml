@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_rule_service_rpcidmapd_disabled
+severity: low
+title: Disable RPC ID Mapping Service (rpcidmapd)
+description: |
+  `rpcidmapd` service can be disabled with the following command:
+
+      # chkconfig rpcidmapd off
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26870-6
+tests: []

@@ -1,0 +1,39 @@
+id: xccdf_org.ssgproject.content_rule_mount_option_var_tmp_bind_var
+severity: low
+title: Bind Mount /var/tmp To /tmp
+description: |
+  `/var/tmp` directory is a world-writable directory. Bind-mount it to
+  `/tmp` in order to consolidate temporary storage into one location
+  protected by the same techniques as `/tmp`. To do so, edit `/etc/fstab`
+  and add the following line:
+
+      /tmp     /var/tmp     none     rw,nodev,noexec,nosuid,bind     0 0
+
+  See the `mount(8)` man page for further explanation of bind mounting.
+rationale: |
+  `/var/tmp` should be bind mounted to `/tmp` and thus share the same
+  protections.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26582-7
+tests:
+- type: linux:partition_test
+  check: all
+  object:
+    linux:mount_point:
+      operation: pattern match
+      value: /var/tmp
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    ind:filepath: /etc/mtab
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*/tmp[\s]+/var/tmp[\s]+.*bind.*$
+    ind:instance:
+      operation: greater than or equal
+      value: 1

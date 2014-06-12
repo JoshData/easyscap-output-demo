@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_group_dhcp
+title: DHCP
+description: |
+  \
+  \
+   This guide recommends configuring networking on clients by manually
+  editing the appropriate files under `/etc/sysconfig`. Use of DHCP can
+  make client systems vulnerable to compromise by rogue DHCP servers, and
+  should be avoided unless necessary. If using DHCP is necessary, however,
+  there are best practices that should be followed to minimize security
+  risk.
+rules: []
+subgroups:
+- disabling_dhcp_server
+- dhcp_server_configuration
+- disabling_dhcp_client
+- dhcp_client_configuration

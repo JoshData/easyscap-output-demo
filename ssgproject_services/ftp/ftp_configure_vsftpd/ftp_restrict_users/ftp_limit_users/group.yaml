@@ -1,0 +1,20 @@
+id: xccdf_org.ssgproject.content_group_ftp_limit_users
+title: Limit Users Allowed FTP Access if Necessary
+description: |
+  userlist_enable=YES
+      userlist_file=/etc/vsftp.ftpusers
+      userlist_deny=NO
+
+  Edit the file `/etc/vsftp.ftpusers`. For each user USERNAME who should
+  be allowed to access the system via FTP, add a line containing that
+  user’s name:
+
+      USERNAME
+
+  If anonymous access is also required, add the anonymous usernames to
+  `/etc/vsftp.ftpusers` as well.
+
+      anonymous
+      ftp
+rules: []
+subgroups: []

@@ -1,0 +1,137 @@
+id: xccdf_org.ssgproject.content_rule_service_autofs_disabled
+severity: low
+title: Disable the Automounter
+description: |
+  `autofs` daemon mounts and unmounts filesystems, such as user home
+  directories shared via NFS, on demand. In addition, autofs can be used
+  to handle removable media, and the default configuration provides the
+  cdrom device as `/misc/cd`. However, this method of providing access to
+  removable media is not common, so autofs can almost always be disabled
+  if NFS is not in use. Even if NFS is required, it may be possible to
+  configure filesystem mounts statically by editing `/etc/fstab` rather
+  than relying on the automounter. \
+  \
+   The `autofs` service can be disabled with the following command:
+
+      # chkconfig autofs off
+rationale: '`/etc/fstab`.'
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(e)
+- href: http://iase.disa.mil/cci/index.html
+  value: '1250'
+- href: http://iase.disa.mil/cci/index.html
+  value: '85'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26976-1
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': autofs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '0'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': autofs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '1'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': autofs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '2'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': autofs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '3'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': autofs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '4'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': autofs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '5'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+  check: all
+  check_existence: any_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': autofs
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+      operation: equals
+      value: '6'
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
+      datatype: boolean
+      value: 'true'

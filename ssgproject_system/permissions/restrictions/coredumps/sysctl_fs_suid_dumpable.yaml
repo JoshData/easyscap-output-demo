@@ -1,0 +1,42 @@
+id: xccdf_org.ssgproject.content_rule_sysctl_fs_suid_dumpable
+severity: low
+title: Disable Core Dumps for SUID programs
+description: |
+  `fs.suid_dumpable` kernel parameter, run the following command:
+
+  ~~~~ {xml:space="preserve"}
+  # sysctl -w fs.suid_dumpable=0
+  ~~~~
+
+  If this is not the system’s default value, add the following line to
+  `/etc/sysctl.conf`:
+
+  ~~~~ {xml:space="preserve"}
+  fs.suid_dumpable = 0
+  ~~~~
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SI-11
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27044-7
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sysctl_test'
+  check: all
+  check_existence: all_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}name': fs.suid_dumpable
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}value':
+      operation: equals
+      value: 0
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/sysctl.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*fs.suid_dumpable[\s]*=[\s]*0*$
+    ind:instance: 1

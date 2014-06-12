@@ -1,0 +1,20 @@
+id: xccdf_org.ssgproject.content_rule_httpd_cache_support
+severity: low
+title: Disable Cache Support
+description: |
+  `cache` module allows `httpd` to cache data, optimizing access to
+  frequently accessed content. However, it introduces potential security
+  flaws such as the possibility of circumventing `Allow` and `Deny`
+  directives. \
+  \
+   If this functionality is unnecessary, comment out the module:
+
+      #LoadModule cache_module modules/mod_cache.so
+
+  If caching is required, it should not be enabled for any limited-access
+  content.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26859-9

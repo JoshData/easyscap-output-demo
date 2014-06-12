@@ -1,0 +1,52 @@
+id: xccdf_org.ssgproject.content_rule_mount_option_noexec_removable_partitions
+severity: low
+title: Add noexec Option to Removable Media Partitions
+description: |
+  `noexec` mount option prevents the direct execution of binaries on the
+  mounted filesystem. Preventing the direct execution of binaries from
+  removable media (such as a USB key) provides a defense against malicious
+  software that may be present on such untrusted media. Add the `noexec`
+  option to the fourth column of `/etc/fstab` for the line which controls
+  mounting of any removable media partitions.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(e)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: MP-2
+- href: http://iase.disa.mil/cci/index.html
+  value: '87'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27196-5
+tests:
+- type: linux:partition_test
+  check: all
+  check_existence: all_exist
+  object:
+    linux:mount_point:
+      var_ref: oval:ssg:var:2214
+  state:
+    linux:mount_options:
+      entity_check: at least one
+      operation: equals
+      value: noexec
+- type: ind:textfilecontent54_test
+  check: at least one
+  object:
+    ind:filepath: /etc/fstab
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*([/\w]*)\s+.*,?noexec,?.*$
+    ind:instance:
+      operation: not equal
+      value: 0
+  state:
+    ind:subexpression:
+      var_ref: oval:ssg:var:2214

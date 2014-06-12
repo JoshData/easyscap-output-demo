@@ -1,0 +1,50 @@
+id: xccdf_org.ssgproject.content_rule_permissions_grub_conf
+severity: medium
+title: Verify /boot/grub/grub.conf Permissions
+description: |
+  `/boot/grub/grub.conf` should be set to 600, which is the default. To
+  properly set the permissions of `/boot/grub/grub.conf`, run the command:
+
+  ~~~~ {xml:space="preserve"}
+  # chmod 600/boot/grub/grub.conf
+  ~~~~
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+- href: http://iase.disa.mil/cci/index.html
+  value: '225'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26949-8
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: all_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path': /boot/grub
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename': grub.conf
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}uexec':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gread':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gwrite':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gexec':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oread':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
+      datatype: boolean
+      value: 'false'
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oexec':
+      datatype: boolean
+      value: 'false'

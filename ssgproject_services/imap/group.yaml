@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_imap
+title: IMAP and POP3 Server
+description: ~
+rules: []
+subgroups:
+- disabling_dovecot
+- configure_dovecot

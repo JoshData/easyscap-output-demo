@@ -1,0 +1,22 @@
+id: xccdf_org.ssgproject.content_rule_service_rhnsd_disabled
+severity: low
+title: Disable Red Hat Network Service (rhnsd)
+description: |
+  `rhnsd` service can be disabled with the following command:
+
+      # chkconfig rhnsd off
+rationale: '`rhnsd` daemon can remain on.'
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '382'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26846-6
+tests: []

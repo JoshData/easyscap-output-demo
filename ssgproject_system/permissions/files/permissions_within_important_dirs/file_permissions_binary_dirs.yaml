@@ -1,0 +1,41 @@
+id: xccdf_org.ssgproject.content_rule_file_permissions_binary_dirs
+severity: medium
+title: Verify that System Executables Have Restrictive Permissions
+description: |
+  /bin
+      /usr/bin
+      /usr/local/bin
+      /sbin
+      /usr/sbin
+      /usr/local/sbin
+
+  All files in these directories should not be group-writable or
+  world-writable. If any file *FILE* in these directories is found to be
+  group-writable or world-writable, correct its permission with the
+  following command:
+
+      # chmod go-w FILE
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://iase.disa.mil/cci/index.html
+  value: '1499'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27289-8
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: none_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: pattern match
+      value: ^\/(|s)bin|^\/usr\/(|local\/)(|s)bin
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      operation: pattern match
+      value: ^.*$
+    filter:
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}type':
+        operation: equals
+        value: symbolic link

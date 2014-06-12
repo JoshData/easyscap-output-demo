@@ -1,0 +1,5 @@
+id: xccdf_org.ssgproject.content_group_postfix_server_mail_relay_require_tls_for_smtp_auth
+title: Use TLS for SMTP AUTH
+description: ~
+rules: []
+subgroups: []

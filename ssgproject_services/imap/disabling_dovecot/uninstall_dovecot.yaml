@@ -1,0 +1,18 @@
+id: xccdf_org.ssgproject.content_rule_uninstall_dovecot
+severity: low
+title: Uninstall dovecot Package
+description: |
+  `dovecot` package can be uninstalled with the following command:
+
+      # yum erase dovecot
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27039-7
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: dovecot

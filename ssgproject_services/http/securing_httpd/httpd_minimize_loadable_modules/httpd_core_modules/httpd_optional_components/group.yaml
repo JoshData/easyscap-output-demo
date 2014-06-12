@@ -1,0 +1,33 @@
+id: xccdf_org.ssgproject.content_group_httpd_optional_components
+title: Minimize Various Optional Components
+description: |
+  -   External filtering (response passed through external program prior
+      to client delivery)
+
+          #LoadModule ext_filter_module modules/mod_ext_filter.so
+
+  -   User-specified Cache Control and Expiration
+
+          #LoadModule expires_module modules/mod_expires.so
+
+  -   Compression Output Filter (provides content compression prior to
+      client delivery)
+
+          #LoadModule deflate_module modules/mod_deflate.so
+
+  -   HTTP Response/Request Header Customization
+
+          #LoadModule headers_module modules/mod_headers.so
+
+  -   User activity monitoring via cookies
+
+          #LoadModule usertrack_module modules/mod_usertrack.so
+
+  -   Dynamically configured mass virtual hosting
+
+          #LoadModule vhost_alias_module modules/mod_vhost_alias.so
+
+  Minimizing the number of loadable modules available to the web server
+  reduces risk by limiting the capabilities allowed by the web server.
+rules: []
+subgroups: []

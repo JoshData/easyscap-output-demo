@@ -1,0 +1,85 @@
+id: xccdf_org.ssgproject.content_rule_unmet_nonfinding_nonselected_scope
+severity: low
+title: Guidance Does Not Meet this Requirement Due to Impracticality or Scope
+description: ~
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '21'
+- href: http://iase.disa.mil/cci/index.html
+  value: '25'
+- href: http://iase.disa.mil/cci/index.html
+  value: '28'
+- href: http://iase.disa.mil/cci/index.html
+  value: '29'
+- href: http://iase.disa.mil/cci/index.html
+  value: '30'
+- href: http://iase.disa.mil/cci/index.html
+  value: '165'
+- href: http://iase.disa.mil/cci/index.html
+  value: '221'
+- href: http://iase.disa.mil/cci/index.html
+  value: '354'
+- href: http://iase.disa.mil/cci/index.html
+  value: '553'
+- href: http://iase.disa.mil/cci/index.html
+  value: '779'
+- href: http://iase.disa.mil/cci/index.html
+  value: '780'
+- href: http://iase.disa.mil/cci/index.html
+  value: '781'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1009'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1094'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1123'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1124'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1125'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1132'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1135'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1140'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1141'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1142'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1143'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1145'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1147'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1148'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1166'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1339'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1340'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1341'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1350'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1356'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1373'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1374'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1383'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1391'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1392'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1395'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1662'
+crosswalk: []

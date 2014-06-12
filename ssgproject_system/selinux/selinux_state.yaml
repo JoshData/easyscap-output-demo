@@ -1,0 +1,48 @@
+id: xccdf_org.ssgproject.content_rule_selinux_state
+severity: medium
+title: Ensure SELinux State is Enforcing
+description: |
+  `enforcing` at system boot time. In the file `/etc/selinux/config`, add
+  or correct the following line to configure the system to boot into
+  enforcing mode:
+
+      SELINUX=enforcing
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-3
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-3(3)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-4
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-9
+- href: http://iase.disa.mil/cci/index.html
+  value: '22'
+- href: http://iase.disa.mil/cci/index.html
+  value: '32'
+- href: http://iase.disa.mil/cci/index.html
+  value: '26'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26969-6
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/selinux/config
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*SELINUX[\s]*=[\s]*(.*)[\s]*$
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: equals
+      var_check: all
+      var_ref: oval:ssg:var:2251

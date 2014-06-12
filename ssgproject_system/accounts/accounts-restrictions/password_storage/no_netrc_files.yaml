@@ -1,0 +1,36 @@
+id: xccdf_org.ssgproject.content_rule_no_netrc_files
+severity: medium
+title: Verify No netrc Files Exist
+description: |
+  `.netrc` files contain login information used to auto-login into FTP
+  servers and reside in the user’s home directory. These files may contain
+  unencrypted passwords to remote FTP servers making them susceptible to
+  access by unauthorized users and should not be used. Any `.netrc` files
+  should be removed.
+rationale: |
+  `.netrc` files. DoD policy requires passwords be encrypted in storage
+  and not used in access scripts.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IA-5(h)
+- href: http://iase.disa.mil/cci/index.html
+  value: '196'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27225-2
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+      max_depth: '1'
+      recurse: directories
+      recurse_direction: down
+      recurse_file_system: all
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: equals
+      value: /home
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      operation: pattern match
+      value: ^\.netrc$

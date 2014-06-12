@@ -1,0 +1,21 @@
+id: xccdf_org.ssgproject.content_group_http
+title: Web Server
+description: |
+  \
+  \
+
+  -   The HTTP port is commonly probed by malicious sources
+  -   Web server software is very complex, and includes a long history of
+      vulnerabilities
+  -   The HTTP protocol is unencrypted and vulnerable to passive
+      monitoring
+
+  \
+  \
+   The system’s default web server software is Apache 2 and is provided in
+  the RPM package `httpd`.
+rules: []
+subgroups:
+- disabling_httpd
+- installing_httpd
+- securing_httpd

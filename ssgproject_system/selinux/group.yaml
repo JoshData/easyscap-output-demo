@@ -1,0 +1,28 @@
+id: xccdf_org.ssgproject.content_group_selinux
+title: SELinux
+description: |
+  \
+  \
+   The default SELinux policy, as configured on RHEL 6, has been
+  sufficiently developed and debugged that it should be usable on almost
+  any Red Hat machine with minimal configuration and a small amount of
+  system administrator training. This policy prevents system services -
+  including most of the common network-visible services such as mail
+  servers, FTP servers, and DNS servers - from accessing files which those
+  services have no valid reason to access. This action alone prevents a
+  huge amount of possible damage from network attacks against services,
+  from trojaned software, and so forth. \
+  \
+   This guide recommends that SELinux be enabled using the default
+  (targeted) policy on every Red Hat system, unless that system has
+  unusual requirements which make a stronger policy appropriate.
+rules:
+- enable_selinux_bootloader
+- selinux_state
+- selinux_policytype
+- service_restorecond_enabled
+- package_setroubleshoot_removed
+- package_mcstrans_removed
+- selinux_confinement_of_daemons
+- selinux_all_devicefiles_labeled
+subgroups: []

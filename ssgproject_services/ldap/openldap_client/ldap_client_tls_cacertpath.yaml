@@ -1,0 +1,50 @@
+id: xccdf_org.ssgproject.content_rule_ldap_client_tls_cacertpath
+severity: medium
+title: Configure Certificate Directives for LDAP Use of TLS
+description: |
+  `/etc/pki/tls/CA/cacert.pem`. Configure LDAP to enforce TLS use and to
+  trust certificates signed by that CA. First, edit the file
+  `/etc/pam_ldap.conf`, and add or correct either of the following lines:
+
+      tls_cacertdir /etc/pki/tls/CA
+
+  or
+
+      tls_cacertfile /etc/pki/tls/CA/cacert.pem
+
+  Then review the LDAP server and ensure TLS has been configured.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '776'
+- href: http://iase.disa.mil/cci/index.html
+  value: '778'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1453'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27189-0
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    ind:filepath: /etc/pam_ldap.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*tls_cacertdir[\s]+(.*)$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    ind:filepath: /etc/pam_ldap.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*tls_cacertfile[\s]+(.*)$
+    ind:instance: 1

@@ -1,0 +1,28 @@
+id: xccdf_org.ssgproject.content_group_disk_partitioning
+title: Disk Partitioning
+description: |
+  `/`, `/boot`, and `swap`.
+
+  -   If starting with any of the default layouts, check the box to
+      “Review and modify partitioning.” This allows for the easy creation
+      of additional logical volumes inside the volume group already
+      created, though it may require making `/`’s logical volume smaller
+      to create space. In general, using logical volumes is preferable to
+      using partitions because they can be more easily adjusted later.
+  -   If creating a custom layout, create the partitions mentioned in the
+      previous paragraph (which the installer will require anyway), as
+      well as separate ones described in the following sections.
+
+  If a system has already been installed, and the default partitioning
+  scheme was used, it is possible but nontrivial to modify it to create
+  separate logical volumes for the directories listed above. The Logical
+  Volume Manager (LVM) makes this possible. See the LVM HOWTO at
+  http://tldp.org/HOWTO/LVM-HOWTO/ for more detailed information on LVM.
+rules:
+- partition_for_tmp
+- partition_for_var
+- partition_for_var_log
+- partition_for_var_log_audit
+- partition_for_home
+- encrypt_partitions
+subgroups: []

@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_disabling_dovecot
+title: Disable Dovecot
+description: ~
+rules:
+- disable_dovecot
+- uninstall_dovecot
+subgroups: []

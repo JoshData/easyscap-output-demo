@@ -1,0 +1,18 @@
+id: xccdf_org.ssgproject.content_rule_service_smartd_disabled
+severity: low
+title: Disable SMART Disk Monitoring Service (smartd)
+description: |
+  `smartd` service can be disabled with the following command:
+
+      # chkconfig smartd off
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26853-2
+tests: []

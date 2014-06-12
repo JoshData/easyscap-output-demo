@@ -1,0 +1,34 @@
+id: xccdf_org.ssgproject.content_rule_disable_rexec
+severity: high
+title: Disable rexec Service
+description: |
+  `rexec` service, which is available with the `rsh-server` package and
+  runs as a service through xinetd, should be disabled. The `rexec`
+  service can be disabled with the following command:
+
+      # chkconfig rexec off
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '68'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1436'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27208-8
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/xinetd.d/rexec
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*disable\s+=\s+yes\s*$
+    ind:instance: 1

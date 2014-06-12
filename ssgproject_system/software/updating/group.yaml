@@ -1,0 +1,19 @@
+id: xccdf_org.ssgproject.content_group_updating
+title: Updating Software
+description: |
+  `yum` command line tool is used to install and update software packages.
+  The system also provides a graphical software update tool in the
+  **System** menu, in the **Administration** submenu, called **Software
+  Update**. \
+  \
+   Red Hat Enterprise Linux systems contain an installed software catalog
+  called the RPM database, which records metadata of installed packages.
+  Consistently using `yum` or the graphical **Software Update** for all
+  software installation allows for insight into the current inventory of
+  installed software on the system.
+rules:
+- ensure_redhat_gpgkey_installed
+- ensure_gpgcheck_globally_activated
+- ensure_gpgcheck_never_disabled
+- security_patches_up_to_date
+subgroups: []

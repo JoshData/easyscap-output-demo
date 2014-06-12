@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_group_dovecot_enabling_ssl
+title: Enable SSL Support
+description: ~
+rules:
+- dovecot_enable_ssl
+- dovecot_configure_ssl_cert
+- dovecot_configure_ssl_key
+- dovecot_disable_plaintext_auth
+subgroups: []

@@ -1,0 +1,15 @@
+id: xccdf_org.ssgproject.content_rule_avahi_prevent_port_sharing
+severity: low
+title: Prevent Other Programs from Using Avahi's Port
+description: |
+  `/etc/avahi/avahi-daemon.conf` and ensure the following line appears in
+  the `[server]` section:
+
+      disallow-other-stacks=yes
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27308-6

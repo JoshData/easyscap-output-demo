@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_bios_disable_usb_boot
+severity: low
+title: Disable Booting from USB Devices in Boot Firmware
+description: ~
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-19(e)
+- href: http://iase.disa.mil/cci/index.html
+  value: '1250'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26923-3

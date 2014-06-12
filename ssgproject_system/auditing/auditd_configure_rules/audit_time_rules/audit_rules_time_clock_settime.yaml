@@ -1,0 +1,34 @@
+id: xccdf_org.ssgproject.content_rule_audit_rules_time_clock_settime
+severity: low
+title: Record Attempts to Alter Time Through clock_settime
+description: "`/etc/audit/audit.rules`:\n\n    # audit_time_rules\n    -a always,exit
+  -F arch=b32 -S clock_settime -k audit_time_rules\n\nOn a 64-bit system, add the
+  following to `/etc/audit/audit.rules`:\n\n    # audit_time_rules\n    -a always,exit
+  -F arch=b64 -S clock_settime -k audit_time_rules\n\nThe -k option allows for the
+  specification of a key in string form that\ncan be used for better reporting capability
+  through ausearch and\naureport. Multiple system calls can be defined on the same
+  line to save\nspace if desired, but is not required. See an example of multiple\ncombined
+  syscalls:\n\n    -a always,exit -F arch=b64 -S adjtimex -S settimeofday -S clock_settime
+  \n    -k audit_time_rules\n"
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(7)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(c)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: http://iase.disa.mil/cci/index.html
+  value: '1487'
+- href: http://iase.disa.mil/cci/index.html
+  value: '169'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27170-0
+tests: []

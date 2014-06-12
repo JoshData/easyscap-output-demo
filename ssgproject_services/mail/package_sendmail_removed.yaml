@@ -1,0 +1,23 @@
+id: xccdf_org.ssgproject.content_rule_package_sendmail_removed
+severity: medium
+title: Uninstall Sendmail Package
+description: |
+  `sendmail` package can be removed with the following command:
+
+      # yum erase sendmail
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27515-6
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: sendmail

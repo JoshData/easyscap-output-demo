@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_rule_snmpd_use_newer_protocol
+severity: medium
+title: 'Configure SNMP Service to Use Only SNMPv3 or Newer '
+description: |
+  `/etc/snmp/snmpd.conf`, removing any references to `v1`, `v2c`, or
+  `com2sec`. Upon doing that, restart the SNMP service:
+
+      # service snmpd restart
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27365-6

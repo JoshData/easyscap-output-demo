@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_disabling_snmp_service
+title: Disable SNMP Server if Possible
+description: ~
+rules:
+- disable_snmpd
+- uninstall_net-snmp
+subgroups: []

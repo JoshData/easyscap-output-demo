@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_httpd_url_correction
+severity: low
+title: Disable URL Correction on Misspelled Entries
+description: |
+  `speling` module attempts to find a document match by allowing one
+  misspelling in an otherwise failed request. If this functionality is
+  unnecessary, comment out the module:
+
+      #LoadModule speling_module modules/mod_speling.so
+
+  This functionality weakens server security by making site enumeration
+  easier.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27276-5

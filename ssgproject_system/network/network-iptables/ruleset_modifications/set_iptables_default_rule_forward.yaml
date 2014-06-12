@@ -1,0 +1,20 @@
+id: xccdf_org.ssgproject.content_rule_set_iptables_default_rule_forward
+severity: medium
+title: Set Default iptables Policy for Forwarded Packets
+description: |
+  `/etc/sysconfig/iptables`:
+
+      :FORWARD DROP [0:0]
+rationale: |
+  `iptables` the default policy is applied only after all the applicable
+  rules in the table are examined for a match. Setting the default policy
+  to `DROP` implements proper design for a firewall, i.e. any packets
+  which are not explicitly permitted should not be accepted.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '1109'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27186-6

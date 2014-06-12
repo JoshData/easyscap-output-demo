@@ -1,0 +1,18 @@
+id: xccdf_org.ssgproject.content_rule_rsyslog_accept_remote_messages_udp
+severity: low
+title: Enable rsyslog to Accept Messages via UDP, if Acting As Log Server
+description: |
+  `rsyslog` daemon should not accept remote messages unless the system
+  acts as a log server. If the system needs to act as a central log
+  server, add the following lines to `/etc/rsyslog.conf` to enable
+  reception of messages over UDP:
+
+      $ModLoad imudp
+      $UDPServerRun 514
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-9
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27236-9

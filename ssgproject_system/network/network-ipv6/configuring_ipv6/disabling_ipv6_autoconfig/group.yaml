@@ -1,0 +1,11 @@
+id: xccdf_org.ssgproject.content_group_disabling_ipv6_autoconfig
+title: Disable Automatic Configuration
+description: |
+  `/etc/sysconfig/network` (note that this does not disable sending router
+  solicitations):
+
+      IPV6_AUTOCONF=no
+rules:
+- sysctl_net_ipv6_conf_default_accept_ra
+- sysctl_ipv6_default_accept_redirects
+subgroups: []

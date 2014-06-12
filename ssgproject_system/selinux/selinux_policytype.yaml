@@ -1,0 +1,54 @@
+id: xccdf_org.ssgproject.content_rule_selinux_policytype
+severity: low
+title: Configure SELinux Policy
+description: |
+  `targeted` policy is appropriate for general-purpose desktops and
+  servers, as well as systems in many other roles. To configure the system
+  to use this policy, add or correct the following line in
+  `/etc/selinux/config`:
+
+      SELINUXTYPE=targeted
+
+  Other policies, such as `mls`, provide additional security labeling and
+  greater confinement but are not compatible with many general-purpose use
+  cases.
+rationale: |
+  `targeted` or a more specialized policy ensures the system will confine
+  processes that are likely to be targeted for exploitation, such as
+  network or system services.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-3
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-3(3)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-4
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-9
+- href: http://iase.disa.mil/cci/index.html
+  value: '22'
+- href: http://iase.disa.mil/cci/index.html
+  value: '32'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26875-5
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/selinux/config
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*SELINUXTYPE[\s]*=[\s]*([^\s]*)
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: equals
+      var_check: all
+      var_ref: oval:ssg:var:2250

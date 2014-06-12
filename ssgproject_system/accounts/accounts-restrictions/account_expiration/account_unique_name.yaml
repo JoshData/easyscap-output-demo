@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_rule_account_unique_name
+severity: low
+title: Ensure All Accounts on the System Have Unique Names
+description: ~
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '770'
+- href: http://iase.disa.mil/cci/index.html
+  value: '804'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27609-7

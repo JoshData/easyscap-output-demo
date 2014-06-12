@@ -1,0 +1,70 @@
+id: xccdf_org.ssgproject.content_rule_rpm_verify_permissions
+severity: low
+title: Verify and Correct File Permissions with RPM
+description: |
+  # rpm -qf FILENAME
+
+  Next, run the following command to reset its permissions to the correct
+  values:
+
+      # rpm --setperms PACKAGENAME
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-6(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-6(3)
+- href: http://iase.disa.mil/cci/index.html
+  value: '1493'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1494'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1495'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26731-0
+tests:
+- type: linux:rpmverifyfile_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:behaviors:
+      nomd5: 'true'
+    linux:name:
+      operation: pattern match
+      value: .*
+    linux:filepath:
+      operation: pattern match
+      value: .*
+    filter:
+      linux:ownership_differs: fail
+- type: linux:rpmverifyfile_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:behaviors:
+      nomd5: 'true'
+    linux:name:
+      operation: pattern match
+      value: .*
+    linux:filepath:
+      operation: pattern match
+      value: .*
+    filter:
+      linux:group_differs: fail
+- type: linux:rpmverifyfile_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:behaviors:
+      nomd5: 'true'
+    linux:name:
+      operation: pattern match
+      value: .*
+    linux:filepath:
+      operation: pattern match
+      value: .*
+    filter:
+      linux:mode_differs: fail

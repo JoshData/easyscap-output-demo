@@ -1,0 +1,36 @@
+id: xccdf_org.ssgproject.content_rule_ensure_gpgcheck_never_disabled
+severity: high
+title: Ensure gpgcheck Enabled For All Yum Package Repositories
+description: |
+  `/etc/yum.repos.d` of the form:
+
+      gpgcheck=0
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SI-7
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: MA-1(b)
+- href: http://iase.disa.mil/cci/index.html
+  value: '352'
+- href: http://iase.disa.mil/cci/index.html
+  value: '663'
+- href: test_attestation
+  dc:contributor: MM
+  dc:date: '20120928'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26647-8
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:path: /etc/yum.repos.d
+    ind:filename:
+      operation: pattern match
+      value: .*
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*gpgcheck\s*=\s*0\s*$
+    ind:instance: 1

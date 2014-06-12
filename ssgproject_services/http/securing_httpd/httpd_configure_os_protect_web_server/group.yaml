@@ -1,0 +1,8 @@
+id: xccdf_org.ssgproject.content_group_httpd_configure_os_protect_web_server
+title: Configure Operating System to Protect Web Server
+description: ~
+rules: []
+subgroups:
+- httpd_restrict_file_dir_access
+- httpd_configure_iptables
+- httpd_chroot

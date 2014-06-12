@@ -1,0 +1,37 @@
+id: xccdf_org.ssgproject.content_rule_aide_build_database
+severity: low
+title: Build and Test AIDE Database
+description: |
+  # /usr/sbin/aide --init
+
+  By default, the database will be written to the file
+  `/var/lib/aide/aide.db.new.gz`. Storing the database, the configuration
+  file `/etc/aide.conf`, and the binary `/usr/sbin/aide` (or hashes of
+  these files), in a secure location (such as on read-only media) provides
+  additional assurance about their integrity. The newly-generated database
+  can be installed as follows:
+
+      # cp /var/lib/aide/aide.db.new.gz /var/lib/aide/aide.db.gz
+
+  To initiate a manual check, run the following command:
+
+      # /usr/sbin/aide --check
+
+  If this check produces any unexpected output, investigate.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-3(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-3(e)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-6(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-6(3)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SC-28
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: SI-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27135-3

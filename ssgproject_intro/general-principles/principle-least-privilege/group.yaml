@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_group_principle-least-privilege
+title: Least Privilege
+description: |
+  `sudo` can be implemented to limit authorization to super user accounts
+  on the system only to designated personnel. Another example is to limit
+  logins on server systems to only those administrators who need to log
+  into them in order to perform administration tasks. Using SELinux also
+  follows the principle of least privilege: SELinux policy can confine
+  software to perform only actions on the system that are specifically
+  allowed. This can be far more restrictive than the actions permissible
+  by the traditional Unix permissions model.
+rules: []
+subgroups: []

@@ -1,0 +1,38 @@
+id: xccdf_org.ssgproject.content_rule_accounts_minimum_age_login_defs
+severity: medium
+title: Set Password Minimum Age
+description: |
+  `/etc/login.defs` and add or correct the following line, replacing
+  *DAYS* appropriately:
+
+      PASS_MIN_DAYS DAYS
+
+  A value of 1 day is considered for sufficient for many environments. The
+  DoD requirement is 1.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IA-5(f)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IA-5(1)(d)
+- href: http://iase.disa.mil/cci/index.html
+  value: '198'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27013-2
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/login.defs
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*PASS_MIN_DAYS[\s]+(\d+)[\s]*(?:|(?:#.*))?$
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: greater than or equal
+      var_ref: oval:ssg:var:2225

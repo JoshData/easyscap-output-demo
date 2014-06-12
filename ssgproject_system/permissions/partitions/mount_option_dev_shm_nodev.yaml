@@ -1,0 +1,31 @@
+id: xccdf_org.ssgproject.content_rule_mount_option_dev_shm_nodev
+severity: low
+title: Add nodev Option to /dev/shm
+description: |
+  `nodev` mount option can be used to prevent creation of device files in
+  `/dev/shm`. Legitimate character and block devices should not exist
+  within temporary directories like `/dev/shm`. Add the `nodev` option to
+  the fourth column of `/etc/fstab` for the line which controls mounting
+  of `/dev/shm`.
+rationale: |
+  `/dev` directory located on the root partition. The only exception to
+  this is chroot jails.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: MP-2
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26778-1
+tests:
+- type: linux:partition_test
+  check: all
+  check_existence: all_exist
+  object:
+    linux:mount_point: /dev/shm
+  state:
+    linux:mount_options:
+      entity_check: at least one
+      operation: equals
+      value: nodev

@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_nfs_configuring_clients
+title: Configure NFS Clients
+description: ~
+rules: []
+subgroups:
+- disabling_nfsd
+- mounting_remote_filesystems

@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_group_network-uncommon
+title: Uncommon Network Protocols
+description: ~
+rules:
+- kernel_module_dccp_disabled
+- kernel_module_sctp_disabled
+- kernel_module_rds_disabled
+- kernel_module_tipc_disabled
+subgroups: []

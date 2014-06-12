@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_disabling_nfs
+title: Disable All NFS Services if Possible
+description: ~
+rules: []
+subgroups:
+- disabling_nfs_services
+- disabling_netfs

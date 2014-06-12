@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_rule_disable_snmpd
+severity: low
+title: Disable snmpd Service
+description: |
+  `snmpd` service can be disabled with the following command:
+
+      # chkconfig snmpd off
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26906-8
+tests: []

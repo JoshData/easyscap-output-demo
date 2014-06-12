@@ -1,0 +1,6 @@
+id: xccdf_org.ssgproject.content_group_postfix_configure_ssl_certs
+title: Configure SSL Certificates for Use with SMTP AUTH
+description: ~
+rules: []
+subgroups:
+- postfix_install_ssl_cert

@@ -1,0 +1,16 @@
+id: xccdf_org.ssgproject.content_rule_ntpd_specify_multiple_servers
+severity: low
+title: Specify Additional Remote NTP Servers
+description: |
+  `/etc/ntp.conf`. To do so, add additional lines of the following form,
+  substituting the IP address or hostname of a remote NTP server for
+  *ntpserver*:
+
+      server ntpserver
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-8(1)
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26958-9

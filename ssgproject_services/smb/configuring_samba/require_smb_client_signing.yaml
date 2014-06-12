@@ -1,0 +1,28 @@
+id: xccdf_org.ssgproject.content_rule_require_smb_client_signing
+severity: low
+title: Require Client SMB Packet Signing, if using smbclient
+description: |
+  `smbclient` to use packet signing, add the following to the `[global]`
+  section of the Samba configuration file, `/etc/samba/smb.conf`:
+
+      client signing = mandatory
+
+  Requiring samba clients such as `smbclient` to use packet signing
+  ensures they can only communicate with servers that support packet
+  signing.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26328-5
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    ind:path: /etc/samba
+    ind:filename: smb.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*client[\s]+signing[\s]*=[\s]*mandatory
+    ind:instance: 1

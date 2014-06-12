@@ -1,0 +1,27 @@
+id: xccdf_org.ssgproject.content_rule_disable_gnome_thumbnailers
+severity: low
+title: Disable All GNOME Thumbnailers
+description: |
+  # gconftool-2 --direct \
+        --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
+        --type bool \
+        --set /desktop/gnome/thumbnailers/disable_all true
+
+  This effectively prevents an attacker from gaining access to a system
+  through a flaw in GNOME’s Nautilus thumbnail creators.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27224-5
+tests:
+- type: ind:xmlfilecontent_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/gconf/gconf.xml.mandatory/desktop/gnome/thumbnailers/%gconf.xml
+    ind:xpath: /gconf/entry[@name='disable_all']/@value
+  state:
+    ind:value_of: 'true'

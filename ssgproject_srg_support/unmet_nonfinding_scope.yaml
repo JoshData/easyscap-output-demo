@@ -1,0 +1,67 @@
+id: xccdf_org.ssgproject.content_rule_unmet_nonfinding_scope
+severity: low
+title: Guidance Does Not Meet this Requirement Due to Impracticality or Scope
+description: ~
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '15'
+- href: http://iase.disa.mil/cci/index.html
+  value: '27'
+- href: http://iase.disa.mil/cci/index.html
+  value: '218'
+- href: http://iase.disa.mil/cci/index.html
+  value: '219'
+- href: http://iase.disa.mil/cci/index.html
+  value: '371'
+- href: http://iase.disa.mil/cci/index.html
+  value: '372'
+- href: http://iase.disa.mil/cci/index.html
+  value: '535'
+- href: http://iase.disa.mil/cci/index.html
+  value: '537'
+- href: http://iase.disa.mil/cci/index.html
+  value: '539'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1682'
+- href: http://iase.disa.mil/cci/index.html
+  value: '370'
+- href: http://iase.disa.mil/cci/index.html
+  value: '37'
+- href: http://iase.disa.mil/cci/index.html
+  value: '24'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1112'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1126'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1143'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1149'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1157'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1159'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1210'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1211'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1274'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1372'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1376'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1377'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1352'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1401'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1555'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1556'
+- href: http://iase.disa.mil/cci/index.html
+  value: '1150'
+crosswalk: []

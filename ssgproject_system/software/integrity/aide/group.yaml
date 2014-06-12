@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_group_aide
+title: Verify Integrity with AIDE
+description: '`/usr/share/doc/aide-VERSION`.'
+rules:
+- package_aide_installed
+- disable_prelink
+- aide_build_database
+- aide_periodic_cron_checking
+subgroups: []

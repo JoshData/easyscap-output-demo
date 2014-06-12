@@ -1,0 +1,15 @@
+id: xccdf_org.ssgproject.content_group_network_ssl
+title: Transport Layer Security Support
+description: |
+  `openssl`). TLS provides encrypted and authenticated network
+  communications, and many network services include support for it. TLS or
+  SSL can be leveraged to avoid any plaintext transmission of sensitive
+  data. \
+   For information on how to use OpenSSL, see
+  **http://www.openssl.org/docs/HOWTO/**. Information on FIPS validation
+  of OpenSSL is available at
+  **http://www.openssl.org/docs/fips/fipsvalidation.html** and
+  **http://csrc.nist.gov/groups/STM/cmvp/documents/140-1/140val-all.htm**.
+  <!-- Does Red Hat offer any documentation on using OpenSSL? -->
+rules: []
+subgroups: []

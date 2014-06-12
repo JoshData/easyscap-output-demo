@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_gui_login_banner
+title: Implement a GUI Warning Banner
+description: ~
+rules:
+- enable_gdm_login_banner
+- set_gdm_login_banner_text
+subgroups: []

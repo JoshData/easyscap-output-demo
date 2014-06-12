@@ -1,0 +1,14 @@
+id: xccdf_org.ssgproject.content_rule_sshd_limit_user_access
+severity: low
+title: Limit Users' SSH Access
+description: |
+  `/etc/ssh/sshd_config` file:
+
+      DenyUsers USER1 USER2
+
+  Where `USER1` and `USER2` are valid user names.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27556-0

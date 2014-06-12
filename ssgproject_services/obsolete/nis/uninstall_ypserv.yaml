@@ -1,0 +1,31 @@
+id: xccdf_org.ssgproject.content_rule_uninstall_ypserv
+severity: medium
+title: Uninstall ypserv Package
+description: |
+  `ypserv` package can be uninstalled with the following command:
+
+      # yum erase ypserv
+rationale: |
+  `ypserv` package decreases the risk of the accidental (or intentional)
+  activation of NIS or NIS+ services.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(8)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '305'
+- href: http://iase.disa.mil/cci/index.html
+  value: '381'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27079-3
+tests:
+- type: linux:rpminfo_test
+  check: all
+  check_existence: none_exist
+  object:
+    linux:name: ypserv

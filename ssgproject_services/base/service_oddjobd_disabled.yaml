@@ -1,0 +1,28 @@
+id: xccdf_org.ssgproject.content_rule_service_oddjobd_disabled
+severity: low
+title: Disable Odd Job Daemon (oddjobd)
+description: |
+  `oddjobd` service exists to provide an interface and access control
+  mechanism through which specified privileged tasks can run tasks for
+  unprivileged client applications. Communication with `oddjobd` through
+  the system message bus. The `oddjobd` service can be disabled with the
+  following command:
+
+      # chkconfig oddjobd off
+rationale: |
+  `oddjobd` service may provide necessary functionality in some
+  environments, and can be disabled if it is not needed. Execution of
+  tasks by privileged programs, on behalf of unprivileged ones, has
+  traditionally been a source of privilege escalation security issues.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '381'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27257-5
+tests: []

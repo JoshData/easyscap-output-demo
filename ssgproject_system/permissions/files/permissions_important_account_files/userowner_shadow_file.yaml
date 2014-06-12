@@ -1,0 +1,34 @@
+id: xccdf_org.ssgproject.content_rule_userowner_shadow_file
+severity: medium
+title: Verify User Who Owns shadow File
+description: |
+  `/etc/shadow`, run the command:
+
+  ~~~~ {xml:space="preserve"}
+  # chown root/etc/shadow
+  ~~~~
+rationale: |
+  `/etc/shadow` file contains the list of local system accounts and stores
+  password hashes. Protection of this file is critical for system
+  security. Failure to give ownership of this file to root provides the
+  designated owner with access to sensitive information which could weaken
+  the system security posture.
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+- href: http://iase.disa.mil/cci/index.html
+  value: '225'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121026'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26947-2
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: all_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filepath': /etc/shadow
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id': 0

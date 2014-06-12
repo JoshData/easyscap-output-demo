@@ -1,0 +1,18 @@
+id: xccdf_org.ssgproject.content_group_partitions
+title: Restrict Partition Mount Options
+description: |
+  `/etc/fstab` configuration file, and can be used to make certain types
+  of malicious behavior more difficult.
+rules:
+- mountopt_nodev_on_nonroot_partitions
+- mountopt_nodev_on_removable_partitions
+- mount_option_noexec_removable_partitions
+- mountopt_nosuid_on_removable_partitions
+- mount_option_tmp_nodev
+- mount_option_tmp_noexec
+- mount_option_tmp_nosuid
+- mount_option_dev_shm_nodev
+- mount_option_dev_shm_noexec
+- mount_option_dev_shm_nosuid
+- mount_option_var_tmp_bind_var
+subgroups: []

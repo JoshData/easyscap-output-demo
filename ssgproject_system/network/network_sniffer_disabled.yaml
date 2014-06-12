@@ -1,0 +1,31 @@
+id: xccdf_org.ssgproject.content_rule_network_sniffer_disabled
+severity: low
+title: Ensure System is Not Acting as a Network Sniffer
+description: $ ip link | grep PROMISC
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: MA-3
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27152-8
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}interface_test'
+  check: all
+  check_existence: at_least_one_exists
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}name':
+      operation: pattern match
+      value: ^.*$
+    filter:
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}flag':
+        entity_check: at least one
+        operation: equals
+        value: PROMISC
+  state:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}flag':
+      entity_check: at least one
+      operation: equals
+      value: PROMISC

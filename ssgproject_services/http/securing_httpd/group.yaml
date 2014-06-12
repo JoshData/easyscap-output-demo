@@ -1,0 +1,14 @@
+id: xccdf_org.ssgproject.content_group_securing_httpd
+title: Secure Apache Configuration
+description: |
+  `httpd` configuration file is `/etc/httpd/conf/httpd.conf`. Apply the
+  recommendations in the remainder of this section to this file.
+rules: []
+subgroups:
+- httpd_restrict_info_leakage
+- httpd_minimize_loadable_modules
+- httpd_directory_restrictions
+- httpd_modules_improve_security
+- httpd_use_dos_protection_modules
+- httpd_configure_php_securely
+- httpd_configure_os_protect_web_server

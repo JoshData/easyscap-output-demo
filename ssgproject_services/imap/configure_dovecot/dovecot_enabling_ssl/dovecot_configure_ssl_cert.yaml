@@ -1,0 +1,17 @@
+id: xccdf_org.ssgproject.content_rule_dovecot_configure_ssl_cert
+severity: low
+title: Configure Dovecot to Use the SSL Certificate file
+description: |
+  \
+  \
+   Edit `/etc/dovecot/conf.d/10-ssl.conf` and add or correct the following
+  line (*note: the path below is the default path set by the Dovecot
+  installation. If you are using a different path, ensure you reference
+  the appropriate file*):
+
+      ssl_cert = </etc/pki/dovecot/certs/dovecot.pem
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27459-7

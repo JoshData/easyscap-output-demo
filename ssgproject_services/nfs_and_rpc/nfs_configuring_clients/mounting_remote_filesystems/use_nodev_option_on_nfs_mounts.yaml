@@ -1,0 +1,41 @@
+id: xccdf_org.ssgproject.content_rule_use_nodev_option_on_nfs_mounts
+severity: medium
+title: Mount Remote Filesystems with nodev
+description: |
+  `nodev` option to the fourth column of `/etc/fstab` for the line which
+  controls mounting of any NFS mounts.
+rationale: ~
+references:
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121025'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27090-0
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:filepath: /etc/fstab
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*[\.\w]+:[/\w]+\s+[/\w]+\s+nfs[4]?\s+.*$
+    ind:instance:
+      operation: not equal
+      value: 0
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:filepath: /etc/fstab
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*[\.\w]+:[/\w]+\s+[/\w]+\s+nfs[4]?\s+(.*)$
+    ind:instance:
+      operation: not equal
+      value: 0
+  state:
+    ind:subexpression:
+      operation: pattern match
+      value: ^.*nodev.*$

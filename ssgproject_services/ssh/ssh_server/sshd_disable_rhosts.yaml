@@ -1,0 +1,29 @@
+id: xccdf_org.ssgproject.content_rule_sshd_disable_rhosts
+severity: medium
+title: Disable SSH Support for .rhosts Files
+description: |
+  `.rhosts` files. \
+  \
+   To ensure this behavior is disabled, add or correct the following line
+  in `/etc/ssh/sshd_config`:
+
+      IgnoreRhosts yes
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '765'
+- href: http://iase.disa.mil/cci/index.html
+  value: '766'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27124-7
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:filepath: /etc/ssh/sshd_config
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*(?i)IgnoreRhosts(?-i)[\s]+no[\s]*(?:|(?:#.*))?$
+    ind:instance: 1

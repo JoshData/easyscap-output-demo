@@ -1,0 +1,11 @@
+id: xccdf_org.ssgproject.content_group_httpd_use_dos_protection_modules
+title: Use Denial-of-Service Protection Modules
+description: |
+  mod_cband mod_bwshare mod_limitipconn mod_evasive
+
+  Denial-of-service prevention should be implemented for a web server if
+  such a threat exists. However, specific configuration details are very
+  dependent on the environment and often best left at the discretion of
+  the administrator.
+rules: []
+subgroups: []

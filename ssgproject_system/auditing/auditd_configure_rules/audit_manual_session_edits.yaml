@@ -1,0 +1,51 @@
+id: xccdf_org.ssgproject.content_rule_audit_manual_session_edits
+severity: low
+title: ' Record Attempts to Alter Process and Session Initiation Information'
+description: |
+  `/etc/audit/audit.rules`:
+
+      -w /var/run/utmp -p wa -k session
+      -w /var/log/btmp -p wa -k session
+      -w /var/log/wtmp -p wa -k session
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(7)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(c)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26610-6
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/var/run/utmp\s+\-p\s+wa\s+\-k\s+[-\w]+\s*$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/var/log/btmp\s+\-p\s+wa\s+\-k\s+[-\w]+\s*$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-w\s+/var/log/wtmp\s+\-p\s+wa\s+\-k\s+[-\w]+\s*$
+    ind:instance: 1

@@ -1,0 +1,11 @@
+id: xccdf_org.ssgproject.content_group_nfs_configuring_servers
+title: Configure NFS Servers
+description: ~
+rules:
+- use_root_squashing_all_exports
+- restrict_nfs_clients_to_privileged_ports
+- no_insecure_locks_exports
+subgroups:
+- configure_exports_restrictively
+- use_acl_enforce_auth_restrictions
+- export_filesystems_read_only

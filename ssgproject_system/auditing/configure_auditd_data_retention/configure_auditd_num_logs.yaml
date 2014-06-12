@@ -1,0 +1,39 @@
+id: xccdf_org.ssgproject.content_rule_configure_auditd_num_logs
+severity: medium
+title: Configure auditd Number of Logs Retained
+description: |
+  `auditd` should retain when it rotates logs. Edit the file
+  `/etc/audit/auditd.conf`. Add or modify the following line, substituting
+  *NUMLOGS* with the correct value:
+
+      num_logs = NUMLOGS
+
+  Set the value to 5 for general-purpose systems. Note that values less
+  than 2 result in no log rotation.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-11
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27522-2
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/auditd.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[ ]*num_logs[ ]+=[ ]+(\d+)[ ]*$
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: greater than or equal
+      var_ref: oval:ssg:var:2244

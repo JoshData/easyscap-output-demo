@@ -1,0 +1,18 @@
+id: xccdf_org.ssgproject.content_rule_service_irqbalance_enabled
+severity: low
+title: Enable IRQ Balance (irqbalance)
+description: |
+  `irqbalance` service optimizes the balance between power savings and
+  performance through distribution of hardware interrupts across multiple
+  processors. The `irqbalance` service can be enabled with the following
+  command:
+
+      # chkconfig --level 2345 irqbalance on
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26990-2
+tests: []

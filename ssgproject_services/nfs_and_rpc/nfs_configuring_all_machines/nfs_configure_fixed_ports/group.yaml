@@ -1,0 +1,23 @@
+id: xccdf_org.ssgproject.content_group_nfs_configure_fixed_ports
+title: Configure NFS Services to Use Fixed Ports (NFSv3 and NFSv2)
+description: |
+  \
+  \
+   Therefore, restrict each service to always use a given port, so that
+  firewalling can be done effectively. Note that, because of the way RPC
+  is implemented, it is not possible to disable the RPC Bind service even
+  if ports are assigned statically to all RPC services. \
+  \
+   In NFSv4, the mounting and locking protocols have been incorporated
+  into the protocol, and the server listens on the the well-known TCP port
+  2049. As such, NFSv4 does not need to interact with the
+  `rpcbind, lockd, and rpc.statd` daemons, which can and should be
+  disabled in a pure NFSv4 environment. The `rpc.mountd` daemon is still
+  required on the NFS server to setup exports, but is not involved in any
+  over-the-wire operations.
+rules:
+- nfs_fixed_lockd_tcp_port
+- nfs_fixed_lockd_udp_port
+- nfs_fixed_statd_port
+- nfs_fixed_mountd_port
+subgroups: []

@@ -1,0 +1,31 @@
+id: xccdf_org.ssgproject.content_group_accounts-pam
+title: Protect Accounts by Configuring PAM
+description: |
+  \
+  \
+   PAM is implemented as a set of shared objects which are loaded and
+  invoked whenever an application wishes to authenticate a user.
+  Typically, the application must be running as root in order to take
+  advantage of PAM, because PAM’s modules often need to be able to access
+  sensitive stores of account information, such as /etc/shadow.
+  Traditional privileged network listeners (e.g. sshd) or SUID programs
+  (e.g. sudo) already meet this requirement. An SUID root application,
+  userhelper, is provided so that programs which are not SUID or
+  privileged themselves can still take advantage of PAM. \
+  \
+   PAM looks in the directory `/etc/pam.d` for application-specific
+  configuration information. For instance, if the program login attempts
+  to authenticate a user, then PAM’s libraries follow the instructions in
+  the file `/etc/pam.d/login` to determine what actions should be taken. \
+  \
+   One very important file in `/etc/pam.d` is `/etc/pam.d/system-auth`.
+  This file, which is included by many other PAM configuration files,
+  defines ‘default’ system authentication measures. Modifying this file is
+  a good way to make far-reaching authentication changes, for instance
+  when implementing a centralized authentication service.
+rules:
+- display_login_attempts
+subgroups:
+- password_quality
+- locking_out_password_attempts
+- set_password_hashing_algorithm

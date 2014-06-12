@@ -1,0 +1,10 @@
+id: xccdf_org.ssgproject.content_group_audit_time_rules
+title: Records Events that Modify Date and Time Information
+description: ~
+rules:
+- audit_rules_time_adjtimex
+- audit_rules_time_settimeofday
+- audit_rules_time_stime
+- audit_rules_time_clock_settime
+- audit_rules_time_watch_localtime
+subgroups: []

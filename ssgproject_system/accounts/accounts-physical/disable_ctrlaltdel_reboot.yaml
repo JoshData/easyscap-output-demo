@@ -1,0 +1,23 @@
+id: xccdf_org.ssgproject.content_rule_disable_ctrlaltdel_reboot
+severity: high
+title: Disable Ctrl-Alt-Del Reboot Activation
+description: |
+  `/etc/init/control-alt-delete.conf` to reboot the system when the
+  Ctrl-Alt-Del key sequence is pressed:
+
+      exec /sbin/shutdown -r now "Control-Alt-Delete pressed"
+
+  \
+   To configure the system to log a message instead of rebooting the
+  system, alter that line to read as follows:
+
+      exec /usr/bin/logger -p security.info "Control-Alt-Delete pressed"
+rationale: |
+  `initscripts` package on a Red Hat Enterprise Linux 6 system, custom
+  changes to `/etc/init/control-alt-delete.conf` may be overwritten. Refer
+  to https://access.redhat.com/site/solutions/70464 for additional
+  information.
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27567-7

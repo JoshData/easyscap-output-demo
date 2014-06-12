@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_rule_ftp_home_partition
+severity: low
+title: Place the FTP Home Directory on its Own Partition
+description: ~
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27411-8

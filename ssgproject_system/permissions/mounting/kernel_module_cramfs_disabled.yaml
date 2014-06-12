@@ -1,0 +1,39 @@
+id: xccdf_org.ssgproject.content_rule_kernel_module_cramfs_disabled
+severity: low
+title: Disable Mounting of cramfs
+description: |
+  `cramfs` kernel module from being loaded, add the following line to a
+  file in the directory `/etc/modprobe.d`:
+
+  ~~~~ {xml:space="preserve"}
+  install cramfs /bin/false
+  ~~~~
+
+  This effectively prevents usage of this uncommon filesystem.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26340-0
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:path: /etc/modprobe.d
+    ind:filename:
+      operation: pattern match
+      value: ^.*\.conf$
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*install\s+cramfs\s+(/bin/false|/bin/true)$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/modprobe.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^\s*install\s+cramfs\s+(/bin/false|/bin/true)$
+    ind:instance: 1

@@ -1,0 +1,5 @@
+id: xccdf_org.ssgproject.content_group_nfs_client_or_server_not_both
+title: Make Each Machine a Client or a Server, not Both
+description: ~
+rules: []
+subgroups: []

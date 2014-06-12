@@ -1,0 +1,31 @@
+id: xccdf_org.ssgproject.content_rule_world_writeable_files
+severity: medium
+title: Ensure No World-Writable Files Exist
+description: ~
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26910-0
+tests:
+- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+  check: all
+  check_existence: none_exist
+  object:
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+      max_depth: '-1'
+      recurse: directories
+      recurse_direction: down
+      recurse_file_system: local
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+      operation: equals
+      value: /
+    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+      operation: pattern match
+      value: ^.*$
+    filter:
+      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filepath':
+        operation: pattern match
+        value: ^/sys/.*$

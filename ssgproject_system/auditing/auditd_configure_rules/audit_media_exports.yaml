@@ -1,0 +1,39 @@
+id: xccdf_org.ssgproject.content_rule_audit_media_exports
+severity: low
+title: Ensure auditd Collects Information on Exporting to Media (successful)
+description: |
+  `/etc/audit/audit.rules`, setting ARCH to either b32 or b64 as
+  appropriate for your system:
+
+      -a always,exit -F arch=ARCH -S mount -F auid>=500 -F auid!=4294967295 -k export
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-17(7)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(c)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-2(d)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: http://iase.disa.mil/cci/index.html
+  value: '126'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26573-6
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/audit.rules
+    ind:pattern:
+      operation: pattern match
+      value: ^\-a\s+always,exit\s+(\-F\s+arch=(b64|b32)\s+)?\-S\s+mount\s+\-F\s+auid>=500\s+\-F\s+auid!=4294967295\s+\-k\s+[-\w]+\s*$
+    ind:instance: 1

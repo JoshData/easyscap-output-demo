@@ -1,0 +1,14 @@
+id: xccdf_org.ssgproject.content_group_bootloader
+title: Set Boot Loader Password
+description: |
+  *single-user mode*, which provides root access without any
+  authentication, and the ability to disable SELinux. To prevent local
+  users from modifying the boot parameters and endangering security,
+  protect the boot loader configuration with a password and ensure its
+  configuration file’s permissions are set properly.
+rules:
+- user_owner_grub_conf
+- group_owner_grub_conf
+- permissions_grub_conf
+- bootloader_password
+subgroups: []

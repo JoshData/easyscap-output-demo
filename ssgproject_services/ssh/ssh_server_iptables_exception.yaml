@@ -1,0 +1,39 @@
+id: xccdf_org.ssgproject.content_rule_ssh_server_iptables_exception
+severity: low
+title: Remove SSH Server iptables Firewall exception (Unusual)
+description: |
+  \
+  \
+   Edit the files `/etc/sysconfig/iptables` and `/etc/sysconfig/ip6tables`
+  (if IPv6 is in use). In each file, locate and delete the line:
+
+      -A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+
+  This is unusual, as SSH is a common method for encrypted and
+  authenticated remote access.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27060-3
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:path: /etc/sysconfig
+    ind:filename: iptables
+    ind:pattern:
+      operation: pattern match
+      value: ^-A INPUT -m state --state NEW -m tcp -p tcp --dport 25 -j ACCEPT$
+    ind:instance: 1
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:path: /etc/sysconfig
+    ind:filename: ip6tables
+    ind:pattern:
+      operation: pattern match
+      value: ^-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT$
+    ind:instance: 1

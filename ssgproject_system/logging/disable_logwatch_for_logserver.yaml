@@ -1,0 +1,12 @@
+id: xccdf_org.ssgproject.content_rule_disable_logwatch_for_logserver
+severity: low
+title: ' Disable Logwatch on Clients if a Logserver Exists'
+description: "# rm /etc/cron.daily/0logwatch \n\nIf no logserver exists, it will be
+  necessary for each machine to run\nLogwatch individually. Using a central logserver
+  provides the security\nand reliability benefits discussed earlier, and also makes
+  monitoring\nlogs easier and less time-intensive for administrators.\n"
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27162-7

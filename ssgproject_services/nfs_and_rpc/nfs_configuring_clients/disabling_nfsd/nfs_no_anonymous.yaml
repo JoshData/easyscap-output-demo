@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_rule_nfs_no_anonymous
+severity: low
+title: Specify UID and GID for Anonymous NFS Connections
+description: |
+  `/etc/exports` file and add the following for each export:
+
+      anonuid=-1
+      anongid=-1
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27414-2

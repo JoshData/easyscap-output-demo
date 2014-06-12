@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_rule_httpd_restrict_critical_directories
+severity: low
+title: Restrict Other Critical Directories
+description: |
+  `Options` directive should be limited to necessary functionality and the
+  `AllowOverride` directive should be used only if needed. The `Order` and
+  `Deny` access control tags should be used to deny access by default,
+  allowing access only where necessary.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27565-1

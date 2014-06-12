@@ -1,0 +1,13 @@
+id: xccdf_org.ssgproject.content_rule_restrict_nfs_clients_to_privileged_ports
+severity: low
+title: Restrict NFS Clients to Privileged Ports
+description: |
+  \
+  \
+   To ensure that the default has not been changed, ensure no line in
+  `/etc/exports` contains the option `insecure`.
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27121-3

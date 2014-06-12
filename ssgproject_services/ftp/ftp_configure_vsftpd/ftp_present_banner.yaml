@@ -1,0 +1,15 @@
+id: xccdf_org.ssgproject.content_rule_ftp_present_banner
+severity: medium
+title: Create Warning Banners for All FTP Users
+description: |
+  `/etc/vsftpd/vsftpd.conf` by default. Add or correct the following
+  configuration options:
+
+      banner_file=/etc/issue
+rationale: ~
+references:
+- href: http://iase.disa.mil/cci/index.html
+  value: '48'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27145-2

@@ -1,0 +1,16 @@
+id: xccdf_org.ssgproject.content_rule_dhcp_server_configure_logging
+severity: low
+title: Configure Logging
+description: |
+  `/etc/rsyslog.conf`:
+
+      daemon.*           /var/log/daemon.log
+
+  Configure logwatch or other log monitoring tools to summarize error
+  conditions reported by the dhcpd process.
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-26898-7

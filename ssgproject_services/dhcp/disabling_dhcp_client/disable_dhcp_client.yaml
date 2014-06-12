@@ -1,0 +1,46 @@
+id: xccdf_org.ssgproject.content_rule_disable_dhcp_client
+severity: low
+title: Disable DHCP Client
+description: |
+  `/etc/sysconfig/network-scripts/ifcfg-interface` and make the following
+  changes:
+
+  -   Correct the BOOTPROTO line to read:
+
+          BOOTPROTO=none
+
+  -   Add or correct the following lines, substituting the appropriate
+      values based on your site’s addressing scheme:
+
+          NETMASK=255.255.255.0
+          IPADDR=192.168.1.2
+          GATEWAY=192.168.1.1
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: CM-7
+- href: http://iase.disa.mil/cci/index.html
+  value: '366'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27021-5
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: all_exist
+  object:
+    ind:path: /etc/sysconfig/network-scripts
+    ind:filename:
+      operation: pattern match
+      value: ifcfg-.*
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*BOOTPROTO[\s]*=[\s"]*([^#"\s]*)
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: pattern match
+      value: ^(static|none)$

@@ -1,0 +1,31 @@
+id: xccdf_org.ssgproject.content_rule_sshd_disable_root_login
+severity: medium
+title: Disable SSH Root Login
+description: |
+  `/etc/ssh/sshd_config`:
+
+      PermitRootLogin no
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AC-6(2)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IA-2(1)
+- href: http://iase.disa.mil/cci/index.html
+  value: '770'
+- href: test_attestation
+  dc:contributor: DS
+  dc:date: '20121024'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27100-7
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  check_existence: none_exist
+  object:
+    ind:filepath: /etc/ssh/sshd_config
+    ind:pattern:
+      operation: pattern match
+      value: ^[\s]*(?i)PermitRootLogin(?-i)[\s]+yes[\s]*(?:|(?:#.*))?$
+    ind:instance: 1

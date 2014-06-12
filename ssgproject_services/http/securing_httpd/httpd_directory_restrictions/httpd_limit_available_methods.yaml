@@ -1,0 +1,22 @@
+id: xccdf_org.ssgproject.content_rule_httpd_limit_available_methods
+severity: low
+title: Limit Available Methods
+description: |
+  \
+  \
+   Note: `GET` and `POST` are the most common methods. A majority of the
+  others are limited to the WebDAV protocol.
+
+      <Directory /var/www/html>
+      # ...
+         # Only allow specific methods (this command is case-sensitive!)
+         <LimitExcept GET POST>
+            Order allow,deny
+         </LimitExcept>
+      # ...
+      </Directory>
+rationale: ~
+references: []
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27581-8

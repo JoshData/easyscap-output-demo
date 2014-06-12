@@ -1,0 +1,40 @@
+id: xccdf_org.ssgproject.content_rule_auditd_data_retention_action_mail_acct
+severity: medium
+title: Configure auditd mail_acct Action on Low Disk Space
+description: |
+  `auditd` service can be configured to send email to a designated account
+  in certain situations. Add or correct the following line in
+  `/etc/audit/auditd.conf` to ensure that administrators are notified via
+  email for those situations:
+
+      action_mail_acct = root
+rationale: ~
+references:
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-1(b)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-4
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: AU-5(a)
+- href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
+  value: IR-5
+- href: http://iase.disa.mil/cci/index.html
+  value: '139'
+- href: http://iase.disa.mil/cci/index.html
+  value: '144'
+crosswalk:
+- system: http://cce.mitre.org
+  value: CCE-27241-9
+tests:
+- type: ind:textfilecontent54_test
+  check: all
+  object:
+    ind:filepath: /etc/audit/auditd.conf
+    ind:pattern:
+      operation: pattern match
+      value: ^[ ]*action_mail_acct[ ]+=[ ]+(\S+)[ ]*$
+    ind:instance: 1
+  state:
+    ind:subexpression:
+      operation: equals
+      var_ref: oval:ssg:var:2240

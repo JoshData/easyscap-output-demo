@@ -1,0 +1,6 @@
+id: xccdf_org.ssgproject.content_group_daemon_umask
+title: Daemon Umask
+description: ~
+rules:
+- umask_for_daemons
+subgroups: []

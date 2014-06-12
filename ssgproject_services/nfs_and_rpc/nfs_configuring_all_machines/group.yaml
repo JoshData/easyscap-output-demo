@@ -1,0 +1,7 @@
+id: xccdf_org.ssgproject.content_group_nfs_configuring_all_machines
+title: Configure All Machines which Use NFS
+description: ~
+rules: []
+subgroups:
+- nfs_client_or_server_not_both
+- nfs_configure_fixed_ports

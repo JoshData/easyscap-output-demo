@@ -1,0 +1,10 @@
+id: xccdf_org.ssgproject.content_group_configuring_ipv6
+title: Configure IPv6 Settings if Necessary
+description: ~
+rules:
+- network_ipv6_static_address
+- network_ipv6_privacy_extensions
+- network_ipv6_default_gateway
+subgroups:
+- disabling_ipv6_autoconfig
+- network_ipv6_limit_requests

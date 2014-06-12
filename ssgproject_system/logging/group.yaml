@@ -1,0 +1,22 @@
+id: xccdf_org.ssgproject.content_group_logging
+title: Configure Syslog
+description: |
+  \
+   \
+   In RHEL 6, rsyslog has replaced ksyslogd as the syslog daemon of
+  choice, and it includes some additional security features such as
+  reliable, connection-oriented (i.e. TCP) transmission of logs, the
+  option to log to database formats, and the encryption of log data en
+  route to a central logging server. This section discusses how to
+  configure rsyslog for best effect, and how to use tools provided with
+  the system to maintain and monitor logs.
+rules:
+- package_rsyslog_installed
+- service_rsyslog_enabled
+- disable_logwatch_for_logserver
+subgroups:
+- ensure_rsyslog_log_file_configuration
+- rsyslog_sending_messages
+- rsyslog_accepting_remote_messages
+- log_rotation
+- configure_logwatch_on_logserver

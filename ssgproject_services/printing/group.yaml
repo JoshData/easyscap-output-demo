@@ -1,0 +1,9 @@
+id: xccdf_org.ssgproject.content_group_printing
+title: Print Support
+description: |
+  \
+  \
+rules:
+- service_cups_disabled
+subgroups:
+- configure_printing
