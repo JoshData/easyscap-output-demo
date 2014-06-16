@@ -20,13 +20,13 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27366-4
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sysctl_test'
+- type: unix:sysctl_test
   check: all
   check_existence: all_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}name': kernel.dmesg_restrict
+    unix:name: kernel.dmesg_restrict
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}value':
+    unix:value:
       operation: equals
       value: 1
 - type: ind:textfilecontent54_test

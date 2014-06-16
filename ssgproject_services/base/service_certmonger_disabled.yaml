@@ -13,108 +13,80 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27267-4
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+- type: unix:runlevel_test
   check: all
   check_existence: any_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': certmonger
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+    unix:service_name: certmonger
+    unix:runlevel:
       operation: equals
       value: '0'
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
-      datatype: boolean
-      value: 'true'
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+    unix:start: false
+    unix:kill: true
+- type: unix:runlevel_test
   check: all
   check_existence: any_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': certmonger
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+    unix:service_name: certmonger
+    unix:runlevel:
       operation: equals
       value: '1'
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
-      datatype: boolean
-      value: 'true'
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+    unix:start: false
+    unix:kill: true
+- type: unix:runlevel_test
   check: all
   check_existence: any_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': certmonger
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+    unix:service_name: certmonger
+    unix:runlevel:
       operation: equals
       value: '2'
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
-      datatype: boolean
-      value: 'true'
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+    unix:start: false
+    unix:kill: true
+- type: unix:runlevel_test
   check: all
   check_existence: any_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': certmonger
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+    unix:service_name: certmonger
+    unix:runlevel:
       operation: equals
       value: '3'
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
-      datatype: boolean
-      value: 'true'
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+    unix:start: false
+    unix:kill: true
+- type: unix:runlevel_test
   check: all
   check_existence: any_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': certmonger
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+    unix:service_name: certmonger
+    unix:runlevel:
       operation: equals
       value: '4'
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
-      datatype: boolean
-      value: 'true'
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+    unix:start: false
+    unix:kill: true
+- type: unix:runlevel_test
   check: all
   check_existence: any_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': certmonger
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+    unix:service_name: certmonger
+    unix:runlevel:
       operation: equals
       value: '5'
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
-      datatype: boolean
-      value: 'true'
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel_test'
+    unix:start: false
+    unix:kill: true
+- type: unix:runlevel_test
   check: all
   check_existence: any_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}service_name': certmonger
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}runlevel':
+    unix:service_name: certmonger
+    unix:runlevel:
       operation: equals
       value: '6'
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}start':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}kill':
-      datatype: boolean
-      value: 'true'
+    unix:start: false
+    unix:kill: true

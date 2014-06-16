@@ -25,38 +25,38 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27270-8
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: at_least_one_exists
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+    unix:path:
       operation: equals
       value: /root
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:filename:
       operation: pattern match
       value: ^\.(r|s)hosts$
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: at_least_one_exists
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+    unix:behaviors:
       max_depth: '1'
       recurse: directories
       recurse_direction: down
       recurse_file_system: all
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+    unix:path:
       operation: equals
       value: /home
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:filename:
       operation: pattern match
       value: ^\.(r|s)hosts$
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: at_least_one_exists
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+    unix:path:
       operation: equals
       value: /etc
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:filename:
       operation: pattern match
       value: ^s?hosts\.equiv$

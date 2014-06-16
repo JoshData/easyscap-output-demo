@@ -8,38 +8,20 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27487-8
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: all_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path': /etc/httpd/conf
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:path: /etc/httpd/conf
+    unix:filename:
       '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}suid':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sgid':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gread':
-      datatype: boolean
-      value: 'true'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gwrite':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gexec':
-      datatype: boolean
-      value: 'true'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oread':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oexec':
-      datatype: boolean
-      value: 'false'
+    unix:suid: false
+    unix:sgid: false
+    unix:sticky: false
+    unix:gread: true
+    unix:gwrite: false
+    unix:gexec: true
+    unix:oread: false
+    unix:owrite: false
+    unix:oexec: false

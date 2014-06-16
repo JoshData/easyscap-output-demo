@@ -21,76 +21,40 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27243-5
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: at_least_one_exists
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+    unix:behaviors:
       max_depth: '-1'
       recurse: directories
       recurse_direction: down
       recurse_file_system: local
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+    unix:path:
       operation: equals
       value: /var/log/audit
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:filename:
       operation: pattern match
       value: ^.*$
     filter:
       operator: OR
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}suid':
-        datatype: boolean
-        value: 'true'
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sgid':
-        datatype: boolean
-        value: 'true'
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
-        datatype: boolean
-        value: 'true'
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}uexec':
-        datatype: boolean
-        value: 'true'
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gwrite':
-        datatype: boolean
-        value: 'true'
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gexec':
-        datatype: boolean
-        value: 'true'
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oread':
-        datatype: boolean
-        value: 'true'
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
-        datatype: boolean
-        value: 'true'
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oexec':
-        datatype: boolean
-        value: 'true'
+      unix:suid: true
+      unix:sgid: true
+      unix:sticky: true
+      unix:uexec: true
+      unix:gwrite: true
+      unix:gexec: true
+      unix:oread: true
+      unix:owrite: true
+      unix:oexec: true
   state:
     operator: OR
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}suid':
-      datatype: boolean
-      value: 'true'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sgid':
-      datatype: boolean
-      value: 'true'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
-      datatype: boolean
-      value: 'true'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}uexec':
-      datatype: boolean
-      value: 'true'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gwrite':
-      datatype: boolean
-      value: 'true'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gexec':
-      datatype: boolean
-      value: 'true'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oread':
-      datatype: boolean
-      value: 'true'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
-      datatype: boolean
-      value: 'true'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}oexec':
-      datatype: boolean
-      value: 'true'
+    unix:suid: true
+    unix:sgid: true
+    unix:sticky: true
+    unix:uexec: true
+    unix:gwrite: true
+    unix:gexec: true
+    unix:oread: true
+    unix:owrite: true
+    unix:oexec: true

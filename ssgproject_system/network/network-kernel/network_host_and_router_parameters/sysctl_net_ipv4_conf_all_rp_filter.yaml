@@ -32,13 +32,13 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26979-5
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sysctl_test'
+- type: unix:sysctl_test
   check: all
   check_existence: all_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}name': net.ipv4.conf.all.rp_filter
+    unix:name: net.ipv4.conf.all.rp_filter
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}value':
+    unix:value:
       operation: equals
       value: 1
 - type: ind:textfilecontent54_test

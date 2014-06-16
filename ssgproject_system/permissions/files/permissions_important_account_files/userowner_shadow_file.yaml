@@ -25,10 +25,10 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26947-2
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: all_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filepath': /etc/shadow
+    unix:filepath: /etc/shadow
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id': 0
+    unix:user_id: 0

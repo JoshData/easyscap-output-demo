@@ -21,17 +21,17 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26995-1
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: all_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filepath': /boot/grub/grub.conf
+    unix:filepath: /boot/grub/grub.conf
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id': 0
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+    unix:user_id: 0
+- type: unix:file_test
   check: all
   check_existence: all_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filepath': /boot/efi/EFI/redhat/grub.conf
+    unix:filepath: /boot/efi/EFI/redhat/grub.conf
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id': 0
+    unix:user_id: 0

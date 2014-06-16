@@ -23,10 +23,10 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26856-5
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: all_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filepath': /etc/passwd
+    unix:filepath: /etc/passwd
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}group_id': 0
+    unix:group_id: 0

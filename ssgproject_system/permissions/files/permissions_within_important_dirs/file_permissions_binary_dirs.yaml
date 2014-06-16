@@ -25,17 +25,17 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27289-8
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: none_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+    unix:path:
       operation: pattern match
       value: ^\/(|s)bin|^\/usr\/(|local\/)(|s)bin
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:filename:
       operation: pattern match
       value: ^.*$
     filter:
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}type':
+      unix:type:
         operation: equals
         value: symbolic link

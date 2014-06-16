@@ -27,30 +27,30 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27424-1
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: none_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+    unix:path:
       operation: pattern match
       value: ^\/lib(|64)\/|^\/usr\/lib(|64)\/
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:filename:
       '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
     filter:
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id':
+      unix:user_id:
         operation: not equal
         value: 0
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: none_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+    unix:path:
       operation: pattern match
       value: ^\/lib(|64)\/|^\/usr\/lib(|64)\/
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:filename:
       operation: pattern match
       value: ^.*$
     filter:
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}user_id':
+      unix:user_id:
         operation: not equal
         value: 0

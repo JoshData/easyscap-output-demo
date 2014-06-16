@@ -12,29 +12,25 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26768-2
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: any_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+    unix:path:
       var_check: at least one
       var_ref: oval:ssg:var:2193
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:filename:
       '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
     filter:
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}gwrite':
-        datatype: boolean
-        value: 'true'
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+      unix:gwrite: true
+- type: unix:file_test
   check: all
   check_existence: any_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+    unix:path:
       var_check: at least one
       var_ref: oval:ssg:var:2193
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:filename:
       '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
     filter:
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
-        datatype: boolean
-        value: 'true'
+      unix:owrite: true

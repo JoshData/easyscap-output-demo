@@ -9,22 +9,22 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26497-8
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: none_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+    unix:behaviors:
       max_depth: '-1'
       recurse: directories
       recurse_direction: down
       recurse_file_system: local
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+    unix:path:
       operation: equals
       value: /
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:filename:
       operation: pattern match
       value: ^.*$
     filter:
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filepath':
+      unix:filepath:
         var_check: at least one
         var_ref: oval:ssg:var:2247

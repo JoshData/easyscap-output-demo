@@ -25,31 +25,23 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26840-9
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   check_existence: all_exist
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+    unix:behaviors:
       max_depth: '-1'
       recurse: directories
       recurse_direction: down
       recurse_file_system: local
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path':
+    unix:path:
       operation: equals
       value: /
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:filename:
       '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
     filter:
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
-        datatype: boolean
-        value: 'false'
-      '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
-        datatype: boolean
-        value: 'true'
+      unix:sticky: false
+      unix:owrite: true
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}sticky':
-      datatype: boolean
-      value: 'false'
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}owrite':
-      datatype: boolean
-      value: 'true'
+    unix:sticky: false
+    unix:owrite: true

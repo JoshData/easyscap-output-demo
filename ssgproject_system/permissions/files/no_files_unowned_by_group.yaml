@@ -12,18 +12,18 @@ crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26872-2
 tests:
-- type: '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}file_test'
+- type: unix:file_test
   check: all
   '{http://oval.mitre.org/XMLSchema/oval-definitions-5}notes':
     '{http://oval.mitre.org/XMLSchema/oval-definitions-5}note': This will enumerate
       all files on local partitions
   object:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}behaviors':
+    unix:behaviors:
       recurse: symlinks and directories
       recurse_file_system: local
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}path': /
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}filename':
+    unix:path: /
+    unix:filename:
       operation: pattern match
       value: .*
   state:
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5#unix}group_id': 0
+    unix:group_id: 0
