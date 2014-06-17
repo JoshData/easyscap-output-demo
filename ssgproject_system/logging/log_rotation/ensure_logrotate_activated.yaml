@@ -25,7 +25,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Tests the presence of daily setting in /etc/logrotate.conf file
+  version: '1'
   object:
+    version: '2'
     ind:behaviors:
       singleline: 'true'
     ind:filepath: /etc/logrotate.conf
@@ -34,13 +37,18 @@ tests:
       value: (?:daily)*.*(?=[\n][\s]*daily)(.*)$
     ind:instance: 1
     filter:
+      version: '1'
       ind:subexpression:
         operation: pattern match
         value: '}[^{]+[\n][\s]*(weekly|monthly|yearly)|[\n][\s]*(weekly|monthly|yearly)[^}]+{'
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Tests the existence of /etc/cron.daily/logrotate file (and verify it actually
+    calls logrotate utility)
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/cron.daily/logrotate
     ind:pattern:
       operation: pattern match

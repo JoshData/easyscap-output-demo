@@ -40,13 +40,17 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: the value INACTIVE parameter should be set appropriately in /etc/default/useradd
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/default/useradd
     ind:pattern:
       operation: pattern match
       value: ^\s*INACTIVE\s*=\s*(\d+)\s*$
     ind:instance: 1
   state:
+    version: '1'
     ind:subexpression:
       operation: greater than
       value: -1

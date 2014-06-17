@@ -39,13 +39,17 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: /selinux/enforce is 1
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/selinux/config
     ind:pattern:
       operation: pattern match
       value: ^[\s]*SELINUX[\s]*=[\s]*(.*)[\s]*$
     ind:instance: 1
   state:
+    version: '1'
     ind:subexpression:
       operation: equals
       var_check: all

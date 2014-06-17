@@ -30,7 +30,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: rexec disabled
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/xinetd.d/rexec
     ind:pattern:
       operation: pattern match

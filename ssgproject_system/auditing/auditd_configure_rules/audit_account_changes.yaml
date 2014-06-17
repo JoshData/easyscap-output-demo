@@ -52,7 +52,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: audit /etc/group
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -60,7 +63,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: audit /etc/passwd
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -68,7 +74,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: audit /etc/gshadow
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -76,7 +85,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: audit /etc/shadow
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -84,7 +96,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: audit /etc/security/opasswd
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match

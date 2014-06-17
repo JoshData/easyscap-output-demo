@@ -16,5 +16,8 @@ tests:
 - type: linux:rpminfo_test
   check: all
   check_existence: none_exist
+  comment: package squid is removed
+  version: '1'
   object:
+    version: '1'
     linux:name: squid

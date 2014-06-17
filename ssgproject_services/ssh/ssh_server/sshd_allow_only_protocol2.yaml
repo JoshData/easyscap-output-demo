@@ -31,7 +31,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: sshd uses protocol 2
+  version: '1'
   object:
+    version: '3'
     ind:filepath: /etc/ssh/sshd_config
     ind:pattern:
       operation: pattern match

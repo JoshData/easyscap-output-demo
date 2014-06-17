@@ -26,7 +26,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: Ensure that the /etc/rsyslog.conf does not contain $InputTCPServerRun |
+    $UDPServerRun | $InputRELPServerRun
+  version: '1'
   object:
+    version: '2'
     ind:path: /etc
     ind:filename: rsyslog.conf
     ind:pattern:

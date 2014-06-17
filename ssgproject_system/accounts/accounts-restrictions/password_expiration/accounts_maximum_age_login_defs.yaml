@@ -36,13 +36,17 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: the value PASS_MAX_DAYS should be set appropriately in /etc/login.defs
+  version: '1'
   object:
+    version: '2'
     ind:filepath: /etc/login.defs
     ind:pattern:
       operation: pattern match
       value: ^[\s]*PASS_MAX_DAYS[\s]+(\d+)[\s]*(?:|(?:#.*))?$
     ind:instance: 1
   state:
+    version: '1'
     ind:subexpression:
       operation: less than or equal
       var_ref: oval:ssg:var:2224

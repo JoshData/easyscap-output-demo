@@ -17,11 +17,16 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: Testing directory permissions
+  version: '1'
   object:
+    comment: /etc/httpd/conf/
+    version: '1'
     unix:path: /etc/httpd/conf
     unix:filename:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
   state:
+    version: '2'
     unix:suid: false
     unix:sgid: false
     unix:sticky: false

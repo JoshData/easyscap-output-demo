@@ -23,7 +23,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Enable privacy extensions on each interface
+  version: '1'
   object:
+    comment: Enable privacy extensions on each interface
+    version: '1'
     ind:path: /etc/sysconfig/network-scripts
     ind:filename:
       operation: pattern match

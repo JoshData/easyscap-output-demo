@@ -33,5 +33,8 @@ tests:
 - type: linux:rpminfo_test
   check: all
   check_existence: all_exist
+  comment: package aide is installed
+  version: '1'
   object:
+    version: '1'
     linux:name: aide

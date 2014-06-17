@@ -30,7 +30,11 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: at_least_one_exists
+  comment: home directories
+  version: '1'
   object:
+    comment: home directories
+    version: '1'
     unix:behaviors:
       max_depth: '1'
       recurse: directories
@@ -40,9 +44,10 @@ tests:
       operation: equals
       value: /home
     unix:filename:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     filter:
       operator: OR
+      version: '1'
       unix:suid: true
       unix:sgid: true
       unix:sticky: true
@@ -52,6 +57,7 @@ tests:
       unix:oexec: true
   state:
     operator: OR
+    version: '1'
     unix:suid: true
     unix:sgid: true
     unix:sticky: true

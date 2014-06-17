@@ -25,7 +25,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: tftpd secure mode
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/xinetd.d/tftp
     ind:pattern:
       operation: pattern match

@@ -29,7 +29,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: check for existence of gpgcheck=0 in /etc/yum.repos.d/ files
+  version: '1'
   object:
+    version: '1'
     ind:path: /etc/yum.repos.d
     ind:filename:
       operation: pattern match

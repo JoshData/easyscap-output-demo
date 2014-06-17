@@ -22,7 +22,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: at_least_one_exists
+  comment: check for client signing = mandatory in /etc/samba/smb.conf
+  version: '1'
   object:
+    version: '1'
     ind:path: /etc/samba
     ind:filename: smb.conf
     ind:pattern:

@@ -31,7 +31,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: check value of gpgcheck in /etc/yum.conf
+  version: '1'
   object:
+    comment: gpgcheck set in /etc/yum.conf
+    version: '1'
     ind:filepath: /etc/yum.conf
     ind:pattern:
       operation: pattern match

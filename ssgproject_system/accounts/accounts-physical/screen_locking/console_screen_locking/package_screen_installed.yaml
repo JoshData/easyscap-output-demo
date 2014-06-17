@@ -30,5 +30,8 @@ tests:
 - type: linux:rpminfo_test
   check: all
   check_existence: all_exist
+  comment: package screen is installed
+  version: '1'
   object:
+    version: '1'
     linux:name: screen

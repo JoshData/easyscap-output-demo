@@ -48,7 +48,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Ensures system configured to export logs to remote host
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/rsyslog.conf
     ind:pattern:
       operation: pattern match
@@ -57,7 +60,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Ensures system configured to export logs to remote host
+  version: '1'
   object:
+    version: '1'
     ind:path: /etc/rsyslog.d
     ind:filename:
       operation: pattern match

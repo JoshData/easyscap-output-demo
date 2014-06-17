@@ -32,10 +32,15 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: Files that end in .log in /var/log owned by root
+  version: '1'
   object:
+    comment: Files that end in .log in /var/log
+    version: '2'
     unix:path: /var/log
     unix:filename:
       operation: pattern match
       value: .*log
   state:
+    version: '1'
     unix:user_id: 0

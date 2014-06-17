@@ -24,11 +24,15 @@ tests:
 - type: linux:partition_test
   check: all
   check_existence: all_exist
+  comment: nodev on local filesystems
+  version: '1'
   object:
+    version: '1'
     linux:mount_point:
       operation: pattern match
       value: ^/\w.*$
     filter:
+      version: '1'
       linux:device:
         operation: pattern match
         value: ^/dev/.*$
@@ -37,6 +41,7 @@ tests:
         operation: not equal
         value: nodev
   state:
+    version: '1'
     linux:device:
       operation: pattern match
       value: ^/dev/.*$

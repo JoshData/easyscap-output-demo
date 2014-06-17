@@ -24,10 +24,14 @@ crosswalk:
 tests:
 - type: unix:file_test
   check: all
+  comment: files with no group owner
+  version: '1'
   '{http://oval.mitre.org/XMLSchema/oval-definitions-5}notes':
     '{http://oval.mitre.org/XMLSchema/oval-definitions-5}note': This will enumerate
       all files on local partitions
   object:
+    comment: all local files
+    version: '1'
     unix:behaviors:
       recurse: symlinks and directories
       recurse_file_system: local
@@ -36,4 +40,6 @@ tests:
       operation: pattern match
       value: .*
   state:
+    comment: Executables with suid set
+    version: '1'
     unix:group_id: 0

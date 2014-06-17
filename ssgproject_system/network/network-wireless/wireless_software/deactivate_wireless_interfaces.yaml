@@ -54,7 +54,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: query /proc/net/wireless
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /proc/net/wireless
     ind:pattern:
       operation: pattern match

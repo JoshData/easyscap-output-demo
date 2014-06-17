@@ -22,7 +22,11 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: none_exist
+  comment: world writable files
+  version: '1'
   object:
+    comment: world writable
+    version: '1'
     unix:behaviors:
       max_depth: '-1'
       recurse: directories
@@ -35,6 +39,7 @@ tests:
       operation: pattern match
       value: ^.*$
     filter:
+      version: '1'
       unix:filepath:
         operation: pattern match
         value: ^/sys/.*$

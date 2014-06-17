@@ -23,7 +23,11 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: at_least_one_exists
+  comment: look for .netrc in /home
+  version: '1'
   object:
+    comment: look for .netrc in /home
+    version: '1'
     unix:behaviors:
       max_depth: '1'
       recurse: directories

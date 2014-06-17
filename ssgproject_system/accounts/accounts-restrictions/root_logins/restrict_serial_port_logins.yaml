@@ -27,7 +27,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: serial ports /etc/securetty
+  version: '1'
   object:
+    comment: serial ports /etc/securetty
+    version: '1'
     ind:path: /etc
     ind:filename: securetty
     ind:pattern:

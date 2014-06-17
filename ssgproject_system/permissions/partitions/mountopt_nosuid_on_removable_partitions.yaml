@@ -33,17 +33,24 @@ tests:
 - type: linux:partition_test
   check: all
   check_existence: all_exist
+  comment: nosuid on removable partition
+  version: '1'
   object:
+    version: '1'
     linux:mount_point:
       var_ref: oval:ssg:var:2215
   state:
+    version: '1'
     linux:mount_options:
       entity_check: at least one
       operation: equals
       value: nosuid
 - type: ind:textfilecontent54_test
   check: at least one
+  comment: removable partition /etc/fstab
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/fstab
     ind:pattern:
       operation: pattern match
@@ -52,5 +59,6 @@ tests:
       operation: not equal
       value: 0
   state:
+    version: '1'
     ind:subexpression:
       var_ref: oval:ssg:var:2215

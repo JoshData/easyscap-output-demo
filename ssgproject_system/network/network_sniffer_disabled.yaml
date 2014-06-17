@@ -23,16 +23,21 @@ tests:
 - type: unix:interface_test
   check: all
   check_existence: at_least_one_exists
+  comment: random
+  version: '1'
   object:
+    version: '1'
     unix:name:
       operation: pattern match
       value: ^.*$
     filter:
+      version: '1'
       unix:flag:
         entity_check: at least one
         operation: equals
         value: PROMISC
   state:
+    version: '1'
     unix:flag:
       entity_check: at least one
       operation: equals

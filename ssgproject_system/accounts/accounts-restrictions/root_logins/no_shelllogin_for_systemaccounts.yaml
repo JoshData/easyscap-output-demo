@@ -32,7 +32,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: tests for the presence of login shells (not /sbin/nologin) for system accounts
+    in /etc/passwd file
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/passwd
     ind:pattern:
       operation: pattern match

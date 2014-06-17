@@ -38,7 +38,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: kernel module bluetooth disabled
+  version: '1'
   object:
+    comment: kernel module bluetooth disabled
+    version: '1'
     ind:path: /etc/modprobe.d
     ind:filename:
       operation: pattern match
@@ -50,7 +54,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: kernel module net-pf-31 disabled
+  version: '1'
   object:
+    comment: kernel module net-pf-31 disabled
+    version: '1'
     ind:path: /etc/modprobe.d
     ind:filename:
       operation: pattern match

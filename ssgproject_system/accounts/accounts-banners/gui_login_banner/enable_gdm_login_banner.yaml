@@ -31,8 +31,12 @@ crosswalk:
 tests:
 - type: ind:xmlfilecontent_test
   check: all
+  comment: stuff
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /var/lib/gdm/.gconf/apps/gdm/simple-greeter/%gconf.xml
     ind:xpath: /gconf/entry[@name='banner_message_enable']/@value
   state:
+    version: '1'
     ind:value_of: 'true'

@@ -42,7 +42,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: tests the value of Ciphers setting in the /etc/ssh/sshd_config file
+  version: '1'
   object:
+    version: '2'
     ind:filepath: /etc/ssh/sshd_config
     ind:pattern:
       operation: pattern match

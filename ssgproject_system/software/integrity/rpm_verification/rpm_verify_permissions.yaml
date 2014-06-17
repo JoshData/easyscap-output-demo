@@ -38,7 +38,11 @@ tests:
 - type: linux:rpmverifyfile_test
   check: all
   check_existence: none_exist
+  comment: user ownership of all files matches local rpm database
+  version: '1'
   object:
+    comment: rpm verify of all files
+    version: '1'
     linux:behaviors:
       nomd5: 'true'
     linux:name:
@@ -48,11 +52,16 @@ tests:
       operation: pattern match
       value: .*
     filter:
+      version: '1'
       linux:ownership_differs: fail
 - type: linux:rpmverifyfile_test
   check: all
   check_existence: none_exist
+  comment: group ownership of all files matches local rpm database
+  version: '1'
   object:
+    comment: rpm verify of all files
+    version: '1'
     linux:behaviors:
       nomd5: 'true'
     linux:name:
@@ -62,11 +71,16 @@ tests:
       operation: pattern match
       value: .*
     filter:
+      version: '1'
       linux:group_differs: fail
 - type: linux:rpmverifyfile_test
   check: all
   check_existence: none_exist
+  comment: mode of all files matches local rpm database
+  version: '1'
   object:
+    comment: rpm verify of all files
+    version: '1'
     linux:behaviors:
       nomd5: 'true'
     linux:name:
@@ -76,4 +90,5 @@ tests:
       operation: pattern match
       value: .*
     filter:
+      version: '1'
       linux:mode_differs: fail

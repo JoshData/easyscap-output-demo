@@ -32,7 +32,11 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: none_exist
+  comment: /var/log/audit files uid root gid root
+  version: '1'
   object:
+    comment: /var/log/audit files
+    version: '1'
     unix:behaviors:
       max_depth: '-1'
       recurse: directories
@@ -46,6 +50,7 @@ tests:
       value: ^.*$
     filter:
       operator: OR
+      version: '1'
       unix:group_id:
         operation: not equal
         value: 0
@@ -55,7 +60,11 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: none_exist
+  comment: /var/log/audit directories uid root gid root
+  version: '1'
   object:
+    comment: /var/log/audit directories
+    version: '1'
     unix:behaviors:
       max_depth: '-1'
       recurse: directories
@@ -65,9 +74,10 @@ tests:
       operation: equals
       value: /var/log/audit
     unix:filename:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     filter:
       operator: OR
+      version: '1'
       unix:group_id:
         operation: not equal
         value: 0

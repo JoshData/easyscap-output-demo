@@ -25,7 +25,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Disable Browsing
+  version: '2'
   object:
+    version: '2'
     ind:filepath: /etc/cups/cupsd.conf
     ind:pattern:
       operation: pattern match
@@ -34,7 +37,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Do not allow incoming printer information packets
+  version: '2'
   object:
+    version: '2'
     ind:filepath: /etc/cups/cupsd.conf
     ind:pattern:
       operation: pattern match

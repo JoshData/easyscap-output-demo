@@ -26,7 +26,12 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: Testing group ownership of /etc/passwd
+  version: '1'
   object:
+    comment: /etc/passwd
+    version: '1'
     unix:filepath: /etc/passwd
   state:
+    version: '1'
     unix:group_id: 0

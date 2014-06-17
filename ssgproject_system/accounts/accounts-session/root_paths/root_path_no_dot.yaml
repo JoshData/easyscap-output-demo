@@ -24,61 +24,91 @@ crosswalk:
 tests:
 - type: ind:environmentvariable58_test
   check: none satisfy
+  comment: 'environment variable PATH starts with : or .'
+  version: '1'
   object:
+    version: '1'
     ind:pid:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     ind:name: PATH
   state:
+    comment: starts with colon or period
+    version: '1'
     ind:value:
       operation: pattern match
       value: ^[:\.]
 - type: ind:environmentvariable58_test
   check: none satisfy
+  comment: 'environment variable PATH doesn''t contain : twice in a row'
+  version: '1'
   object:
+    version: '1'
     ind:pid:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     ind:name: PATH
   state:
+    comment: colon twice in a row
+    version: '1'
     ind:value:
       operation: pattern match
       value: '::'
 - type: ind:environmentvariable58_test
   check: none satisfy
+  comment: environment variable PATH doesn't contain . twice in a row
+  version: '1'
   object:
+    version: '1'
     ind:pid:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     ind:name: PATH
   state:
+    comment: period twice in a row
+    version: '1'
     ind:value:
       operation: pattern match
       value: \.\.
 - type: ind:environmentvariable58_test
   check: none satisfy
+  comment: 'environment variable PATH ends with : or .'
+  version: '1'
   object:
+    version: '1'
     ind:pid:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     ind:name: PATH
   state:
+    comment: ends with colon or period
+    version: '1'
     ind:value:
       operation: pattern match
       value: '[:\.]$'
 - type: ind:environmentvariable58_test
   check: none satisfy
+  comment: environment variable PATH starts with an absolute path /
+  version: '1'
   object:
+    version: '1'
     ind:pid:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     ind:name: PATH
   state:
+    comment: begins with a slash
+    version: '1'
     ind:value:
       operation: pattern match
       value: ^[^/]
 - type: ind:environmentvariable58_test
   check: none satisfy
+  comment: environment variable PATH contains relative paths
+  version: '1'
   object:
+    version: '1'
     ind:pid:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     ind:name: PATH
   state:
+    comment: elements begin with a slash
+    version: '1'
     ind:value:
       operation: pattern match
       value: '[^\\]:[^/]'

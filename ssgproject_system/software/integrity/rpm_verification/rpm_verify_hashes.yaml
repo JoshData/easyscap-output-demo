@@ -45,7 +45,11 @@ tests:
 - type: linux:rpmverifyfile_test
   check: all
   check_existence: none_exist
+  comment: verify file md5 hashes
+  version: '1'
   object:
+    comment: rpm verify of all files
+    version: '1'
     linux:behaviors:
       nomd5: 'false'
     linux:name:
@@ -56,4 +60,5 @@ tests:
       value: ^.*bin/.*$
     filter:
       operator: AND
+      version: '1'
       linux:md5_differs: fail

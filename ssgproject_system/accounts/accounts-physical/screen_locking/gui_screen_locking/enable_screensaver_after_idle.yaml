@@ -26,8 +26,12 @@ crosswalk:
 tests:
 - type: ind:xmlfilecontent_test
   check: all
+  comment: gnome screensaver is activated on idle
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/gconf/gconf.xml.mandatory/apps/gnome-screensaver/%gconf.xml
     ind:xpath: /gconf/entry[@name='idle_activation_enabled']/@value
   state:
+    version: '1'
     ind:value_of: 'true'

@@ -31,5 +31,8 @@ tests:
 - type: linux:partition_test
   check: all
   check_existence: all_exist
+  comment: check for /var/log/audit partition
+  version: '1'
   object:
+    version: '1'
     linux:mount_point: /var/log/audit

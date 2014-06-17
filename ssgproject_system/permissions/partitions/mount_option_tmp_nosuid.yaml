@@ -22,9 +22,13 @@ tests:
 - type: linux:partition_test
   check: all
   check_existence: all_exist
+  comment: nosuid on /tmp
+  version: '1'
   object:
+    version: '1'
     linux:mount_point: /tmp
   state:
+    version: '1'
     linux:mount_options:
       entity_check: at least one
       operation: equals

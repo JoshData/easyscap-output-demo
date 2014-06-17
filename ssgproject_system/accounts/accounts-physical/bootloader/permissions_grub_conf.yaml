@@ -26,10 +26,15 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: Testing file permissions
+  version: '1'
   object:
+    comment: /boot/grub/grub.conf
+    version: '1'
     unix:path: /boot/grub
     unix:filename: grub.conf
   state:
+    version: '2'
     unix:uexec: false
     unix:gread: false
     unix:gwrite: false

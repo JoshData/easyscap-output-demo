@@ -28,7 +28,11 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: ipv6 disabled any modprobe conf file
+  version: '1'
   object:
+    comment: ipv6 disabled any modprobe conf file
+    version: '1'
     ind:path: /etc/modprobe.d
     ind:filename:
       operation: pattern match

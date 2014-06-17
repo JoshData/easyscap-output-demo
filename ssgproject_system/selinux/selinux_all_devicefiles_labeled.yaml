@@ -30,7 +30,11 @@ tests:
 - type: linux:selinuxsecuritycontext_test
   check: none satisfy
   check_existence: all_exist
+  comment: unlabeled_t in /dev
+  version: '1'
   object:
+    comment: unlabeled_t in /dev
+    version: '1'
     linux:behaviors:
       recurse_direction: down
     linux:path: /dev
@@ -38,10 +42,14 @@ tests:
       operation: pattern match
       value: ^.*$
     filter:
+      comment: do it
+      version: '1'
       linux:type:
         operation: equals
         value: unlabeled_t
   state:
+    comment: do it
+    version: '1'
     linux:type:
       operation: equals
       value: unlabeled_t

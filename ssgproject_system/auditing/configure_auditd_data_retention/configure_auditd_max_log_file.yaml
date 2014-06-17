@@ -31,13 +31,17 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: max log file size
+  version: '1'
   object:
+    version: '2'
     ind:filepath: /etc/audit/auditd.conf
     ind:pattern:
       operation: pattern match
       value: ^[ ]*max_log_file[ ]+=[ ]+(\d+)[ ]*$
     ind:instance: 1
   state:
+    version: '1'
     ind:subexpression:
       operation: greater than or equal
       var_ref: oval:ssg:var:2242

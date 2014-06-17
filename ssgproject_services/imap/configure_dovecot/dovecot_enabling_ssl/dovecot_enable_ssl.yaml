@@ -23,7 +23,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Tests the value of the ssl[\s]*(<:nocomment:>*) setting in the /etc/dovecot.conf
+    file
+  version: '1'
   object:
+    version: '1'
     ind:path: /etc/dovecot/conf.d
     ind:filename: 10-ssl.conf
     ind:pattern:

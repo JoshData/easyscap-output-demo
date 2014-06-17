@@ -24,7 +24,12 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: Testing user ownership
+  version: '1'
   object:
+    comment: /etc/group
+    version: '1'
     unix:filepath: /etc/group
   state:
+    version: '1'
     unix:user_id: 0

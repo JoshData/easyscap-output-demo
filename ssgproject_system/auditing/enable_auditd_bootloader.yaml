@@ -37,7 +37,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: check for audit=1 in /etc/grub.conf
+  version: '1'
   object:
+    version: '1'
     ind:path: /etc
     ind:filename: grub.conf
     ind:pattern:

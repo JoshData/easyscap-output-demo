@@ -36,7 +36,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: dac modification lsetxattr x32
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match

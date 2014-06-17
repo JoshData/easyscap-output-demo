@@ -27,7 +27,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: virtual consoles /etc/securetty
+  version: '1'
   object:
+    comment: virtual consoles /etc/securetty
+    version: '1'
     ind:filepath: /etc/securetty
     ind:pattern:
       operation: pattern match

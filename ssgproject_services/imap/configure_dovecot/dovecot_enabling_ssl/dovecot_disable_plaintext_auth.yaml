@@ -18,7 +18,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Tests the value of the disable_plaintext_auth[\s]*(<:nocomment:>*) setting
+    in the /etc/dovecot.conf file
+  version: '1'
   object:
+    version: '1'
     ind:path: /etc/dovecot/conf.d
     ind:filename: 10-auth.conf
     ind:pattern:

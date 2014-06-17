@@ -37,16 +37,23 @@ tests:
 - type: unix:sysctl_test
   check: all
   check_existence: all_exist
+  comment: kernel runtime parameter net.ipv4.conf.all.log_martians set to 1
+  version: '1'
   object:
+    version: '1'
     unix:name: net.ipv4.conf.all.log_martians
   state:
+    version: '1'
     unix:value:
       operation: equals
       value: 1
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: net.ipv4.conf.all.log_martians static configuration
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/sysctl.conf
     ind:pattern:
       operation: pattern match

@@ -25,9 +25,14 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: /etc/gshadow mode and ownership
+  version: '1'
   object:
+    comment: /etc/gshadow
+    version: '1'
     unix:filepath: /etc/gshadow
   state:
+    version: '1'
     unix:suid: false
     unix:sgid: false
     unix:sticky: false

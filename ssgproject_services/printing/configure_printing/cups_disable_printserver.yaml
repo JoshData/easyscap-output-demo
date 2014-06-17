@@ -34,7 +34,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: Disable the more general port directive
+  version: '1'
   object:
+    version: '2'
     ind:filepath: /etc/cups/cupsd.conf
     ind:pattern:
       operation: pattern match
@@ -43,7 +46,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Listen only at the localhost level
+  version: '1'
   object:
+    version: '2'
     ind:filepath: /etc/cups/cupsd.conf
     ind:pattern:
       operation: pattern match

@@ -24,14 +24,24 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: /boot/grub/grub.conf owned by root
+  version: '1'
   object:
+    comment: /boot/grub/grub.conf
+    version: '1'
     unix:filepath: /boot/grub/grub.conf
   state:
+    version: '1'
     unix:user_id: 0
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: /boot/efi/EFI/redhat/grub.conf owned by root
+  version: '1'
   object:
+    comment: /boot/efi/EFI/redhat/grub.conf
+    version: '1'
     unix:filepath: /boot/efi/EFI/redhat/grub.conf
   state:
+    version: '1'
     unix:user_id: 0

@@ -32,3 +32,5 @@ crosswalk:
 tests:
 - type: ind:unknown_test
   check: all
+  comment: use extended content to evaluated this test
+  version: '1'

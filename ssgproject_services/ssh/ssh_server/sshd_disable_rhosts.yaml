@@ -25,7 +25,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: Tests the value of the IgnoreRhosts[\s]*(<:nocomment:>*) setting in the
+    /etc/ssh/sshd_config file
+  version: '1'
   object:
+    version: '2'
     ind:filepath: /etc/ssh/sshd_config
     ind:pattern:
       operation: pattern match

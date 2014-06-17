@@ -26,77 +26,112 @@ tests:
 - type: unix:runlevel_test
   check: all
   check_existence: any_exist
+  comment: Runlevel test
+  version: '2'
   object:
+    version: '1'
     unix:service_name: netconsole
     unix:runlevel:
       operation: equals
       value: '0'
   state:
+    comment: not configured to start
+    version: '1'
     unix:start: false
     unix:kill: true
 - type: unix:runlevel_test
   check: all
   check_existence: any_exist
+  comment: Runlevel test
+  version: '2'
   object:
+    version: '1'
     unix:service_name: netconsole
     unix:runlevel:
       operation: equals
       value: '1'
   state:
+    comment: not configured to start
+    version: '1'
     unix:start: false
     unix:kill: true
 - type: unix:runlevel_test
   check: all
   check_existence: any_exist
+  comment: Runlevel test
+  version: '2'
   object:
+    version: '1'
     unix:service_name: netconsole
     unix:runlevel:
       operation: equals
       value: '2'
   state:
+    comment: not configured to start
+    version: '1'
     unix:start: false
     unix:kill: true
 - type: unix:runlevel_test
   check: all
   check_existence: any_exist
+  comment: Runlevel test
+  version: '2'
   object:
+    version: '1'
     unix:service_name: netconsole
     unix:runlevel:
       operation: equals
       value: '3'
   state:
+    comment: not configured to start
+    version: '1'
     unix:start: false
     unix:kill: true
 - type: unix:runlevel_test
   check: all
   check_existence: any_exist
+  comment: Runlevel test
+  version: '2'
   object:
+    version: '1'
     unix:service_name: netconsole
     unix:runlevel:
       operation: equals
       value: '4'
   state:
+    comment: not configured to start
+    version: '1'
     unix:start: false
     unix:kill: true
 - type: unix:runlevel_test
   check: all
   check_existence: any_exist
+  comment: Runlevel test
+  version: '2'
   object:
+    version: '1'
     unix:service_name: netconsole
     unix:runlevel:
       operation: equals
       value: '5'
   state:
+    comment: not configured to start
+    version: '1'
     unix:start: false
     unix:kill: true
 - type: unix:runlevel_test
   check: all
   check_existence: any_exist
+  comment: Runlevel test
+  version: '2'
   object:
+    version: '1'
     unix:service_name: netconsole
     unix:runlevel:
       operation: equals
       value: '6'
   state:
+    comment: not configured to start
+    version: '1'
     unix:start: false
     unix:kill: true

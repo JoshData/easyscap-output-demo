@@ -35,13 +35,18 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: timeout is configured
+  version: '1'
   object:
+    version: '2'
     ind:filepath: /etc/ssh/sshd_config
     ind:pattern:
       operation: pattern match
       value: ^[\s]*(?i)ClientAliveInterval[\s]+(\d+)[\s]*(?:|(?:#.*))?$
     ind:instance: 1
   state:
+    comment: lower bound of ClientAliveInterval in seconds
+    version: '1'
     ind:subexpression:
       operation: greater than
       value: 0

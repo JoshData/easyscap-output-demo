@@ -38,7 +38,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Disable Telnet Service
+  version: '1'
   object:
+    comment: Disable Telnet Service
+    version: '1'
     ind:path: /etc/xinetd.d
     ind:filename: telnet
     ind:pattern:

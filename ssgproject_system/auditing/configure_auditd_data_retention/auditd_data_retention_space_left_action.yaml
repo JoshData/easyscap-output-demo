@@ -47,13 +47,17 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: space left action
+  version: '1'
   object:
+    version: '2'
     ind:filepath: /etc/audit/auditd.conf
     ind:pattern:
       operation: pattern match
       value: ^[ ]*space_left_action[ ]+=[ ]+(\S+)[ ]*$
     ind:instance: 1
   state:
+    version: '1'
     ind:subexpression:
       operation: case insensitive equals
       var_ref: oval:ssg:var:2245

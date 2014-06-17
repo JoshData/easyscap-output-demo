@@ -28,7 +28,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: test that there are no accounts with UID 0 except root in the /etc/passwd
+    file
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/passwd
     ind:pattern:
       operation: pattern match

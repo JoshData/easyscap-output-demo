@@ -17,7 +17,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Test HostLimit
+  version: '1'
   object:
+    version: '1'
     ind:path: /etc/logwatch/conf
     ind:filename: logwatch.conf
     ind:pattern:

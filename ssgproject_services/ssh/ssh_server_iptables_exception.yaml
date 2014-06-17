@@ -25,7 +25,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: Test for port 22 access over ipv4
+  version: '1'
   object:
+    comment: Test for port 22 access over ipv4
+    version: '1'
     ind:path: /etc/sysconfig
     ind:filename: iptables
     ind:pattern:
@@ -35,7 +39,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: Test for port 22 access over ipv6
+  version: '1'
   object:
+    comment: Test for port 22 access over ipv6
+    version: '1'
     ind:path: /etc/sysconfig
     ind:filename: ip6tables
     ind:pattern:

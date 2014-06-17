@@ -36,7 +36,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: audit insmod
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -44,7 +47,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: audit rmmod
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -52,7 +58,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: audit modprobe
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -60,7 +69,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: audit module syscalls
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match

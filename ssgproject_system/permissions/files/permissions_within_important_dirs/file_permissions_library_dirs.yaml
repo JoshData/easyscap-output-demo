@@ -38,20 +38,29 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: none_exist
+  comment: library directories go-w
+  version: '1'
   object:
+    comment: library directories
+    version: '1'
     unix:path:
       operation: pattern match
       value: ^\/lib(|64)|^\/usr\/lib(|64)
     unix:filename:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     filter:
+      version: '1'
       unix:type:
         operation: equals
         value: symbolic link
 - type: unix:file_test
   check: all
   check_existence: none_exist
+  comment: library files go-w
+  version: '1'
   object:
+    comment: library files
+    version: '1'
     unix:path:
       operation: pattern match
       value: ^\/lib(|64)|^\/usr\/lib(|64)
@@ -59,6 +68,7 @@ tests:
       operation: pattern match
       value: ^.*$
     filter:
+      version: '1'
       unix:type:
         operation: equals
         value: symbolic link

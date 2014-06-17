@@ -32,7 +32,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: rsh disabled
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/xinetd.d/rsh
     ind:pattern:
       operation: pattern match

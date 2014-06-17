@@ -34,7 +34,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: network modification syscall
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -42,7 +45,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: /etc/issue modification
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -50,7 +56,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: /etc/issue.net modification
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -58,7 +67,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: /etc/hosts modification
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -66,7 +78,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: /etc/sysconfig/network modification
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match

@@ -37,7 +37,11 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: all local world-writable directories have sticky bit set
+  version: '1'
   object:
+    comment: only local directories
+    version: '1'
     unix:behaviors:
       max_depth: '-1'
       recurse: directories
@@ -47,10 +51,12 @@ tests:
       operation: equals
       value: /
     unix:filename:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     filter:
+      version: '1'
       unix:sticky: false
       unix:owrite: true
   state:
+    version: '1'
     unix:sticky: false
     unix:owrite: true

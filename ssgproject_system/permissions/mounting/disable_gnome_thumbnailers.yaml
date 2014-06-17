@@ -32,8 +32,12 @@ tests:
 - type: ind:xmlfilecontent_test
   check: all
   check_existence: all_exist
+  comment: Disable thumbnailers in GNOME
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/gconf/gconf.xml.mandatory/desktop/gnome/thumbnailers/%gconf.xml
     ind:xpath: /gconf/entry[@name='disable_all']/@value
   state:
+    version: '1'
     ind:value_of: 'true'

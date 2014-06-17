@@ -26,9 +26,14 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: Testing /etc/group permissions
+  version: '1'
   object:
+    comment: /etc/group
+    version: '1'
     unix:filepath: /etc/group
   state:
+    version: '2'
     unix:suid: false
     unix:sgid: false
     unix:sticky: false

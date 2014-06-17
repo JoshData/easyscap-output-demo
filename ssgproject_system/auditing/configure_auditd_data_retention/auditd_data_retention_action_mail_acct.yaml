@@ -30,13 +30,17 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: email account for actions
+  version: '1'
   object:
+    version: '2'
     ind:filepath: /etc/audit/auditd.conf
     ind:pattern:
       operation: pattern match
       value: ^[ ]*action_mail_acct[ ]+=[ ]+(\S+)[ ]*$
     ind:instance: 1
   state:
+    version: '1'
     ind:subexpression:
       operation: equals
       var_ref: oval:ssg:var:2240

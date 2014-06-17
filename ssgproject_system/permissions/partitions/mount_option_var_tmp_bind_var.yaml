@@ -24,14 +24,21 @@ crosswalk:
 tests:
 - type: linux:partition_test
   check: all
+  comment: Ensure /var/tmp is mounted
+  version: '1'
   object:
+    version: '1'
     linux:mount_point:
       operation: pattern match
       value: /var/tmp
 - type: ind:textfilecontent54_test
   check: all
   check_existence: at_least_one_exists
+  comment: Ensure bind mount option is on /var/tmp
+  version: '1'
   object:
+    comment: look for the partition mount point in /etc/mtab
+    version: '1'
     ind:filepath: /etc/mtab
     ind:pattern:
       operation: pattern match

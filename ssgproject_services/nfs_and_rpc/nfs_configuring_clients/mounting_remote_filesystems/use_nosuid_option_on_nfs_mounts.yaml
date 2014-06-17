@@ -19,7 +19,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: no nfs
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/fstab
     ind:pattern:
       operation: pattern match
@@ -30,7 +33,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: all nfs has nosuid
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/fstab
     ind:pattern:
       operation: pattern match
@@ -39,6 +45,7 @@ tests:
       operation: not equal
       value: 0
   state:
+    version: '1'
     ind:subexpression:
       operation: pattern match
       value: ^.*nosuid.*$

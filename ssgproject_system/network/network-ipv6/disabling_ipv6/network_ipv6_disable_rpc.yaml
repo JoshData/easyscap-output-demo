@@ -21,7 +21,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: Test for udp6 based rpc services
+  version: '1'
   object:
+    comment: Test for udp6 based rpc services
+    version: '1'
     ind:path: /etc
     ind:filename: netconfig
     ind:pattern:
@@ -31,7 +35,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: Test for tcp6 based rpc services
+  version: '1'
   object:
+    comment: Test for tcp6 based rpc services
+    version: '1'
     ind:path: /etc
     ind:filename: netconfig
     ind:pattern:

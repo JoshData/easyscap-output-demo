@@ -23,8 +23,12 @@ crosswalk:
 tests:
 - type: ind:xmlfilecontent_test
   check: all
+  comment: gnome screensaver set to blank screen
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/gconf/gconf.xml.mandatory/apps/gnome-screensaver/%gconf.xml
     ind:xpath: /gconf/entry[@name='mode']/stringvalue[1]/text()
   state:
+    version: '1'
     ind:value_of: blank-only

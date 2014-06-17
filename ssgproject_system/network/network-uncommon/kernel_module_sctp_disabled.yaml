@@ -29,7 +29,11 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: kernel module sctp disabled
+  version: '1'
   object:
+    comment: kernel module sctp disabled
+    version: '1'
     ind:path: /etc/modprobe.d
     ind:filename:
       operation: pattern match
@@ -40,7 +44,11 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: kernel module sctp disabled in /etc/modprobe.conf
+  version: '1'
   object:
+    comment: Check depricated /etc/modprobe.conf for disablement of sctp
+    version: '1'
     ind:filepath: /etc/modprobe.conf
     ind:pattern:
       operation: pattern match

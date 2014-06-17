@@ -23,7 +23,12 @@ crosswalk:
 tests:
 - type: unix:file_test
   check: all
+  comment: check for local directories that are world writable and have uid greater
+    than or equal to 500
+  version: '1'
   object:
+    comment: all local directories
+    version: '1'
     unix:behaviors:
       max_depth: '-1'
       recurse: directories
@@ -33,13 +38,17 @@ tests:
       operation: equals
       value: /
     unix:filename:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     filter:
+      comment: uid greater than or equal to 500 and world writable
+      version: '1'
       unix:user_id:
         operation: greater than or equal
         value: 500
       unix:owrite: true
   state:
+    comment: uid greater than or equal to 500 and world writable
+    version: '1'
     unix:user_id:
       operation: greater than or equal
       value: 500

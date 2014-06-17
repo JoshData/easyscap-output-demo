@@ -19,7 +19,11 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: /etc/httpd/conf/* permissions
+  version: '1'
   object:
+    comment: /etc/httpd/conf/* permissions
+    version: '1'
     unix:behaviors:
       max_depth: '-1'
       recurse: directories
@@ -32,6 +36,7 @@ tests:
       operation: pattern match
       value: ^.*$
   state:
+    version: '2'
     unix:suid: false
     unix:sgid: false
     unix:sticky: false

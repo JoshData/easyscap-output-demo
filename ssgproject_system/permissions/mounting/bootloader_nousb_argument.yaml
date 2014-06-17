@@ -31,7 +31,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: look for argument 'nousb' in the kernel line in /etc/grub.conf
+  version: '1'
   object:
+    version: '1'
     ind:path: /etc
     ind:filename: grub.conf
     ind:pattern:

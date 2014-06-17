@@ -22,7 +22,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: check the configuration of /etc/pam.d/system-auth
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/pam.d/system-auth
     ind:pattern:
       operation: pattern match

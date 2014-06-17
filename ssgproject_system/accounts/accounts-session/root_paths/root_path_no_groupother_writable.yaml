@@ -19,22 +19,34 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: any_exist
+  comment: Check that write permission to group in root's path is denied
+  version: '1'
   object:
+    comment: root's PATH
+    version: '1'
     unix:path:
       var_check: at least one
       var_ref: oval:ssg:var:2193
     unix:filename:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     filter:
+      comment: Group has write privilege
+      version: '1'
       unix:gwrite: true
 - type: unix:file_test
   check: all
   check_existence: any_exist
+  comment: Check that write permission to other in root's path is denied
+  version: '1'
   object:
+    comment: root's PATH
+    version: '1'
     unix:path:
       var_check: at least one
       var_ref: oval:ssg:var:2193
     unix:filename:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     filter:
+      comment: Other has write privilege
+      version: '1'
       unix:owrite: true

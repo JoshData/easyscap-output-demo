@@ -28,7 +28,12 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: Testing user ownership of /etc/shadow
+  version: '1'
   object:
+    comment: /etc/shadow
+    version: '1'
     unix:filepath: /etc/shadow
   state:
+    version: '1'
     unix:user_id: 0

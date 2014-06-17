@@ -25,7 +25,11 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: none_exist
+  comment: Check user ids on all files on the system
+  version: '1'
   object:
+    comment: all local files
+    version: '1'
     unix:behaviors:
       recurse: directories
       recurse_direction: down
@@ -35,6 +39,7 @@ tests:
       operation: pattern match
       value: .*
     filter:
+      version: '1'
       unix:user_id:
         var_check: at least one
         var_ref: oval:ssg:var:2249

@@ -26,13 +26,17 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: the value maxlogins should be set appropriately in /etc/security/limits.conf
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/security/limits.conf
     ind:pattern:
       operation: pattern match
       value: ^[\s]*\*[\s]+(?:(?:hard)|(?:-))[\s]+maxlogins[\s]+(\d+)\s*$
     ind:instance: 1
   state:
+    version: '1'
     ind:subexpression:
       operation: less than or equal
       var_ref: oval:ssg:var:2223

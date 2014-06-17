@@ -23,5 +23,8 @@ tests:
 - type: linux:partition_test
   check: all
   check_existence: all_exist
+  comment: /var/log on own partition
+  version: '1'
   object:
+    version: '1'
     linux:mount_point: /var/log

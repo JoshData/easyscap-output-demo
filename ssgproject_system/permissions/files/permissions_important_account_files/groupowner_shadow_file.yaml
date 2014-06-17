@@ -25,7 +25,12 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: all_exist
+  comment: Testing group ownership /etc/shadow
+  version: '1'
   object:
+    comment: /etc/shadow
+    version: '1'
     unix:filepath: /etc/shadow
   state:
+    version: '1'
     unix:group_id: 0

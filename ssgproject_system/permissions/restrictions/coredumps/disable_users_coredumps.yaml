@@ -20,13 +20,18 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: Tests the value of the ^[\s]*\*[\s]+(hard|-)[\s]+core[\s]+([\d]+) setting
+    in the /etc/security/limits.conf file
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/security/limits.conf
     ind:pattern:
       operation: pattern match
       value: ^[\s]*\*[\s]+hard[\s]+core[\s]+([\d]+)
     ind:instance: 1
   state:
+    version: '1'
     ind:subexpression:
       operation: equals
       value: '0'

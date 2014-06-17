@@ -26,13 +26,18 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Tests the value of the ^[\s]*umask[\s]+([^#]*) expression in the /etc/login.defs
+    file
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/login.defs
     ind:pattern:
       operation: pattern match
       value: ^[\s]*UMASK[\s]+([^#\s]*)
     ind:instance: 1
   state:
+    version: '1'
     ind:subexpression:
       operation: equals
       var_check: all

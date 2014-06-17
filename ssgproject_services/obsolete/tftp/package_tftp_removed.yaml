@@ -19,5 +19,8 @@ tests:
 - type: linux:rpminfo_test
   check: all
   check_existence: none_exist
+  comment: package tftp is removed
+  version: '1'
   object:
+    version: '1'
     linux:name: tftp

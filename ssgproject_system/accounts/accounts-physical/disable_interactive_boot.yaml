@@ -28,7 +28,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Tests that PROMPT=no in /etc/sysconfig/init
+  version: '1'
   object:
+    version: '2'
     ind:filepath: /etc/sysconfig/init
     ind:pattern:
       operation: pattern match

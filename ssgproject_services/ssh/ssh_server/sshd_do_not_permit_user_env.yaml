@@ -22,7 +22,10 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: none_exist
+  comment: Check value of PermitUserEnvironment in /etc/ssh/sshd_config
+  version: '1'
   object:
+    version: '2'
     ind:filepath: /etc/ssh/sshd_config
     ind:pattern:
       operation: pattern match

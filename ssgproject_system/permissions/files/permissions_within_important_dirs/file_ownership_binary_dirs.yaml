@@ -32,21 +32,30 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: none_exist
+  comment: binary directories uid root
+  version: '1'
   object:
+    comment: binary directories
+    version: '1'
     unix:path:
       operation: pattern match
       value: ^\/(|s)bin|^\/usr\/(|local\/)(|s)bin
     unix:filename:
-      '{http://www.w3.org/2001/XMLSchema-instance}nil': 'true'
+      '@xsi:nil': 'true'
     filter:
       operator: OR
+      version: '1'
       unix:user_id:
         operation: not equal
         value: 0
 - type: unix:file_test
   check: all
   check_existence: none_exist
+  comment: binary files uid root
+  version: '1'
   object:
+    comment: binary files
+    version: '1'
     unix:path:
       operation: pattern match
       value: ^\/(|s)bin|^\/usr\/(|local\/)(|s)bin
@@ -55,6 +64,7 @@ tests:
       value: ^.*$
     filter:
       operator: OR
+      version: '1'
       unix:user_id:
         operation: not equal
         value: 0

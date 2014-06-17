@@ -33,16 +33,23 @@ tests:
 - type: unix:sysctl_test
   check: all
   check_existence: all_exist
+  comment: kernel runtime parameter net.ipv4.conf.all.accept_source_route set to 0
+  version: '1'
   object:
+    version: '1'
     unix:name: net.ipv4.conf.all.accept_source_route
   state:
+    version: '1'
     unix:value:
       operation: equals
       value: 0
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: net.ipv4.conf.all.accept_source_route static configuration
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/sysctl.conf
     ind:pattern:
       operation: pattern match

@@ -32,7 +32,12 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Tests that the SINGLE variable in the /etc/sysconfig/init file is set to
+    /sbin/sulogin, to ensure that a password must be entered to access single user
+    mode
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/sysconfig/init
     ind:pattern:
       operation: pattern match

@@ -30,7 +30,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: rlogin disabled
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/xinetd.d/rlogin
     ind:pattern:
       operation: pattern match

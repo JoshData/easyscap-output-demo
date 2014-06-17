@@ -33,7 +33,11 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: none_exist
+  comment: binary files go-w
+  version: '1'
   object:
+    comment: binary files
+    version: '1'
     unix:path:
       operation: pattern match
       value: ^\/(|s)bin|^\/usr\/(|local\/)(|s)bin
@@ -41,6 +45,7 @@ tests:
       operation: pattern match
       value: ^.*$
     filter:
+      version: '1'
       unix:type:
         operation: equals
         value: symbolic link

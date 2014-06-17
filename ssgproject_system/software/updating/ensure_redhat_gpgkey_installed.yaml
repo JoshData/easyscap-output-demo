@@ -36,16 +36,24 @@ tests:
 - type: linux:rpminfo_test
   check: only one
   check_existence: any_exist
+  comment: Red Hat release key package is installed
+  version: '1'
   object:
+    version: '1'
     linux:name: gpg-pubkey
   state:
+    version: '1'
     linux:release: 4ae0493b
     linux:version: fd431d51
 - type: linux:rpminfo_test
   check: only one
   check_existence: any_exist
+  comment: Red Hat auxiliary key package is installed
+  version: '1'
   object:
+    version: '1'
     linux:name: gpg-pubkey
   state:
+    version: '1'
     linux:release: 45700c69
     linux:version: 2fa658e0

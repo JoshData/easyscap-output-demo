@@ -31,7 +31,10 @@ crosswalk:
 tests:
 - type: ind:textfilecontent54_test
   check: all
+  comment: utmp
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -39,7 +42,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: btmp
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match
@@ -47,7 +53,10 @@ tests:
     ind:instance: 1
 - type: ind:textfilecontent54_test
   check: all
+  comment: wtmp
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/audit/audit.rules
     ind:pattern:
       operation: pattern match

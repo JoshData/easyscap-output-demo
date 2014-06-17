@@ -37,7 +37,11 @@ tests:
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist
+  comment: Tests the value of the ^[\s]*BOOTPROTO[\s]*=[\s]*([^#]*) expression in
+    the /etc/sysconfig/network-scripts/ifcfg-.* file
+  version: '1'
   object:
+    version: '1'
     ind:path: /etc/sysconfig/network-scripts
     ind:filename:
       operation: pattern match
@@ -47,6 +51,7 @@ tests:
       value: ^[\s]*BOOTPROTO[\s]*=[\s"]*([^#"\s]*)
     ind:instance: 1
   state:
+    version: '2'
     ind:subexpression:
       operation: pattern match
       value: ^(static|none)$

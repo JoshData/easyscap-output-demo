@@ -33,16 +33,24 @@ tests:
 - type: ind:xmlfilecontent_test
   check: all
   check_existence: all_exist
+  comment: Disable automount in GNOME
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/gconf/gconf.xml.mandatory/apps/nautilus/preferences/%gconf.xml
     ind:xpath: /gconf/entry[@name='media_automount']/@value
   state:
+    version: '1'
     ind:value_of: 'false'
 - type: ind:xmlfilecontent_test
   check: all
   check_existence: all_exist
+  comment: Disable autorun in GNOME
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/gconf/gconf.xml.mandatory/apps/nautilus/preferences/%gconf.xml
     ind:xpath: /gconf/entry[@name='media_autorun_never']/@value
   state:
+    version: '1'
     ind:value_of: 'true'

@@ -21,7 +21,11 @@ tests:
 - type: unix:file_test
   check: all
   check_existence: none_exist
+  comment: setuid files outside system RPMs
+  version: '1'
   object:
+    comment: files with suid set
+    version: '1'
     unix:behaviors:
       max_depth: '-1'
       recurse: directories
@@ -34,6 +38,7 @@ tests:
       operation: pattern match
       value: ^.*$
     filter:
+      version: '1'
       unix:filepath:
         var_check: at least one
         var_ref: oval:ssg:var:2247

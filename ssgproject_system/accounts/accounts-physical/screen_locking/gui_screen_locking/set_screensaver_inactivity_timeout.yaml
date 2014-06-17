@@ -24,10 +24,15 @@ crosswalk:
 tests:
 - type: ind:xmlfilecontent_test
   check: all
+  comment: test screensaver timeout period
+  version: '1'
   object:
+    version: '1'
     ind:filepath: /etc/gconf/gconf.xml.mandatory/desktop/gnome/session/%gconf.xml
     ind:xpath: /gconf/entry[@name='idle_delay']/@value
   state:
+    comment: idle timeout
+    version: '1'
     ind:value_of:
       operation: less than or equal
       var_check: all
