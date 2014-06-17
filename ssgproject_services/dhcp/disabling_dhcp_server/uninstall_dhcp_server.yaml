@@ -2,10 +2,14 @@ id: xccdf_org.ssgproject.content_rule_uninstall_dhcp_server
 severity: medium
 title: Uninstall DHCP Server Package
 description: |
-  `dhcp` package can be removed with the following command:
+  If the system does not need to act as a DHCP server, the dhcp package
+  can be uninstalled. The `dhcp` package can be removed with the following
+  command:
 
       # yum erase dhcp
-rationale: ~
+rationale: |
+  Removing the DHCP server ensures that it cannot be easily or
+  accidentally reactivated and disrupt network operation.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

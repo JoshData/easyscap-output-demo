@@ -2,12 +2,14 @@ id: xccdf_org.ssgproject.content_rule_service_cgred_disabled
 severity: low
 title: Disable Control Group Rules Engine (cgred)
 description: |
-  `cgred` service moves tasks into control groups according to parameters
-  set in the `/etc/cgrules.conf` configuration file. The `cgred` service
-  can be disabled with the following command:
+  The `cgred` service moves tasks into control groups according to
+  parameters set in the `/etc/cgrules.conf` configuration file. The
+  `cgred` service can be disabled with the following command:
 
       # chkconfig cgred off
-rationale: ~
+rationale: |
+  Unless control groups are used to manage system resources, running the
+  cgred service service is not necessary.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

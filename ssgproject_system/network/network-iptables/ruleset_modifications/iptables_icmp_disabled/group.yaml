@@ -1,7 +1,7 @@
 id: xccdf_org.ssgproject.content_group_iptables_icmp_disabled
 title: Restrict ICMP Message Types
 description: |
-  `/etc/sysconfig/iptables`, the accepted ICMP messages types can be
+  In `/etc/sysconfig/iptables`, the accepted ICMP messages types can be
   restricted. To accept only ICMP echo reply, destination unreachable, and
   time exceeded messages, remove the line:\
 

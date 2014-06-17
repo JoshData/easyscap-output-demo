@@ -2,16 +2,16 @@ id: xccdf_org.ssgproject.content_rule_service_sysstat_disabled
 severity: low
 title: Disable System Statistics Reset Service (sysstat)
 description: |
-  `sysstat` service resets various I/O and CPU performance statistics to
-  zero in order to begin counting from a fresh state at boot time. The
+  The `sysstat` service resets various I/O and CPU performance statistics
+  to zero in order to begin counting from a fresh state at boot time. The
   `sysstat` service can be disabled with the following command:
 
       # chkconfig sysstat off
 rationale: |
-  `sysstat` service merely runs a program at boot to reset the statistics,
-  which can be retrieved using programs such as `sar` and `sadc`. These
-  may provide useful insight into system operation, but unless used this
-  service can be disabled.
+  By default the `sysstat` service merely runs a program at boot to reset
+  the statistics, which can be retrieved using programs such as `sar` and
+  `sadc`. These may provide useful insight into system operation, but
+  unless used this service can be disabled.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

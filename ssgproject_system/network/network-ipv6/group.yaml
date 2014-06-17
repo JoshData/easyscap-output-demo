@@ -1,6 +1,10 @@
 id: xccdf_org.ssgproject.content_group_network-ipv6
 title: IPv6
-description: ~
+description: |
+  The system includes support for Internet Protocol version 6. A major and
+  often-mentioned improvement over IPv4 is its enormous increase in the
+  number of available addresses. Another important feature is its support
+  for automatic configuration of many network settings.
 rules: []
 subgroups:
 - disabling_ipv6

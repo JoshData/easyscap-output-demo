@@ -1,12 +1,16 @@
 id: xccdf_org.ssgproject.content_group_openldap_client
 title: Configure OpenLDAP Clients
 description: |
-  `system-config-authentication`. However, these tools do not provide as
-  much control over configuration as manual editing of configuration
-  files. The authconfig tools do not allow you to specify locations of SSL
-  certificate files, which is useful when trying to use SSL cleanly across
-  several protocols. Installation and configuration of OpenLDAP on RHEL 6
-  is available at
+  This section provides information on which security settings are
+  important to configure in OpenLDAP clients by manually editing the
+  appropriate configuration files. RHEL 6 provides an automated
+  configuration tool called authconfig and a graphical wrapper for
+  authconfig called `system-config-authentication`. However, these tools
+  do not provide as much control over configuration as manual editing of
+  configuration files. The authconfig tools do not allow you to specify
+  locations of SSL certificate files, which is useful when trying to use
+  SSL cleanly across several protocols. Installation and configuration of
+  OpenLDAP on RHEL 6 is available at
   https://access.redhat.com/site/documentation/en-US/Red\_Hat\_Enterprise\_Linux/6/html/Deployment\_Guide/ch-Directory\_Servers.html.
 rules:
 - ldap_client_start_tls

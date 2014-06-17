@@ -1,7 +1,12 @@
 id: xccdf_org.ssgproject.content_group_ftp_limit_users
 title: Limit Users Allowed FTP Access if Necessary
 description: |
-  userlist_enable=YES
+  If there is a mission-critical reason for users to access their accounts
+  via the insecure FTP protocol, limit the set of users who are allowed
+  this access. Edit the vsftpd configuration file. Add or correct the
+  following configuration options:
+
+      userlist_enable=YES
       userlist_file=/etc/vsftp.ftpusers
       userlist_deny=NO
 

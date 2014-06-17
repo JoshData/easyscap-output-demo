@@ -2,10 +2,12 @@ id: xccdf_org.ssgproject.content_rule_disable_squid
 severity: low
 title: Disable Squid
 description: |
-  `squid` service can be disabled with the following command:
+  The `squid` service can be disabled with the following command:
 
       # chkconfig squid off
-rationale: ~
+rationale: |
+  Running proxy server software provides a network-based avenue of attack,
+  and should be removed if not needed.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

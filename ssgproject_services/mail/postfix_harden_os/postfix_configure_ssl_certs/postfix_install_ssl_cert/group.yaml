@@ -1,7 +1,10 @@
 id: xccdf_org.ssgproject.content_group_postfix_install_ssl_cert
 title: Ensure Security of Postfix SSL Certificate
 description: |
-  # mkdir /etc/pki/tls/mail
+  Create the PKI directory for mail certificates, if it does not already
+  exist:
+
+      # mkdir /etc/pki/tls/mail
       # chown root:root /etc/pki/tls/mail
       # chmod 755 /etc/pki/tls/mail
 

@@ -2,14 +2,21 @@ id: xccdf_org.ssgproject.content_rule_require_singleuser_auth
 severity: medium
 title: Require Authentication for Single User Mode
 description: |
-  \
-  \
-   To require entry of the root password even if the system is started in
+  Single-user mode is intended as a system recovery method, providing a
+  single user root access to the system by providing a boot option at
+  startup. By default, no authentication is performed if single-user mode
+  is selected.
+
+  <p>
+  To require entry of the root password even if the system is started in
   single-user mode, add or correct the following line in the file
   `/etc/sysconfig/init`:
 
       SINGLE=/sbin/sulogin
-rationale: ~
+rationale: |
+  This prevents attackers with physical access from trivially bypassing
+  security on the machine and gaining root access. Such accesses are
+  further prevented by configuring the bootloader password.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: IA-2(1)

@@ -1,27 +1,26 @@
 id: xccdf_org.ssgproject.content_group_gui_screen_locking
 title: Configure GUI Screen Locking
 description: |
-  **Lock Screen** from the **System** menu. \
-  \
-   The `gconftool-2` program can be used to enforce mandatory screen
+  In the default GNOME desktop, the screen can be locked by choosing
+  **Lock Screen** from the **System** menu.
+
+  The `gconftool-2` program can be used to enforce mandatory screen
   locking settings for the default GNOME environment. The following
   sections detail commands to enforce idle activation of the screen saver,
   screen locking, a blank-screen screensaver, and an idle activation time.
-  \
-  \
-   Because users should be trained to lock the screen when they step away
+
+  Because users should be trained to lock the screen when they step away
   from the computer, the automatic locking feature is only meant as a
   backup. The Lock Screen icon from the System menu can also be dragged to
   the taskbar in order to facilitate even more convenient screen-locking.
-  \
-  \
-   The root account cannot be screen-locked, but this should
+
+  The root account cannot be screen-locked, but this should
   <!-- TODO: is this still true? -->have no practical effect as the root
   account should *never* be used to log into an X Windows environment, and
   should only be used to for direct login via console in emergency
-  circumstances. \
-  \
-   For more information about configuring GNOME screensaver, see
+  circumstances.
+
+  For more information about configuring GNOME screensaver, see
   http://live.gnome.org/GnomeScreensaver. For more information about
   enforcing preferences in the GNOME environment using the GConf
   configuration system, see http://projects.gnome.org/gconf and the man

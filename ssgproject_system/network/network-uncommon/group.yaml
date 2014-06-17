@@ -1,6 +1,11 @@
 id: xccdf_org.ssgproject.content_group_network-uncommon
 title: Uncommon Network Protocols
-description: ~
+description: |
+  The system includes support for several network protocols which are not
+  commonly used. Although security vulnerabilities in kernel networking
+  code are not frequently discovered, the consequences can be dramatic.
+  Ensuring uncommon network protocols are disabled reduces the system’s
+  risk to attacks targeted at its implementation of those protocols.
 rules:
 - kernel_module_dccp_disabled
 - kernel_module_sctp_disabled

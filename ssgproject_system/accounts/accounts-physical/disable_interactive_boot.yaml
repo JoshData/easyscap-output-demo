@@ -2,14 +2,17 @@ id: xccdf_org.ssgproject.content_rule_disable_interactive_boot
 severity: medium
 title: Disable Interactive Boot
 description: |
-  `/etc/sysconfig/init`. Add or correct the line:
+  To disable the ability for users to perform interactive startups, edit
+  the file `/etc/sysconfig/init`. Add or correct the line:
 
       PROMPT=no
 
   The `PROMPT` option allows the console user to perform an interactive
   system startup, in which it is possible to select the set of services
   which are started on boot.
-rationale: ~
+rationale: |
+  Using interactive boot, the console user could disable auditing,
+  firewalls, or other services, weakening system security.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: SC-2

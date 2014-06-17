@@ -1,9 +1,12 @@
 id: xccdf_org.ssgproject.content_group_network-wireless
 title: Wireless Networking
 description: |
-  \
-  \
-   Removal of hardware provides the greatest assurance that the wireless
+  Wireless networking, such as 802.11 (WiFi) and Bluetooth, can present a
+  security risk to sensitive or classified systems and networks. Wireless
+  networking hardware is much more likely to be included in laptop or
+  portable systems than desktops or servers.
+
+  Removal of hardware provides the greatest assurance that the wireless
   capability remains disabled. Acquisition policies often include
   provisions to prevent the purchase of equipment that will be used in
   sensitive spaces and includes wireless capabilities. If it is

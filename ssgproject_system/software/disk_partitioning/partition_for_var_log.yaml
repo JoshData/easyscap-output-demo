@@ -2,11 +2,12 @@ id: xccdf_org.ssgproject.content_rule_partition_for_var_log
 severity: low
 title: Ensure /var/log Located On Separate Partition
 description: |
-  `/var/log` directory. Ensure that it has its own partition or logical
-  volume at installation time, or migrate it using LVM.
+  System logs are stored in the `/var/log` directory. Ensure that it has
+  its own partition or logical volume at installation time, or migrate it
+  using LVM.
 rationale: |
-  `/var/log` in its own partition enables better separation between log
-  files and other files in `/var/`.
+  Placing `/var/log` in its own partition enables better separation
+  between log files and other files in `/var/`.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AU-9

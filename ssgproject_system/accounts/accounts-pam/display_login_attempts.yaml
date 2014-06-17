@@ -2,11 +2,17 @@ id: xccdf_org.ssgproject.content_rule_display_login_attempts
 severity: low
 title: Set Last Logon/Access Notification
 description: |
+  To configure the system to notify users of last logon/access using
   `pam_lastlog`, add the following line immediately after
   `session  required  pam_limits.so`:
 
       session       required     pam_lastlog.so showfailed
-rationale: ~
+rationale: |
+  Users need to be aware of activity that occurs regarding their account.
+  Providing users with information regarding the number of unsuccessful
+  attempts that were made to login to their account allows the user to
+  determine if any unauthorized activity has occurred and gives them an
+  opportunity to notify administrators.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '53'

@@ -1,6 +1,11 @@
 id: xccdf_org.ssgproject.content_group_aide
 title: Verify Integrity with AIDE
-description: '`/usr/share/doc/aide-VERSION`.'
+description: |
+  AIDE conducts integrity checks by comparing information about files with
+  previously-gathered information. Ideally, the AIDE database is created
+  immediately after initial system configuration, and then again after any
+  software update. AIDE is highly configurable, with further configuration
+  information located in `/usr/share/doc/aide-VERSION`.
 rules:
 - package_aide_installed
 - disable_prelink

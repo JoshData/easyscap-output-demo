@@ -2,12 +2,14 @@ id: xccdf_org.ssgproject.content_rule_service_mdmonitor_disabled
 severity: low
 title: Disable Software RAID Monitor (mdmonitor)
 description: |
-  `mdmonitor` service is used for monitoring a software RAID array;
+  The `mdmonitor` service is used for monitoring a software RAID array;
   hardware RAID setups do not use this service. The `mdmonitor` service
   can be disabled with the following command:
 
       # chkconfig mdmonitor off
-rationale: ~
+rationale: |
+  If software RAID monitoring is not required, there is no need to run
+  this service.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

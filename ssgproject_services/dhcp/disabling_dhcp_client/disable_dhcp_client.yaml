@@ -2,6 +2,7 @@ id: xccdf_org.ssgproject.content_rule_disable_dhcp_client
 severity: low
 title: Disable DHCP Client
 description: |
+  For each interface on the system (e.g. eth0), edit
   `/etc/sysconfig/network-scripts/ifcfg-interface` and make the following
   changes:
 
@@ -15,7 +16,12 @@ description: |
           NETMASK=255.255.255.0
           IPADDR=192.168.1.2
           GATEWAY=192.168.1.1
-rationale: ~
+rationale: |
+  DHCP relies on trusting the local network. If the local network is not
+  trusted, then it should not be used. However, the automatic
+  configuration provided by DHCP is commonly used and the alternative,
+  manual configuration, presents an unacceptable burden in many
+  circumstances.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

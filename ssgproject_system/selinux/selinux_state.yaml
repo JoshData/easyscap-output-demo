@@ -2,12 +2,16 @@ id: xccdf_org.ssgproject.content_rule_selinux_state
 severity: medium
 title: Ensure SELinux State is Enforcing
 description: |
-  `enforcing` at system boot time. In the file `/etc/selinux/config`, add
-  or correct the following line to configure the system to boot into
-  enforcing mode:
+  The SELinux state should be set to `enforcing` at system boot time. In
+  the file `/etc/selinux/config`, add or correct the following line to
+  configure the system to boot into enforcing mode:
 
       SELINUX=enforcing
-rationale: ~
+rationale: |
+  Setting the SELinux state to enforcing ensures SELinux is able to
+  confine potentially compromised processes to the security policy, which
+  is designed to prevent them from causing damage to the system or further
+  elevating their privileges.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-3

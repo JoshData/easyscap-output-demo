@@ -2,7 +2,11 @@ id: xccdf_org.ssgproject.content_group_files
 title: |-
   Verify Permissions on Important Files and
   Directories
-description: ~
+description: |
+  Permissions for many files on a system must be set restrictively to
+  ensure sensitive information is properly protected. This section
+  discusses important permission restrictions which can be verified to
+  ensure that no harmful discrepancies have arisen.
 rules:
 - sticky_world_writable_dirs
 - world_writeable_files

@@ -2,16 +2,18 @@ id: xccdf_org.ssgproject.content_rule_kernel_module_ipv6_option_disabled
 severity: medium
 title: Disable IPv6 Networking Support Automatic Loading
 description: |
-  `ipv6`) from loading the IPv6 networking stack, add the following line
-  to `/etc/modprobe.d/disabled.conf` (or another file in
-  `/etc/modprobe.d`):
+  To prevent the IPv6 kernel module (`ipv6`) from loading the IPv6
+  networking stack, add the following line to
+  `/etc/modprobe.d/disabled.conf` (or another file in `/etc/modprobe.d`):
 
       options ipv6 disable=1
 
   This permits the IPv6 module to be loaded (and thus satisfy other
   modules that depend on it), while disabling support for the IPv6
   protocol.
-rationale: ~
+rationale: |
+  Any unnecessary network stacks - including IPv6 - should be disabled, to
+  reduce the vulnerability to exploitation.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

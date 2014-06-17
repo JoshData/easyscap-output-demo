@@ -2,10 +2,13 @@ id: xccdf_org.ssgproject.content_rule_package_rsyslog_installed
 severity: medium
 title: Ensure rsyslog is Installed
 description: |
-  `rsyslog` package can be installed with the following command:
+  Rsyslog is installed by default. The `rsyslog` package can be installed
+  with the following command:
 
       # yum install rsyslog
-rationale: ~
+rationale: |
+  The rsyslog package provides the rsyslog daemon, which provides system
+  logging services.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AU-9(2)

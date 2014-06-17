@@ -2,12 +2,17 @@ id: xccdf_org.ssgproject.content_rule_kernel_module_bluetooth_disabled
 severity: medium
 title: Disable Bluetooth Kernel Modules
 description: |
+  The kernel’s module loading system can be configured to prevent loading
+  of the Bluetooth module. Add the following to the appropriate
   `/etc/modprobe.d` configuration file to prevent the loading of the
   Bluetooth module:
 
       install net-pf-31 /bin/false
       install bluetooth /bin/false
-rationale: ~
+rationale: |
+  If Bluetooth functionality must be disabled, preventing the kernel from
+  loading the kernel module provides an additional safeguard against its
+  activation.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

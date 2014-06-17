@@ -2,14 +2,26 @@ id: xccdf_org.ssgproject.content_rule_disable_gnome_thumbnailers
 severity: low
 title: Disable All GNOME Thumbnailers
 description: |
-  # gconftool-2 --direct \
+  The system’s default desktop environment, GNOME, uses a number of
+  different thumbnailer programs to generate thumbnails for any new or
+  modified content in an opened folder. The following command can disable
+  the execution of these thumbnail applications:
+
+      # gconftool-2 --direct \
         --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
         --type bool \
         --set /desktop/gnome/thumbnailers/disable_all true
 
   This effectively prevents an attacker from gaining access to a system
   through a flaw in GNOME’s Nautilus thumbnail creators.
-rationale: ~
+rationale: |
+  An attacker with knowledge of a flaw in a GNOME thumbnailer application
+  could craft a malicious file to exploit this flaw. Assuming the attacker
+  could place the malicious file on the local filesystem (via a web upload
+  for example) and assuming a user browses the same location using
+  Nautilus, the malicious file would exploit the thumbnailer with the
+  potential for malicious code execution. It is best to disable these
+  thumbnailer applications unless they are explicitly required.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

@@ -1,6 +1,9 @@
 id: xccdf_org.ssgproject.content_group_daemon_umask
 title: Daemon Umask
-description: ~
+description: |
+  The umask is a per-process setting which limits the default permissions
+  for creation of new files and directories. The system includes
+  initialization scripts which set the default umask for system daemons.
 rules:
 - umask_for_daemons
 subgroups: []

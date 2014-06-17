@@ -2,10 +2,12 @@ id: xccdf_org.ssgproject.content_rule_disable_snmpd
 severity: low
 title: Disable snmpd Service
 description: |
-  `snmpd` service can be disabled with the following command:
+  The `snmpd` service can be disabled with the following command:
 
       # chkconfig snmpd off
-rationale: ~
+rationale: |
+  Running SNMP software provides a network-based avenue of attack, and
+  should be disabled if not needed.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

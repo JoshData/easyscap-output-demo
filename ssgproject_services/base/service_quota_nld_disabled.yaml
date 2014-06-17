@@ -2,19 +2,19 @@ id: xccdf_org.ssgproject.content_rule_service_quota_nld_disabled
 severity: low
 title: Disable Quota Netlink (quota_nld)
 description: |
-  `quota_nld` service provides notifications to users of disk space quota
-  violations. It listens to the kernel via a netlink socket for disk quota
-  violations and notifies the appropriate user of the violation using
-  D-Bus or by sending a message to the terminal that the user has last
-  accessed. The `quota_nld` service can be disabled with the following
-  command:
+  The `quota_nld` service provides notifications to users of disk space
+  quota violations. It listens to the kernel via a netlink socket for disk
+  quota violations and notifies the appropriate user of the violation
+  using D-Bus or by sending a message to the terminal that the user has
+  last accessed. The `quota_nld` service can be disabled with the
+  following command:
 
       # chkconfig quota_nld off
 rationale: |
-  `quota_nld` service likely provides useful functionality and should
-  remain enabled. However, if disk quotas are not used or user
-  notification of disk quota violation is not desired then there is no
-  need to run this service.
+  If disk quotas are enforced on the local system, then the `quota_nld`
+  service likely provides useful functionality and should remain enabled.
+  However, if disk quotas are not used or user notification of disk quota
+  violation is not desired then there is no need to run this service.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

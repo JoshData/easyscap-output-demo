@@ -2,7 +2,9 @@ id: xccdf_org.ssgproject.content_rule_ssh_server_disabled
 severity: low
 title: Disable SSH Server If Possible (Unusual)
 description: |
-  `sshd` service can be disabled with the following command:
+  The SSH server service, sshd, is commonly needed. However, if it can be
+  disabled, do so. The `sshd` service can be disabled with the following
+  command:
 
       # chkconfig sshd off
 

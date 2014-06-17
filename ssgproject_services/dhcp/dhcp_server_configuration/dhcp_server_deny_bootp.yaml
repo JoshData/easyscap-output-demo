@@ -1,8 +1,16 @@
 id: xccdf_org.ssgproject.content_rule_dhcp_server_deny_bootp
 severity: low
 title: Deny BOOTP Queries
-description: deny bootp;
-rationale: ~
+description: |
+  Unless your network needs to support older BOOTP clients, disable
+  support for the bootp protocol by adding or correcting the global
+  option:
+
+      deny bootp;
+rationale: |
+  The bootp option tells dhcpd to respond to BOOTP queries. If support for
+  this simpler protocol is not needed, it should be disabled to remove
+  attack vectors against the DHCP server.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

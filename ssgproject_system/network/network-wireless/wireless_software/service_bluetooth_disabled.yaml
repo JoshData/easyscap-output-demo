@@ -2,16 +2,16 @@ id: xccdf_org.ssgproject.content_rule_service_bluetooth_disabled
 severity: medium
 title: Disable Bluetooth Service
 description: |
-  `bluetooth` service can be disabled with the following command:
+  The `bluetooth` service can be disabled with the following command:
 
       # chkconfig bluetooth off
 
       # service bluetooth stop
 rationale: |
-  `bluetooth` service prevents the system from attempting connections to
-  Bluetooth devices, which entails some security risk. Nevertheless,
-  variation in this risk decision may be expected due to the utility of
-  Bluetooth connectivity and its limited range.
+  Disabling the `bluetooth` service prevents the system from attempting
+  connections to Bluetooth devices, which entails some security risk.
+  Nevertheless, variation in this risk decision may be expected due to the
+  utility of Bluetooth connectivity and its limited range.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

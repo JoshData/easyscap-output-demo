@@ -1,6 +1,13 @@
 id: xccdf_org.ssgproject.content_group_iptables_log_and_drop_suspicious
 title: Log and Drop Packets with Suspicious Source Addresses
 description: |
+  Packets with non-routable source addresses should be rejected, as they
+  may indicate spoofing. Because the modified policy will reject
+  non-matching packets, you only need to add these rules if you are
+  interested in also logging these spoofing or suspicious attempts before
+  they are dropped. If you do choose to log various suspicious traffic,
+  add identical rules with a target of DROP after each LOG. To log and
+  then drop these IPv4 packets, insert the following rules in
   `/etc/sysconfig/iptables` (excepting any that are intentionally used):
 
       -A INPUT -s 10.0.0.0/8 -j LOG --log-prefix "IP DROP SPOOF A: "

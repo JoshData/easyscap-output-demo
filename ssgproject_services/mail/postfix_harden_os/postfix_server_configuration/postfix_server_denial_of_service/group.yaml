@@ -1,8 +1,8 @@
 id: xccdf_org.ssgproject.content_group_postfix_server_denial_of_service
 title: Configure Postfix Resource Usage to Limit Denial of Service Attacks
 description: |
-  `/etc/postfix/main.cf`. Edit the following lines to configure the amount
-  of system resources Postfix can consume:
+  Edit `/etc/postfix/main.cf`. Edit the following lines to configure the
+  amount of system resources Postfix can consume:
 
       default_process_limit = 100
       smtpd_client_connection_count_limit = 10

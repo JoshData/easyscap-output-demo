@@ -1,6 +1,9 @@
 id: xccdf_org.ssgproject.content_group_ldap
 title: LDAP
-description: ~
+description: |
+  LDAP is a popular directory service, that is, a standardized way of
+  looking up information from a central database. RHEL 6 includes software
+  that enables a system to act as both an LDAP client and server.
 rules: []
 subgroups:
 - openldap_client

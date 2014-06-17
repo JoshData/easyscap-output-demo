@@ -1,10 +1,12 @@
 id: xccdf_org.ssgproject.content_group_network_disable_unused_interfaces
 title: Disable Unused Interfaces
 description: |
-  \
-  \
-   If the system does not require network communications but still needs
-  to use the loopback interface, remove all files of the form
+  Network interfaces expand the attack surface of the system. Unused
+  interfaces are not monitored or controlled, and should be disabled.
+
+  <p>
+  If the system does not require network communications but still needs to
+  use the loopback interface, remove all files of the form
   `ifcfg-interface` except for `ifcfg-lo` from
   `/etc/sysconfig/network-scripts`:
 

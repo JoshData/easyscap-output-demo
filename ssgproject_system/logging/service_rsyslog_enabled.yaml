@@ -2,13 +2,13 @@ id: xccdf_org.ssgproject.content_rule_service_rsyslog_enabled
 severity: medium
 title: Enable rsyslog Service
 description: |
-  `rsyslog` service provides syslog-style logging by default on RHEL 6.
-  The `rsyslog` service can be enabled with the following command:
+  The `rsyslog` service provides syslog-style logging by default on RHEL
+  6. The `rsyslog` service can be enabled with the following command:
 
       # chkconfig --level 2345 rsyslog on
 rationale: |
-  `rsyslog` service must be running in order to provide logging services,
-  which are essential to system administration.
+  The `rsyslog` service must be running in order to provide logging
+  services, which are essential to system administration.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AU-12

@@ -2,12 +2,17 @@ id: xccdf_org.ssgproject.content_rule_security_patches_up_to_date
 severity: high
 title: Ensure Software Patches Installed
 description: |
-  # yum update
+  If the system is joined to the Red Hat Network, a Red Hat Satellite
+  Server, or a yum server, run the following command to install updates:
+
+      # yum update
 
   If the system is not configured to use one of these sources, updates (in
   the form of RPM packages) can be manually downloaded from the Red Hat
   Network and installed using `rpm`.
-rationale: ~
+rationale: |
+  Installing software updates is a fundamental mitigation against the
+  exploitation of publicly-known vulnerabilities.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: SI-2

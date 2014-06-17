@@ -2,14 +2,20 @@ id: xccdf_org.ssgproject.content_rule_disable_user_list
 severity: low
 title: Disable the User List
 description: |
-  \
-  \
-   Run the following command to disable the user list:
+  In the default graphical environment, users logging directly into the
+  system are greeted with a login screen that displays all known users.
+  This functionality should be disabled.
+
+  <p>
+  Run the following command to disable the user list:
 
       sudo -u gdm gconftool-2 \
         --type bool \
         --set /apps/gdm/simple-greeter/disable_user_list true
-rationale: ~
+rationale: |
+  Leaving the user list enabled is a security risk since it allows anyone
+  with physical access to the system to quickly enumerate known user
+  accounts without logging in.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-23

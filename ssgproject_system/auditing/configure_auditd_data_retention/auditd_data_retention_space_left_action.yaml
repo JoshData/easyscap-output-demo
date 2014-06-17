@@ -2,7 +2,7 @@ id: xccdf_org.ssgproject.content_rule_auditd_data_retention_space_left_action
 severity: medium
 title: Configure auditd space_left Action on Low Disk Space
 description: |
-  `auditd` service can be configured to take an action when disk space
+  The `auditd` service can be configured to take an action when disk space
   *starts* to run low. Edit the file `/etc/audit/auditd.conf`. Modify the
   following line, substituting *ACTION* appropriately:
 
@@ -22,7 +22,9 @@ description: |
   Set this to `email` (instead of the default, which is `suspend`) as it
   is more likely to get prompt attention. Acceptable values also include
   `suspend`, `single`, and `halt`.
-rationale: ~
+rationale: |
+  Notifying administrators of an impending disk space problem may allow
+  them to take corrective action prior to any disruption.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AU-1(b)

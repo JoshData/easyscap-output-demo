@@ -2,9 +2,11 @@ id: xccdf_org.ssgproject.content_rule_use_nodev_option_on_nfs_mounts
 severity: medium
 title: Mount Remote Filesystems with nodev
 description: |
-  `nodev` option to the fourth column of `/etc/fstab` for the line which
-  controls mounting of any NFS mounts.
-rationale: ~
+  Add the `nodev` option to the fourth column of `/etc/fstab` for the line
+  which controls mounting of any NFS mounts.
+rationale: |
+  Legitimate device files should only exist in the /dev directory. NFS
+  mounts should not present device files to users.
 references:
 - href: test_attestation
   dc:contributor: DS

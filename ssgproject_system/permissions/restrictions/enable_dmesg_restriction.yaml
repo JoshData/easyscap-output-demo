@@ -2,7 +2,8 @@ id: xccdf_org.ssgproject.content_rule_enable_dmesg_restriction
 severity: low
 title: Restrict Access to Kernel Message Buffer
 description: |
-  `kernel.dmesg_restrict` kernel parameter, run the following command:
+  To set the runtime status of the `kernel.dmesg_restrict` kernel
+  parameter, run the following command:
 
   ~~~~ {xml:space="preserve"}
   # sysctl -w kernel.dmesg_restrict=1
@@ -14,7 +15,9 @@ description: |
   ~~~~ {xml:space="preserve"}
   kernel.dmesg_restrict = 1
   ~~~~
-rationale: ~
+rationale: |
+  Unprivileged access to the kernel syslog can expose sensitive kernel
+  address information.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

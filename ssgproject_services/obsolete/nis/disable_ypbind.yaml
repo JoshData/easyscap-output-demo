@@ -2,14 +2,14 @@ id: xccdf_org.ssgproject.content_rule_disable_ypbind
 severity: medium
 title: Disable ypbind Service
 description: |
-  `ypbind` service, which allows the system to act as a client in a NIS or
-  NIS+ domain, should be disabled. The `ypbind` service can be disabled
-  with the following command:
+  The `ypbind` service, which allows the system to act as a client in a
+  NIS or NIS+ domain, should be disabled. The `ypbind` service can be
+  disabled with the following command:
 
       # chkconfig ypbind off
 rationale: |
-  `ypbind` service ensures the system is not acting as a client in a NIS
-  or NIS+ domain.
+  Disabling the `ypbind` service ensures the system is not acting as a
+  client in a NIS or NIS+ domain.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

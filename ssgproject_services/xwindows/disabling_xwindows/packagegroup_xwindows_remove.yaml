@@ -1,8 +1,15 @@
 id: xccdf_org.ssgproject.content_rule_packagegroup_xwindows_remove
 severity: low
 title: Remove the X Windows Package Group
-description: '# yum groupremove "X Window System"'
-rationale: ~
+description: |
+  Removing all packages which constitute the X Window System ensures users
+  or malicious software cannot start X. To do so, run the following
+  command:
+
+      # yum groupremove "X Window System"
+rationale: |
+  Unnecessary packages should not be installed to decrease the attack
+  surface of the system.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '366'

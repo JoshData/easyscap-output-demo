@@ -2,8 +2,8 @@ id: xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_all_accept_source_rou
 severity: medium
 title: Disable Kernel Parameter for Accepting Source-Routed Packets for All Interfaces
 description: |
-  `net.ipv4.conf.all.accept_source_route` kernel parameter, run the
-  following command:
+  To set the runtime status of the `net.ipv4.conf.all.accept_source_route`
+  kernel parameter, run the following command:
 
   ~~~~ {xml:space="preserve"}
   # sysctl -w net.ipv4.conf.all.accept_source_route=0
@@ -15,7 +15,9 @@ description: |
   ~~~~ {xml:space="preserve"}
   net.ipv4.conf.all.accept_source_route = 0
   ~~~~
-rationale: ~
+rationale: |
+  Accepting source-routed packets in the IPv4 protocol has few legitimate
+  uses. It should be disabled unless it is absolutely required.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

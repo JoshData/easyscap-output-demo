@@ -2,10 +2,10 @@ id: xccdf_org.ssgproject.content_rule_service_cups_disabled
 severity: low
 title: Disable the CUPS Service
 description: |
-  `cups` service can be disabled with the following command:
+  The `cups` service can be disabled with the following command:
 
       # chkconfig cups off
-rationale: ~
+rationale: Turn off unneeded services to reduce attack surface.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

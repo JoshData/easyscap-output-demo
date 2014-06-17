@@ -2,8 +2,10 @@ id: xccdf_org.ssgproject.content_rule_configure_logwatch_hostlimit
 severity: low
 title: Configure Logwatch HostLimit Line
 description: |
-  `HostLimit` setting tells Logwatch to report on all hosts, not just the
-  one on which it is running.
+  On a central logserver, you want Logwatch to summarize all syslog
+  entries, including those which did not originate on the logserver
+  itself. The `HostLimit` setting tells Logwatch to report on all hosts,
+  not just the one on which it is running.
 
        HostLimit = no
 rationale: ~

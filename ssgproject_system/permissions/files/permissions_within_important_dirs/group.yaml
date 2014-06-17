@@ -1,6 +1,11 @@
 id: xccdf_org.ssgproject.content_group_permissions_within_important_dirs
 title: Verify File Permissions Within Some Important Directories
-description: ~
+description: |
+  Some directories contain files whose confidentiality or integrity is
+  notably important and may also be susceptible to misconfiguration over
+  time, particularly if unpackaged software is installed. As such, an
+  argument exists to verify that files’ permissions within these
+  directories remain configured correctly and restrictively.
 rules:
 - file_permissions_library_dirs
 - file_ownership_library_dirs

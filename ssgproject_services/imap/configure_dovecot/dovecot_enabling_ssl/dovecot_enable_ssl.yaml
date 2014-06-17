@@ -2,13 +2,19 @@ id: xccdf_org.ssgproject.content_rule_dovecot_enable_ssl
 severity: low
 title: Enable the SSL flag in /etc/dovecot.conf
 description: |
-  `ssl` flag in Dovecot’s configuration file needs to be set to `yes`. \
-  \
-   Edit `/etc/dovecot/conf.d/10-ssl.conf` and add or correct the following
+  To allow clients to make encrypted connections the `ssl` flag in
+  Dovecot’s configuration file needs to be set to `yes`.
+
+  <p>
+  Edit `/etc/dovecot/conf.d/10-ssl.conf` and add or correct the following
   line:
 
       ssl = yes
-rationale: ~
+rationale: |
+  SSL encrypt network traffic between the Dovecot server and its clients
+  protecting user credentials, mail as it is downloaded, and clients may
+  use SSL certificates to authenticate the server, preventing another
+  system from impersonating the server.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

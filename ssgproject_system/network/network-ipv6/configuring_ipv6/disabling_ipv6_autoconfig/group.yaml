@@ -1,8 +1,9 @@
 id: xccdf_org.ssgproject.content_group_disabling_ipv6_autoconfig
 title: Disable Automatic Configuration
 description: |
-  `/etc/sysconfig/network` (note that this does not disable sending router
-  solicitations):
+  Disable the system’s acceptance of router advertisements and redirects
+  by adding or correcting the following line in `/etc/sysconfig/network`
+  (note that this does not disable sending router solicitations):
 
       IPV6_AUTOCONF=no
 rules:

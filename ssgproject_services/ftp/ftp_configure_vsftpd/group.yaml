@@ -1,8 +1,8 @@
 id: xccdf_org.ssgproject.content_group_ftp_configure_vsftpd
 title: Use vsftpd to Provide FTP Service if Necessary
 description: |
-  `/etc/vsftpd.conf`, if that file exists, or `/etc/vsftpd/vsftpd.conf` if
-  it does not.
+  The primary vsftpd configuration file is `/etc/vsftpd.conf`, if that
+  file exists, or `/etc/vsftpd/vsftpd.conf` if it does not.
 rules:
 - ftp_log_transactions
 - ftp_present_banner

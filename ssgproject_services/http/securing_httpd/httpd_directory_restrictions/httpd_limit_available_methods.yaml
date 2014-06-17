@@ -2,9 +2,12 @@ id: xccdf_org.ssgproject.content_rule_httpd_limit_available_methods
 severity: low
 title: Limit Available Methods
 description: |
-  \
-  \
-   Note: `GET` and `POST` are the most common methods. A majority of the
+  Web server methods are defined in section 9 of RFC 2616
+  (http://www.ietf.org/rfc/rfc2616.txt). If a web server does not require
+  the implementation of all available methods, they should be disabled.
+
+  <p>
+  Note: `GET` and `POST` are the most common methods. A majority of the
   others are limited to the WebDAV protocol.
 
       <Directory /var/www/html>
@@ -15,7 +18,9 @@ description: |
          </LimitExcept>
       # ...
       </Directory>
-rationale: ~
+rationale: |
+  Minimizing the number of available methods to the web client reduces
+  risk by limiting the capabilities allowed by the web server.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

@@ -2,13 +2,18 @@ id: xccdf_org.ssgproject.content_rule_enable_gdm_login_banner
 severity: medium
 title: Enable GUI Warning Banner
 description: |
-  sudo -u gdm gconftool-2 \
+  To enable displaying a login warning banner in the GNOME Display
+  Manager’s login screen, run the following command:
+
+      sudo -u gdm gconftool-2 \
         --type bool \
         --set /apps/gdm/simple-greeter/banner_message_enable true
 
   To display a banner, this setting must be enabled and then banner text
   must also be set.
-rationale: ~
+rationale: |
+  An appropriate warning message reinforces policy awareness during the
+  logon process and facilitates possible legal action against attackers.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-8(a)

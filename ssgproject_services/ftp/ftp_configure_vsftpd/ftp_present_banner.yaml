@@ -2,11 +2,14 @@ id: xccdf_org.ssgproject.content_rule_ftp_present_banner
 severity: medium
 title: Create Warning Banners for All FTP Users
 description: |
+  Edit the vsftpd configuration file, which resides at
   `/etc/vsftpd/vsftpd.conf` by default. Add or correct the following
   configuration options:
 
       banner_file=/etc/issue
-rationale: ~
+rationale: |
+  This setting will cause the system greeting banner to be used for FTP
+  connections as well.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '48'

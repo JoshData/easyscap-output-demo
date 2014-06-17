@@ -1,8 +1,17 @@
 id: xccdf_org.ssgproject.content_rule_no_unpackaged_sgid_files
 severity: low
 title: Ensure All SGID Executables Are Authorized
-description: ~
-rationale: ~
+description: |
+  The SGID (set group id) bit should be set only on files that were
+  installed via authorized means. A straightforward means of identifying
+  unauthorized SGID files is determine if any were not installed as part
+  of an RPM package, which is cryptographically verified. Investigate the
+  origin of any unpackaged SGID files.
+rationale: |
+  Executable files with the SGID permission run with the privileges of the
+  owner of the file. SGID files of uncertain provenance could allow for
+  unprivileged users to elevate privileges. The presence of these files
+  should be strictly controlled on the system.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
 crosswalk:

@@ -1,6 +1,10 @@
 id: xccdf_org.ssgproject.content_group_disabling_snmp_service
 title: Disable SNMP Server if Possible
-description: ~
+description: |
+  The system includes an SNMP daemon that allows for its remote
+  monitoring, though it not installed by default. If it was installed and
+  activated but is not needed, the software should be disabled and
+  removed.
 rules:
 - disable_snmpd
 - uninstall_net-snmp

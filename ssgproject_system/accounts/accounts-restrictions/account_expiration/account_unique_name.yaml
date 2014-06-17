@@ -1,8 +1,8 @@
 id: xccdf_org.ssgproject.content_rule_account_unique_name
 severity: low
 title: Ensure All Accounts on the System Have Unique Names
-description: ~
-rationale: ~
+description: Change usernames, or delete accounts, so each has a unique name.
+rationale: Unique usernames allow for accountability on the system.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '770'

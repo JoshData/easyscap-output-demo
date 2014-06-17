@@ -2,10 +2,15 @@ id: xccdf_org.ssgproject.content_rule_service_nfs_disabled
 severity: low
 title: Disable Network File System (nfs)
 description: |
-  `nfs` service can be disabled with the following command:
+  The Network File System (NFS) service allows remote hosts to mount and
+  interact with shared filesystems on the local machine. If the local
+  machine is not designated as a NFS server then this service should be
+  disabled. The `nfs` service can be disabled with the following command:
 
       # chkconfig nfs off
-rationale: ~
+rationale: |
+  Unnecessary services should be disabled to decrease the attack surface
+  of the system.
 references:
 - href: test_attestation
   dc:contributor: DS

@@ -1,14 +1,14 @@
 id: xccdf_org.ssgproject.content_group_auditd_configure_rules
 title: Configure auditd Rules for Comprehensive Auditing
 description: |
-  `auditd` program can perform comprehensive monitoring of system
+  The `auditd` program can perform comprehensive monitoring of system
   activity. This section describes recommended configuration settings for
   comprehensive auditing, but a full description of the auditing system’s
   capabilities is beyond the scope of this guide. The mailing list
   *linux-audit@redhat.com* exists to facilitate community discussion of
-  the auditing system. \
-  \
-   The audit subsystem supports extensive collection of events, including:
+  the auditing system.
+
+  The audit subsystem supports extensive collection of events, including:
   \
 
   -   Tracing of arbitrary system calls (identified by name or number) on
@@ -25,15 +25,16 @@ description: |
   `/etc/audit/audit.rules` represents a series of arguments that can be
   passed to `auditctl` and can be individually tested during runtime. See
   documentation in `/usr/share/doc/audit-VERSION` and in the related man
-  pages for more details. \
-  \
-   If copying any example audit rulesets from
+  pages for more details.
+
+  If copying any example audit rulesets from
   `/usr/share/doc/audit-VERSION`, be sure to comment out the lines
   containing `arch=` which are not appropriate for your system’s
   architecture. Then review and understand the following rules, ensuring
-  rules are activated as needed for the appropriate architecture. \
-  \
-   After reviewing all the rules, reading the following sections, and
+  rules are activated as needed for the appropriate architecture.
+
+  <p>
+  After reviewing all the rules, reading the following sections, and
   editing as needed, the new rules can be activated as follows:
 
       # service auditd restart

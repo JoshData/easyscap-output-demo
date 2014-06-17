@@ -1,8 +1,8 @@
 id: xccdf_org.ssgproject.content_group_postfix_server_mail_relay_set_trusted_networks
 title: Configure Trusted Networks and Hosts
 description: |
-  `/etc/postfix/main.cf`, and configure the contents of the `mynetworks`
-  variable in one of the following ways:
+  Edit `/etc/postfix/main.cf`, and configure the contents of the
+  `mynetworks` variable in one of the following ways:
 
   -   If any machine in the subnet containing the MTA may be trusted to
       relay messages, add or correct the following line:

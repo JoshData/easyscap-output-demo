@@ -2,12 +2,17 @@ id: xccdf_org.ssgproject.content_rule_ntpd_specify_multiple_servers
 severity: low
 title: Specify Additional Remote NTP Servers
 description: |
-  `/etc/ntp.conf`. To do so, add additional lines of the following form,
-  substituting the IP address or hostname of a remote NTP server for
+  Additional NTP servers can be specified for time synchronization in the
+  file `/etc/ntp.conf`. To do so, add additional lines of the following
+  form, substituting the IP address or hostname of a remote NTP server for
   *ntpserver*:
 
       server ntpserver
-rationale: ~
+rationale: |
+  Specifying additional NTP servers increases the availability of accurate
+  time data, in the event that one of the specified servers becomes
+  unavailable. This is typical for a system acting as an NTP server for
+  other systems.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AU-8(1)

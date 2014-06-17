@@ -1,9 +1,10 @@
 id: xccdf_org.ssgproject.content_group_disabling_nfs_services
 title: Disable Services Used Only by NFS
 description: |
-  \
-  \
-   All of these daemons run with elevated privileges, and many listen for
+  If NFS is not needed, disable the NFS client daemons nfslock, rpcgssd,
+  and rpcidmapd.
+
+  All of these daemons run with elevated privileges, and many listen for
   network connections. If they are not needed, they should be disabled to
   improve system security posture.
 rules:

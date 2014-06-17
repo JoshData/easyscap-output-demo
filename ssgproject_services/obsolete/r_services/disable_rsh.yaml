@@ -2,12 +2,16 @@ id: xccdf_org.ssgproject.content_rule_disable_rsh
 severity: high
 title: Disable rsh Service
 description: |
-  `rsh` service, which is available with the `rsh-server` package and runs
-  as a service through xinetd, should be disabled. The `rsh` service can
-  be disabled with the following command:
+  The `rsh` service, which is available with the `rsh-server` package and
+  runs as a service through xinetd, should be disabled. The `rsh` service
+  can be disabled with the following command:
 
       # chkconfig rsh off
-rationale: ~
+rationale: |
+  The rsh service uses unencrypted network communications, which means
+  that data from the login session, including passwords and all other
+  information transmitted during the session, can be stolen by
+  eavesdroppers on the network.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

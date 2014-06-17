@@ -2,13 +2,19 @@ id: xccdf_org.ssgproject.content_rule_kernel_module_sctp_disabled
 severity: medium
 title: Disable SCTP Support
 description: |
-  `sctp` kernel module from being loaded, add the following line to a file
-  in the directory `/etc/modprobe.d`:
+  The Stream Control Transmission Protocol (SCTP) is a transport layer
+  protocol, designed to support the idea of message-oriented
+  communication, with several streams of messages within one connection.
+  To configure the system to prevent the `sctp` kernel module from being
+  loaded, add the following line to a file in the directory
+  `/etc/modprobe.d`:
 
   ~~~~ {xml:space="preserve"}
   install sctp /bin/false
   ~~~~
-rationale: ~
+rationale: |
+  Disabling SCTP protects the system against exploitation of any flaws in
+  its implementation.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

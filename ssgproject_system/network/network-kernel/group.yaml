@@ -1,9 +1,9 @@
 id: xccdf_org.ssgproject.content_group_network-kernel
 title: Kernel Parameters Which Affect Networking
 description: |
-  `sysctl` utility is used to set parameters which affect the operation of
-  the Linux kernel. Kernel parameters which affect networking and have
-  security implications are described here.
+  The `sysctl` utility is used to set parameters which affect the
+  operation of the Linux kernel. Kernel parameters which affect networking
+  and have security implications are described here.
 rules: []
 subgroups:
 - network_host_parameters

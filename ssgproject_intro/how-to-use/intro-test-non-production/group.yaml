@@ -1,5 +1,8 @@
 id: xccdf_org.ssgproject.content_group_intro-test-non-production
 title: Test in Non-Production Environment
-description: ~
+description: |
+  This guidance should always be tested in a non-production environment
+  before deployment. This test environment should simulate the setup in
+  which the system will be deployed as closely as possible.
 rules: []
 subgroups: []

@@ -2,16 +2,17 @@ id: xccdf_org.ssgproject.content_rule_service_cpuspeed_disabled
 severity: low
 title: Disable CPU Speed (cpuspeed)
 description: |
-  `cpuspeed` service can adjust the clock speed of supported CPUs based
-  upon the current processing load thereby conserving power and reducing
-  heat. The `cpuspeed` service can be disabled with the following command:
+  The `cpuspeed` service can adjust the clock speed of supported CPUs
+  based upon the current processing load thereby conserving power and
+  reducing heat. The `cpuspeed` service can be disabled with the following
+  command:
 
       # chkconfig cpuspeed off
 rationale: |
-  `cpuspeed` service is only necessary if adjusting the CPU clock speed
-  provides benefit. Traditionally this has included laptops (to enhance
-  battery life), but may also apply to server or desktop environments
-  where conserving power is highly desirable or necessary.
+  The `cpuspeed` service is only necessary if adjusting the CPU clock
+  speed provides benefit. Traditionally this has included laptops (to
+  enhance battery life), but may also apply to server or desktop
+  environments where conserving power is highly desirable or necessary.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

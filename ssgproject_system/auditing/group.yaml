@@ -1,10 +1,14 @@
 id: xccdf_org.ssgproject.content_group_auditing
 title: System Accounting with auditd
-description: "`auditd` has modest disk space requirements, and should not noticeably\nimpact
-  system performance. \\\n\\\n Government networks often have substantial auditing
-  requirements and\n`auditd` can be configured to meet these requirements. Examining
-  some\nexample audit records demonstrates how the Linux audit system satisfies\ncommon
-  requirements. The following example from Fedora Documentation\navailable at\n`http://docs.fedoraproject.org/en-US/Fedora/13/html/Security-Enhanced_Linux/sect-Security-Enhanced_Linux-Fixing_Problems-Raw_Audit_Messages.html`\nshows
+description: "The audit service provides substantial capabilities for recording system\nactivities.
+  By default, the service audits about SELinux AVC denials and\ncertain types of security-relevant
+  events such as system logins, account\nmodifications, and authentication events
+  performed by programs such as\nsudo. Under its default configuration, `auditd` has
+  modest disk space\nrequirements, and should not noticeably impact system performance.\n\n<p>\nGovernment
+  networks often have substantial auditing requirements and\n`auditd` can be configured
+  to meet these requirements. Examining some\nexample audit records demonstrates how
+  the Linux audit system satisfies\ncommon requirements. The following example from
+  Fedora Documentation\navailable at\n`http://docs.fedoraproject.org/en-US/Fedora/13/html/Security-Enhanced_Linux/sect-Security-Enhanced_Linux-Fixing_Problems-Raw_Audit_Messages.html`\nshows
   the substantial amount of information captured in a two typical\n“raw” audit messages,
   followed by a breakdown of the most important\nfields. In this example the message
   is SELinux-related and reports an\nAVC denial (and the associated system call) that

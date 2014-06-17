@@ -2,16 +2,19 @@ id: xccdf_org.ssgproject.content_rule_httpd_server_configuration_display
 severity: low
 title: Disable Web Server Configuration Display
 description: |
-  `info` module creates a web page illustrating the configuration of the
-  web server. This can create an unnecessary security leak and should be
-  disabled. If its functionality is unnecessary, comment out the module:
+  The `info` module creates a web page illustrating the configuration of
+  the web server. This can create an unnecessary security leak and should
+  be disabled. If its functionality is unnecessary, comment out the
+  module:
 
       #LoadModule info_module modules/mod_info.so
 
   If there is a critical need for this module, use the `Location`
   directive to provide an access control list to restrict access to the
   information.
-rationale: ~
+rationale: |
+  Minimizing the number of loadable modules available to the web server
+  reduces risk by limiting the capabilities allowed by the web server.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

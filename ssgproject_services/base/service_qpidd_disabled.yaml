@@ -2,14 +2,19 @@ id: xccdf_org.ssgproject.content_rule_service_qpidd_disabled
 severity: low
 title: Disable Apache Qpid (qpidd)
 description: |
-  `qpidd` service provides high speed, secure, guaranteed delivery
+  The `qpidd` service provides high speed, secure, guaranteed delivery
   services. It is an implementation of the Advanced Message Queuing
   Protocol. By default the qpidd service will bind to port 5672 and listen
   for connection attempts. The `qpidd` service can be disabled with the
   following command:
 
       # chkconfig qpidd off
-rationale: '`qpidd` service is not needed and should be disabled or removed.'
+rationale: |
+  The qpidd service is automatically installed when the “base” package
+  selection is selected during installation. The qpidd service listens for
+  network connections, which increases the attack surface of the system.
+  If the system is not intended to receive AMQP traffic, then the `qpidd`
+  service is not needed and should be disabled or removed.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

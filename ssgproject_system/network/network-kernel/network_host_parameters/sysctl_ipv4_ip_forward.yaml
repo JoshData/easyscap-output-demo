@@ -2,7 +2,8 @@ id: xccdf_org.ssgproject.content_rule_sysctl_ipv4_ip_forward
 severity: medium
 title: Disable Kernel Parameter for IP Forwarding
 description: |
-  `net.ipv4.ip_forward` kernel parameter, run the following command:
+  To set the runtime status of the `net.ipv4.ip_forward` kernel parameter,
+  run the following command:
 
   ~~~~ {xml:space="preserve"}
   # sysctl -w net.ipv4.ip_forward=0
@@ -14,7 +15,10 @@ description: |
   ~~~~ {xml:space="preserve"}
   net.ipv4.ip_forward = 0
   ~~~~
-rationale: ~
+rationale: |
+  IP forwarding permits the kernel to forward packets from one network
+  interface to another. The ability to forward packets between two
+  networks is only appropriate for systems acting as routers.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

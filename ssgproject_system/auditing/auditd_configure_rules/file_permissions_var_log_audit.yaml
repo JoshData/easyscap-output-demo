@@ -1,8 +1,13 @@
 id: xccdf_org.ssgproject.content_rule_file_permissions_var_log_audit
 severity: low
 title: System Audit Logs Must Have Mode 0640 or Less Permissive
-description: '# chmod 0640 audit_file'
-rationale: ~
+description: |
+  Change the mode of the audit log files with the following command:
+
+      # chmod 0640 audit_file
+rationale: |
+  If users can write to audit logs, audit trails can be modified or
+  destroyed.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-6

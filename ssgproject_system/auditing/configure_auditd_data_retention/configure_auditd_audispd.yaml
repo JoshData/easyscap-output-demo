@@ -2,12 +2,16 @@ id: xccdf_org.ssgproject.content_rule_configure_auditd_audispd
 severity: medium
 title: Configure auditd to use audispd plugin
 description: |
-  `auditd` service to use the `audispd` plugin, set the `active` line in
-  `/etc/audisp/plugins.d/syslog.conf` to `yes`. Restart the
-  `auditd`service:
+  To configure the `auditd` service to use the `audispd` plugin, set the
+  `active` line in `/etc/audisp/plugins.d/syslog.conf` to `yes`. Restart
+  the `auditd`service:
 
       # service auditd restart
-rationale: ~
+rationale: |
+  The auditd service does not include the ability to send audit records to
+  a centralized server for management directly. It does, however, include
+  an audit event multiplexor plugin (audispd) to pass audit records to the
+  local syslog server
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AU-1(b)

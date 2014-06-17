@@ -2,6 +2,7 @@ id: xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_icmp_ignore_bogus_error_re
 severity: low
 title: Enable Kernel Parameter to Ignore Bogus ICMP Error Responses
 description: |
+  To set the runtime status of the
   `net.ipv4.icmp_ignore_bogus_error_responses` kernel parameter, run the
   following command:
 
@@ -15,7 +16,9 @@ description: |
   ~~~~ {xml:space="preserve"}
   net.ipv4.icmp_ignore_bogus_error_responses = 1
   ~~~~
-rationale: ~
+rationale: |
+  Ignoring bogus ICMP error responses reduces log size, although some
+  activity would not be logged.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

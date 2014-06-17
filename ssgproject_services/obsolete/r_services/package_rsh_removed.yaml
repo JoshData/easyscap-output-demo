@@ -1,8 +1,14 @@
 id: xccdf_org.ssgproject.content_rule_package_rsh_removed
 severity: low
 title: Uninstal rsh Package
-description: '`rsh` package contains the client commands for the rsh services'
-rationale: '`rsh` package removes the clients for `rsh`,`rcp`, and `rlogin`.'
+description: The `rsh` package contains the client commands for the rsh services
+rationale: |
+  These legacy clients contain numerous security exposures and have been
+  replaced with the more secure SSH package. Even if the server is
+  removed, it is best to ensure the clients are also removed to prevent
+  users from inadvertently attempting to use these commands and therefore
+  exposing their credentials. Note that removing the `rsh` package removes
+  the clients for `rsh`,`rcp`, and `rlogin`.
 references:
 - href: test_attestation
   dc:contributor: JL

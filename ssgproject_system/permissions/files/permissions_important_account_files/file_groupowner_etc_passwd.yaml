@@ -2,13 +2,13 @@ id: xccdf_org.ssgproject.content_rule_file_groupowner_etc_passwd
 severity: medium
 title: Verify Group Who Owns passwd File
 description: |
-  `/etc/passwd`, run the command:
+  To properly set the group owner of `/etc/passwd`, run the command:
 
   ~~~~ {xml:space="preserve"}
   # chgrp root/etc/passwd
   ~~~~
 rationale: |
-  `/etc/passwd` file contains information about the users that are
+  The `/etc/passwd` file contains information about the users that are
   configured on the system. Protection of this file is critical for system
   security.
 references:

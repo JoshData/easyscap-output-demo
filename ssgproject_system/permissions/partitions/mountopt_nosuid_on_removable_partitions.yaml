@@ -2,7 +2,7 @@ id: xccdf_org.ssgproject.content_rule_mountopt_nosuid_on_removable_partitions
 severity: low
 title: Add nosuid Option to Removable Media Partitions
 description: |
-  `nosuid` mount option prevents set-user-identifier (suid) and
+  The `nosuid` mount option prevents set-user-identifier (suid) and
   set-group-identifier (sgid) permissions from taking effect. These
   permissions allow users to execute binaries with the same permissions as
   the owner and group of the file respectively. Users should not be
@@ -10,7 +10,11 @@ description: |
   mounted from removeable media. Add the `nosuid` option to the fourth
   column of `/etc/fstab` for the line which controls mounting of any
   removable media partitions.
-rationale: ~
+rationale: |
+  The presence of suid and sgid executables should be tightly controlled.
+  Allowing users to introduce suid or sgid binaries from partitions
+  mounted off of removable media would allow them to introduce their own
+  highly-privileged programs.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-19(a)

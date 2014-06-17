@@ -1,6 +1,13 @@
 id: xccdf_org.ssgproject.content_group_ssh
 title: SSH Server
-description: '`sshd` and provided by the RPM package `openssh-server`.'
+description: |
+  The SSH protocol is recommended for remote login and remote file
+  transfer. SSH provides confidentiality and integrity for data exchanged
+  between two systems, as well as server authentication, through the use
+  of public key cryptography. The implementation included with the system
+  is called OpenSSH, and more detailed documentation is available from its
+  website, http://www.openssh.org. Its server program is called `sshd` and
+  provided by the RPM package `openssh-server`.
 rules:
 - ssh_server_disabled
 - ssh_server_iptables_exception

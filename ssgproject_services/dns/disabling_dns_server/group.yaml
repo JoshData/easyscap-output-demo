@@ -1,6 +1,10 @@
 id: xccdf_org.ssgproject.content_group_disabling_dns_server
 title: Disable DNS Server
-description: ~
+description: |
+  DNS software should be disabled on any machine which does not need to be
+  a nameserver. Note that the BIND DNS server software is not installed on
+  RHEL 6 by default. The remainder of this section discusses secure
+  configuration of machines which must be nameservers.
 rules:
 - disable_dns_server
 - uninstall_bind

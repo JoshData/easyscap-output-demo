@@ -2,13 +2,16 @@ id: xccdf_org.ssgproject.content_rule_ensure_gpgcheck_globally_activated
 severity: high
 title: Ensure gpgcheck Enabled In Main Yum Configuration
 description: |
-  `gpgcheck` option controls whether RPM packages’ signatures are always
-  checked prior to installation. To configure yum to check package
+  The `gpgcheck` option controls whether RPM packages’ signatures are
+  always checked prior to installation. To configure yum to check package
   signatures before installing them, ensure the following line appears in
   `/etc/yum.conf` in the `[main]` section:
 
       gpgcheck=1
-rationale: ~
+rationale: |
+  Ensuring the validity of packages’ cryptographic signatures prior to
+  installation ensures the authenticity of the software and protects
+  against malicious tampering.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: SI-7

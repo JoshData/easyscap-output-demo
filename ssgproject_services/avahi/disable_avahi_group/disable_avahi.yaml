@@ -2,10 +2,13 @@ id: xccdf_org.ssgproject.content_rule_disable_avahi
 severity: low
 title: Disable Avahi Server Software
 description: |
-  `avahi-daemon` service can be disabled with the following command:
+  The `avahi-daemon` service can be disabled with the following command:
 
       # chkconfig avahi-daemon off
-rationale: ~
+rationale: |
+  Because the Avahi daemon service keeps an open network port, it is
+  subject to network attacks. Its functionality is convenient but is only
+  appropriate if the local network can be trusted.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

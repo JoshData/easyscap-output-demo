@@ -2,13 +2,16 @@ id: xccdf_org.ssgproject.content_rule_require_smb_client_signing_mount.cifs
 severity: low
 title: Require Client SMB Packet Signing, if using mount.cifs
 description: |
+  Require packet signing of clients who mount Samba shares using the
   `mount.cifs` program (e.g., those who specify shares in `/etc/fstab`).
   To do so, ensure signing options (either `sec=krb5i` or `sec=ntlmv2i`)
-  are used. \
-  \
-   See the `mount.cifs(8)` man page for more information. A Samba client
+  are used.
+
+  See the `mount.cifs(8)` man page for more information. A Samba client
   should only communicate with servers who can support SMB packet signing.
-rationale: ~
+rationale: |
+  Packet signing can prevent man-in-the-middle attacks which modify SMB
+  packets in transit.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

@@ -2,8 +2,8 @@ id: xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_icmp_echo_ignore_broadcast
 severity: low
 title: Enable Kernel Parameter to Ignore ICMP Broadcast Echo Requests
 description: |
-  `net.ipv4.icmp_echo_ignore_broadcasts` kernel parameter, run the
-  following command:
+  To set the runtime status of the `net.ipv4.icmp_echo_ignore_broadcasts`
+  kernel parameter, run the following command:
 
   ~~~~ {xml:space="preserve"}
   # sysctl -w net.ipv4.icmp_echo_ignore_broadcasts=1
@@ -15,7 +15,10 @@ description: |
   ~~~~ {xml:space="preserve"}
   net.ipv4.icmp_echo_ignore_broadcasts = 1
   ~~~~
-rationale: ~
+rationale: |
+  Ignoring ICMP echo requests (pings) sent to broadcast or multicast
+  addresses makes the system slightly more difficult to enumerate on the
+  network.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

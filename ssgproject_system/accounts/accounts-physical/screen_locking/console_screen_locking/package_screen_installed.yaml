@@ -2,7 +2,7 @@ id: xccdf_org.ssgproject.content_rule_package_screen_installed
 severity: low
 title: Install the screen Package
 description: |
-  `screen` package:
+  To enable console screen locking, install the `screen` package:
 
       # yum install screen
 
@@ -15,8 +15,8 @@ description: |
 
       ctrl+a x
 rationale: |
-  `screen` ensures a console locking capability is available for users who
-  may need to suspend console logins.
+  Installing `screen` ensures a console locking capability is available
+  for users who may need to suspend console logins.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '58'

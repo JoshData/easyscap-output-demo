@@ -2,13 +2,15 @@ id: xccdf_org.ssgproject.content_rule_mount_option_noexec_removable_partitions
 severity: low
 title: Add noexec Option to Removable Media Partitions
 description: |
-  `noexec` mount option prevents the direct execution of binaries on the
-  mounted filesystem. Preventing the direct execution of binaries from
+  The `noexec` mount option prevents the direct execution of binaries on
+  the mounted filesystem. Preventing the direct execution of binaries from
   removable media (such as a USB key) provides a defense against malicious
   software that may be present on such untrusted media. Add the `noexec`
   option to the fourth column of `/etc/fstab` for the line which controls
   mounting of any removable media partitions.
-rationale: ~
+rationale: |
+  Allowing users to execute binaries from removable media such as USB keys
+  exposes the system to potential compromise.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-19(a)

@@ -2,18 +2,19 @@ id: xccdf_org.ssgproject.content_rule_service_ntpdate_disabled
 severity: low
 title: Disable ntpdate Service (ntpdate)
 description: |
-  `ntpdate` service sets the local hardware clock by polling NTP servers
-  when the system boots. It synchronizes to the NTP servers listed in
-  `/etc/ntp/step-tickers` or `/etc/ntp.conf` and then sets the local
+  The `ntpdate` service sets the local hardware clock by polling NTP
+  servers when the system boots. It synchronizes to the NTP servers listed
+  in `/etc/ntp/step-tickers` or `/etc/ntp.conf` and then sets the local
   hardware clock to the newly synchronized system time. The `ntpdate`
   service can be disabled with the following command:
 
       # chkconfig ntpdate off
 rationale: |
-  `ntpdate` service may only be suitable for systems which are rebooted
-  frequently enough that clock drift does not cause problems between
-  reboots. In any event, the functionality of the ntpdate service is now
-  available in the ntpd program and should be considered deprecated.
+  The `ntpdate` service may only be suitable for systems which are
+  rebooted frequently enough that clock drift does not cause problems
+  between reboots. In any event, the functionality of the ntpdate service
+  is now available in the ntpd program and should be considered
+  deprecated.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

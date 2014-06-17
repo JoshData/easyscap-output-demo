@@ -2,12 +2,21 @@ id: xccdf_org.ssgproject.content_rule_install_PAE_kernel_on_x86-32
 severity: low
 title: Install PAE Kernel on Supported 32-bit x86 Systems
 description: |
-  # yum install kernel-PAE
+  Systems that are using the 64-bit x86 kernel package do not need to
+  install the kernel-PAE package because the 64-bit x86 kernel already
+  includes this support. However, if the system is 32-bit and also
+  supports the PAE and NX features as determined in the previous section,
+  the kernel-PAE package should be installed to enable XD or NX support:
+
+      # yum install kernel-PAE
 
   The installation process should also have configured the bootloader to
   load the new kernel at boot. Verify this at reboot and modify
   `/etc/grub.conf` if necessary.
-rationale: ~
+rationale: |
+  On 32-bit systems that support the XD or NX bit, the vendor-supplied PAE
+  kernel is required to enable either Execute Disable (XD) or No Execute
+  (NX) support.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
 crosswalk:

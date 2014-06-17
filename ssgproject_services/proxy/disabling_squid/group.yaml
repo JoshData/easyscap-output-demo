@@ -1,6 +1,8 @@
 id: xccdf_org.ssgproject.content_group_disabling_squid
 title: Disable Squid if Possible
-description: ~
+description: |
+  If Squid was installed and activated, but the system does not need to
+  act as a proxy server, then it should be disabled and removed.
 rules:
 - disable_squid
 - uninstall_squid

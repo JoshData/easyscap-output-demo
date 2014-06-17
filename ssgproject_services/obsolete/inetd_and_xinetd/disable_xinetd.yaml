@@ -2,10 +2,14 @@ id: xccdf_org.ssgproject.content_rule_disable_xinetd
 severity: medium
 title: Disable xinetd Service
 description: |
-  `xinetd` service can be disabled with the following command:
+  The `xinetd` service can be disabled with the following command:
 
       # chkconfig xinetd off
-rationale: ~
+rationale: |
+  The xinetd service provides a dedicated listener service for some
+  programs, which is no longer necessary for commonly-used network
+  services. Disabling it ensures that these uncommon services are not
+  running, and also prevents attacks against xinetd itself.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

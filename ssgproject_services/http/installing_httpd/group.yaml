@@ -1,8 +1,8 @@
 id: xccdf_org.ssgproject.content_group_installing_httpd
 title: Install Apache if Necessary
 description: |
-  `httpd` was not installed and activated, but the system needs to act as
-  a web server, then it should be installed on the system. Follow these
+  If `httpd` was not installed and activated, but the system needs to act
+  as a web server, then it should be installed on the system. Follow these
   guidelines to install it defensively. The `httpd` package can be
   installed with the following command:
 

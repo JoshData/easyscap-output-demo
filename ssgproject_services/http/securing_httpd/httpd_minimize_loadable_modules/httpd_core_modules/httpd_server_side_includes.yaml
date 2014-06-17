@@ -2,13 +2,20 @@ id: xccdf_org.ssgproject.content_rule_httpd_server_side_includes
 severity: low
 title: Disable Server Side Includes
 description: |
-  #LoadModule include_module modules/mod_include.so
+  Server Side Includes provide a method of dynamically generating web
+  pages through the insertion of server-side code. However, the technology
+  is also deprecated and introduces significant security concerns. If this
+  functionality is unnecessary, comment out the related module:
+
+      #LoadModule include_module modules/mod_include.so
 
   If there is a critical need for Server Side Includes, they should be
   enabled with the option `IncludesNoExec` to prevent arbitrary code
   execution. Additionally, user supplied data should be encoded to prevent
   cross-site scripting vulnerabilities.
-rationale: ~
+rationale: |
+  Minimizing the number of loadable modules available to the web server
+  reduces risk by limiting the capabilities allowed by the web server.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

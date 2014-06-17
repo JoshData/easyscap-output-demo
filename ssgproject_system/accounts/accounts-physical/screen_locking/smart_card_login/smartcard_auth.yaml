@@ -1,8 +1,14 @@
 id: xccdf_org.ssgproject.content_rule_smartcard_auth
 severity: medium
 title: Enable Smart Card Login
-description: '-   https://docs.redhat.com/docs/en-US/Red\_Hat\_Enterprise\_Linux/6/html/Managing\_Smart\_Cards/enabling-smart-card-login.html'
-rationale: ~
+description: |
+  To enable smart card authentication, consult the documentation at:
+
+  -   https://docs.redhat.com/docs/en-US/Red\_Hat\_Enterprise\_Linux/6/html/Managing\_Smart\_Cards/enabling-smart-card-login.html
+rationale: |
+  Smart card login provides two-factor authentication stronger than that
+  provided by a username/password combination. Smart cards leverage a PKI
+  (public key infrastructure) in order to provide and verify credentials.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '765'

@@ -2,11 +2,11 @@ id: xccdf_org.ssgproject.content_rule_uninstall_rsh-server
 severity: high
 title: Uninstall rsh-server Package
 description: |
-  `rsh-server` package can be uninstalled with the following command:
+  The `rsh-server` package can be uninstalled with the following command:
 
       # yum erase rsh-server
 rationale: |
-  `rsh-server` package provides several obsolete and insecure network
+  The `rsh-server` package provides several obsolete and insecure network
   services. Removing it decreases the risk of those services’ accidental
   (or intentional) activation.
 references:

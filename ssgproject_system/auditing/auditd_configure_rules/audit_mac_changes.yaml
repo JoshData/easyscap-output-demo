@@ -2,10 +2,13 @@ id: xccdf_org.ssgproject.content_rule_audit_mac_changes
 severity: low
 title: Record Events that Modify the System's Mandatory Access Controls
 description: |
-  `/etc/audit/audit.rules`:
+  Add the following to `/etc/audit/audit.rules`:
 
       -w /etc/selinux/ -p wa -k MAC-policy
-rationale: ~
+rationale: |
+  The system’s mandatory access policy (SELinux) should not be arbitrarily
+  changed by anything other than administrator action. All changes to MAC
+  policy should be audited.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(7)

@@ -1,10 +1,12 @@
 id: xccdf_org.ssgproject.content_rule_gid_passwd_group_same
 severity: low
 title: All GIDs referenced in /etc/passwd must be defined in /etc/group
-description: ~
+description: |
+  Add a group to the system for each GID referenced without a
+  corresponding group.
 rationale: |
-  `/etc/passwd` and `/etc/group` could lead to a user having unintended
-  rights.
+  Inconsistency in GIDs between `/etc/passwd` and `/etc/group` could lead
+  to a user having unintended rights.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '366'

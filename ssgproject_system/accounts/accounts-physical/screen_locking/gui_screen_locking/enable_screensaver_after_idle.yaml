@@ -2,11 +2,19 @@ id: xccdf_org.ssgproject.content_rule_enable_screensaver_after_idle
 severity: medium
 title: GNOME Desktop Screensaver Mandatory Use
 description: |
-  # gconftool-2 --direct \
+  Run the following command to activate the screensaver in the GNOME
+  desktop after a period of inactivity:
+
+      # gconftool-2 --direct \
         --config-source xml:readwrite:/etc/gconf/gconf.xml.mandatory \
         --type bool \
         --set /apps/gnome-screensaver/idle_activation_enabled true
-rationale: ~
+rationale: |
+  Enabling idle activation of the screen saver ensures the screensaver
+  will be activated after the idle delay. Applications requiring
+  continuous, real-time screen display (such as network management
+  products) require the login session does not have administrator rights
+  and the display station is located in a controlled-access area.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-11(a)

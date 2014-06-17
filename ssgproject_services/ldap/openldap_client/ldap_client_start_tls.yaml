@@ -2,12 +2,16 @@ id: xccdf_org.ssgproject.content_rule_ldap_client_start_tls
 severity: medium
 title: Configure LDAP Client to Use TLS For All Transactions
 description: |
+  Configure LDAP to enforce TLS use. First, edit the file
   `/etc/pam_ldap.conf`, and add or correct the following lines:
 
       ssl start_tls
 
   Then review the LDAP server and ensure TLS has been configured.
-rationale: ~
+rationale: |
+  The ssl directive specifies whether to use ssl or not. If not specified
+  it will default to no. It should be set to start\_tls rather than doing
+  LDAP over SSL.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

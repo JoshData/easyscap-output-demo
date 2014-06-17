@@ -1,6 +1,10 @@
 id: xccdf_org.ssgproject.content_group_srg_support
 title: Documentation to Support DISA OS SRG Mapping
-description: ~
+description: |
+  These groups exist to document how the Red Hat Enterprise Linux product
+  meets (or does not meet) requirements listed in the DISA OS SRG, for
+  those cases where Groups or Rules elsewhere in scap-security-guide do
+  not clearly relate.
 rules:
 - met_inherently_generic
 - met_inherently_auditing

@@ -1,10 +1,11 @@
 id: xccdf_org.ssgproject.content_group_httpd_minimal_modules_installed
 title: Confirm Minimal Built-in Modules Installed
 description: |
-  `httpd` installation minimizes the number of modules that are compiled
-  directly into the binary (`core prefork http_core mod_so`). This
-  minimizes risk by limiting the capabilities allowed by the web server.
-  Query the set of compiled-in modules using the following command:
+  The default `httpd` installation minimizes the number of modules that
+  are compiled directly into the binary (`core prefork http_core mod_so`).
+  This minimizes risk by limiting the capabilities allowed by the web
+  server. Query the set of compiled-in modules using the following
+  command:
 
       $ httpd -l
 

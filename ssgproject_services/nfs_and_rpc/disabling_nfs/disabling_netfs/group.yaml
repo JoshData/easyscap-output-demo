@@ -1,7 +1,10 @@
 id: xccdf_org.ssgproject.content_group_disabling_netfs
 title: Disable netfs if Possible
 description: |
-  # mount -t nfs,nfs4,smbfs,cifs,ncpfs
+  To determine if any network filesystems handled by netfs are currently
+  mounted on the system execute the following command:
+
+      # mount -t nfs,nfs4,smbfs,cifs,ncpfs
 
   If the command did not return any output then disable netfs.
 rules:

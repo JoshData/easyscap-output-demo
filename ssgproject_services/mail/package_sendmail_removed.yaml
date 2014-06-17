@@ -2,10 +2,15 @@ id: xccdf_org.ssgproject.content_rule_package_sendmail_removed
 severity: medium
 title: Uninstall Sendmail Package
 description: |
-  `sendmail` package can be removed with the following command:
+  Sendmail is not the default mail transfer agent and is not installed by
+  default. The `sendmail` package can be removed with the following
+  command:
 
       # yum erase sendmail
-rationale: ~
+rationale: |
+  The sendmail software was not developed with security in mind and its
+  design prevents it from being effectively contained by SELinux. Postfix
+  should be used instead.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

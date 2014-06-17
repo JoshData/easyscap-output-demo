@@ -1,9 +1,10 @@
 id: xccdf_org.ssgproject.content_group_ssh_server
 title: Configure OpenSSH Server if Necessary
 description: |
-  `/etc/ssh/sshd_config`. The following recommendations can be applied to
-  this file. See the `sshd_config(5)` man page for more detailed
-  information.
+  If the system needs to act as an SSH server, then certain changes should
+  be made to the OpenSSH daemon configuration file `/etc/ssh/sshd_config`.
+  The following recommendations can be applied to this file. See the
+  `sshd_config(5)` man page for more detailed information.
 rules:
 - sshd_allow_only_protocol2
 - sshd_limit_user_access

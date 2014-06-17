@@ -2,10 +2,14 @@ id: xccdf_org.ssgproject.content_rule_audit_sysadmin_actions
 severity: low
 title: Ensure auditd Collects System Administrator Actions
 description: |
-  `/etc/audit/audit.rules`:
+  At a minimum the audit system should collect administrator actions for
+  all users and root. Add the following to `/etc/audit/audit.rules`:
 
       -w /etc/sudoers -p wa -k actions
-rationale: ~
+rationale: |
+  The actions taken by system administrators should be audited to keep a
+  record of what was executed on the system, as well as, for
+  accountability purposes.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-2(7)(b)

@@ -1,7 +1,10 @@
 id: xccdf_org.ssgproject.content_group_dns_server_separate_internal_external
 title: Run Separate DNS Servers for External and Internal Queries
 description: |
-  `/etc/named.conf` to add or correct the following directives:
+  Is it possible to run external and internal nameservers on separate
+  machines? If so, follow the configuration guidance in this section. On
+  the external nameserver, edit `/etc/named.conf` to add or correct the
+  following directives:
 
       options {
         allow-query { any; };

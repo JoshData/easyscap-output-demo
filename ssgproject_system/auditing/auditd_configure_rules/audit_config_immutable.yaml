@@ -2,12 +2,16 @@ id: xccdf_org.ssgproject.content_rule_audit_config_immutable
 severity: low
 title: Make the auditd Configuration Immutable
 description: |
-  `/etc/audit/audit.rules` in order to make the configuration immutable:
+  Add the following to `/etc/audit/audit.rules` in order to make the
+  configuration immutable:
 
       -e 2
 
   With this setting, a reboot will be required to change any audit rules.
-rationale: ~
+rationale: |
+  Making the audit configuration immutable prevents accidental as well as
+  malicious modification of the audit rules, although it may be
+  problematic if legitimate changes are needed during system operation
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-6

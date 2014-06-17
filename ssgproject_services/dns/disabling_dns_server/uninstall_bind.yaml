@@ -2,11 +2,13 @@ id: xccdf_org.ssgproject.content_rule_uninstall_bind
 severity: low
 title: Uninstall bind Package
 description: |
-  `bind` package, which contains the `named` service, run the following
-  command:
+  To remove the `bind` package, which contains the `named` service, run
+  the following command:
 
       # yum erase bind
-rationale: ~
+rationale: |
+  If there is no need to make DNS server software available, removing it
+  provides a safeguard against its activation.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

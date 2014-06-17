@@ -1,6 +1,12 @@
 id: xccdf_org.ssgproject.content_group_snmp_configure_server
 title: Configure SNMP Server if Necessary
 description: |
+  If it is necessary to run the snmpd agent on the system, some best
+  practices should be followed to minimize the security risk from the
+  installation. The multiple security models implemented by SNMP cannot be
+  fully covered here so only the following general configuration advice
+  can be offered:
+
   -   use only SNMP version 3 security models and enable the use of
       authentication and encryption
   -   write access to the MIB (Management Information Base) should be

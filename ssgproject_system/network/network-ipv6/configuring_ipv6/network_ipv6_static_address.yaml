@@ -2,6 +2,7 @@ id: xccdf_org.ssgproject.content_rule_network_ipv6_static_address
 severity: low
 title: Manually Assign Global IPv6 Address
 description: |
+  To manually assign an IP address for an interface, edit the file
   `/etc/sysconfig/network-scripts/ifcfg-interface`. Add or correct the
   following line (substituting the correct IPv6 address):
 

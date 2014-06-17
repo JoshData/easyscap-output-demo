@@ -2,12 +2,13 @@ id: xccdf_org.ssgproject.content_rule_uninstall_telnet_server
 severity: high
 title: Uninstall telnet-server Package
 description: |
-  `telnet-server` package can be uninstalled with the following command:
+  The `telnet-server` package can be uninstalled with the following
+  command:
 
       # yum erase telnet-server
 rationale: |
-  `telnet-server` package decreases the risk of the telnet service’s
-  accidental (or intentional) activation.
+  Removing the `telnet-server` package decreases the risk of the telnet
+  service’s accidental (or intentional) activation.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

@@ -2,6 +2,7 @@ id: xccdf_org.ssgproject.content_rule_rsyslog_send_messages_to_logserver
 severity: low
 title: Ensure Logs Sent To Remote Host
 description: |
+  To configure rsyslog to send logs to a remote log server, open
   `/etc/rsyslog.conf` and read and understand the last section of the
   file, which describes the multiple directives necessary to activate
   remote logging. Along with these other directives, the system can be
@@ -24,7 +25,13 @@ description: |
    To use RELP for log message delivery:
 
       *.* :omrelp:loghost.example.com
-rationale: ~
+rationale: |
+  A log server (loghost) receives syslog messages from one or more
+  systems. This data can be used as an additional log source in the event
+  a system is compromised and its local logs are suspect. Forwarding log
+  messages to a remote loghost also provides system administrators with a
+  centralized place to view the status of multiple hosts within the
+  enterprise.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AU-3(2)

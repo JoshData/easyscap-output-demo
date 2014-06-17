@@ -1,7 +1,10 @@
 id: xccdf_org.ssgproject.content_group_disk_partitioning
 title: Disk Partitioning
 description: |
-  `/`, `/boot`, and `swap`.
+  To ensure separation and protection of data, there are top-level system
+  directories which should be placed on their own physical partition or
+  logical volume. The installer’s default partitioning scheme creates
+  separate logical volumes for `/`, `/boot`, and `swap`.
 
   -   If starting with any of the default layouts, check the box to
       “Review and modify partitioning.” This allows for the easy creation

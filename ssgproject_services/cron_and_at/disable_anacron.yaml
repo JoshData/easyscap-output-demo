@@ -2,13 +2,13 @@ id: xccdf_org.ssgproject.content_rule_disable_anacron
 severity: low
 title: Disable anacron Service
 description: |
-  `cronie-anacron` package, which provides `anacron` functionality, is
+  The `cronie-anacron` package, which provides `anacron` functionality, is
   installed by default. The `cronie-anacron` package can be removed with
   the following command:
 
       # yum erase cronie-anacron
 rationale: |
-  `anacron` service provides `cron` functionality for systems such as
+  The `anacron` service provides `cron` functionality for systems such as
   laptops and workstations that may be shut down during the normal times
   that `cron` jobs are scheduled to run. On systems which do not require
   this additional functionality, `anacron` could needlessly increase the

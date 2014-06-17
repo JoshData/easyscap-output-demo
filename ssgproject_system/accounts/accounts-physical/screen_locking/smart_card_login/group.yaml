@@ -1,6 +1,10 @@
 id: xccdf_org.ssgproject.content_group_smart_card_login
 title: Hardware Tokens for Authentication
-description: ~
+description: |
+  The use of hardware tokens such as smart cards for system login provides
+  stronger, two-factor authentication than using a username/password. In
+  Red Hat Enterprise Linux servers and workstations, hardware token login
+  is not enabled by default and must be enabled in the system settings.
 rules:
 - smartcard_auth
 subgroups: []

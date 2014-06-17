@@ -2,12 +2,16 @@ id: xccdf_org.ssgproject.content_rule_audit_manual_session_edits
 severity: low
 title: ' Record Attempts to Alter Process and Session Initiation Information'
 description: |
-  `/etc/audit/audit.rules`:
+  The audit system already collects process information for all users and
+  root. To watch for attempted manual edits of files involved in storing
+  such process information, add the following to `/etc/audit/audit.rules`:
 
       -w /var/run/utmp -p wa -k session
       -w /var/log/btmp -p wa -k session
       -w /var/log/wtmp -p wa -k session
-rationale: ~
+rationale: |
+  Manual editing of these files may indicate nefarious activity, such as
+  an attacker attempting to remove evidence of an intrusion.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(7)

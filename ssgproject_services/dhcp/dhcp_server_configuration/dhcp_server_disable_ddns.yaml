@@ -2,10 +2,20 @@ id: xccdf_org.ssgproject.content_rule_dhcp_server_disable_ddns
 severity: low
 title: Do Not Use Dynamic DNS
 description: |
-  `/etc/dhcp/dhcpd.conf`, and add or correct the following global option:
+  To prevent the DHCP server from receiving DNS information from clients,
+  edit `/etc/dhcp/dhcpd.conf`, and add or correct the following global
+  option:
 
       ddns-update-style none;
-rationale: ~
+rationale: |
+  The Dynamic DNS protocol is used to remotely update the data served by a
+  DNS server. DHCP servers can use Dynamic DNS to publish information
+  about their clients. This setup carries security risks, and its use is
+  not recommended. If Dynamic DNS must be used despite the risks it poses,
+  it is critical that Dynamic DNS transactions be protected using TSIG or
+  some other cryptographic authentication mechanism. See dhcpd.conf(5) for
+  more information about protecting the DHCP server from passing along
+  malicious DNS data from its clients.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

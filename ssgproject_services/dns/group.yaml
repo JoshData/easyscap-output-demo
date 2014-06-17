@@ -1,6 +1,10 @@
 id: xccdf_org.ssgproject.content_group_dns
 title: DNS Server
-description: ~
+description: |
+  Most organizations have an operational need to run at least one
+  nameserver. However, there are many common attacks involving DNS server
+  software, and this server software should be disabled on any system on
+  which it is not needed.
 rules: []
 subgroups:
 - disabling_dns_server

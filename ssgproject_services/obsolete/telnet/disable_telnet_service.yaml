@@ -2,10 +2,15 @@ id: xccdf_org.ssgproject.content_rule_disable_telnet_service
 severity: high
 title: Disable telnet Service
 description: |
-  `telnet` service can be disabled with the following command:
+  The `telnet` service can be disabled with the following command:
 
       # chkconfig telnet off
-rationale: ~
+rationale: |
+  The telnet protocol uses unencrypted network communication, which means
+  that data from the login session, including passwords and all other
+  information transmitted during the session, can be stolen by
+  eavesdroppers on the network. The telnet protocol is also subject to
+  man-in-the-middle attacks.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

@@ -2,8 +2,8 @@ id: xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_default_send_redirect
 severity: medium
 title: Disable Kernel Parameter for Sending ICMP Redirects by Default
 description: |
-  `net.ipv4.conf.default.send_redirects` kernel parameter, run the
-  following command:
+  To set the runtime status of the `net.ipv4.conf.default.send_redirects`
+  kernel parameter, run the following command:
 
   ~~~~ {xml:space="preserve"}
   # sysctl -w net.ipv4.conf.default.send_redirects=0
@@ -15,7 +15,10 @@ description: |
   ~~~~ {xml:space="preserve"}
   net.ipv4.conf.default.send_redirects = 0
   ~~~~
-rationale: ~
+rationale: |
+  Sending ICMP redirects permits the system to instruct other systems to
+  update their routing information. The ability to send ICMP redirects is
+  only appropriate for systems acting as routers.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-4

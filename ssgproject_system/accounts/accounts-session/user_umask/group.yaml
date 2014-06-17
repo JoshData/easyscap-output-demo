@@ -1,18 +1,19 @@
 id: xccdf_org.ssgproject.content_group_user_umask
 title: Ensure that Users Have Sensible Umask Values
 description: |
-  `umask` setting of 077, files and directories created by users will not
-  be readable by any other user on the system. Users who wish to make
-  specific files group- or world-readable can accomplish this by using the
-  chmod command. Additionally, users can make all their files readable to
-  their group by default by setting a `umask` of 027 in their shell
-  configuration files. If default per-user groups exist (that is, if every
-  user has a default group whose name is the same as that user’s username
-  and whose only member is the user), then it may even be safe for users
-  to select a `umask` of 007, making it very easy to intentionally share
-  files with groups of which the user is a member. \
-  \
-   <!--In addition, it may be necessary to change root's <tt>umask</tt>
+  The umask setting controls the default permissions for the creation of
+  new files. With a default `umask` setting of 077, files and directories
+  created by users will not be readable by any other user on the system.
+  Users who wish to make specific files group- or world-readable can
+  accomplish this by using the chmod command. Additionally, users can make
+  all their files readable to their group by default by setting a `umask`
+  of 027 in their shell configuration files. If default per-user groups
+  exist (that is, if every user has a default group whose name is the same
+  as that user’s username and whose only member is the user), then it may
+  even be safe for users to select a `umask` of 007, making it very easy
+  to intentionally share files with groups of which the user is a member.
+
+  <!--In addition, it may be necessary to change root's <tt>umask</tt>
   temporarily in order to install software or files which must be
   readable by other users, or to change the default umasks of certain
   service accounts such as the FTP user. However, setting a

@@ -1,6 +1,9 @@
 id: xccdf_org.ssgproject.content_group_dovecot_support_necessary_protocols
 title: Support Only the Necessary Protocols
 description: |
+  Dovecot supports the IMAP and POP3 protocols, as well as SSL-protected
+  versions of those protocols. Configure the Dovecot server to support
+  only the protocols needed by your site. Edit
   `/etc/dovecot/dovecot.conf`. Add or correct the following lines,
   replacing `PROTOCOL` with only the subset of protocols (`imap`, `imaps`,
   `pop3`, `pop3s`) required:

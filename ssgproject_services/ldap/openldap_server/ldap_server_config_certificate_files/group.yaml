@@ -1,7 +1,10 @@
 id: xccdf_org.ssgproject.content_group_ldap_server_config_certificate_files
 title: Install and Protect LDAP Certificate Files
 description: |
-  # mkdir /etc/pki/tls/ldap
+  Create the PKI directory for LDAP certificates if it does not already
+  exist:
+
+      # mkdir /etc/pki/tls/ldap
       # chown root:root /etc/pki/tls/ldap
       # chmod 755 /etc/pki/tls/ldap
 

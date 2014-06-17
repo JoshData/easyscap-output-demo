@@ -2,10 +2,15 @@ id: xccdf_org.ssgproject.content_rule_sshd_disable_root_login
 severity: medium
 title: Disable SSH Root Login
 description: |
-  `/etc/ssh/sshd_config`:
+  The root user should never be allowed to login to a system directly over
+  a network. To disable root login via SSH, add or correct the following
+  line in `/etc/ssh/sshd_config`:
 
       PermitRootLogin no
-rationale: ~
+rationale: |
+  Permitting direct root login reduces auditable information about who ran
+  privileged commands on the system and also allows direct attack attempts
+  on root’s password.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-6(2)

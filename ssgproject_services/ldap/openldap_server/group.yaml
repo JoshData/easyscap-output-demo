@@ -1,6 +1,10 @@
 id: xccdf_org.ssgproject.content_group_openldap_server
 title: Configure OpenLDAP Server
-description: ~
+description: |
+  This section details some security-relevant settings for an OpenLDAP
+  server. Installation and configuration of OpenLDAP on RHEL 6 is
+  available at:
+  https://access.redhat.com/site/documentation/en-US/Red\_Hat\_Enterprise\_Linux/6/html/Deployment\_Guide/ch-Directory\_Servers.html.
 rules:
 - package_openldap-servers_removed
 subgroups:

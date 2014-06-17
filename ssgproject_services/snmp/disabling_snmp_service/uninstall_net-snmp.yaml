@@ -2,11 +2,13 @@ id: xccdf_org.ssgproject.content_rule_uninstall_net-snmp
 severity: low
 title: Uninstall net-snmp Package
 description: |
-  `net-snmp` package provides the snmpd service. The `net-snmpd` package
-  can be removed with the following command:
+  The `net-snmp` package provides the snmpd service. The `net-snmpd`
+  package can be removed with the following command:
 
       # yum erase net-snmpd
-rationale: ~
+rationale: |
+  If there is no need to run SNMP server software, removing the package
+  provides a safeguard against its activation.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

@@ -2,14 +2,18 @@ id: xccdf_org.ssgproject.content_rule_service_haldaemon_disabled
 severity: low
 title: Disable Hardware Abstraction Layer Service (haldaemon)
 description: |
-  `haldaemon`) collects and maintains information about the system’s
-  hardware configuration. This service is required on a workstation
-  running a desktop environment, and may be necessary on any system which
-  deals with removable media or devices. The `haldaemon` service can be
-  disabled with the following command:
+  The Hardware Abstraction Layer Daemon (`haldaemon`) collects and
+  maintains information about the system’s hardware configuration. This
+  service is required on a workstation running a desktop environment, and
+  may be necessary on any system which deals with removable media or
+  devices. The `haldaemon` service can be disabled with the following
+  command:
 
       # chkconfig haldaemon off
-rationale: ~
+rationale: |
+  The haldaemon provides essential functionality on systems that use
+  removable media or devices, but can be disabled for systems that do not
+  require these.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

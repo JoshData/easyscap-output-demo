@@ -1,5 +1,8 @@
 id: xccdf_org.ssgproject.content_group_dns_server_dedicated
 title: Run DNS Software on Dedicated Servers
-description: ~
+description: |
+  Since DNS is a high-risk service which must frequently be made available
+  to the entire Internet, it is strongly recommended that no other
+  services be offered by machines which act as organizational DNS servers.
 rules: []
 subgroups: []

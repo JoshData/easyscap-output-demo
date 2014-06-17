@@ -1,9 +1,9 @@
 id: xccdf_org.ssgproject.content_group_disabling_dhcp_server
 title: Disable DHCP Server
 description: |
-  `dhcpd` is not installed or activated by default. If the software was
-  installed and activated, but the system does not need to act as a DHCP
-  server, it should be disabled and removed.
+  The DHCP server `dhcpd` is not installed or activated by default. If the
+  software was installed and activated, but the system does not need to
+  act as a DHCP server, it should be disabled and removed.
 rules:
 - disable_dhcp_server
 - uninstall_dhcp_server

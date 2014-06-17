@@ -2,13 +2,17 @@ id: xccdf_org.ssgproject.content_rule_root_path_default
 severity: low
 title: Root Path Must Be Vendor Default
 description: |
-  ~/.profile
+  Assuming root shell is bash, edit the following files:
+
+      ~/.profile
 
       ~/.bashrc
 
   Change any `PATH` variables to the vendor default for root and remove
   any empty `PATH` entries or references to relative paths.
-rationale: ~
+rationale: |
+  The root account’s executable search path must be the vendor default,
+  and must contain only absolute paths.
 references:
 - href: test_attestation
   dc:contributor: DS

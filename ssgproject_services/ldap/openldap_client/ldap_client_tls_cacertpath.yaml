@@ -2,6 +2,7 @@ id: xccdf_org.ssgproject.content_rule_ldap_client_tls_cacertpath
 severity: medium
 title: Configure Certificate Directives for LDAP Use of TLS
 description: |
+  Ensure a copy of a trusted CA certificate has been placed in the file
   `/etc/pki/tls/CA/cacert.pem`. Configure LDAP to enforce TLS use and to
   trust certificates signed by that CA. First, edit the file
   `/etc/pam_ldap.conf`, and add or correct either of the following lines:
@@ -13,7 +14,11 @@ description: |
       tls_cacertfile /etc/pki/tls/CA/cacert.pem
 
   Then review the LDAP server and ensure TLS has been configured.
-rationale: ~
+rationale: |
+  The tls\_cacertdir or tls\_cacertfile directives are required when
+  tls\_checkpeer is configured (which is the default for openldap versions
+  2.1 and up). These directives define the path to the trust certificates
+  signed by the site CA.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

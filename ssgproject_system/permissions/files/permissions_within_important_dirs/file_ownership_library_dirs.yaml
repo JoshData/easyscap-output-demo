@@ -2,7 +2,11 @@ id: xccdf_org.ssgproject.content_rule_file_ownership_library_dirs
 severity: medium
 title: Verify that Shared Library Files Have Root Ownership
 description: |
-  /lib
+  System-wide shared library files, which are linked to executables during
+  process load time or run time, are stored in the following directories
+  by default:
+
+      /lib
       /lib64
       /usr/lib
       /usr/lib64
@@ -14,7 +18,11 @@ description: |
   ownership with the following command:
 
       # chown root FILE
-rationale: ~
+rationale: |
+  Files from shared library directories are loaded into the address space
+  of processes (including privileged ones) or of the kernel itself at
+  runtime. Proper ownership is necessary to protect the integrity of the
+  system.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-6

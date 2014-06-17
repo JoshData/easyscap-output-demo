@@ -2,11 +2,16 @@ id: xccdf_org.ssgproject.content_rule_accounts_umask_login_defs
 severity: low
 title: Ensure the Default Umask is Set Correctly in login.defs
 description: |
-  `/etc/login.defs` is set properly, add or correct the `UMASK` setting in
-  `/etc/login.defs` to read as follows:
+  To ensure the default umask controlled by `/etc/login.defs` is set
+  properly, add or correct the `UMASK` setting in `/etc/login.defs` to
+  read as follows:
 
       UMASK 077
-rationale: ~
+rationale: |
+  The umask value influences the permissions assigned to files when they
+  are created. A misconfigured umask value could result in files with
+  excessive permissions that can be read and written to by unauthorized
+  users.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
 - href: http://iase.disa.mil/cci/index.html

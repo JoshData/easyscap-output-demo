@@ -2,10 +2,16 @@ id: xccdf_org.ssgproject.content_rule_service_smartd_disabled
 severity: low
 title: Disable SMART Disk Monitoring Service (smartd)
 description: |
-  `smartd` service can be disabled with the following command:
+  SMART (Self-Monitoring, Analysis, and Reporting Technology) is a feature
+  of hard drives that allows them to detect symptoms of disk failure and
+  relay an appropriate warning. The `smartd` service can be disabled with
+  the following command:
 
       # chkconfig smartd off
-rationale: ~
+rationale: |
+  SMART can help protect against denial of service due to failing
+  hardware. Nevertheless, if it is not needed or the system’s drives are
+  not SMART-capable (such as solid state drives), it can be disabled.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

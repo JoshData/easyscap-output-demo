@@ -2,11 +2,11 @@ id: xccdf_org.ssgproject.content_rule_service_iptables_enabled
 severity: medium
 title: Verify iptables Enabled
 description: |
-  `iptables` service can be enabled with the following command:
+  The `iptables` service can be enabled with the following command:
 
       # chkconfig --level 2345 iptables on
 rationale: |
-  `iptables` service provides the system’s host-based firewalling
+  The `iptables` service provides the system’s host-based firewalling
   capability for IPv4 and ICMP.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf

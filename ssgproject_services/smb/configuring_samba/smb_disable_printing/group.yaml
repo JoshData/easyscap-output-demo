@@ -1,7 +1,11 @@
 id: xccdf_org.ssgproject.content_group_smb_disable_printing
 title: Restrict Printer Sharing
 description: |
-  `/etc/samba/smb.conf`:
+  By default, Samba utilizes the CUPS printing service to enable printer
+  sharing with Microsoft Windows workstations. If there are no printers on
+  the local machine, or if printer sharing with Microsoft Windows is not
+  required, disable the printer sharing capability by commenting out the
+  following lines, found in `/etc/samba/smb.conf`:
 
       [global]
         load printers = yes

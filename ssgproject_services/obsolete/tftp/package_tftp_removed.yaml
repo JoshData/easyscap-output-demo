@@ -2,9 +2,15 @@ id: xccdf_org.ssgproject.content_rule_package_tftp_removed
 severity: low
 title: Remove tftp
 description: |
-  `tftp` is a client program that allows for connections to a `tftp`
-  server.
-rationale: ~
+  Trivial File Transfer Protocol (TFTP) is a simple file transfer
+  protocol, typically used to automatically transfer configuration or boot
+  files between machines. TFTP does not support authentication and can be
+  easily hacked. The package `tftp` is a client program that allows for
+  connections to a `tftp` server.
+rationale: |
+  It is recommended that TFTP be remvoed, unless there is a specific need
+  for TFTP (such as a boot server). In that case, use extreme caution when
+  configuring the services.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

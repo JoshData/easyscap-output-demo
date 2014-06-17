@@ -2,11 +2,11 @@ id: xccdf_org.ssgproject.content_rule_service_ip6tables_enabled
 severity: medium
 title: Verify ip6tables Enabled if Using IPv6
 description: |
-  `ip6tables` service can be enabled with the following command:
+  The `ip6tables` service can be enabled with the following command:
 
       # chkconfig --level 2345 ip6tables on
 rationale: |
-  `ip6tables` service provides the system’s host-based firewalling
+  The `ip6tables` service provides the system’s host-based firewalling
   capability for IPv6 and ICMPv6.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf

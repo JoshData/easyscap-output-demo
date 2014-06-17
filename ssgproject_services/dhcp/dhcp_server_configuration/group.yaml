@@ -1,10 +1,14 @@
 id: xccdf_org.ssgproject.content_group_dhcp_server_configuration
 title: Disable DHCP Server
 description: |
-  `/etc/dhcp/dhcpd.conf`. The file begins with a number of global
-  configuration options. The remainder of the file is divided into
-  sections, one for each block of addresses offered by dhcpd, each of
-  which contains configuration options specific to that address block.
+  If the system must act as a DHCP server, the configuration information
+  it serves should be minimized. Also, support for other protocols and
+  DNS-updating schemes should be explicitly disabled unless needed. The
+  configuration file for dhcpd is called `/etc/dhcp/dhcpd.conf`. The file
+  begins with a number of global configuration options. The remainder of
+  the file is divided into sections, one for each block of addresses
+  offered by dhcpd, each of which contains configuration options specific
+  to that address block.
 rules:
 - dhcp_server_disable_ddns
 - dhcp_server_deny_decline

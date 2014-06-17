@@ -1,8 +1,13 @@
 id: xccdf_org.ssgproject.content_rule_package_aide_installed
 severity: medium
 title: Install AIDE
-description: '# yum install aide'
-rationale: ~
+description: |
+  Install the AIDE package with the command:
+
+      # yum install aide
+rationale: |
+  The AIDE package must be installed if it is to be available for
+  integrity checking.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-3(d)

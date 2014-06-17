@@ -2,7 +2,10 @@ id: xccdf_org.ssgproject.content_rule_set_gdm_login_banner_text
 severity: medium
 title: Set GUI Warning Banner Text
 description: |
-  sudo -u gdm gconftool-2 \
+  To set the text shown by the GNOME Display Manager in the login screen,
+  run the following command:
+
+      sudo -u gdm gconftool-2 \
         --type string \
         --set /apps/gdm/simple-greeter/banner_message_text \
         "Text of the warning banner here"
@@ -11,7 +14,9 @@ description: |
   begin and end the string with `"`. This command writes directly to the
   file `/var/lib/gdm/.gconf/apps/gdm/simple-greeter/%gconf.xml`, and this
   file can later be edited directly if necessary.
-rationale: ~
+rationale: |
+  An appropriate warning message reinforces policy awareness during the
+  logon process and facilitates possible legal action against attackers.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-8(a)

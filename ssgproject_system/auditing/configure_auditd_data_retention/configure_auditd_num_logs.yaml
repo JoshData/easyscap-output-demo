@@ -2,15 +2,18 @@ id: xccdf_org.ssgproject.content_rule_configure_auditd_num_logs
 severity: medium
 title: Configure auditd Number of Logs Retained
 description: |
-  `auditd` should retain when it rotates logs. Edit the file
-  `/etc/audit/auditd.conf`. Add or modify the following line, substituting
-  *NUMLOGS* with the correct value:
+  Determine how many log files `auditd` should retain when it rotates
+  logs. Edit the file `/etc/audit/auditd.conf`. Add or modify the
+  following line, substituting *NUMLOGS* with the correct value:
 
       num_logs = NUMLOGS
 
   Set the value to 5 for general-purpose systems. Note that values less
   than 2 result in no log rotation.
-rationale: ~
+rationale: |
+  The total storage for audit log files must be large enough to retain log
+  information over the period required. This is a function of the maximum
+  log file size and the number of logs retained.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AU-1(b)

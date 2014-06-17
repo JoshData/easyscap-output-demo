@@ -2,8 +2,8 @@ id: xccdf_org.ssgproject.content_rule_audit_network_modifications
 severity: low
 title: Record Events that Modify the System's Network Environment
 description: |
-  `/etc/audit/audit.rules`, setting ARCH to either b32 or b64 as
-  appropriate for your system:
+  Add the following to `/etc/audit/audit.rules`, setting ARCH to either
+  b32 or b64 as appropriate for your system:
 
       # audit_network_modifications
       -a always,exit -F arch=ARCH -S sethostname -S setdomainname -k audit_network_modifications
@@ -11,7 +11,10 @@ description: |
       -w /etc/issue.net -p wa -k audit_network_modifications
       -w /etc/hosts -p wa -k audit_network_modifications
       -w /etc/sysconfig/network -p wa -k audit_network_modifications
-rationale: ~
+rationale: |
+  The network environment should not be modified by anything other than
+  administrator action. Any change to network parameters should be
+  audited.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(7)

@@ -2,14 +2,14 @@ id: xccdf_org.ssgproject.content_rule_user_owner_grub_conf
 severity: medium
 title: Verify /etc/grub.conf User Ownership
 description: |
-  `/etc/grub.conf` should be owned by the `root` user to prevent
+  The file `/etc/grub.conf` should be owned by the `root` user to prevent
   destruction or modification of the file. To properly set the owner of
   `/etc/grub.conf`, run the command:
 
   ~~~~ {xml:space="preserve"}
   # chown root/etc/grub.conf
   ~~~~
-rationale: ~
+rationale: Only root should be able to modify important boot parameters.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
 - href: http://iase.disa.mil/cci/index.html

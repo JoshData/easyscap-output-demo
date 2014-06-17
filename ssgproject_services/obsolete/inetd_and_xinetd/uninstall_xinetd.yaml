@@ -2,12 +2,12 @@ id: xccdf_org.ssgproject.content_rule_uninstall_xinetd
 severity: low
 title: Uninstall xinetd Package
 description: |
-  `xinetd` package can be uninstalled with the following command:
+  The `xinetd` package can be uninstalled with the following command:
 
       # yum erase xinetd
 rationale: |
-  `xinetd` package decreases the risk of the xinetd service’s accidental
-  (or intentional) activation.
+  Removing the `xinetd` package decreases the risk of the xinetd service’s
+  accidental (or intentional) activation.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

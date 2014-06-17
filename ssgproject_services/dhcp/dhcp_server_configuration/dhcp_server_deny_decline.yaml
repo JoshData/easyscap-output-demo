@@ -2,12 +2,17 @@ id: xccdf_org.ssgproject.content_rule_dhcp_server_deny_decline
 severity: low
 title: Deny Decline Messages
 description: |
-  `/etc/dhcp/dhcpd.conf` and add or correct the following global option to
-  prevent the DHCP server from responding the DHCPDECLINE messages, if
-  possible:
+  Edit `/etc/dhcp/dhcpd.conf` and add or correct the following global
+  option to prevent the DHCP server from responding the DHCPDECLINE
+  messages, if possible:
 
       deny declines;
-rationale: ~
+rationale: |
+  The DHCPDECLINE message can be sent by a DHCP client to indicate that it
+  does not consider the lease offered by the server to be valid. By
+  issuing many DHCPDECLINE messages, a malicious client can exhaust the
+  DHCP server’s pool of IP addresses, causing the DHCP server to forget
+  old address allocations.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

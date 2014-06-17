@@ -2,8 +2,8 @@ id: xccdf_org.ssgproject.content_rule_avahi_ip_only
 severity: low
 title: Serve Avahi Only via Required Protocol
 description: |
-  `/etc/avahi/avahi-daemon.conf` and ensure the following line exists in
-  the `[server]` section:
+  If you are using only IPv4, edit `/etc/avahi/avahi-daemon.conf` and
+  ensure the following line exists in the `[server]` section:
 
       use-ipv6=no
 

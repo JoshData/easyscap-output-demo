@@ -2,15 +2,17 @@ id: xccdf_org.ssgproject.content_rule_nfs_fixed_lockd_tcp_port
 severity: low
 title: Configure lockd to use static TCP port
 description: |
-  `lockd` daemon to use a static TCP port as opposed to letting the RPC
-  Bind service dynamically assign a port. Edit the file
+  Configure the `lockd` daemon to use a static TCP port as opposed to
+  letting the RPC Bind service dynamically assign a port. Edit the file
   `/etc/sysconfig/nfs`. Add or correct the following line:
 
       LOCKD_TCPPORT=lockd-port
 
   Where `lockd-port` is a port which is not used by any other service on
   your network.
-rationale: ~
+rationale: |
+  Restrict service to always use a given port, so that firewalling can be
+  done effectively.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

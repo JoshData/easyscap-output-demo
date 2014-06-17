@@ -2,7 +2,7 @@ id: xccdf_org.ssgproject.content_rule_httpd_install_mod_ssl
 severity: low
 title: Install mod_ssl
 description: |
-  `mod_ssl` module:
+  Install the `mod_ssl` module:
 
       # yum install mod_ssl
 rationale: |

@@ -1,6 +1,9 @@
 id: xccdf_org.ssgproject.content_group_imap
 title: IMAP and POP3 Server
-description: ~
+description: |
+  Dovecot provides IMAP and POP3 services. It is not installed by default.
+  The project page at http://www.dovecot.org contains more detailed
+  information about Dovecot configuration.
 rules: []
 subgroups:
 - disabling_dovecot

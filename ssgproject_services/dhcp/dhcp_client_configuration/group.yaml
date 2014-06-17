@@ -1,6 +1,11 @@
 id: xccdf_org.ssgproject.content_group_dhcp_client_configuration
 title: Configure DHCP Client if Necessary
-description: '`dhclient(8)` and `dhclient.conf(5)` man pages.'
+description: |
+  If DHCP must be used, then certain configuration changes can minimize
+  the amount of information it receives and applies from the network, and
+  thus the amount of incorrect information a rogue DHCP server could
+  successfully distribute. For more information on configuring dhclient,
+  see the `dhclient(8)` and `dhclient.conf(5)` man pages.
 rules: []
 subgroups:
 - dhcp_client_restrict_options

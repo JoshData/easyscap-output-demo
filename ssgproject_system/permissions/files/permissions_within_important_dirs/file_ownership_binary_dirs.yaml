@@ -2,7 +2,9 @@ id: xccdf_org.ssgproject.content_rule_file_ownership_binary_dirs
 severity: medium
 title: Verify that System Executables Have Root Ownership
 description: |
-  /bin
+  System executables are stored in the following directories by default:
+
+      /bin
       /usr/bin
       /usr/local/bin
       /sbin
@@ -14,7 +16,10 @@ description: |
   other than root, correct its ownership with the following command:
 
       # chown root FILE
-rationale: ~
+rationale: |
+  System binaries are executed by privileged users as well as system
+  services, and restrictive permissions are necessary to ensure that their
+  execution of these programs cannot be co-opted.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-6

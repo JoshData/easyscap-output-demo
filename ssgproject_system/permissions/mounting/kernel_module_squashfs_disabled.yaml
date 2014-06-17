@@ -2,15 +2,18 @@ id: xccdf_org.ssgproject.content_rule_kernel_module_squashfs_disabled
 severity: low
 title: Disable Mounting of squashfs
 description: |
-  `squashfs` kernel module from being loaded, add the following line to a
-  file in the directory `/etc/modprobe.d`:
+  To configure the system to prevent the `squashfs` kernel module from
+  being loaded, add the following line to a file in the directory
+  `/etc/modprobe.d`:
 
   ~~~~ {xml:space="preserve"}
   install squashfs /bin/false
   ~~~~
 
   This effectively prevents usage of this uncommon filesystem.
-rationale: ~
+rationale: |
+  Linux kernel modules which implement filesystems that are not needed by
+  the local system should be disabled.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

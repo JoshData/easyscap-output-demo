@@ -1,6 +1,11 @@
 id: xccdf_org.ssgproject.content_group_disabling_ipv6
 title: Disable Support for IPv6 Unless Needed
-description: ~
+description: |
+  Despite configuration that suggests support for IPv6 has been disabled,
+  link-local IPv6 address auto-configuration occurs even when only an IPv4
+  address is assigned. The only way to effectively prevent execution of
+  the IPv6 networking stack is to instruct the system not to activate the
+  IPv6 kernel module.
 rules:
 - kernel_module_ipv6_option_disabled
 - network_ipv6_disable_interfaces

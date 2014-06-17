@@ -2,10 +2,12 @@ id: xccdf_org.ssgproject.content_rule_disable_dovecot
 severity: low
 title: Disable Dovecot Service
 description: |
-  `dovecot` service can be disabled with the following command:
+  The `dovecot` service can be disabled with the following command:
 
       # chkconfig dovecot off
-rationale: ~
+rationale: |
+  Running an IMAP or POP3 server provides a network-based avenue of
+  attack, and should be disabled if not needed.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

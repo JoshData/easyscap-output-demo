@@ -1,8 +1,10 @@
 id: xccdf_org.ssgproject.content_rule_met_inherently_nonselected
 severity: low
 title: Product Meets this Requirement
-description: ~
-rationale: ~
+description: This requirement is a permanent not a finding. No fix is required.
+rationale: |
+  Red Hat Enterprise Linux meets this requirement through design and
+  implementation.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '34'

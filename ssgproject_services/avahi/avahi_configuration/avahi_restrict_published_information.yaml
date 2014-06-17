@@ -2,7 +2,11 @@ id: xccdf_org.ssgproject.content_rule_avahi_restrict_published_information
 severity: low
 title: Restrict Information Published by Avahi
 description: |
-  `[publish]` section:
+  If it is necessary to publish some information to the network, it should
+  not be joined by any extraneous information, or by information supplied
+  by a non-trusted source on the system. Prevent user applications from
+  using Avahi to publish services by adding or correcting the following
+  line in the `[publish]` section:
 
       disable-user-service-publishing=yes
 
@@ -17,7 +21,11 @@ description: |
   Inspect the files in the directory `/etc/avahi/services/`. Unless there
   is an operational need to publish information about each of these
   services, delete the corresponding file.
-rationale: ~
+rationale: |
+  These options prevent publishing attempts from succeeding, and can be
+  applied even if publishing is disabled entirely via disable-publishing.
+  Alternatively, these can be used to restrict the types of published
+  information in the event that some information must be published.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

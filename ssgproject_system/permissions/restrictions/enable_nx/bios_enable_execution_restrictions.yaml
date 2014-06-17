@@ -1,8 +1,16 @@
 id: xccdf_org.ssgproject.content_rule_bios_enable_execution_restrictions
 severity: low
 title: Enable NX or XD Support in the BIOS
-description: ~
-rationale: ~
+description: |
+  Reboot the system and enter the BIOS or Setup configuration menu.
+  Navigate the BIOS configuration menu and make sure that the option is
+  enabled. The setting may be located under a Security section. Look for
+  Execute Disable (XD) on Intel-based systems and No Execute (NX) on
+  AMD-based systems.
+rationale: |
+  Computers with the ability to prevent this type of code execution
+  frequently put an option in the BIOS that will allow users to turn the
+  feature on or off at will.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
 crosswalk:

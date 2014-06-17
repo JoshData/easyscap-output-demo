@@ -1,6 +1,8 @@
 id: xccdf_org.ssgproject.content_group_avahi_configuration
 title: Configure Avahi if Necessary
 description: |
+  If your system requires the Avahi daemon, its configuration can be
+  restricted to improve security. The Avahi daemon configuration file is
   `/etc/avahi/avahi-daemon.conf`. The following security recommendations
   should be applied to this file: See the `avahi-daemon.conf(5)` man page,
   or documentation at http://www.avahi.org, for more detailed information

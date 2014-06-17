@@ -1,6 +1,11 @@
 id: xccdf_org.ssgproject.content_group_configuring_ipv6
 title: Configure IPv6 Settings if Necessary
-description: ~
+description: |
+  A major feature of IPv6 is the extent to which systems implementing it
+  can automatically configure their networking devices using information
+  from the network. From a security perspective, manually configuring
+  important configuration information is preferable to accepting it from
+  the network in an unauthenticated fashion.
 rules:
 - network_ipv6_static_address
 - network_ipv6_privacy_extensions

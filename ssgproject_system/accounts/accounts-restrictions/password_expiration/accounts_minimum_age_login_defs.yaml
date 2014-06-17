@@ -2,6 +2,7 @@ id: xccdf_org.ssgproject.content_rule_accounts_minimum_age_login_defs
 severity: medium
 title: Set Password Minimum Age
 description: |
+  To specify password minimum age for new accounts, edit the file
   `/etc/login.defs` and add or correct the following line, replacing
   *DAYS* appropriately:
 
@@ -9,7 +10,9 @@ description: |
 
   A value of 1 day is considered for sufficient for many environments. The
   DoD requirement is 1.
-rationale: ~
+rationale: |
+  Setting the minimum password age protects against users cycling back to
+  a favorite password after satisfying the password reuse requirement.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: IA-5(f)

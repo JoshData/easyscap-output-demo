@@ -2,13 +2,13 @@ id: xccdf_org.ssgproject.content_rule_file_owner_etc_passwd
 severity: medium
 title: Verify User Who Owns passwd File
 description: |
-  `/etc/passwd`, run the command:
+  To properly set the owner of `/etc/passwd`, run the command:
 
   ~~~~ {xml:space="preserve"}
   # chown root/etc/passwd
   ~~~~
 rationale: |
-  `/etc/passwd` file contains information about the users that are
+  The `/etc/passwd` file contains information about the users that are
   configured on the system. Protection of this file is critical for system
   security.
 references:

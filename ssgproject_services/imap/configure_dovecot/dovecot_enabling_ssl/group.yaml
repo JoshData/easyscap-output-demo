@@ -1,6 +1,12 @@
 id: xccdf_org.ssgproject.content_group_dovecot_enabling_ssl
 title: Enable SSL Support
-description: ~
+description: |
+  SSL should be used to encrypt network traffic between the Dovecot server
+  and its clients. Users must authenticate to the Dovecot server in order
+  to read their mail, and passwords should never be transmitted in clear
+  text. In addition, protecting mail as it is downloaded is a privacy
+  measure, and clients may use SSL certificates to authenticate the
+  server, preventing another system from impersonating the server.
 rules:
 - dovecot_enable_ssl
 - dovecot_configure_ssl_cert

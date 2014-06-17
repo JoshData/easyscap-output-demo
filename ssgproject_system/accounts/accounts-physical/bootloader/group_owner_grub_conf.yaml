@@ -2,16 +2,16 @@ id: xccdf_org.ssgproject.content_rule_group_owner_grub_conf
 severity: medium
 title: Verify /etc/grub.conf Group Ownership
 description: |
-  `/etc/grub.conf` should be group-owned by the `root` group to prevent
-  destruction or modification of the file. To properly set the group owner
-  of `/etc/grub.conf`, run the command:
+  The file `/etc/grub.conf` should be group-owned by the `root` group to
+  prevent destruction or modification of the file. To properly set the
+  group owner of `/etc/grub.conf`, run the command:
 
   ~~~~ {xml:space="preserve"}
   # chgrp root/etc/grub.conf
   ~~~~
 rationale: |
-  `root` group is a highly-privileged group. Furthermore, the group-owner
-  of this file should not have any access privileges anyway.
+  The `root` group is a highly-privileged group. Furthermore, the
+  group-owner of this file should not have any access privileges anyway.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
 - href: http://iase.disa.mil/cci/index.html

@@ -1,6 +1,8 @@
 id: xccdf_org.ssgproject.content_group_console_screen_locking
 title: Configure Console Screen Locking
-description: '`screen` package, which is not installed by default.'
+description: |
+  A console screen locking mechanism is provided in the `screen` package,
+  which is not installed by default.
 rules:
 - package_screen_installed
 subgroups: []

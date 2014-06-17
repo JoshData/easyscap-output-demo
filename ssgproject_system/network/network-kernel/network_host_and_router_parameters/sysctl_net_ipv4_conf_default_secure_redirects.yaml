@@ -2,6 +2,7 @@ id: xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_conf_default_secure_redire
 severity: medium
 title: Disable Kernel Parameter for Accepting Secure Redirects By Default
 description: |
+  To set the runtime status of the
   `net.ipv4.conf.default.secure_redirects` kernel parameter, run the
   following command:
 
@@ -15,7 +16,10 @@ description: |
   ~~~~ {xml:space="preserve"}
   net.ipv4.conf.default.secure_redirects = 0
   ~~~~
-rationale: ~
+rationale: |
+  Accepting “secure” ICMP redirects (from those gateways listed as default
+  gateways) has few legitimate uses. It should be disabled unless it is
+  absolutely required.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-4

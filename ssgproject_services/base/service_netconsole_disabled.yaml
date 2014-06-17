@@ -2,16 +2,16 @@ id: xccdf_org.ssgproject.content_rule_service_netconsole_disabled
 severity: low
 title: Disable Network Console (netconsole)
 description: |
-  `netconsole` service is responsible for loading the netconsole kernel
-  module, which logs kernel printk messages over UDP to a syslog server.
-  This allows debugging of problems where disk logging fails and serial
-  consoles are impractical. The `netconsole` service can be disabled with
-  the following command:
+  The `netconsole` service is responsible for loading the netconsole
+  kernel module, which logs kernel printk messages over UDP to a syslog
+  server. This allows debugging of problems where disk logging fails and
+  serial consoles are impractical. The `netconsole` service can be
+  disabled with the following command:
 
       # chkconfig netconsole off
 rationale: |
-  `netconsole` service is not necessary unless there is a need to debug
-  kernel panics, which is not common.
+  The `netconsole` service is not necessary unless there is a need to
+  debug kernel panics, which is not common.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

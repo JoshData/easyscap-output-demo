@@ -1,9 +1,9 @@
 id: xccdf_org.ssgproject.content_group_disabling_nfsd
 title: Disable NFS Server Daemons
 description: |
-  `nfs` and `rpcsvcgssd` except on a small number of properly secured
-  machines designated as NFS servers. Ensure that these daemons are turned
-  off on clients.
+  There is no need to run the NFS server daemons `nfs` and `rpcsvcgssd`
+  except on a small number of properly secured machines designated as NFS
+  servers. Ensure that these daemons are turned off on clients.
 rules:
 - nfs_no_anonymous
 - service_nfs_disabled

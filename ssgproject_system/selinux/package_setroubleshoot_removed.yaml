@@ -2,10 +2,15 @@ id: xccdf_org.ssgproject.content_rule_package_setroubleshoot_removed
 severity: low
 title: Uninstall setroubleshoot Package
 description: |
+  The SETroubleshoot service notifies desktop users of SELinux denials.
+  The service provides information around configuration errors,
+  unauthorized intrusions, and other potential errors. The
   `setroubleshoot` package can be removed with the following command:
 
       # yum erase setroubleshoot
-rationale: ~
+rationale: |
+  The SETroubleshoot service is an unnecessary daemon to have running on a
+  server
 references: []
 crosswalk:
 - system: http://cce.mitre.org

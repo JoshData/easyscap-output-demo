@@ -3,12 +3,16 @@ severity: low
 title: Set httpd ServerTokens Directive to Prod
 description: |
   `ServerTokens Prod` restricts information in page headers, returning
-  only the word “Apache.” \
-  \
-   Add or correct the following directive in `/etc/httpd/conf/httpd.conf`:
+  only the word “Apache.”
+
+  <p>
+  Add or correct the following directive in `/etc/httpd/conf/httpd.conf`:
 
       ServerTokens Prod
-rationale: ~
+rationale: |
+  Information disclosed to clients about the configuration of the web
+  server and system could be used to plan an attack on the given system.
+  This information disclosure should be restricted to a minimum.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

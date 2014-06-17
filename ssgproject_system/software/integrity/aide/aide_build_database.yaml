@@ -2,7 +2,9 @@ id: xccdf_org.ssgproject.content_rule_aide_build_database
 severity: low
 title: Build and Test AIDE Database
 description: |
-  # /usr/sbin/aide --init
+  Run the following command to generate a new database:
+
+      # /usr/sbin/aide --init
 
   By default, the database will be written to the file
   `/var/lib/aide/aide.db.new.gz`. Storing the database, the configuration
@@ -18,7 +20,10 @@ description: |
       # /usr/sbin/aide --check
 
   If this check produces any unexpected output, investigate.
-rationale: ~
+rationale: |
+  For AIDE to be effective, an initial database of “known-good”
+  information about files must be captured and it should be able to be
+  verified against the installed files.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-3(d)

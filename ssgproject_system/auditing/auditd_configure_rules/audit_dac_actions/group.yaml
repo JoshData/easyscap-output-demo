@@ -1,25 +1,26 @@
 id: xccdf_org.ssgproject.content_group_audit_dac_actions
 title: Record Events that Modify the System's Discretionary Access Controls
-description: >
+description: |
+  At a minimum the audit system should collect file permission changes for
+  all users and root. Note that the “-F arch=b32” lines should be present
+  even on a 64 bit system. These commands identify system calls for
+  auditing. Even if the system is 64 bit it can still execute 32 bit
+  system calls. Additionally, these rules can be configured in a number of
+  ways while still achieving the desired effect. An example of this is
+  that the “-S” calls could be split up and placed on separate lines,
+  however, this is less efficient. Add the following to
   `/etc/audit/audit.rules`:
 
-      -a always,exit -F arch=b32 -S chmod -S fchmod -S fchmodat -F auid>=500 -F auid!=4294967295
-  -k perm_mod
-          -a always,exit -F arch=b32 -S chown -S fchown -S fchownat -S lchown -F auid>=500
-  -F auid!=4294967295 -k perm_mod
-          -a always,exit -F arch=b32 -S setxattr -S lsetxattr -S fsetxattr -S removexattr
-  -S lremovexattr -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+      -a always,exit -F arch=b32 -S chmod -S fchmod -S fchmodat -F auid>=500 -F auid!=4294967295 -k perm_mod
+          -a always,exit -F arch=b32 -S chown -S fchown -S fchownat -S lchown -F auid>=500 -F auid!=4294967295 -k perm_mod
+          -a always,exit -F arch=b32 -S setxattr -S lsetxattr -S fsetxattr -S removexattr -S lremovexattr -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
 
   If your system is 64 bit then these lines should be duplicated and the
-
   arch=b32 replaced with arch=b64 as follows:
 
-      -a always,exit -F arch=b64 -S chmod -S fchmod -S fchmodat -F auid>=500 -F auid!=4294967295
-  -k perm_mod
-          -a always,exit -F arch=b64 -S chown -S fchown -S fchownat -S lchown -F auid>=500
-  -F auid!=4294967295 -k perm_mod
-          -a always,exit -F arch=b64 -S setxattr -S lsetxattr -S fsetxattr -S removexattr
-  -S lremovexattr -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
+      -a always,exit -F arch=b64 -S chmod -S fchmod -S fchmodat -F auid>=500 -F auid!=4294967295 -k perm_mod
+          -a always,exit -F arch=b64 -S chown -S fchown -S fchownat -S lchown -F auid>=500 -F auid!=4294967295 -k perm_mod
+          -a always,exit -F arch=b64 -S setxattr -S lsetxattr -S fsetxattr -S removexattr -S lremovexattr -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod
 rules:
 - audit_rules_dac_modification_chmod
 - audit_rules_dac_modification_chown

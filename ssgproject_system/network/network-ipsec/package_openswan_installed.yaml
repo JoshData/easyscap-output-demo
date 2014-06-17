@@ -2,10 +2,15 @@ id: xccdf_org.ssgproject.content_rule_package_openswan_installed
 severity: low
 title: Install openswan Package
 description: |
+  The Openswan package provides an implementation of IPsec and IKE, which
+  permits the creation of secure tunnels over untrusted networks. The
   `openswan` package can be installed with the following command:
 
       # yum install openswan
-rationale: ~
+rationale: |
+  Providing the ability for remote users or systems to initiate a secure
+  VPN connection protects information when it is transmitted over a wide
+  area network.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17

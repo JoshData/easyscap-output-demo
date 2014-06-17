@@ -1,6 +1,8 @@
 id: xccdf_org.ssgproject.content_group_nfs_configuring_clients
 title: Configure NFS Clients
-description: ~
+description: |
+  The steps in this section are appropriate for machines which operate as
+  NFS clients.
 rules: []
 subgroups:
 - disabling_nfsd

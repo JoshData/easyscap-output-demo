@@ -1,13 +1,15 @@
 id: xccdf_org.ssgproject.content_group_httpd_minimize_config_files_included
 title: Minimize Configuration Files Included
 description: |
-  `Include` directive directs `httpd` to load supplementary configuration
-  files from a provided path. The default configuration loads all files
-  that end in `.conf` from the `/etc/httpd/conf.d` directory. \
-  \
-   To restrict excess configuration, the following line should be
-  commented out and replaced with `Include` directives that only reference
-  required configuration files:
+  The `Include` directive directs `httpd` to load supplementary
+  configuration files from a provided path. The default configuration
+  loads all files that end in `.conf` from the `/etc/httpd/conf.d`
+  directory.
+
+  <p>
+  To restrict excess configuration, the following line should be commented
+  out and replaced with `Include` directives that only reference required
+  configuration files:
 
       #Include conf.d/*.conf
 

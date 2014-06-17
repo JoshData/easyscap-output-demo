@@ -2,11 +2,14 @@ id: xccdf_org.ssgproject.content_rule_avahi_disable_publishing
 severity: low
 title: Disable Avahi Publishing
 description: |
+  To prevent other mDNS stacks from running, edit
   `/etc/avahi/avahi-daemon.conf` and ensure the following line appears in
   the `[server]` section:
 
       disallow-other-stacks=yes
-rationale: ~
+rationale: |
+  This helps ensure that only Avahi is responsible for mDNS traffic coming
+  from that port on the system.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

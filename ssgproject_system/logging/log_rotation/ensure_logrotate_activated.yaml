@@ -2,14 +2,17 @@ id: xccdf_org.ssgproject.content_rule_ensure_logrotate_activated
 severity: low
 title: Ensure Logrotate Runs Periodically
 description: |
-  `logrotate` utility allows for the automatic rotation of log files. The
-  frequency of rotation is specified in `/etc/logrotate.conf`, which
+  The `logrotate` utility allows for the automatic rotation of log files.
+  The frequency of rotation is specified in `/etc/logrotate.conf`, which
   triggers a cron task. To configure logrotate to run daily, add or
   correct the following line in `/etc/logrotate.conf`:
 
       # rotate log files frequency
       daily
-rationale: ~
+rationale: |
+  Log files that are not properly rotated run the risk of growing so large
+  that they fill up the /var/log partition. Valuable logging information
+  could be lost if the /var/log partition becomes full.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AU-9

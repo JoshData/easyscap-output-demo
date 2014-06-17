@@ -1,6 +1,8 @@
 id: xccdf_org.ssgproject.content_group_nfs_configuring_all_machines
 title: Configure All Machines which Use NFS
-description: ~
+description: |
+  The steps in this section are appropriate for all machines which run
+  NFS, whether they operate as clients or as servers.
 rules: []
 subgroups:
 - nfs_client_or_server_not_both

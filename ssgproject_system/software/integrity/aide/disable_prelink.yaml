@@ -2,7 +2,9 @@ id: xccdf_org.ssgproject.content_rule_disable_prelink
 severity: low
 title: Disable Prelinking
 description: |
-  `/etc/sysconfig/prelink`:
+  The prelinking feature changes binaries in an attempt to decrease their
+  startup time. In order to disable it, change or add the following line
+  inside the file `/etc/sysconfig/prelink`:
 
       PRELINKING=no
 
@@ -10,7 +12,9 @@ description: |
   non-prelinked state:
 
       # /usr/sbin/prelink -ua
-rationale: ~
+rationale: |
+  The prelinking feature can interfere with the operation of AIDE, because
+  it changes binaries.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-6(d)

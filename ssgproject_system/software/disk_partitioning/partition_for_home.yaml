@@ -2,14 +2,16 @@ id: xccdf_org.ssgproject.content_rule_partition_for_home
 severity: low
 title: Ensure /home Located On Separate Partition
 description: |
-  `/home` at installation time (or migrate it later using LVM). If `/home`
-  will be mounted from another system such as an NFS server, then creating
-  a separate partition is not necessary at installation time, and the
-  mountpoint can instead be configured later.
+  If user home directories will be stored locally, create a separate
+  partition for `/home` at installation time (or migrate it later using
+  LVM). If `/home` will be mounted from another system such as an NFS
+  server, then creating a separate partition is not necessary at
+  installation time, and the mountpoint can instead be configured later.
 rationale: |
-  `/home` is mounted on its own partition enables the setting of more
-  restrictive mount options, and also helps ensure that users cannot
-  trivially fill partitions used for log or audit data storage.
+  Ensuring that `/home` is mounted on its own partition enables the
+  setting of more restrictive mount options, and also helps ensure that
+  users cannot trivially fill partitions used for log or audit data
+  storage.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
 - href: http://iase.disa.mil/cci/index.html

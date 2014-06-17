@@ -2,10 +2,16 @@ id: xccdf_org.ssgproject.content_rule_httpd_logs_permissions
 severity: low
 title: Set Permissions on the /var/log/httpd/ Directory
 description: |
-  # chmod 700 /var/log/httpd/
+  Ensure that the permissions on the web server log directory is set to
+  700:
+
+      # chmod 700 /var/log/httpd/
 
   This is its default setting.
-rationale: ~
+rationale: |
+  Access to the web server’s log files may allow an unauthorized user or
+  attacker to access information about the web server or alter the
+  server’s log files.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

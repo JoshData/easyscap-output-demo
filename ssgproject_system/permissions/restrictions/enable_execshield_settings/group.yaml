@@ -1,6 +1,13 @@
 id: xccdf_org.ssgproject.content_group_enable_execshield_settings
 title: Enable ExecShield
-description: '`sysctl` variables `kernel.exec-shield` and `kernel.randomize_va_space`.'
+description: |
+  ExecShield describes kernel features that provide protection against
+  exploitation of memory corruption errors such as buffer overflows. These
+  features include random placement of the stack and other memory regions,
+  prevention of execution in memory that should only hold data, and
+  special handling of text buffers. These protections are enabled by
+  default and controlled through `sysctl` variables `kernel.exec-shield`
+  and `kernel.randomize_va_space`.
 rules:
 - sysctl_kernel_exec_shield
 - sysctl_kernel_randomize_va_space

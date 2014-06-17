@@ -1,6 +1,6 @@
 id: xccdf_org.ssgproject.content_group_httpd_restrict_file_dir_access
 title: Restrict File and Directory Access
-description: '`httpd` files and directories.'
+description: Minimize access to critical `httpd` files and directories.
 rules:
 - httpd_logs_permissions
 - httpd_conf_dir_permissions

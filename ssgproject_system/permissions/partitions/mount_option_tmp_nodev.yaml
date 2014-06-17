@@ -2,14 +2,15 @@ id: xccdf_org.ssgproject.content_rule_mount_option_tmp_nodev
 severity: low
 title: Add nodev Option to /tmp
 description: |
-  `nodev` mount option can be used to prevent device files from being
+  The `nodev` mount option can be used to prevent device files from being
   created in `/tmp`. Legitimate character and block devices should not
   exist within temporary directories like `/tmp`. Add the `nodev` option
   to the fourth column of `/etc/fstab` for the line which controls
   mounting of `/tmp`.
 rationale: |
-  `/dev` directory located on the root partition. The only exception to
-  this is chroot jails.
+  The only legitimate location for device files is the `/dev` directory
+  located on the root partition. The only exception to this is chroot
+  jails.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

@@ -1,8 +1,11 @@
 id: xccdf_org.ssgproject.content_rule_unmet_finding_nonselected
 severity: low
 title: Implementation of the Requirement is Not Supported
-description: ~
-rationale: ~
+description: |
+  This requirement is a permanent finding and cannot be fixed. An
+  appropriate mitigation for the system must be implemented but this
+  finding cannot be considered fixed.
+rationale: RHEL6 does not support this requirement.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '20'

@@ -2,12 +2,16 @@ id: xccdf_org.ssgproject.content_rule_service_cgconfig_disabled
 severity: low
 title: Disable Control Group Config (cgconfig)
 description: |
-  `cgconfig` daemon starts at boot and establishes the predefined control
-  groups. The `cgconfig` service can be disabled with the following
-  command:
+  Control groups allow an administrator to allocate system resources (such
+  as CPU, memory, network bandwidth, etc) among a defined group (or
+  groups) of processes executing on a system. The `cgconfig` daemon starts
+  at boot and establishes the predefined control groups. The `cgconfig`
+  service can be disabled with the following command:
 
       # chkconfig cgconfig off
-rationale: ~
+rationale: |
+  Unless control groups are used to manage system resources, running the
+  cgconfig service is not necessary.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

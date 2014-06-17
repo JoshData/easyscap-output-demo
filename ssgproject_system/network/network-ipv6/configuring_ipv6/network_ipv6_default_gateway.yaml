@@ -2,8 +2,9 @@ id: xccdf_org.ssgproject.content_rule_network_ipv6_default_gateway
 severity: low
 title: Manually Assign IPv6 Router Address
 description: |
-  `/etc/sysconfig/network-scripts/ifcfg-interface`, and add or correct the
-  following line (substituting your gateway IP as appropriate):
+  Edit the file `/etc/sysconfig/network-scripts/ifcfg-interface`, and add
+  or correct the following line (substituting your gateway IP as
+  appropriate):
 
       IPV6_DEFAULTGW=2001:0DB8::0001
 

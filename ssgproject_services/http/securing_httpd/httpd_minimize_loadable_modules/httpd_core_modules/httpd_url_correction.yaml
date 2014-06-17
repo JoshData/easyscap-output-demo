@@ -2,7 +2,7 @@ id: xccdf_org.ssgproject.content_rule_httpd_url_correction
 severity: low
 title: Disable URL Correction on Misspelled Entries
 description: |
-  `speling` module attempts to find a document match by allowing one
+  The `speling` module attempts to find a document match by allowing one
   misspelling in an otherwise failed request. If this functionality is
   unnecessary, comment out the module:
 
@@ -10,7 +10,9 @@ description: |
 
   This functionality weakens server security by making site enumeration
   easier.
-rationale: ~
+rationale: |
+  Minimizing the number of loadable modules available to the web server
+  reduces risk by limiting the capabilities allowed by the web server.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

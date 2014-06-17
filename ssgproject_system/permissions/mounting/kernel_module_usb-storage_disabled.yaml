@@ -2,8 +2,11 @@ id: xccdf_org.ssgproject.content_rule_kernel_module_usb-storage_disabled
 severity: low
 title: Disable Modprobe Loading of USB Storage Driver
 description: |
-  `usb-storage` kernel module from being loaded, add the following line to
-  a file in the directory `/etc/modprobe.d`:
+  To prevent USB storage devices from being used, configure the kernel
+  module loading system to prevent automatic loading of the USB storage
+  driver. To configure the system to prevent the `usb-storage` kernel
+  module from being loaded, add the following line to a file in the
+  directory `/etc/modprobe.d`:
 
   ~~~~ {xml:space="preserve"}
   install usb-storage /bin/false
@@ -12,7 +15,9 @@ description: |
   This will prevent the `modprobe` program from loading the `usb-storage`
   module, but will not prevent an administrator (or another program) from
   using the `insmod` program to load the module manually.
-rationale: ~
+rationale: |
+  USB storage devices such as thumb drives can be used to introduce
+  malicious software.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-19(a)

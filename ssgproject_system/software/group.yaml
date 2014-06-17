@@ -1,6 +1,9 @@
 id: xccdf_org.ssgproject.content_group_software
 title: Installing and Maintaining Software
-description: ~
+description: |
+  The following sections contain information on security-relevant choices
+  during the initial operating system installation process and the setup
+  of software updates.
 rules: []
 subgroups:
 - disk_partitioning

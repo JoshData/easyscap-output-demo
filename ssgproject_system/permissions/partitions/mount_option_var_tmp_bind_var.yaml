@@ -2,7 +2,7 @@ id: xccdf_org.ssgproject.content_rule_mount_option_var_tmp_bind_var
 severity: low
 title: Bind Mount /var/tmp To /tmp
 description: |
-  `/var/tmp` directory is a world-writable directory. Bind-mount it to
+  The `/var/tmp` directory is a world-writable directory. Bind-mount it to
   `/tmp` in order to consolidate temporary storage into one location
   protected by the same techniques as `/tmp`. To do so, edit `/etc/fstab`
   and add the following line:
@@ -11,6 +11,8 @@ description: |
 
   See the `mount(8)` man page for further explanation of bind mounting.
 rationale: |
+  Having multiple locations for temporary storage is not required. Unless
+  absolutely necessary to meet requirements, the storage location
   `/var/tmp` should be bind mounted to `/tmp` and thus share the same
   protections.
 references:

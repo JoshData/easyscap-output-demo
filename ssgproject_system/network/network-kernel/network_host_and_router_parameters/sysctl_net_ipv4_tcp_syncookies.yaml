@@ -2,7 +2,8 @@ id: xccdf_org.ssgproject.content_rule_sysctl_net_ipv4_tcp_syncookies
 severity: medium
 title: Enable Kernel Parameter to Use TCP Syncookies
 description: |
-  `net.ipv4.tcp_syncookies` kernel parameter, run the following command:
+  To set the runtime status of the `net.ipv4.tcp_syncookies` kernel
+  parameter, run the following command:
 
   ~~~~ {xml:space="preserve"}
   # sysctl -w net.ipv4.tcp_syncookies=1
@@ -14,7 +15,14 @@ description: |
   ~~~~ {xml:space="preserve"}
   net.ipv4.tcp_syncookies = 1
   ~~~~
-rationale: ~
+rationale: |
+  A TCP SYN flood attack can cause a denial of service by filling a
+  system’s TCP connection table with connections in the SYN\_RCVD state.
+  Syncookies can be used to track a connection when a subsequent ACK is
+  received, verifying the initiator is attempting a valid connection and
+  is not a flood source. This feature is activated when a flood condition
+  is detected, and enables the system to continue servicing valid
+  connection requests.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-4

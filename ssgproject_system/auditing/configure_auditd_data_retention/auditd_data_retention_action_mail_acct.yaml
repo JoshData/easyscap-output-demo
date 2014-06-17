@@ -2,13 +2,15 @@ id: xccdf_org.ssgproject.content_rule_auditd_data_retention_action_mail_acct
 severity: medium
 title: Configure auditd mail_acct Action on Low Disk Space
 description: |
-  `auditd` service can be configured to send email to a designated account
-  in certain situations. Add or correct the following line in
+  The `auditd` service can be configured to send email to a designated
+  account in certain situations. Add or correct the following line in
   `/etc/audit/auditd.conf` to ensure that administrators are notified via
   email for those situations:
 
       action_mail_acct = root
-rationale: ~
+rationale: |
+  Email sent to the root account is typically aliased to the
+  administrators of the system, who can take appropriate action.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AU-1(b)

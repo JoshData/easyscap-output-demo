@@ -1,10 +1,14 @@
 id: xccdf_org.ssgproject.content_rule_selinux_all_devicefiles_labeled
 severity: low
 title: Ensure No Device Files are Unlabeled by SELinux
-description: '`unlabeled_t`, investigate the cause and correct the file’s context.'
+description: |
+  Device files, which are used for communication with important system
+  resources, should be labeled with proper SELinux types. If any device
+  files carry the SELinux type `unlabeled_t`, investigate the cause and
+  correct the file’s context.
 rationale: |
-  `unlabeled_t`, then SELinux cannot properly restrict access to the
-  device file.
+  If a device file carries the SELinux type `unlabeled_t`, then SELinux
+  cannot properly restrict access to the device file.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-6

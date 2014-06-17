@@ -2,10 +2,18 @@ id: xccdf_org.ssgproject.content_rule_service_certmonger_disabled
 severity: low
 title: Disable Certmonger Service (certmonger)
 description: |
-  `certmonger` service can be disabled with the following command:
+  Certmonger is a D-Bus based service that attempts to simplify
+  interaction with certifying authorities on networks which use public-key
+  infrastructure. It is often combined with Red Hat’s IPA (Identity Policy
+  Audit) security information management solution to aid in the management
+  of certificates. The `certmonger` service can be disabled with the
+  following command:
 
       # chkconfig certmonger off
-rationale: ~
+rationale: |
+  The services provided by certmonger may be essential for systems
+  fulfilling some roles a PKI infrastructure, but its functionality is not
+  necessary for many other use cases.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

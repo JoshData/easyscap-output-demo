@@ -1,6 +1,8 @@
 id: xccdf_org.ssgproject.content_group_partitions
 title: Restrict Partition Mount Options
 description: |
+  System partitions can be mounted with certain options that limit what
+  files on those partitions can do. These options are set in the
   `/etc/fstab` configuration file, and can be used to make certain types
   of malicious behavior more difficult.
 rules:

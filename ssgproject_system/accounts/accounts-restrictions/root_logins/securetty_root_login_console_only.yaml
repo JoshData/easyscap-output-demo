@@ -2,13 +2,16 @@ id: xccdf_org.ssgproject.content_rule_securetty_root_login_console_only
 severity: medium
 title: Restrict Virtual Console Root Logins
 description: |
-  `/etc/securetty`:
+  To restrict root logins through the (deprecated) virtual console
+  devices, ensure lines of this form do not appear in `/etc/securetty`:
 
       vc/1
       vc/2
       vc/3
       vc/4
-rationale: ~
+rationale: |
+  Preventing direct root login to virtual console devices helps ensure
+  accountability for actions taken on the system using the root account.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-6(2)

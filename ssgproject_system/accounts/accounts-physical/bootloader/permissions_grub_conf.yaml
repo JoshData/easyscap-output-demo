@@ -2,13 +2,16 @@ id: xccdf_org.ssgproject.content_rule_permissions_grub_conf
 severity: medium
 title: Verify /boot/grub/grub.conf Permissions
 description: |
-  `/boot/grub/grub.conf` should be set to 600, which is the default. To
-  properly set the permissions of `/boot/grub/grub.conf`, run the command:
+  File permissions for `/boot/grub/grub.conf` should be set to 600, which
+  is the default. To properly set the permissions of
+  `/boot/grub/grub.conf`, run the command:
 
   ~~~~ {xml:space="preserve"}
   # chmod 600/boot/grub/grub.conf
   ~~~~
-rationale: ~
+rationale: |
+  Proper permissions ensure that only the root user can modify important
+  boot parameters.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
 - href: http://iase.disa.mil/cci/index.html

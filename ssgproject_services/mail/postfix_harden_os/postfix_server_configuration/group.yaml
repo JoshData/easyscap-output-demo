@@ -1,6 +1,8 @@
 id: xccdf_org.ssgproject.content_group_postfix_server_configuration
 title: Configure Postfix if Necessary
-description: '`/etc/postfix/main.cf`.'
+description: |
+  Postfix stores its configuration files in the directory /etc/postfix by
+  default. The primary configuration file is `/etc/postfix/main.cf`.
 rules:
 - postfix_server_banner
 subgroups:

@@ -1,7 +1,8 @@
 id: xccdf_org.ssgproject.content_group_postfix_server_mail_smtpd_recipient_restrictions
 title: Enact SMTP Recipient Restrictions
 description: |
-  \
+  To configure Postfix to restrict addresses to which it will send mail,
+  see: http://www.postfix.org/SMTPD\_ACCESS\_README.html\#danger \
    The full contents of `smtpd_recipient_restrictions` will vary by site,
   since this is a common place to put spam restrictions and other
   site-specific options. The `permit_mynetworks` option allows all mail to

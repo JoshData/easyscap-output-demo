@@ -1,27 +1,29 @@
 id: xccdf_org.ssgproject.content_group_password_expiration
 title: Set Password Expiration Parameters
 description: |
-  `/etc/login.defs` controls several password-related settings. Programs
-  such as `passwd`, `su`, and `login` consult `/etc/login.defs` to
-  determine behavior with regard to password aging, expiration warnings,
-  and length. See the man page `login.defs(5)` for more information. \
-  \
-   Users should be forced to change their passwords, in order to decrease
+  The file `/etc/login.defs` controls several password-related settings.
+  Programs such as `passwd`, `su`, and `login` consult `/etc/login.defs`
+  to determine behavior with regard to password aging, expiration
+  warnings, and length. See the man page `login.defs(5)` for more
+  information.
+
+  Users should be forced to change their passwords, in order to decrease
   the utility of compromised passwords. However, the need to change
   passwords often should be balanced against the risk that users will
   reuse or write down passwords if forced to change them too often.
   Forcing password changes every 90-360 days, depending on the
   environment, is recommended. Set the appropriate value as
-  `PASS_MAX_DAYS` and apply it to existing accounts with the `-M` flag. \
-  \
-   The `PASS_MIN_DAYS` (`-m`) setting prevents password changes for 7 days
+  `PASS_MAX_DAYS` and apply it to existing accounts with the `-M` flag.
+
+  The `PASS_MIN_DAYS` (`-m`) setting prevents password changes for 7 days
   after the first change, to discourage password cycling. If you use this
   setting, train users to contact an administrator for an emergency
   password change in case a new password becomes compromised. The
   `PASS_WARN_AGE` (`-W`) setting gives users 7 days of warnings at login
-  time that their passwords are about to expire. \
-  \
-   For example, for each existing human user *USER*, expiration parameters
+  time that their passwords are about to expire.
+
+  <p>
+  For example, for each existing human user *USER*, expiration parameters
   could be adjusted to a 180 day maximum password age, 7 day minimum
   password age, and 7 day warning period with the following command:
 

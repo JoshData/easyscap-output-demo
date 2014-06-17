@@ -2,10 +2,12 @@ id: xccdf_org.ssgproject.content_rule_disable_httpd
 severity: low
 title: Disable httpd Service
 description: |
-  `httpd` service can be disabled with the following command:
+  The `httpd` service can be disabled with the following command:
 
       # chkconfig httpd off
-rationale: ~
+rationale: |
+  Running web server software provides a network-based avenue of attack,
+  and should be disabled if not needed.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

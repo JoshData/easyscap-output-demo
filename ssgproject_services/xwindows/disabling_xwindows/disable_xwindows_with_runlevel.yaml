@@ -2,10 +2,14 @@ id: xccdf_org.ssgproject.content_rule_disable_xwindows_with_runlevel
 severity: low
 title: Disable X Windows Startup By Setting Runlevel
 description: |
-  `/etc/inittab` features a `3` as shown:
+  Setting the system’s runlevel to 3 will prevent automatic startup of the
+  X server. To do so, ensure the following line in `/etc/inittab` features
+  a `3` as shown:
 
       id:3:initdefault:
-rationale: ~
+rationale: |
+  Unnecessary services should be disabled to decrease the attack surface
+  of the system.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '366'

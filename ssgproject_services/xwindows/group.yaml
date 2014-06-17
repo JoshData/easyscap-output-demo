@@ -1,6 +1,8 @@
 id: xccdf_org.ssgproject.content_group_xwindows
 title: X Window System
-description: ~
+description: |
+  The X Window System implementation included with the system is called
+  X.org.
 rules: []
 subgroups:
 - disabling_xwindows

@@ -1,6 +1,9 @@
 id: xccdf_org.ssgproject.content_group_general-principles
 title: General Principles
-description: ~
+description: |
+  The following general principles motivate much of the advice in this
+  guide and should also influence any configuration decisions that are not
+  explicitly covered.
 rules: []
 subgroups:
 - principle-encrypt-transmitted-data

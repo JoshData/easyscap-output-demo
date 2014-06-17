@@ -2,6 +2,7 @@ id: xccdf_org.ssgproject.content_rule_sysctl_ipv6_default_accept_redirects
 severity: medium
 title: Disable Accepting IPv6 Redirects
 description: |
+  To set the runtime status of the
   `net.ipv6.conf.default.accept_redirects` kernel parameter, run the
   following command:
 
@@ -15,7 +16,9 @@ description: |
   ~~~~ {xml:space="preserve"}
   net.ipv6.conf.default.accept_redirects = 0
   ~~~~
-rationale: ~
+rationale: |
+  An illicit ICMP redirect message could result in a man-in-the-middle
+  attack.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

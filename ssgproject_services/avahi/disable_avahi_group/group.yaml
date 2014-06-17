@@ -1,6 +1,9 @@
 id: xccdf_org.ssgproject.content_group_disable_avahi_group
 title: Disable Avahi Server if Possible
-description: ~
+description: |
+  Because the Avahi daemon service keeps an open network port, it is
+  subject to network attacks. Disabling it can reduce the system’s
+  vulnerability to such attacks.
 rules:
 - disable_avahi
 subgroups: []

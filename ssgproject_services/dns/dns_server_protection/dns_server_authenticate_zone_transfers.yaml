@@ -2,7 +2,11 @@ id: xccdf_org.ssgproject.content_rule_dns_server_authenticate_zone_transfers
 severity: low
 title: Authenticate Zone Transfers
 description: |
-  # cd /tmp
+  If it is necessary for a secondary nameserver to receive zone data via
+  zone transfer from the primary server, follow the instructions here. Use
+  dnssec-keygen to create a symmetric key file in the current directory:
+
+      # cd /tmp
       # dnssec-keygen -a HMAC-MD5 -b 128 -n HOST dns.example.com
       Kdns.example.com .+aaa +iiiii
 
@@ -41,7 +45,16 @@ description: |
         masters { IP-OF-MASTER ; };
         ...
       };
-rationale: ~
+rationale: |
+  The BIND transaction signature (TSIG) functionality allows primary and
+  secondary nameservers to use a shared secret to verify authorization to
+  perform zone transfers. This method is more secure than using IP-based
+  limiting to restrict nameserver access, since IP addresses can be easily
+  spoofed. However, if you cannot configure TSIG between your servers
+  because, for instance, the secondary nameserver is not under your
+  control and its administrators are unwilling to configure TSIG, you can
+  configure an allow-transfer directive with numerical IP addresses or
+  ACLs as a last resort.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

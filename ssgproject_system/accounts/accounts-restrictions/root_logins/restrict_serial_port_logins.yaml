@@ -2,13 +2,16 @@ id: xccdf_org.ssgproject.content_rule_restrict_serial_port_logins
 severity: low
 title: Restrict Serial Port Root Logins
 description: |
-  `/etc/securetty`:
+  To restrict root logins on serial ports, ensure lines of this form do
+  not appear in `/etc/securetty`:
 
       ttyS0
       ttyS1
 
   <!-- TODO: discussion/description of serial port -->
-rationale: ~
+rationale: |
+  Preventing direct root login to serial port interfaces helps ensure
+  accountability for actions taken on the systems using the root account.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-6(2)

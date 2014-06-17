@@ -2,10 +2,18 @@ id: xccdf_org.ssgproject.content_rule_service_messagebus_disabled
 severity: low
 title: Disable D-Bus IPC Service (messagebus)
 description: |
+  D-Bus provides an IPC mechanism used by a growing list of programs, such
+  as those used for Gnome, Bluetooth, and Avahi. Due to these
+  dependencies, disabling D-Bus may not be practical for many systems. The
   `messagebus` service can be disabled with the following command:
 
       # chkconfig messagebus off
-rationale: ~
+rationale: |
+  If no services which require D-Bus are needed, then it can be disabled.
+  As a broker for IPC between processes of different privilege levels, it
+  could be a target for attack. However, disabling D-Bus is likely to be
+  impractical for any system which needs to provide a graphical login
+  session.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

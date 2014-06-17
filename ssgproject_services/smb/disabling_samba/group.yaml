@@ -1,6 +1,9 @@
 id: xccdf_org.ssgproject.content_group_disabling_samba
 title: Disable Samba if Possible
-description: ~
+description: |
+  Even after the Samba server package has been installed, it will remain
+  disabled. Do not enable this service unless it is absolutely necessary
+  to provide Microsoft Windows file and print sharing functionality.
 rules:
 - disable_smb_server
 subgroups: []

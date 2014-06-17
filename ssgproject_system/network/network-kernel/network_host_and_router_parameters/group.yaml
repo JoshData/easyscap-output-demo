@@ -1,6 +1,9 @@
 id: xccdf_org.ssgproject.content_group_network_host_and_router_parameters
 title: Network Related Kernel Runtime Parameters for Hosts and Routers
-description: ~
+description: |
+  Certain kernel parameters should be set for systems which are acting as
+  either hosts or routers to improve the system’s ability defend against
+  certain types of IPv4 protocol attacks.
 rules:
 - sysctl_net_ipv4_conf_all_accept_source_route
 - sysctl_net_ipv4_conf_all_accept_redirects

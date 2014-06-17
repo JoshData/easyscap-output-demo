@@ -1,7 +1,10 @@
 id: xccdf_org.ssgproject.content_group_postfix_harden_os
 title: |
   Configure Operating System to Protect Mail Server
-description: ~
+description: |
+  The guidance in this section is appropriate for any host which is
+  operating as a site MTA, whether the mail server runs using Sendmail,
+  Postfix, or some other software.
 rules: []
 subgroups:
 - postfix_configure_ssl_certs

@@ -2,10 +2,13 @@ id: xccdf_org.ssgproject.content_rule_sshd_set_keepalive
 severity: low
 title: Set SSH Client Alive Count
 description: |
+  To ensure the SSH idle timeout occurs precisely when the
   `ClientAliveCountMax` is set, edit `/etc/ssh/sshd_config` as follows:
 
       ClientAliveCountMax 0
-rationale: '`ClientAliveCountMax` is reached.'
+rationale: |
+  This ensures a user login will be terminated as soon as the
+  `ClientAliveCountMax` is reached.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '879'

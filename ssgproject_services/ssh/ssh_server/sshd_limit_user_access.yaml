@@ -2,12 +2,17 @@ id: xccdf_org.ssgproject.content_rule_sshd_limit_user_access
 severity: low
 title: Limit Users' SSH Access
 description: |
-  `/etc/ssh/sshd_config` file:
+  By default, the SSH configuration allows any user with an account to
+  access the system. In order to specify the users that are allowed to
+  login via SSH and deny all other users, add or correct the following
+  line in the `/etc/ssh/sshd_config` file:
 
       DenyUsers USER1 USER2
 
   Where `USER1` and `USER2` are valid user names.
-rationale: ~
+rationale: |
+  Specifying which accounts are allowed SSH access into the system reduces
+  the possibility of unauthorized access to the system.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

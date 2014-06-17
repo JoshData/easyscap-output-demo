@@ -2,13 +2,18 @@ id: xccdf_org.ssgproject.content_rule_kernel_module_rds_disabled
 severity: low
 title: Disable RDS Support
 description: |
-  `rds` kernel module from being loaded, add the following line to a file
-  in the directory `/etc/modprobe.d`:
+  The Reliable Datagram Sockets (RDS) protocol is a transport layer
+  protocol designed to provide reliable high- bandwidth, low-latency
+  communications between nodes in a cluster. To configure the system to
+  prevent the `rds` kernel module from being loaded, add the following
+  line to a file in the directory `/etc/modprobe.d`:
 
   ~~~~ {xml:space="preserve"}
   install rds /bin/false
   ~~~~
-rationale: ~
+rationale: |
+  Disabling RDS protects the system against exploitation of any flaws in
+  its implementation.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

@@ -1,11 +1,13 @@
 id: xccdf_org.ssgproject.content_rule_package_telnet_removed
 severity: low
 title: Remove telnet Clients
-description: ~
+description: |
+  The telnet client allows users to start connections to other systems via
+  the telnet protocol.
 rationale: |
-  `telnet` protocol is insecure and unencrypted. The use of an unencrypted
-  transmission medium could allow an unauthorized user to steal
-  credentials. The `ssh` package provides an encrypted session and
+  The `telnet` protocol is insecure and unencrypted. The use of an
+  unencrypted transmission medium could allow an unauthorized user to
+  steal credentials. The `ssh` package provides an encrypted session and
   stronger security and is included in Red Hat Enterprise Linux.
 references: []
 crosswalk:

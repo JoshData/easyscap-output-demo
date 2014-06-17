@@ -2,15 +2,14 @@ id: xccdf_org.ssgproject.content_rule_set_system_login_banner
 severity: medium
 title: Modify the System Login Banner
 description: >
-  \
+  To configure the system login banner:
 
-  \
-   Edit `/etc/issue`. Replace the default text with a message compliant
+
+  Edit `/etc/issue`. Replace the default text with a message compliant
+
   with the local site policy or a legal disclaimer. The DoD required text
 
-  is either: \
-
-  \
+  is either:
 
 
   `You are accessing a U.S. Government (USG) Information System (IS) that is provided
@@ -30,13 +29,14 @@ description: >
   clergy, and their assistants. Such communications and work product are private and
   confidential. See User Agreement for details.`
 
-  \
 
-  \
-   OR: \
-  \
-   `I've read & consent to terms in IS user agreem't.`
-rationale: ~
+  OR:
+
+
+  `I've read & consent to terms in IS user agreem't.`
+rationale: |
+  An appropriate warning message reinforces policy awareness during the
+  logon process and facilitates possible legal action against attackers.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-8(a)

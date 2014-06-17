@@ -1,8 +1,9 @@
 id: xccdf_org.ssgproject.content_group_http
 title: Web Server
 description: |
-  \
-  \
+  The web server is responsible for providing access to content via the
+  HTTP protocol. Web servers represent a significant security risk
+  because:
 
   -   The HTTP port is commonly probed by malicious sources
   -   Web server software is very complex, and includes a long history of
@@ -10,9 +11,7 @@ description: |
   -   The HTTP protocol is unencrypted and vulnerable to passive
       monitoring
 
-  \
-  \
-   The system’s default web server software is Apache 2 and is provided in
+  The system’s default web server software is Apache 2 and is provided in
   the RPM package `httpd`.
 rules: []
 subgroups:

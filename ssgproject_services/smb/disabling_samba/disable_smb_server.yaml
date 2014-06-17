@@ -2,10 +2,12 @@ id: xccdf_org.ssgproject.content_rule_disable_smb_server
 severity: low
 title: Disable Samba
 description: |
-  `smb` service can be disabled with the following command:
+  The `smb` service can be disabled with the following command:
 
       # chkconfig smb off
-rationale: ~
+rationale: |
+  Running a Samba server provides a network-based avenue of attack, and
+  should be disabled if not needed.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '1436'

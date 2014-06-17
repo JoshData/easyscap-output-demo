@@ -2,10 +2,20 @@ id: xccdf_org.ssgproject.content_rule_network_disable_zeroconf
 severity: low
 title: Disable Zeroconf Networking
 description: |
+  Zeroconf networking allows the system to assign itself an IP address and
+  engage in IP communication without a statically-assigned address or even
+  a DHCP server. Automatic address assignment via Zeroconf (or DHCP) is
+  not recommended. To disable Zeroconf automatic route assignment in the
+  169.254.0.0 subnet, add or correct the following line in
   `/etc/sysconfig/network`:
 
       NOZEROCONF=yes
-rationale: ~
+rationale: |
+  Zeroconf addresses are in the network 169.254.0.0. The networking
+  scripts add entries to the system’s routing table for these addresses.
+  Zeroconf address assignment commonly occurs when the system is
+  configured to use DHCP but fails to receive an address assignment from
+  the DHCP server.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

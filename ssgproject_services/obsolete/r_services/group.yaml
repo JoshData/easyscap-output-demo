@@ -1,6 +1,8 @@
 id: xccdf_org.ssgproject.content_group_r_services
 title: Rlogin, Rsh, and Rexec
-description: ~
+description: |
+  The Berkeley r-commands are legacy services which allow cleartext remote
+  access and have an insecure trust model.
 rules:
 - uninstall_rsh-server
 - disable_rexec

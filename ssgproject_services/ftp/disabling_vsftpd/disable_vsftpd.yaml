@@ -2,10 +2,13 @@ id: xccdf_org.ssgproject.content_rule_disable_vsftpd
 severity: low
 title: Disable vsftpd Service
 description: |
-  `vsftpd` service can be disabled with the following command:
+  The `vsftpd` service can be disabled with the following command:
 
       # chkconfig vsftpd off
-rationale: ~
+rationale: |
+  Running FTP server software provides a network-based avenue of attack,
+  and should be disabled if not needed. Furthermore, the FTP protocol is
+  unencrypted and creates a risk of compromising sensitive information.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

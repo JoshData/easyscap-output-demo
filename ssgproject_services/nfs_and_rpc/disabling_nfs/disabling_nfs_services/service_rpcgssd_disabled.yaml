@@ -2,7 +2,11 @@ id: xccdf_org.ssgproject.content_rule_service_rpcgssd_disabled
 severity: low
 title: Disable Secure RPC Client Service (rpcgssd)
 description: |
-  `rpcgssd` service can be disabled with the following command:
+  The rpcgssd service manages RPCSEC GSS contexts required to secure
+  protocols that use RPC (most often Kerberos and NFS). The rpcgssd
+  service is the client-side of RPCSEC GSS. If the system does not require
+  secure RPC then this service should be disabled. The `rpcgssd` service
+  can be disabled with the following command:
 
       # chkconfig rpcgssd off
 rationale: ~

@@ -1,8 +1,14 @@
 id: xccdf_org.ssgproject.content_rule_httpd_conf_files_permissions
 severity: low
 title: Set Permissions on All Configuration Files Inside /etc/httpd/conf/
-description: '# chmod 640 /etc/httpd/conf/*'
-rationale: ~
+description: |
+  Set permissions on the web server configuration files to 640:
+
+      # chmod 640 /etc/httpd/conf/*
+rationale: |
+  Access to the web server’s configuration files may allow an unauthorized
+  user or attacker to access information about the web server or to alter
+  the server’s configuration files.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

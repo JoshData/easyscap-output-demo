@@ -2,7 +2,8 @@ id: xccdf_org.ssgproject.content_rule_sysctl_kernel_exec_shield
 severity: medium
 title: Enable ExecShield
 description: |
-  `kernel.exec-shield` kernel parameter, run the following command:
+  To set the runtime status of the `kernel.exec-shield` kernel parameter,
+  run the following command:
 
   ~~~~ {xml:space="preserve"}
   # sysctl -w kernel.exec-shield=1
@@ -14,7 +15,13 @@ description: |
   ~~~~ {xml:space="preserve"}
   kernel.exec-shield = 1
   ~~~~
-rationale: ~
+rationale: |
+  ExecShield uses the segmentation feature on all x86 systems to prevent
+  execution in memory higher than a certain address. It writes an address
+  as a limit in the code segment descriptor, to control where code can be
+  executed, on a per-process basis. When the kernel places a process’s
+  memory regions such as the stack and heap higher than this address, the
+  hardware prevents execution in that address range.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
 - href: test_attestation

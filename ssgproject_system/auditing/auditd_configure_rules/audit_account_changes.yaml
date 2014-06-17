@@ -2,8 +2,8 @@ id: xccdf_org.ssgproject.content_rule_audit_account_changes
 severity: low
 title: Record Events that Modify User/Group Information
 description: |
-  `/etc/audit/audit.rules`, in order to capture events that modify account
-  changes:
+  Add the following to `/etc/audit/audit.rules`, in order to capture
+  events that modify account changes:
 
       # audit_account_changes
       -w /etc/group -p wa -k audit_account_changes
@@ -11,7 +11,10 @@ description: |
       -w /etc/gshadow -p wa -k audit_account_changes
       -w /etc/shadow -p wa -k audit_account_changes
       -w /etc/security/opasswd -p wa -k audit_account_changes
-rationale: ~
+rationale: |
+  In addition to auditing new user and group accounts, these watches will
+  alert the system administrator(s) to any modifications. Any unexpected
+  users, groups, or modifications should be investigated for legitimacy.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-2(4)

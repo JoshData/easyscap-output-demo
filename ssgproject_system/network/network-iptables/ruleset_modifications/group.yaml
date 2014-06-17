@@ -1,17 +1,20 @@
 id: xccdf_org.ssgproject.content_group_ruleset_modifications
 title: Strengthen the Default Ruleset
 description: |
-  `/etc/sysconfig`. Many of the lines in these files are similar to the
-  command line arguments that would be provided to the programs
-  `/sbin/iptables` or `/sbin/ip6tables` - but some are quite different. \
-  \
-   The following recommendations describe how to strengthen the default
+  The default rules can be strengthened. The system scripts that activate
+  the firewall rules expect them to be defined in the configuration files
+  iptables and ip6tables in the directory `/etc/sysconfig`. Many of the
+  lines in these files are similar to the command line arguments that
+  would be provided to the programs `/sbin/iptables` or `/sbin/ip6tables`
+  - but some are quite different.
+
+  The following recommendations describe how to strengthen the default
   ruleset configuration file. An alternative to editing this configuration
   file is to create a shell script that makes calls to the iptables
   program to load in rules, and then invokes service iptables save to
-  write those loaded rules to `/etc/sysconfig/iptables.` \
-  \
-   The following alterations can be made directly to
+  write those loaded rules to `/etc/sysconfig/iptables.`
+
+  The following alterations can be made directly to
   `/etc/sysconfig/iptables` and `/etc/sysconfig/ip6tables`. Instructions
   apply to both unless otherwise noted. Language and address conventions
   for regular iptables are used throughout this section; configuration for

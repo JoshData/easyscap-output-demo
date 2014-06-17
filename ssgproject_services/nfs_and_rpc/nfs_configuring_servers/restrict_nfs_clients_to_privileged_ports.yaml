@@ -2,11 +2,20 @@ id: xccdf_org.ssgproject.content_rule_restrict_nfs_clients_to_privileged_ports
 severity: low
 title: Restrict NFS Clients to Privileged Ports
 description: |
-  \
-  \
-   To ensure that the default has not been changed, ensure no line in
+  By default, the server NFS implementation requires that all client
+  requests be made from ports less than 1024. If your organization has
+  control over machines connected to its network, and if NFS requests are
+  prohibited at the border firewall, this offers some protection against
+  malicious requests from unprivileged users. Therefore, the default
+  should not be changed.
+
+  To ensure that the default has not been changed, ensure no line in
   `/etc/exports` contains the option `insecure`.
-rationale: ~
+rationale: |
+  Allowing client requests to be made from ports higher than 1024 could
+  allow a unprivileged user to initiate an NFS connection. If the
+  unprivileged user account has been compromised, an attacker could gain
+  access to data on the NFS server.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

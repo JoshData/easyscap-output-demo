@@ -2,15 +2,19 @@ id: xccdf_org.ssgproject.content_rule_service_rdisc_disabled
 severity: low
 title: Disable Network Router Discovery Daemon (rdisc)
 description: |
-  `rdisc` service implements the client side of the ICMP Internet Router
-  Discovery Protocol (IRDP), which allows discovery of routers on the
-  local subnet. If a router is discovered then the local routing table is
-  updated with a corresponding default route. By default this daemon is
+  The `rdisc` service implements the client side of the ICMP Internet
+  Router Discovery Protocol (IRDP), which allows discovery of routers on
+  the local subnet. If a router is discovered then the local routing table
+  is updated with a corresponding default route. By default this daemon is
   disabled. The `rdisc` service can be disabled with the following
   command:
 
       # chkconfig rdisc off
-rationale: ~
+rationale: |
+  General-purpose systems typically have their network and routing
+  information configured statically by a system administrator.
+  Workstations or some special-purpose systems often use DHCP (instead of
+  IRDP) to retrieve dynamic network configuration information.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

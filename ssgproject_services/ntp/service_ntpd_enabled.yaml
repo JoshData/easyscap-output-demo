@@ -2,19 +2,19 @@ id: xccdf_org.ssgproject.content_rule_service_ntpd_enabled
 severity: medium
 title: Enable the NTP Daemon
 description: |
-  `ntpd` service can be enabled with the following command:
+  The `ntpd` service can be enabled with the following command:
 
       # chkconfig --level 2345 ntpd on
 rationale: |
-  `ntpd` service ensures that the `ntpd` service will be running and that
-  the system will synchronize its time to any servers specified. This is
-  important whether the system is configured to be a client (and
-  synchronize only its own clock) or it is also acting as an NTP server to
-  other systems. Synchronizing time is essential for authentication
-  services such as Kerberos, but it is also important for maintaining
-  accurate logs and auditing possible security breaches. \
-  \
-   The NTP daemon offers all of the functionality of `ntpdate`, which is
+  Enabling the `ntpd` service ensures that the `ntpd` service will be
+  running and that the system will synchronize its time to any servers
+  specified. This is important whether the system is configured to be a
+  client (and synchronize only its own clock) or it is also acting as an
+  NTP server to other systems. Synchronizing time is essential for
+  authentication services such as Kerberos, but it is also important for
+  maintaining accurate logs and auditing possible security breaches.
+
+  The NTP daemon offers all of the functionality of `ntpdate`, which is
   now deprecated. Additional information on this is available at
   http://support.ntp.org/bin/view/Dev/DeprecatingNtpdate
 references:

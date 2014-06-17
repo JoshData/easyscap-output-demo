@@ -2,10 +2,18 @@ id: xccdf_org.ssgproject.content_rule_service_rhnsd_disabled
 severity: low
 title: Disable Red Hat Network Service (rhnsd)
 description: |
+  The Red Hat Network service automatically queries Red Hat Network
+  servers to determine whether there are any actions that should be
+  executed, such as package updates. This only occurs if the system was
+  registered to an RHN server or satellite and managed as such. The
   `rhnsd` service can be disabled with the following command:
 
       # chkconfig rhnsd off
-rationale: '`rhnsd` daemon can remain on.'
+rationale: |
+  Although systems management and patching is extremely important to
+  system security, management by a system outside the enterprise enclave
+  is not desirable for some environments. However, if the system is being
+  managed by RHN or RHN Satellite Server the `rhnsd` daemon can remain on.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

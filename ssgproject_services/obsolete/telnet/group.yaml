@@ -1,6 +1,10 @@
 id: xccdf_org.ssgproject.content_group_telnet
 title: Telnet
-description: ~
+description: |
+  The telnet protocol does not provide confidentiality or integrity for
+  information transmitted on the network. This includes authentication
+  information such as passwords. Organizations which use telnet should be
+  actively working to migrate to a more secure protocol.
 rules:
 - disable_telnet_service
 - uninstall_telnet_server

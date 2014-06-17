@@ -3,10 +3,11 @@ title: |-
   Set Password Quality Requirements, if using
   pam_cracklib
 description: |
-  `pam_cracklib` PAM module can be configured to meet requirements for a
-  variety of policies. \
-  \
-   For example, to configure `pam_cracklib` to require at least one
+  The `pam_cracklib` PAM module can be configured to meet requirements for
+  a variety of policies.
+
+  <p>
+  For example, to configure `pam_cracklib` to require at least one
   uppercase character, lowercase character, digit, and other (special)
   character, locate the following line in `/etc/pam.d/system-auth`:
 

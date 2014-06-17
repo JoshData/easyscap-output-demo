@@ -2,11 +2,14 @@ id: xccdf_org.ssgproject.content_rule_sshd_allow_only_protocol2
 severity: high
 title: Allow Only SSH Protocol 2
 description: |
-  `/etc/ssh/sshd_config` is correct, and can be verified by ensuring that
-  the following line appears:
+  Only SSH protocol version 2 connections should be permitted. The default
+  setting in `/etc/ssh/sshd_config` is correct, and can be verified by
+  ensuring that the following line appears:
 
       Protocol 2
-rationale: ~
+rationale: |
+  SSH protocol version 1 suffers from design flaws that result in security
+  vulnerabilities and should not be used.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(7)

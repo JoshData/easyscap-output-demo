@@ -2,6 +2,8 @@ id: xccdf_org.ssgproject.content_rule_network_ipv6_privacy_extensions
 severity: low
 title: Use Privacy Extensions for Address
 description: |
+  To introduce randomness into the automatic generation of IPv6 addresses,
+  add or correct the following line in
   `/etc/sysconfig/network-scripts/ifcfg-interface`:
 
       IPV6_PRIVACY=rfc3041

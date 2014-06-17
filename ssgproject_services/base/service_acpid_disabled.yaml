@@ -2,12 +2,17 @@ id: xccdf_org.ssgproject.content_rule_service_acpid_disabled
 severity: low
 title: Disable Advanced Configuration and Power Interface (acpid)
 description: |
-  `acpid`) dispatches ACPI events (such as power/reset button depressed)
-  to userspace programs. The `acpid` service can be disabled with the
+  The Advanced Configuration and Power Interface Daemon (`acpid`)
+  dispatches ACPI events (such as power/reset button depressed) to
+  userspace programs. The `acpid` service can be disabled with the
   following command:
 
       # chkconfig acpid off
-rationale: ~
+rationale: |
+  ACPI support is highly desirable for systems in some network roles, such
+  as laptops or desktops. For other systems, such as servers, it may
+  permit accidental or trivially achievable denial of service situations
+  and disabling it is appropriate.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

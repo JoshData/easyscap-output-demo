@@ -1,6 +1,9 @@
 id: xccdf_org.ssgproject.content_group_disabling_nfs
 title: Disable All NFS Services if Possible
-description: ~
+description: |
+  If there is not a reason for the system to operate as either an NFS
+  client or an NFS server, follow all instructions in this section to
+  disable subsystems required by NFS.
 rules: []
 subgroups:
 - disabling_nfs_services

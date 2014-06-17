@@ -2,10 +2,16 @@ id: xccdf_org.ssgproject.content_rule_service_postfix_enabled
 severity: low
 title: Enable Postfix Service
 description: |
-  `postfix` service can be enabled with the following command:
+  The Postfix mail transfer agent is used for local mail delivery within
+  the system. The default configuration only listens for connections to
+  the default SMTP port (port 25) on the loopback interface (127.0.0.1).
+  It is recommended to leave this service enabled for local mail delivery.
+  The `postfix` service can be enabled with the following command:
 
       # chkconfig --level 2345 postfix on
-rationale: ~
+rationale: |
+  Local mail delivery is essential to some system maintenance and
+  notification tasks.
 references:
 - href: test_attestation
   dc:contributor: DS

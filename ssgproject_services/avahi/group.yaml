@@ -1,6 +1,11 @@
 id: xccdf_org.ssgproject.content_group_avahi
 title: Avahi Server
-description: ~
+description: |
+  The Avahi daemon implements the DNS Service Discovery and Multicast DNS
+  protocols, which provide service and host discovery on a network. It
+  allows a system to automatically identify resources on the network, such
+  as printers or web servers. This capability is also known as
+  mDNSresponder and is a major part of Zeroconf networking.
 rules: []
 subgroups:
 - disable_avahi_group

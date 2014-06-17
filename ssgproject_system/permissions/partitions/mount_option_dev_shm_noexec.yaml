@@ -2,12 +2,14 @@ id: xccdf_org.ssgproject.content_rule_mount_option_dev_shm_noexec
 severity: low
 title: Add noexec Option to /dev/shm
 description: |
-  `noexec` mount option can be used to prevent binaries from being
+  The `noexec` mount option can be used to prevent binaries from being
   executed out of `/dev/shm`. It can be dangerous to allow the execution
   of binaries from world-writable temporary storage directories such as
   `/dev/shm`. Add the `noexec` option to the fourth column of `/etc/fstab`
   for the line which controls mounting of `/dev/shm`.
-rationale: '`/dev/shm` can expose the system to potential compromise.'
+rationale: |
+  Allowing users to execute binaries from world-writable directories such
+  as `/dev/shm` can expose the system to potential compromise.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

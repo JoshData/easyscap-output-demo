@@ -1,6 +1,11 @@
 id: xccdf_org.ssgproject.content_group_httpd_optional_components
 title: Minimize Various Optional Components
 description: |
+  The following modules perform very specific tasks, sometimes providing
+  access to just a few additional directives. If such functionality is not
+  required (or if you are not using these directives), comment out the
+  associated module:
+
   -   External filtering (response passed through external program prior
       to client delivery)
 

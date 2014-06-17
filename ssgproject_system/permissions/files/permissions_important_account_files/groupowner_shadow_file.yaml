@@ -2,14 +2,14 @@ id: xccdf_org.ssgproject.content_rule_groupowner_shadow_file
 severity: medium
 title: Verify Group Who Owns shadow File
 description: |
-  `/etc/shadow`, run the command:
+  To properly set the group owner of `/etc/shadow`, run the command:
 
   ~~~~ {xml:space="preserve"}
   # chgrp root/etc/shadow
   ~~~~
 rationale: |
-  `/etc/shadow` file stores password hashes. Protection of this file is
-  critical for system security.
+  The `/etc/shadow` file stores password hashes. Protection of this file
+  is critical for system security.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-6

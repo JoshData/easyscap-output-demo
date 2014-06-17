@@ -2,10 +2,14 @@ id: xccdf_org.ssgproject.content_rule_package_vsftpd_installed
 severity: low
 title: Install vsftpd Package
 description: |
-  `vsftpd` package via the standard channels.
+  If this machine must operate as an FTP server, install the `vsftpd`
+  package via the standard channels.
 
       # yum install vsftpd
-rationale: ~
+rationale: |
+  After RHEL 2.1, Red Hat switched from distributing wu-ftpd with RHEL to
+  distributing vsftpd. For security and for consistency with future Red
+  Hat releases, the use of vsftpd is recommended.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

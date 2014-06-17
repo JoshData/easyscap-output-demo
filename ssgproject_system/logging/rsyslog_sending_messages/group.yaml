@@ -1,9 +1,13 @@
 id: xccdf_org.ssgproject.content_group_rsyslog_sending_messages
 title: Rsyslog Logs Sent To Remote Host
 description: |
-  \
-  \
-   However, it is recommended that logs be stored on the local host in
+  If system logs are to be useful in detecting malicious activities, it is
+  necessary to send logs to a remote server. An intruder who has
+  compromised the root account on a machine may delete the log entries
+  which indicate that the system was attacked before they are seen by an
+  administrator.
+
+  However, it is recommended that logs be stored on the local host in
   addition to being sent to the loghost, especially if `rsyslog` has been
   configured to use the UDP protocol to send messages over a network. UDP
   does not guarantee reliable delivery, and moderately busy sites will

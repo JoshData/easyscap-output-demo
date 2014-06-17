@@ -1,6 +1,9 @@
 id: xccdf_org.ssgproject.content_group_configure_dovecot
 title: Configure Dovecot if Necessary
-description: ~
+description: |
+  If the system will operate as an IMAP or POP3 server, the dovecot
+  software should be configured securely by following the recommendations
+  below.
 rules: []
 subgroups:
 - dovecot_support_necessary_protocols

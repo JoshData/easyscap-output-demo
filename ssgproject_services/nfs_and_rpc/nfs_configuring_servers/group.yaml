@@ -1,6 +1,8 @@
 id: xccdf_org.ssgproject.content_group_nfs_configuring_servers
 title: Configure NFS Servers
-description: ~
+description: |
+  The steps in this section are appropriate for machines which operate as
+  NFS servers.
 rules:
 - use_root_squashing_all_exports
 - restrict_nfs_clients_to_privileged_ports

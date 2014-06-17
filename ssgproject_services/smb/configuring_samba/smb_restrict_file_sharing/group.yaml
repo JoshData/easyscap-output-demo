@@ -1,10 +1,12 @@
 id: xccdf_org.ssgproject.content_group_smb_restrict_file_sharing
 title: Restrict SMB File Sharing to Configured Networks
 description: |
-  `hosts allow` and `hosts deny` directives accordingly, and consider
-  setting the valid users directive to a limited subset of users or to a
-  group of users. Separate each address, user, or user group with a space
-  as follows for a particular *share* or global:
+  Only users with local user accounts will be able to log in to Samba
+  shares by default. Shares can be limited to particular users or network
+  addresses. Use the `hosts allow` and `hosts deny` directives
+  accordingly, and consider setting the valid users directive to a limited
+  subset of users or to a group of users. Separate each address, user, or
+  user group with a space as follows for a particular *share* or global:
 
       [share]
         hosts allow = 192.168.1. 127.0.0.1

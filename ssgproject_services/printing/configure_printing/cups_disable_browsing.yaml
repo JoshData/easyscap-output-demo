@@ -2,10 +2,19 @@ id: xccdf_org.ssgproject.content_rule_cups_disable_browsing
 severity: low
 title: Disable Printer Browsing Entirely if Possible
 description: |
+  By default, CUPS listens on the network for printer list broadcasts on
+  UDP port 631. This functionality is called printer browsing. To disable
+  printer browsing entirely, edit the CUPS configuration file, located at
   `/etc/cups/cupsd.conf`, to include the following:
 
       Browsing Off
-rationale: ~
+rationale: |
+  The CUPS print service can be configured to broadcast a list of
+  available printers to the network. Other machines on the network, also
+  running the CUPS print service, can be configured to listen to these
+  broadcasts and add and configure these printers for immediate use. By
+  disabling this browsing capability, the machine will no longer generate
+  or receive such broadcasts.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

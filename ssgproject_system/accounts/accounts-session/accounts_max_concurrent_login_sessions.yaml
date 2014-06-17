@@ -2,10 +2,19 @@ id: xccdf_org.ssgproject.content_rule_accounts_max_concurrent_login_sessions
 severity: low
 title: Limit the Number of Concurrent Login Sessions Allowed Per User
 description: |
+  Limiting the number of allowed users and sessions per user can limit
+  risks related to Denial of Service attacks. This addresses concurrent
+  sessions for a single account and does not address concurrent sessions
+  by a single user via multiple accounts. The DoD requirement is 10. To
+  set the number of concurrent sessions per user add the following line in
   `/etc/security/limits.conf`:
 
       * hard maxlogins 10
-rationale: ~
+rationale: |
+  Limiting simultaneous user logins can insulate the system from denial of
+  service problems caused by excessive logins. Automated login processes
+  operating improperly or maliciously may result in an exceptional number
+  of simultaneous login sessions.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-10

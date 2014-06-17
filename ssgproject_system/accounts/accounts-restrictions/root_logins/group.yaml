@@ -1,15 +1,17 @@
 id: xccdf_org.ssgproject.content_group_root_logins
 title: Restrict Root Logins
 description: |
-  `su` or `sudo` to execute privileged commands. Discouraging
-  administrators from accessing the root account directly ensures an audit
-  trail in organizations with multiple administrators. Locking down the
-  channels through which root can connect directly also reduces
-  opportunities for password-guessing against the root account. The
-  `login` program uses the file `/etc/securetty` to determine which
-  interfaces should allow root logins. The virtual devices `/dev/console`
-  and `/dev/tty*` represent the system consoles (accessible via the
-  Ctrl-Alt-F1 through Ctrl-Alt-F6 keyboard sequences on a default
+  Direct root logins should be allowed only for emergency use. In normal
+  situations, the administrator should access the system via a unique
+  unprivileged account, and then use `su` or `sudo` to execute privileged
+  commands. Discouraging administrators from accessing the root account
+  directly ensures an audit trail in organizations with multiple
+  administrators. Locking down the channels through which root can connect
+  directly also reduces opportunities for password-guessing against the
+  root account. The `login` program uses the file `/etc/securetty` to
+  determine which interfaces should allow root logins. The virtual devices
+  `/dev/console` and `/dev/tty*` represent the system consoles (accessible
+  via the Ctrl-Alt-F1 through Ctrl-Alt-F6 keyboard sequences on a default
   installation). The default securetty file also contains `/dev/vc/*`.
   These are likely to be deprecated in most environments, but may be
   retained for compatibility. Root should also be prohibited from

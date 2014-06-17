@@ -2,13 +2,13 @@ id: xccdf_org.ssgproject.content_rule_file_groupowner_etc_group
 severity: medium
 title: Verify Group Who Owns group File
 description: |
-  `/etc/group`, run the command:
+  To properly set the group owner of `/etc/group`, run the command:
 
   ~~~~ {xml:space="preserve"}
   # chgrp root/etc/group
   ~~~~
 rationale: |
-  `/etc/group` file contains information regarding groups that are
+  The `/etc/group` file contains information regarding groups that are
   configured on the system. Protection of this file is important for
   system security.
 references:

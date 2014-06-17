@@ -2,13 +2,17 @@ id: xccdf_org.ssgproject.content_rule_aide_periodic_cron_checking
 severity: medium
 title: Configure Periodic Execution of AIDE
 description: |
-  `/etc/crontab`:
+  To implement a daily execution of AIDE at 4:05am using cron, add the
+  following line to `/etc/crontab`:
 
       05 4 * * * root /usr/sbin/aide --check
 
   AIDE can be executed periodically through other means; this is merely
   one example.
-rationale: ~
+rationale: |
+  By default, AIDE does not install itself for periodic execution.
+  Periodically running AIDE is necessary to reveal unexpected changes in
+  installed files.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-3(d)

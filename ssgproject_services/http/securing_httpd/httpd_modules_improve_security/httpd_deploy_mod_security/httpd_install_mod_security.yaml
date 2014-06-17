@@ -2,7 +2,7 @@ id: xccdf_org.ssgproject.content_rule_httpd_install_mod_security
 severity: low
 title: Install mod_security
 description: |
-  `security` module:
+  Install the `security` module:
 
       # yum install mod_security
 

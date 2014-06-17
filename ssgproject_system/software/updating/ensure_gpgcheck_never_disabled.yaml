@@ -2,10 +2,14 @@ id: xccdf_org.ssgproject.content_rule_ensure_gpgcheck_never_disabled
 severity: high
 title: Ensure gpgcheck Enabled For All Yum Package Repositories
 description: |
-  `/etc/yum.repos.d` of the form:
+  To ensure signature checking is not disabled for any repos, remove any
+  lines from files in `/etc/yum.repos.d` of the form:
 
       gpgcheck=0
-rationale: ~
+rationale: |
+  Ensuring all packages’ cryptographic signatures are valid prior to
+  installation ensures the authenticity of the software and protects
+  against malicious tampering.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: SI-7

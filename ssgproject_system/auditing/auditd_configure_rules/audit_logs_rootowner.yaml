@@ -2,12 +2,15 @@ id: xccdf_org.ssgproject.content_rule_audit_logs_rootowner
 severity: low
 title: System Audit Logs Must Be Owned By Root
 description: |
-  `/var/log`, run the command:
+  To properly set the owner of `/var/log`, run the command:
 
   ~~~~ {xml:space="preserve"}
   # chown root/var/log
   ~~~~
-rationale: ~
+rationale: |
+  Failure to give ownership of the audit log files to root allows the
+  designated owner, and unauthorized users, potential access to sensitive
+  information.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-6

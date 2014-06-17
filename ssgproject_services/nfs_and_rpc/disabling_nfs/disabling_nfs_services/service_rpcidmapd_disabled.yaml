@@ -2,7 +2,10 @@ id: xccdf_org.ssgproject.content_rule_service_rpcidmapd_disabled
 severity: low
 title: Disable RPC ID Mapping Service (rpcidmapd)
 description: |
-  `rpcidmapd` service can be disabled with the following command:
+  The rpcidmapd service is used to map user names and groups to UID and
+  GID numbers on NFSv4 mounts. If NFS is not in use on the local system
+  then this service should be disabled. The `rpcidmapd` service can be
+  disabled with the following command:
 
       # chkconfig rpcidmapd off
 rationale: ~

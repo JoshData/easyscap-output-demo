@@ -1,6 +1,10 @@
 id: xccdf_org.ssgproject.content_group_ftp_restrict_users
 title: Restrict the Set of Users Allowed to Access FTP
-description: ~
+description: |
+  This section describes how to disable non-anonymous (password-based) FTP
+  logins, or, if it is not possible to do this entirely due to legacy
+  applications, how to restrict insecure FTP login to only those users who
+  have an identified need for this access.
 rules:
 - ftp_restrict_to_anon
 subgroups:

@@ -2,9 +2,11 @@ id: xccdf_org.ssgproject.content_rule_deactivate_wireless_interfaces
 severity: low
 title: Deactivate Wireless Network Interfaces
 description: |
-  \
-  \
-   First, identify the interfaces available with the command:
+  Deactivating wireless network interfaces should prevent normal usage of
+  the wireless capability.
+
+  <p>
+  First, identify the interfaces available with the command:
 
       # ifconfig -a
 
@@ -25,7 +27,10 @@ description: |
   `/etc/sysconfig/network-scripts`:
 
       # rm /etc/sysconfig/network-scripts/ifcfg-interface
-rationale: ~
+rationale: |
+  Wireless networking allows attackers within physical proximity to launch
+  network-based attacks against systems, including those against local LAN
+  protocols which were not designed with security in mind.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-17(8)

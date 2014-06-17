@@ -1,8 +1,14 @@
 id: xccdf_org.ssgproject.content_rule_no_root_webbrowsing
 severity: low
 title: Restrict Web Browser Use for Administrative Accounts
-description: ~
-rationale: ~
+description: |
+  Enforce policy requiring administrative accounts use web browsers only
+  for local service administration.
+rationale: |
+  If a browser vulnerability is exploited while running with
+  administrative privileges, the entire system could be compromised.
+  Specific exceptions for local service administration should be
+  documented in site-defined policy.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

@@ -2,17 +2,17 @@ id: xccdf_org.ssgproject.content_rule_service_restorecond_enabled
 severity: low
 title: Enable the SELinux Context Restoration Service (restorecond)
 description: |
-  `restorecond` service utilizes `inotify` to look for the creation of new
-  files listed in the `/etc/selinux/restorecond.conf` configuration file.
-  When a file is created, `restorecond` ensures the file receives the
-  proper SELinux security context. The `restorecond` service can be
+  The `restorecond` service utilizes `inotify` to look for the creation of
+  new files listed in the `/etc/selinux/restorecond.conf` configuration
+  file. When a file is created, `restorecond` ensures the file receives
+  the proper SELinux security context. The `restorecond` service can be
   enabled with the following command:
 
       # chkconfig --level 2345 restorecond on
 rationale: |
-  `restorecond` service helps ensure that the default SELinux file context
-  is applied to files. This allows automatic correction of file contexts
-  created by some programs.
+  The `restorecond` service helps ensure that the default SELinux file
+  context is applied to files. This allows automatic correction of file
+  contexts created by some programs.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-3

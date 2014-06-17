@@ -2,10 +2,13 @@ id: xccdf_org.ssgproject.content_rule_sshd_do_not_permit_user_env
 severity: low
 title: Do Not Allow SSH Environment Options
 description: |
-  `/etc/ssh/sshd_config`:
+  To ensure users are not able to present environment options to the SSH
+  daemon, add or correct the following line in `/etc/ssh/sshd_config`:
 
       PermitUserEnvironment no
-rationale: ~
+rationale: |
+  SSH environment options potentially allow users to bypass access
+  restriction in some configurations.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '1414'

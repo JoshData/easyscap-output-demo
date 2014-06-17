@@ -2,10 +2,12 @@ id: xccdf_org.ssgproject.content_rule_disable_dns_server
 severity: low
 title: Disable DNS Server
 description: |
-  `named` service can be disabled with the following command:
+  The `named` service can be disabled with the following command:
 
       # chkconfig named off
-rationale: ~
+rationale: |
+  All network services involve some risk of compromise due to
+  implementation flaws and should be disabled if possible.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: CM-7

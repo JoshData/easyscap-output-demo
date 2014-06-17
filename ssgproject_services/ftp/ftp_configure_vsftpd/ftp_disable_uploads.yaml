@@ -2,11 +2,20 @@ id: xccdf_org.ssgproject.content_rule_ftp_disable_uploads
 severity: low
 title: Disable FTP Uploads if Possible
 description: |
-  write_enable=NO
+  Is there a mission-critical reason for users to upload files via FTP? If
+  not, edit the vsftpd configuration file to add or correct the following
+  configuration options:
+
+      write_enable=NO
 
   If FTP uploads are necessary, follow the guidance in the remainder of
   this section to secure these transactions as much as possible.
-rationale: ~
+rationale: |
+  Anonymous FTP can be a convenient way to make files available for
+  universal download. However, it is less common to have a need to allow
+  unauthenticated users to place files on the FTP server. If this must be
+  done, it is necessary to ensure that files cannot be uploaded and
+  downloaded from the same directory.
 references: []
 crosswalk:
 - system: http://cce.mitre.org

@@ -2,14 +2,18 @@ id: xccdf_org.ssgproject.content_rule_disable_host_auth
 severity: medium
 title: Disable Host-Based Authentication
 description: |
+  SSH’s cryptographic host-based authentication is more secure than
   `.rhosts` authentication. However, it is not recommended that hosts
-  unilaterally trust one another, even within an organization. \
-  \
-   To disable host-based authentication, add or correct the following line
+  unilaterally trust one another, even within an organization.
+
+  <p>
+  To disable host-based authentication, add or correct the following line
   in `/etc/ssh/sshd_config`:
 
       HostbasedAuthentication no
-rationale: ~
+rationale: |
+  SSH trust relationships mean a compromise on one host can allow an
+  attacker to move trivially to other hosts.
 references:
 - href: http://iase.disa.mil/cci/index.html
   value: '765'

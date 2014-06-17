@@ -2,14 +2,14 @@ id: xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow
 severity: medium
 title: Verify User Who Owns gshadow File
 description: |
-  `/etc/gshadow`, run the command:
+  To properly set the owner of `/etc/gshadow`, run the command:
 
   ~~~~ {xml:space="preserve"}
   # chown root/etc/gshadow
   ~~~~
 rationale: |
-  `/etc/gshadow` file contains group password hashes. Protection of this
-  file is critical for system security.
+  The `/etc/gshadow` file contains group password hashes. Protection of
+  this file is critical for system security.
 references:
 - href: http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final.pdf
   value: AC-6

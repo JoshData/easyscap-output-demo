@@ -1,9 +1,9 @@
 id: xccdf_org.ssgproject.content_group_dhcp_client_restrict_options
 title: Minimize the DHCP-Configured Options
 description: |
-  `/etc/dhcp/dhclient.conf`, and add an appropriate setting for each of
-  the ten configuration settings which can be obtained via DHCP. For each
-  setting, do one of the following: \
+  Create the file `/etc/dhcp/dhclient.conf`, and add an appropriate
+  setting for each of the ten configuration settings which can be obtained
+  via DHCP. For each setting, do one of the following: \
    If the setting should *not* be configured remotely by the DHCP server,
   select an appropriate static value, and add the line:
 
