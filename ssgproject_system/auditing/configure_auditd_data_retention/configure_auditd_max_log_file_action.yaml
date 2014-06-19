@@ -56,4 +56,10 @@ tests:
     version: '1'
     ind:subexpression:
       operation: case insensitive equals
-      var_ref: oval:ssg:var:2243
+      var_ref: 0
+variables:
+  0:
+    type: oval:external_variable
+    comment: audit max_log_file_action setting
+    datatype: string
+    version: '1'

@@ -41,5 +41,12 @@ tests:
   state:
     version: '1'
     ind:subexpression:
+      datatype: int
       operation: greater than or equal
-      var_ref: oval:ssg:var:2225
+      var_ref: 0
+variables:
+  0:
+    type: oval:external_variable
+    comment: minimum password age in days
+    datatype: int
+    version: '1'

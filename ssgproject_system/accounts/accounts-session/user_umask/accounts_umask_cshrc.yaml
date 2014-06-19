@@ -41,4 +41,10 @@ tests:
     ind:subexpression:
       operation: equals
       var_check: all
-      var_ref: oval:ssg:var:2239
+      var_ref: 0
+variables:
+  0:
+    type: oval:external_variable
+    comment: umask for user shell
+    datatype: string
+    version: '1'

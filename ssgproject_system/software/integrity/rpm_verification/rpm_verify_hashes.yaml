@@ -58,7 +58,10 @@ tests:
     linux:filepath:
       operation: pattern match
       value: ^.*bin/.*$
-    filter:
-      operator: AND
-      version: '1'
-      linux:md5_differs: fail
+    oval:filter:
+      action: include
+      value:
+        type: linux:rpmverifyfile_state
+        operator: AND
+        version: '1'
+        linux:md5_differs: fail

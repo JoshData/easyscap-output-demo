@@ -51,6 +51,13 @@ tests:
   state:
     version: '1'
     ind:subexpression:
+      datatype: string
       operation: equals
       var_check: all
-      var_ref: oval:ssg:var:2251
+      var_ref: 0
+variables:
+  0:
+    type: oval:external_variable
+    comment: external variable for selinux state
+    datatype: string
+    version: '1'

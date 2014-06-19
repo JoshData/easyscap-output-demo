@@ -48,11 +48,14 @@ tests:
       value: ^\/lib(|64)|^\/usr\/lib(|64)
     unix:filename:
       '@xsi:nil': 'true'
-    filter:
-      version: '1'
-      unix:type:
-        operation: equals
-        value: symbolic link
+    oval:filter:
+      action: exclude
+      value:
+        type: unix:file_state
+        version: '1'
+        unix:type:
+          operation: equals
+          value: symbolic link
 - type: unix:file_test
   check: all
   check_existence: none_exist
@@ -67,8 +70,11 @@ tests:
     unix:filename:
       operation: pattern match
       value: ^.*$
-    filter:
-      version: '1'
-      unix:type:
-        operation: equals
-        value: symbolic link
+    oval:filter:
+      action: exclude
+      value:
+        type: unix:file_state
+        version: '1'
+        unix:type:
+          operation: equals
+          value: symbolic link

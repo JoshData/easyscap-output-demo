@@ -38,8 +38,11 @@ tests:
     unix:filename:
       operation: pattern match
       value: ^.*$
-    filter:
-      version: '1'
-      unix:filepath:
-        operation: pattern match
-        value: ^/sys/.*$
+    oval:filter:
+      action: exclude
+      value:
+        type: unix:file_state
+        version: '1'
+        unix:filepath:
+          operation: pattern match
+          value: ^/sys/.*$

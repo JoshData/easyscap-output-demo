@@ -52,10 +52,13 @@ tests:
       value: /
     unix:filename:
       '@xsi:nil': 'true'
-    filter:
-      version: '1'
-      unix:sticky: false
-      unix:owrite: true
+    oval:filter:
+      action: include
+      value:
+        type: unix:file_state
+        version: '1'
+        unix:sticky: false
+        unix:owrite: true
   state:
     version: '1'
     unix:sticky: false

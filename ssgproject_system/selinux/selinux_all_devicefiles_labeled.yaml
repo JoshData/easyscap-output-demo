@@ -41,15 +41,20 @@ tests:
     linux:filename:
       operation: pattern match
       value: ^.*$
-    filter:
-      comment: do it
-      version: '1'
-      linux:type:
-        operation: equals
-        value: unlabeled_t
+    oval:filter:
+      action: include
+      value:
+        type: linux:selinuxsecuritycontext_state
+        comment: do it
+        version: '1'
+        linux:type:
+          datatype: string
+          operation: equals
+          value: unlabeled_t
   state:
     comment: do it
     version: '1'
     linux:type:
+      datatype: string
       operation: equals
       value: unlabeled_t

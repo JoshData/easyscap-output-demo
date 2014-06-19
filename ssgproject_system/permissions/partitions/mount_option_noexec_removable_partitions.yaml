@@ -36,10 +36,11 @@ tests:
   object:
     version: '1'
     linux:mount_point:
-      var_ref: oval:ssg:var:2214
+      var_ref: 0
   state:
     version: '1'
     linux:mount_options:
+      datatype: string
       entity_check: at least one
       operation: equals
       value: noexec
@@ -59,4 +60,11 @@ tests:
   state:
     version: '1'
     ind:subexpression:
-      var_ref: oval:ssg:var:2214
+      datatype: string
+      var_ref: 0
+variables:
+  0:
+    type: oval:external_variable
+    comment: removable partition
+    datatype: string
+    version: '1'

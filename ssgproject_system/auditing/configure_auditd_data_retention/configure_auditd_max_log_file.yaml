@@ -43,5 +43,12 @@ tests:
   state:
     version: '1'
     ind:subexpression:
+      datatype: int
       operation: greater than or equal
-      var_ref: oval:ssg:var:2242
+      var_ref: 0
+variables:
+  0:
+    type: oval:external_variable
+    comment: audit max_log_file settting
+    datatype: int
+    version: '1'

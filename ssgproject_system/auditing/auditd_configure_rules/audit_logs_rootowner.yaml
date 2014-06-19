@@ -48,15 +48,18 @@ tests:
     unix:filename:
       operation: pattern match
       value: ^.*$
-    filter:
-      operator: OR
-      version: '1'
-      unix:group_id:
-        operation: not equal
-        value: 0
-      unix:user_id:
-        operation: not equal
-        value: 0
+    oval:filter:
+      action: include
+      value:
+        type: unix:file_state
+        operator: OR
+        version: '1'
+        unix:group_id:
+          operation: not equal
+          value: 0
+        unix:user_id:
+          operation: not equal
+          value: 0
 - type: unix:file_test
   check: all
   check_existence: none_exist
@@ -75,12 +78,15 @@ tests:
       value: /var/log/audit
     unix:filename:
       '@xsi:nil': 'true'
-    filter:
-      operator: OR
-      version: '1'
-      unix:group_id:
-        operation: not equal
-        value: 0
-      unix:user_id:
-        operation: not equal
-        value: 0
+    oval:filter:
+      action: include
+      value:
+        type: unix:file_state
+        operator: OR
+        version: '1'
+        unix:group_id:
+          operation: not equal
+          value: 0
+        unix:user_id:
+          operation: not equal
+          value: 0

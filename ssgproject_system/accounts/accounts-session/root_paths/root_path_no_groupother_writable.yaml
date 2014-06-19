@@ -26,13 +26,16 @@ tests:
     version: '1'
     unix:path:
       var_check: at least one
-      var_ref: oval:ssg:var:2193
+      var_ref: 0
     unix:filename:
       '@xsi:nil': 'true'
-    filter:
-      comment: Group has write privilege
-      version: '1'
-      unix:gwrite: true
+    oval:filter:
+      action: include
+      value:
+        type: unix:file_state
+        comment: Group has write privilege
+        version: '1'
+        unix:gwrite: true
 - type: unix:file_test
   check: all
   check_existence: any_exist
@@ -43,10 +46,30 @@ tests:
     version: '1'
     unix:path:
       var_check: at least one
-      var_ref: oval:ssg:var:2193
+      var_ref: 0
     unix:filename:
       '@xsi:nil': 'true'
-    filter:
-      comment: Other has write privilege
-      version: '1'
-      unix:owrite: true
+    oval:filter:
+      action: include
+      value:
+        type: unix:file_state
+        comment: Other has write privilege
+        version: '1'
+        unix:owrite: true
+variables:
+  0:
+    type: oval:local_variable
+    comment: 'Split the PATH on the : delimiter'
+    datatype: string
+    version: '1'
+    oval:split:
+      delimiter: ':'
+      oval:object_component:
+        item_field: value
+        object_ref:
+          type: ind:environmentvariable58_object
+          version: '1'
+          ind:pid:
+            datatype: int
+            '@xsi:nil': 'true'
+          ind:name: PATH

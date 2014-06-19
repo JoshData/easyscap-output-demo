@@ -54,3 +54,9 @@ tests:
     ind:subexpression:
       operation: greater than
       value: -1
+variables:
+  0:
+    type: oval:external_variable
+    comment: inactive days expiration
+    datatype: int
+    version: '1'

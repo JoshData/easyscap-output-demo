@@ -39,4 +39,6 @@ tests:
     ind:xpath: /gconf/entry[@name='banner_message_enable']/@value
   state:
     version: '1'
-    ind:value_of: 'true'
+    ind:value_of:
+      datatype: string
+      value: 'true'

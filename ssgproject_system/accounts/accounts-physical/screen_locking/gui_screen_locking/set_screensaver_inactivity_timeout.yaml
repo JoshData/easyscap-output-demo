@@ -34,6 +34,13 @@ tests:
     comment: idle timeout
     version: '1'
     ind:value_of:
+      datatype: int
       operation: less than or equal
       var_check: all
-      var_ref: oval:ssg:var:2248
+      var_ref: 0
+variables:
+  0:
+    type: oval:external_variable
+    comment: inactivity timeout variable
+    datatype: int
+    version: '1'

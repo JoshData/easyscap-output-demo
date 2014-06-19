@@ -38,8 +38,30 @@ tests:
     unix:filename:
       operation: pattern match
       value: .*
-    filter:
-      version: '1'
-      unix:user_id:
-        var_check: at least one
-        var_ref: oval:ssg:var:2249
+    oval:filter:
+      action: exclude
+      value:
+        type: unix:file_state
+        version: '1'
+        unix:user_id:
+          datatype: int
+          var_check: at least one
+          var_ref: 0
+variables:
+  0:
+    type: oval:local_variable
+    comment: List of valid user ids
+    datatype: int
+    version: '1'
+    oval:object_component:
+      item_field: subexpression
+      object_ref:
+        type: ind:textfilecontent54_object
+        version: '1'
+        ind:filepath: /etc/passwd
+        ind:pattern:
+          operation: pattern match
+          value: ^[^:]+:[^:]+:([\d]+):[\d]+:[^:]*:[^:]+:[^:]*$
+        ind:instance:
+          operation: greater than or equal
+          value: 1

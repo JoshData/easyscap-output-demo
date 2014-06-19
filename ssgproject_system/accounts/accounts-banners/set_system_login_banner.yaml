@@ -73,7 +73,13 @@ tests:
     ind:filepath: /etc/issue
     ind:pattern:
       operation: pattern match
-      var_ref: oval:ssg:var:2196
+      var_ref: 0
     ind:instance:
       operation: greater than or equal
       value: 1
+variables:
+  0:
+    type: oval:external_variable
+    comment: warning banner text variable
+    datatype: string
+    version: '1'

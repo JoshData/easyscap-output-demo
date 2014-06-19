@@ -30,15 +30,20 @@ tests:
     unix:name:
       operation: pattern match
       value: ^.*$
-    filter:
-      version: '1'
-      unix:flag:
-        entity_check: at least one
-        operation: equals
-        value: PROMISC
+    oval:filter:
+      action: include
+      value:
+        type: unix:interface_state
+        version: '1'
+        unix:flag:
+          datatype: string
+          entity_check: at least one
+          operation: equals
+          value: PROMISC
   state:
     version: '1'
     unix:flag:
+      datatype: string
       entity_check: at least one
       operation: equals
       value: PROMISC

@@ -36,11 +36,15 @@ tests:
       operation: pattern match
       value: (?:daily)*.*(?=[\n][\s]*daily)(.*)$
     ind:instance: 1
-    filter:
-      version: '1'
-      ind:subexpression:
-        operation: pattern match
-        value: '}[^{]+[\n][\s]*(weekly|monthly|yearly)|[\n][\s]*(weekly|monthly|yearly)[^}]+{'
+    oval:filter:
+      action: exclude
+      value:
+        type: ind:textfilecontent54_state
+        version: '1'
+        ind:subexpression:
+          datatype: string
+          operation: pattern match
+          value: '}[^{]+[\n][\s]*(weekly|monthly|yearly)|[\n][\s]*(weekly|monthly|yearly)[^}]+{'
 - type: ind:textfilecontent54_test
   check: all
   check_existence: all_exist

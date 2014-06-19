@@ -45,16 +45,19 @@ tests:
       value: /home
     unix:filename:
       '@xsi:nil': 'true'
-    filter:
-      operator: OR
-      version: '1'
-      unix:suid: true
-      unix:sgid: true
-      unix:sticky: true
-      unix:gwrite: true
-      unix:oread: true
-      unix:owrite: true
-      unix:oexec: true
+    oval:filter:
+      action: include
+      value:
+        type: unix:file_state
+        operator: OR
+        version: '1'
+        unix:suid: true
+        unix:sgid: true
+        unix:sticky: true
+        unix:gwrite: true
+        unix:oread: true
+        unix:owrite: true
+        unix:oexec: true
   state:
     operator: OR
     version: '1'

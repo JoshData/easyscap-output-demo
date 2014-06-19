@@ -41,7 +41,9 @@ tests:
     ind:xpath: /gconf/entry[@name='media_automount']/@value
   state:
     version: '1'
-    ind:value_of: 'false'
+    ind:value_of:
+      datatype: string
+      value: 'false'
 - type: ind:xmlfilecontent_test
   check: all
   check_existence: all_exist
@@ -53,4 +55,6 @@ tests:
     ind:xpath: /gconf/entry[@name='media_autorun_never']/@value
   state:
     version: '1'
-    ind:value_of: 'true'
+    ind:value_of:
+      datatype: string
+      value: 'true'

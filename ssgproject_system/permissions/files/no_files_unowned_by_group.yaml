@@ -26,9 +26,8 @@ tests:
   check: all
   comment: files with no group owner
   version: '1'
-  '{http://oval.mitre.org/XMLSchema/oval-definitions-5}notes':
-    '{http://oval.mitre.org/XMLSchema/oval-definitions-5}note': This will enumerate
-      all files on local partitions
+  oval:notes:
+    oval:note: This will enumerate all files on local partitions
   object:
     comment: all local files
     version: '1'

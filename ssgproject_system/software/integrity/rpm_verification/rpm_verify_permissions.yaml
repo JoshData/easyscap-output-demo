@@ -51,9 +51,12 @@ tests:
     linux:filepath:
       operation: pattern match
       value: .*
-    filter:
-      version: '1'
-      linux:ownership_differs: fail
+    oval:filter:
+      action: include
+      value:
+        type: linux:rpmverifyfile_state
+        version: '1'
+        linux:ownership_differs: fail
 - type: linux:rpmverifyfile_test
   check: all
   check_existence: none_exist
@@ -70,9 +73,12 @@ tests:
     linux:filepath:
       operation: pattern match
       value: .*
-    filter:
-      version: '1'
-      linux:group_differs: fail
+    oval:filter:
+      action: include
+      value:
+        type: linux:rpmverifyfile_state
+        version: '1'
+        linux:group_differs: fail
 - type: linux:rpmverifyfile_test
   check: all
   check_existence: none_exist
@@ -89,6 +95,9 @@ tests:
     linux:filepath:
       operation: pattern match
       value: .*
-    filter:
-      version: '1'
-      linux:mode_differs: fail
+    oval:filter:
+      action: include
+      value:
+        type: linux:rpmverifyfile_state
+        version: '1'
+        linux:mode_differs: fail

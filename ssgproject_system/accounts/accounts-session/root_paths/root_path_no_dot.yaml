@@ -29,6 +29,7 @@ tests:
   object:
     version: '1'
     ind:pid:
+      datatype: int
       '@xsi:nil': 'true'
     ind:name: PATH
   state:
@@ -44,6 +45,7 @@ tests:
   object:
     version: '1'
     ind:pid:
+      datatype: int
       '@xsi:nil': 'true'
     ind:name: PATH
   state:
@@ -59,6 +61,7 @@ tests:
   object:
     version: '1'
     ind:pid:
+      datatype: int
       '@xsi:nil': 'true'
     ind:name: PATH
   state:
@@ -74,6 +77,7 @@ tests:
   object:
     version: '1'
     ind:pid:
+      datatype: int
       '@xsi:nil': 'true'
     ind:name: PATH
   state:
@@ -89,6 +93,7 @@ tests:
   object:
     version: '1'
     ind:pid:
+      datatype: int
       '@xsi:nil': 'true'
     ind:name: PATH
   state:
@@ -104,6 +109,7 @@ tests:
   object:
     version: '1'
     ind:pid:
+      datatype: int
       '@xsi:nil': 'true'
     ind:name: PATH
   state:

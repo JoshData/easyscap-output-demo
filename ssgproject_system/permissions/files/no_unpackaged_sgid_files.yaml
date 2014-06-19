@@ -37,8 +37,18 @@ tests:
     unix:filename:
       operation: pattern match
       value: ^.*$
-    filter:
-      version: '1'
-      unix:filepath:
-        var_check: at least one
-        var_ref: oval:ssg:var:2246
+    oval:filter:
+      action: exclude
+      value:
+        type: unix:file_state
+        version: '1'
+        unix:filepath:
+          var_check: at least one
+          var_ref: 0
+variables:
+  0:
+    type: oval:constant_variable
+    comment: sgid whitelist
+    datatype: string
+    version: '1'
+    oval:value: /usr/sbin/sendmail.sendmail

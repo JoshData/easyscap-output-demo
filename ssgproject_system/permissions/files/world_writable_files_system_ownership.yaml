@@ -39,13 +39,16 @@ tests:
       value: /
     unix:filename:
       '@xsi:nil': 'true'
-    filter:
-      comment: uid greater than or equal to 500 and world writable
-      version: '1'
-      unix:user_id:
-        operation: greater than or equal
-        value: 500
-      unix:owrite: true
+    oval:filter:
+      action: include
+      value:
+        type: unix:file_state
+        comment: uid greater than or equal to 500 and world writable
+        version: '1'
+        unix:user_id:
+          operation: greater than or equal
+          value: 500
+        unix:owrite: true
   state:
     comment: uid greater than or equal to 500 and world writable
     version: '1'

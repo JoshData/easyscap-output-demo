@@ -31,21 +31,26 @@ tests:
     linux:mount_point:
       operation: pattern match
       value: ^/\w.*$
-    filter:
-      version: '1'
-      linux:device:
-        operation: pattern match
-        value: ^/dev/.*$
-      linux:mount_options:
-        entity_check: all
-        operation: not equal
-        value: nodev
+    oval:filter:
+      action: include
+      value:
+        type: linux:partition_state
+        version: '1'
+        linux:device:
+          operation: pattern match
+          value: ^/dev/.*$
+        linux:mount_options:
+          datatype: string
+          entity_check: all
+          operation: not equal
+          value: nodev
   state:
     version: '1'
     linux:device:
       operation: pattern match
       value: ^/dev/.*$
     linux:mount_options:
+      datatype: string
       entity_check: all
       operation: not equal
       value: nodev

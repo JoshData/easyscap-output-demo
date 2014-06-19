@@ -40,4 +40,6 @@ tests:
     ind:xpath: /gconf/entry[@name='disable_all']/@value
   state:
     version: '1'
-    ind:value_of: 'true'
+    ind:value_of:
+      datatype: string
+      value: 'true'

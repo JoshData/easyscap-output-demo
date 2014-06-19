@@ -31,6 +31,7 @@ tests:
   state:
     version: '1'
     linux:mount_options:
+      datatype: string
       entity_check: at least one
       operation: equals
       value: nodev

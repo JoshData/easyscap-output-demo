@@ -42,4 +42,10 @@ tests:
     ind:subexpression:
       operation: equals
       var_check: all
-      var_ref: oval:ssg:var:2253
+      var_ref: 0
+variables:
+  0:
+    type: oval:external_variable
+    comment: external variable for daemon umask
+    datatype: string
+    version: '1'

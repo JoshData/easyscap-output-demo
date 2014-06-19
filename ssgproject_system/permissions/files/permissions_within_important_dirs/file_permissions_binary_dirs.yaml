@@ -44,8 +44,11 @@ tests:
     unix:filename:
       operation: pattern match
       value: ^.*$
-    filter:
-      version: '1'
-      unix:type:
-        operation: equals
-        value: symbolic link
+    oval:filter:
+      action: exclude
+      value:
+        type: unix:file_state
+        version: '1'
+        unix:type:
+          operation: equals
+          value: symbolic link

@@ -31,4 +31,6 @@ tests:
     ind:xpath: /gconf/entry[@name='mode']/stringvalue[1]/text()
   state:
     version: '1'
-    ind:value_of: blank-only
+    ind:value_of:
+      datatype: string
+      value: blank-only
