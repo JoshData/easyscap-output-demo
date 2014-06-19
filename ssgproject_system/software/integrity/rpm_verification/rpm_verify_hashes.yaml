@@ -41,6 +41,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27223-7
+operator: ~
 tests:
 - type: linux:rpmverifyfile_test
   check: all

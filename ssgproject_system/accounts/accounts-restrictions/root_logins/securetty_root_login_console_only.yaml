@@ -23,6 +23,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26855-7
+operator: ~
 tests:
 - type: ind:textfilecontent54_test
   check: all

@@ -22,6 +22,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26557-9
+operator: ~
 tests:
 - type: linux:partition_test
   check: all

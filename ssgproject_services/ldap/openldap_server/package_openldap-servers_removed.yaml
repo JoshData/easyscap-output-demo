@@ -27,6 +27,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26858-1
+operator: ~
 tests:
 - type: linux:rpminfo_test
   check: all

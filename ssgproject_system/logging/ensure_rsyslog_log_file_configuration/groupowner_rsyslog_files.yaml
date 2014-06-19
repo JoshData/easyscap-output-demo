@@ -28,6 +28,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26821-9
+operator: ~
 tests:
 - type: ind:unknown_test
   check: all

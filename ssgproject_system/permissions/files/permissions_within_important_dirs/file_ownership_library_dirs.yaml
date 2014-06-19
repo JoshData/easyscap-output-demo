@@ -34,6 +34,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27424-1
+operator: AND
 tests:
 - type: unix:file_test
   check: all

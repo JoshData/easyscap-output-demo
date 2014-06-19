@@ -26,6 +26,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26774-0
+operator: ~
 tests:
 - type: linux:selinuxsecuritycontext_test
   check: none satisfy

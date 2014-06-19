@@ -21,6 +21,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26828-4
+operator: OR
 tests:
 - type: ind:xmlfilecontent_test
   check: all

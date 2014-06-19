@@ -19,6 +19,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27152-8
+operator: ~
 tests:
 - type: unix:interface_test
   check: all

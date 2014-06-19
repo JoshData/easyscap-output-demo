@@ -32,6 +32,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26506-6
+operator: AND
 tests:
 - type: linux:rpminfo_test
   check: only one

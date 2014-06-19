@@ -33,6 +33,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27066-0
+operator: AND
 tests:
 - type: unix:sysctl_test
   check: all

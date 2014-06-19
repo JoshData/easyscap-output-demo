@@ -33,6 +33,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27180-9
+operator: AND
 tests:
 - type: ind:textfilecontent54_test
   check: all

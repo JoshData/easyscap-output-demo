@@ -13,6 +13,7 @@ references: []
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-
+operator: ~
 tests:
 - type: linux:rpminfo_test
   check: all

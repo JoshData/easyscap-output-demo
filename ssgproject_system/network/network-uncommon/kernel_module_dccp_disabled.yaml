@@ -25,6 +25,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26448-1
+operator: OR
 tests:
 - type: ind:textfilecontent54_test
   check: all

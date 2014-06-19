@@ -24,6 +24,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26947-2
+operator: ~
 tests:
 - type: unix:file_test
   check: all

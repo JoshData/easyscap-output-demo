@@ -25,4 +25,5 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26928-2
+operator: OR
 tests: []

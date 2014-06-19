@@ -33,6 +33,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26840-9
+operator: ~
 tests:
 - type: unix:file_test
   check: all

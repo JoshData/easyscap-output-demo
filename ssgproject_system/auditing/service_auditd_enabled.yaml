@@ -66,4 +66,5 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27058-7
+operator: AND
 tests: []

@@ -28,6 +28,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27256-7
+operator: AND
 tests:
 - type: unix:runlevel_test
   check: all

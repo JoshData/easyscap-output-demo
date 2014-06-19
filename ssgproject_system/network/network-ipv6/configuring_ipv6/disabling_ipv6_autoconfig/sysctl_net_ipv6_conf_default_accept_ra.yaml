@@ -24,6 +24,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-27164-3
+operator: AND
 tests:
 - type: unix:sysctl_test
   check: all

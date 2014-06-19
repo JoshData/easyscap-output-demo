@@ -21,6 +21,7 @@ references:
 crosswalk:
 - system: http://cce.mitre.org
   value: CCE-26826-8
+operator: AND
 tests:
 - type: ind:environmentvariable58_test
   check: none satisfy
